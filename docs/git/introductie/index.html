@@ -7,17 +7,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edutorial | Introductie</title>
-<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+<link rel="shortcut icon" type="image/png" href="/_assets/android/edutorial-icon-48.png">
 
-<link rel="manifest" href="/edutorial/manifest.json">
+<link rel="manifest" href='/manifest.json'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
-<link href="/edutorial/_css/colors.css" rel="stylesheet">
-<link href="/edutorial/_css/base.css" rel="stylesheet">
-<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
-<link href="/edutorial/_css/desktop.css" rel="stylesheet">
-<link href="/edutorial/_css/tablet.css" rel="stylesheet">
-<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+<link href="/_css/prism-one-light.css" rel="stylesheet">
+<link href="/_css/colors.css" rel="stylesheet">
+<link href="/_css/base.css" rel="stylesheet">
+<link href="/_css/frontpage.css" rel="stylesheet">
+<link href="/_css/desktop.css" rel="stylesheet">
+<link href="/_css/tablet.css" rel="stylesheet">
+<link href="/_css/mobile.css" rel="stylesheet">
 
     
 </head>
@@ -25,12 +25,13 @@
 <body>
     <header>
         <div class="container">
-            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <a id="logolink" href="/"><img id="logo" class="standard" src="/_assets/logo.svg" alt="logo"></a>
             <nav>
                 
-                <a href="/edutorial/" class="nav-link">Home</a>
+                <a href="/" class="nav-link" >Home</a>
                 
-                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/git/git-ch1.md"><span class="material-icons">edit</span></a>
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/git/git-ch1.md"><span
+                        class="material-icons">edit</span></a>
 
                 
                 <a href="#" id="menu"><span class="material-icons">menu</span></a>
@@ -43,13 +44,13 @@
             
 <h3>Pagina's</h3>
 
-<a class="page-link" href="/edutorial/git/introductie/" aria-current="page" data-state="active">Introductie</a>
+<a class="page-link" href="/git/introductie/" aria-current="page" data-state="active" >Introductie</a>
 
-<a class="page-link" href="/edutorial/git/git-en-github/">Git en github</a>
+<a class="page-link" href="/git/git-en-github/" >Git en github</a>
 
-<a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+<a class="page-link" href="/git/git-branches/" >Git branches</a>
 
-<a class="page-link" href="/edutorial/git/conflicten/">Conflicten</a>
+<a class="page-link" href="/git/conflicten/" >Conflicten</a>
 
 
         </aside>
@@ -57,20 +58,22 @@
             
 <div id="menu-panel">
     
-    <a class="page-link" href="/edutorial/git/introductie/" aria-current="page" data-state="active">Introductie</a>
+    <a class="page-link" href="/git/introductie/" aria-current="page" data-state="active" >Introductie</a>
     
-    <a class="page-link" href="/edutorial/git/git-en-github/">Git en github</a>
+    <a class="page-link" href="/git/git-en-github/" >Git en github</a>
     
-    <a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+    <a class="page-link" href="/git/git-branches/" >Git branches</a>
     
-    <a class="page-link" href="/edutorial/git/conflicten/">Conflicten</a>
+    <a class="page-link" href="/git/conflicten/" >Conflicten</a>
     
 </div>
 
             <h1 id="versiebeheer-met-git">Versiebeheer met Git</h1>
 <h2 id="introductie">Introductie</h2>
 <div class="video-wrapper">
-        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_GRm9onlLXE2QPhWB96poCS">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen frameborder="0" height="auto"
+            src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_GRm9onlLXE2QPhWB96poCS">
         </iframe>
     </div>
 <h3 id="wat-is-git">Wat is Git</h3>
@@ -92,7 +95,7 @@ git commit <span class="token operator">-</span>m <span class="token string sing
 <p>Met 'add' voeg je alle bestanden uit de 'working directory' toe aan de 'stage'.<br>
 Met 'commit' worden de bestanden uit de 'working directory' opgeslagen in de repository. '-m'  geeft nog de mogelijkheid om een message mee te bewaren die iets zegt over de commit. Bijv. 'first commit'.
 Om je bestanden toe te voegen aan een repository moet je 2 stappen doen. Je voegt de bestanden toe aan de 'stage', daarmee zet je ze klaar om opgeslagen te worden. Daarna doe je een 'commit' waarmee de bestanden worden opgeslagen in de repository.</p>
-<p><img src="/edutorial/_assets/git/git.svg" alt="Stadia van working directory naar repository met Git"></p>
+<p><img src="/_assets/git/git.svg" alt="Stadia van working directory naar repository met Git"></p>
 <p>Als je 'git init' start vanuit een directory, dan krijg je in die directory een 'verborgen' mapje met de naam '.git'. Een bestandsnaam of map die begint met een punt is verborgen. Je kunt ook verborgen bestanden zien als je de toevoeging '-a' gebruikt bij het commando 'ls' (list directory)</p>
 <pre class="language-php"><code class="language-php"><span class="token operator">|</span><span class="token operator">--</span>working <span class="token class-name">directory</span>
     <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">.</span>git</code></pre>
@@ -152,7 +155,7 @@ rm <span class="token operator">-</span>rf <span class="token operator">.</span>
             
 <div class="sections">
     <h3>Onderwerpen</h3>
-    <div class="toc">
+    <div class="toc" >
         <ul><li><a href="#introductie">Introductie</a></li><li><a href="#overzicht-git-opdrachten">Overzicht Git opdrachten</a></li></ul>
       </div>
 </div>
@@ -167,7 +170,7 @@ rm <span class="token operator">-</span>rf <span class="token operator">.</span>
     <div></div>
     
     
-    <a id="next-link" href="/edutorial/git/git-en-github/">
+    <a id="next-link" href="/git/git-en-github/">
         <span class="title">Git en github</span>
         <span id="arrow-forward" class="material-icons">
             arrow_forward_ios
@@ -177,7 +180,7 @@ rm <span class="token operator">-</span>rf <span class="token operator">.</span>
 </div>
 
     </footer>
-    <script src="/edutorial/_js/menu-scroller.js"></script>
+    <script src="/_js/menu-scroller.js"></script>
 </body>
 
 </html>

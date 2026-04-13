@@ -108,7 +108,7 @@ eleventyConfig.addFilter("postsAscending", (collection) => {
 });
 
 return {
-    pathPrefix: "/edutorial/",
+    // pathPrefix: "//",
     dir: {
         input: "src",
         output: "docs",
