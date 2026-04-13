@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Models en Controllers</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/laravel/laravel-ch33.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+
+<a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+
+<a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+
+<a class="page-link" href="/edutorial/laravel/views/">Views</a>
+
+<a class="page-link" href="/edutorial/laravel/models-en-controllers/" aria-current="page" data-state="active">Models en Controllers</a>
+
+<a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+
+<a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+
+<a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+    
+    <a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+    
+    <a class="page-link" href="/edutorial/laravel/views/">Views</a>
+    
+    <a class="page-link" href="/edutorial/laravel/models-en-controllers/" aria-current="page" data-state="active">Models en Controllers</a>
+    
+    <a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+    
+    <a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+    
+</div>
+
+            <h1 id="laravel">Laravel</h1>
+<h2 id="models-en-controllers">Models en Controllers</h2>
+<p>Laravel werkt volgens het <a href="https://nl.wikipedia.org/wiki/Model-view-controller-model">model-view-controller</a> concept. Volgens dit concept wordt de opslag van data, het bewerken van data en de presentatie van data gescheiden in de applicatie. In de praktijk blijkt deze opdeling van verantwoordelijkheden te leiden tot applicaties die makkelijk te schalen zijn en code die goed herbruikbaar is.</p>
+<p>In Laravel betekent dit onderscheid dat alle database-acties worden ondergebracht in models. De controllers verbinden de data met de javascript, css en html uit de view.</p>
+<h2 id="controllers">Controllers</h2>
+<p>Vanaf de command-line in de projectmap kun je een controller aanmaken</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>controller MenuItemController</code></pre>
+<p>Artsisan maakt een MenuItemController.php aan in de map app-&gt;Http-&gt;Controllers met de volgende code:</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">MenuItemController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//</span>
+<span class="token punctuation">}</span>
+</span></code></pre>
+<p>In de class MenuItemController kunnen we de volgende methode schrijven...</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">MenuItemController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function-definition function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string double-quoted-string">"Hello World"</span><span class="token punctuation">;</span>   
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Om de index-methode aan te roepen in de MenuItemController is er een route nodig in app-&gt;routes-&gt;web.php</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>MenuItemController</span><span class="token punctuation">;</span>
+<span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/menu_item'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">MenuItemController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'index'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="models">Models</h2>
+<p>Een model wordt gebruikt om de communicatie met een gegevensbron zoals bijvoorbeeld database mogelijk te maken.
+De models van Laravel/Eloquent maken gebruik van PDO (Persisten database object) om queries en data te sturen naar een databaseserver. De connectie heeft gegevens nodig uit het .env-bestand in de projectmap.</p>
+<pre class="language-php"><code class="language-php"><span class="token constant">DB_CONNECTION</span><span class="token operator">=</span>mysql
+<span class="token constant">DB_HOST</span><span class="token operator">=</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span>
+<span class="token constant">DB_PORT</span><span class="token operator">=</span><span class="token number">3306</span>
+<span class="token constant">DB_DATABASE</span><span class="token operator">=</span>mdb
+<span class="token constant">DB_USERNAME</span><span class="token operator">=</span>root
+<span class="token constant">DB_PASSWORD</span><span class="token operator">=</span>secret</code></pre>
+<p>Met php artisan kan een model worden gecreeërd. Een model is de classe-presentatie van een tabel. Laravel koppelt een model met de naam 'Movie' automatisch aan de tabel met de naam 'movies'. Laravel maakt de tabelnaam in kleine letters en in meervoud. Dit gaat natuurlijk alleen goed als je de tabellen engelse benamingen geeft. Gelukkig kun je de tabelnaam ook zelf instellen met de eigenschap $table.
+Laravel gaat er ook van uit dat je tabel een primaire sleutel heeft met de naam 'id'. Dit kun je eventueel ook aanpassen. Als je start met Laravel is het handig om zo veel mogelijk engelse benamingen te gebruiken, zodat je applicatie de <a href="https://xqsit.github.io/laravel-coding-guidelines/docs/naming-conventions/">naam-conventies van Laravel</a> volgt.</p>
+<pre class="language-php"><code class="language-php">php artisam make<span class="token punctuation">:</span>model MenuItem</code></pre>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">MenuItem</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token package">HasFactory</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In feite is dit al voldoende om gegevens uit een database op te halen en weer te geven.
+De MenuItemController aangepast met een nieuwe methode 'show' in app-&gt;http-&gt;controllers-&gt;MenuItemController.php
+Er wordt een nieuwe route gedefineerd (in routes-&gt;web.php) die gebruik maakt van de nieuwe methode in de TestController.</p>
+<pre class="language-php"><code class="language-php"><span class="token comment">//In web.php</span>
+<span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/menu_items'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">MenuItemController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'show'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//In TestController.php</span>
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">MenuItemController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function-definition function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string double-quoted-string">"Hello World"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function-definition function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name static-context">MenuItem</span><span class="token operator">::</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Het resultaat is een lijst met alle menu-items uit de tabel menu_items!</p>
+<h2 id="views">Views</h2>
+<p>Om het resultaat  weer te geven in een view wordt hier een voorbeeld gegeven:<br>
+Views worden opgeslagen in resources-&gt;views. Voor het menu-item-overzicht wordt het bestand menu_items.blade.php in de views-map aangemaakt.
+Een blade-template bestaat uit html waarbinnen variabelen en zgn. blade-directives gebruikt worden om door php/laravel gegenereerde data weer te geven. Om de movies weer te geven kun je de volgende code gebruiken....</p>
+<pre class="language-php"><code class="language-php"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string double-quoted-string">"nl_NL"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string double-quoted-string">"utf-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string double-quoted-string">"viewport"</span> content<span class="token operator">=</span><span class="token string double-quoted-string">"width=device-width, initial-scale=1"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>Laravel<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Fonts <span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>link href<span class="token operator">=</span><span class="token string double-quoted-string">"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap"</span> rel<span class="token operator">=</span><span class="token string double-quoted-string">"stylesheet"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>style<span class="token operator">></span>
+        body <span class="token punctuation">{</span>
+            font<span class="token operator">-</span>family<span class="token punctuation">:</span> <span class="token string single-quoted-string">'Nunito'</span><span class="token punctuation">,</span> sans<span class="token operator">-</span>serif<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>table<span class="token operator">></span>
+    <span class="token operator">&lt;</span>tr<span class="token operator">></span>
+        <span class="token operator">&lt;</span>th<span class="token operator">></span>Name<span class="token operator">&lt;</span><span class="token operator">/</span>th<span class="token operator">></span>
+        <span class="token operator">&lt;</span>th<span class="token operator">></span>Category <span class="token constant">ID</span><span class="token operator">&lt;</span><span class="token operator">/</span>th<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">></span>
+    @<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$menu_items</span> <span class="token keyword">as</span> <span class="token variable">$menu_item</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>tr<span class="token operator">></span>
+        <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$menu_item</span><span class="token operator">-></span><span class="token property">name</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span>
+        <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$menu_item</span><span class="token operator">-></span><span class="token property">category_id</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>td<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">></span>
+    @<span class="token keyword">endforeach</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>table<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
+<p>De variabelen herken je aan de {{ ... }} structuur. Binnen de accolades kun je php code gebruiken.
+Daarnaast zie je de for-each loop die bestaat uit blade-directives (@foreach .... @endforeach).</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#models-en-controllers">Models en Controllers</a></li><li><a href="#controllers">Controllers</a></li><li><a href="#models">Models</a></li><li><a href="#views">Views</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/laravel/views/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Views</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/laravel/authenticatie/">
+        <span class="title">Authenticatie</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

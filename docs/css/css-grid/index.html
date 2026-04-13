@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | CSS Grid</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/css/css-ch090.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+
+<a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+
+<a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+
+<a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+
+<a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+
+<a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+
+<a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+
+<a class="page-link" href="/edutorial/css/css-grid/" aria-current="page" data-state="active">CSS Grid</a>
+
+<a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+
+<a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+    
+    <a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+    
+    <a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+    
+    <a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+    
+    <a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+    
+    <a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+    
+    <a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+    
+    <a class="page-link" href="/edutorial/css/css-grid/" aria-current="page" data-state="active">CSS Grid</a>
+    
+    <a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+    
+    <a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+    
+</div>
+
+            <h1 id="css">CSS</h1>
+<h2 id="css-grid">CSS Grid</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLwzcTrPriiGYLgaBP8TQeuPl1Dz4gPZlM">
+        </iframe>
+    </div>
+<p>In den beginne was het World Wide Web en HTML vooral bedoeld als alternatief voor de dikke encyclopedie. Je kon nu veel makkelijker informatie terugvinden omdat HTML kon werken met hyperlinks!
+Destijds hadden we niet kunnen bedenken dat HTML en CSS gebruikt gingen worden voor het bouwen van webshops en mobiele applicaties.
+HTML en CSS moesten dezelfde functionaliteit krijgen als 'moderne' layout-managers die gebruikt worden bij de ontwikkeling van desktop- en mobiele applicaties met bijvoorbeeld Swift en Java.
+Inmiddels biedt CSS moderne tools om applicaties vorm te geven. De belangrijkste zijn Grid en Flexbox.<br>
+De naam zegt het al. Op basis van een grid kun je html-elementen positioneren.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">#grid-container</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">grid-template-areas</span><span class="token punctuation">:</span>
+    <span class="token string">'header header'</span>
+    <span class="token string">'article nieuws'</span>
+    <span class="token string">'footer footer'</span><span class="token punctuation">;</span>
+  <span class="token property">gap</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">header</span> <span class="token punctuation">{</span> 
+    <span class="token property">grid-area</span><span class="token punctuation">:</span> header<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">article</span> <span class="token punctuation">{</span>
+    <span class="token property">grid-area</span><span class="token punctuation">:</span> article<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">aside</span> <span class="token punctuation">{</span>
+    <span class="token property">grid-area</span><span class="token punctuation">:</span> nieuws<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">footer</span> <span class="token punctuation">{</span> 
+    <span class="token property">grid-area</span><span class="token punctuation">:</span> footer<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> lightblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+            Dit is de header
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>
+            Dit is een article
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span>
+            Hier komt het nieuws
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+            Dit is de footer
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<style>
+    #grid-container {
+        display: grid;
+        grid-template-areas:
+        'header header'
+        'article nieuws'
+        'footer footer';
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    header { 
+        grid-area: header;
+        background-color: yellow;
+    }
+    article {
+        grid-area: article;
+        background-color: lightgreen;
+        height:100px;
+    }
+    aside {
+        grid-area: nieuws;
+        background-color: pink;
+    }
+    footer { 
+        grid-area: footer;
+        background-color: lightblue;
+    }
+</style>
+<div class="html">
+    <div id="grid-container">
+      <header>
+            Dit is de header
+      </header>
+      <article>
+            Dit is een article
+      </article>
+      <aside>
+            Hier komt het nieuws
+      </aside>
+      <footer>
+            Dit is de footer
+      </footer>
+    </div>
+</div>  
+<p>Als je meer over grid wil weten, dan moet je eens kijken op de site van <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="CSS Tricks - Grid">CSS-tricks.com</a>. Maar ook <a href="https://www.w3schools.com/css/css_grid.asp">W3 Schools</a> en <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">MDN</a> hebben uitgebreide hoofdstukken over CSS Grid.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#css-grid">CSS Grid</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/css/flexbox/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Flexbox</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/css/media-queries/">
+        <span class="title">Media Queries</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

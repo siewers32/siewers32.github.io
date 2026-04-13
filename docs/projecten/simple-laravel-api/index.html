@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Simple Laravel API</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/projecten/projecten-api-ch120.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/projecten/farout-project/">FarOut Project</a>
+
+<a class="page-link" href="/edutorial/projecten/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/projecten/projectmanagement/">Projectmanagement</a>
+
+<a class="page-link" href="/edutorial/projecten/documentatie/">Documentatie</a>
+
+<a class="page-link" href="/edutorial/projecten/userstories/">Userstories</a>
+
+<a class="page-link" href="/edutorial/projecten/klassediagram/">Klassediagram</a>
+
+<a class="page-link" href="/edutorial/projecten/activiteitendiagram/">Activiteitendiagram</a>
+
+<a class="page-link" href="/edutorial/projecten/planning-poker/">Planning poker</a>
+
+<a class="page-link" href="/edutorial/projecten/retrospective/">Retrospective</a>
+
+<a class="page-link" href="/edutorial/projecten/poor-man&#39;s-api/">Poor man&#39;s API</a>
+
+<a class="page-link" href="/edutorial/projecten/simple-laravel-api/" aria-current="page" data-state="active">Simple Laravel API</a>
+
+<a class="page-link" href="/edutorial/projecten/swaggie/">Swaggie</a>
+
+<a class="page-link" href="/edutorial/projecten/serial-downloader/">Serial downloader</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/projecten/farout-project/">FarOut Project</a>
+    
+    <a class="page-link" href="/edutorial/projecten/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/projectmanagement/">Projectmanagement</a>
+    
+    <a class="page-link" href="/edutorial/projecten/documentatie/">Documentatie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/userstories/">Userstories</a>
+    
+    <a class="page-link" href="/edutorial/projecten/klassediagram/">Klassediagram</a>
+    
+    <a class="page-link" href="/edutorial/projecten/activiteitendiagram/">Activiteitendiagram</a>
+    
+    <a class="page-link" href="/edutorial/projecten/planning-poker/">Planning poker</a>
+    
+    <a class="page-link" href="/edutorial/projecten/retrospective/">Retrospective</a>
+    
+    <a class="page-link" href="/edutorial/projecten/poor-man&#39;s-api/">Poor man&#39;s API</a>
+    
+    <a class="page-link" href="/edutorial/projecten/simple-laravel-api/" aria-current="page" data-state="active">Simple Laravel API</a>
+    
+    <a class="page-link" href="/edutorial/projecten/swaggie/">Swaggie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/serial-downloader/">Serial downloader</a>
+    
+</div>
+
+            <h1 id="projecten">Projecten</h1>
+<h2 id="simple-laravel-api">Simple Laravel API</h2>
+<h2 id="installatie-met-composer">Installatie met composer</h2>
+<pre class="language-shell"><code class="language-shell"><span class="token function">composer</span> create-project laravel/laravel simple-api
+</code></pre>
+<h2 id="mysql-data">MySQL Data</h2>
+<p>Maak een database aan: simple-api...<br>
+In sql-client terminal:</p>
+<pre class="language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">database</span> <span class="token keyword">simple</span><span class="token operator">-</span>api<span class="token punctuation">;</span></code></pre>
+<p>Pas het .env-bestand aan in laravel met de juiste gegevens voor de database:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">DB_CONNECTION</span><span class="token operator">=</span>mysql
+<span class="token assign-left variable">DB_HOST</span><span class="token operator">=</span><span class="token number">127.0</span>.0.1
+<span class="token assign-left variable">DB_PORT</span><span class="token operator">=</span><span class="token number">3306</span>
+<span class="token assign-left variable">DB_DATABASE</span><span class="token operator">=</span>simple_api
+<span class="token assign-left variable">DB_USERNAME</span><span class="token operator">=</span>root
+<span class="token assign-left variable">DB_PASSWORD</span><span class="token operator">=</span>root</code></pre>
+<ul>
+<li>Maak de standaard laravel-tabellen aan voor users, passwords en tokens met php artisan.</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">php artisan migrate</code></pre>
+<ul>
+<li>Voeg de <a href="/edutorial/_assets/projecten/customers.sql">tabel customers</a> toe aan de simple_api database</li>
+</ul>
+<pre class="language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">use</span> simple_api<span class="token punctuation">;</span>
+mysql<span class="token operator">></span> source C:\customers<span class="token punctuation">.</span><span class="token keyword">sql</span><span class="token punctuation">;</span></code></pre>
+<h2 id="routes-defini%C3%ABren">Routes definiëren</h2>
+<p>In de routes-folder kun je nu een route toevoegen aan api.php.</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>DB</span><span class="token punctuation">;</span>
+
+<span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/customers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name static-context">DB</span><span class="token operator">::</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'customers'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">toJson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>In de browser ga je nu naar http://127.0.0.1/api/customers en voila je ziet een overzicht van alle customers.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#simple-laravel-api">Simple Laravel API</a></li><li><a href="#installatie-met-composer">Installatie met composer</a></li><li><a href="#mysql-data">MySQL Data</a></li><li><a href="#routes-defini%C3%ABren">Routes definiëren</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/projecten/poor-man&#39;s-api/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Poor man&#39;s API</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/projecten/swaggie/">
+        <span class="title">Swaggie</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

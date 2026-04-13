@@ -1,0 +1,156 @@
+{
+  "courses": [
+    {
+      "url": "/ai/introductie/",
+      "name": "AI",
+      "image": "/_assets/course_ai.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-3-dark)",
+      "description": "Effectief gebruik van ChatGPT en bouwen van AI apps"
+    },
+    {
+      "url": "/blog/introductie/",
+      "name": "Blog",
+      "image": "/_assets/course_blog.svg",
+      "style": "var(--c-course-level-1)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Een overzicht van youtube-movies die zijn opgenomen tijdens online lessen"
+    },
+    {
+      "url": "/python/introductie/",
+      "name": "Python",
+      "image": "/_assets/course_python.svg",
+      "style": "var(--c-course-level-2)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Beginnen met Python voor IT-ers."
+    },
+        {
+      "url": "/python_int/introductie/",
+      "name": "Python Intermediate",
+      "image": "/_assets/course_python.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Python voor gevorderden"
+    },
+    {
+      "url": "/blockchain/introductie/",
+      "name": "Blockchain",
+      "image": "/_assets/course_blockchain.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Blockchain oriëntatie"
+    },
+    {
+      "url": "/php/introductie/",
+      "name": "Starten met PHP",
+      "image": "/_assets/course_php8_beginners.svg",
+      "style": "var(--c-course-level-2)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Starten met 1 van de meest populaire programmeertalen voor het maken van websites en applicaties"
+    },
+    {
+      "url": "/php2/introductie/",
+      "name": "PHP Object georiënteerd",
+      "image": "/_assets/course_php_oo.svg",
+      "style": "var(--c-course-level-2)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Introductie tot object geörienteerd programmeren. Voorbereiding op het werken met frameworks."
+    },
+    {
+      "url": "/html/introductie/",
+      "name": "HTML 5",
+      "image": "/_assets/course_html5.svg",
+      "style": "var(--c-course-level-1)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Absolute basiscursus. De beste plek om te beginnen met software development."
+    },
+    {
+      "url": "/css/introductie/",
+      "name": "CSS",
+      "image": "/_assets/course_css3.svg",
+      "style": "var(--c-course-level-1)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Beginnen met het ontwerpen en vormgeven van websites en applicaties."
+    },
+    {
+      "url": "/git/introductie/",
+      "name": "Versiebeheer met Git",
+      "image": "/_assets/course_git.svg",
+      "style": "var(--c-course-level-1)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Starten met versiebeheer en het veilig stellen van bestanden met Git. Opstap naar het samenwerken in projecten."
+    },
+    {
+      "url": "/laravel_api/introductie/",
+      "name": "Laravel API",
+      "image": "/_assets/course_laravel_api.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Back- en frontend applicaties met Vue en Laravel."
+    },
+    {
+      "url": "/laravel/introductie/",
+      "name": "Laravel",
+      "image": "/_assets/course_laravel.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Fullstack applicaties met Laravel maken."
+    },
+    {
+      "url": "/javascript/introductie/",
+      "name": "Javascript",
+      "image": "/_assets/course_javascript.svg",
+      "style": "var(--c-course-level-2)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Beginnen met javascript. Elementen in de browser interactief maken."
+    },
+    {
+      "url": "/dbq/introductie/",
+      "name": "Database queries",
+      "image": "/_assets/course_mysql.svg",
+      "style": "var(--c-course-level-1)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Basiscursus voor developers en IT-ers. Alles over het opvragen en opslaan van gegevens in databases."
+    },
+    {
+      "url": "/dbo/introductie/",
+      "name": "Database ontwerp",
+      "image": "/_assets/course_mysql_design.svg",
+      "style": "var(--c-course-level-2)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Efficiënt leren ontwerpen van relationele databases."
+    },
+    {
+      "url": "/examen/introductie/",
+      "name": "Examenvoorbereiding",
+      "image": "/_assets/course_slim.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Voorbereiding op het beroepsexamen in de vorm van het examenproject op school."
+    },
+    {
+      "url": "/projecten/introductie/",
+      "name": "Projecten",
+      "image": "/_assets/course_projecten.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Samenwerken in projecten."
+    },
+    {
+      "url": "/zt/introductie/",
+      "name": "Technologie en zorg",
+      "image": "/_assets/course_zt.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Alles over de activiteiten en bevindingen vanuit het practoraat Technologie en zorg."
+    },
+    {
+      "url": "/ai_engineer/introductie/",
+      "name": "AI engineer",
+      "image": "/_assets/course_ai_engineer.svg",
+      "style": "var(--c-course-level-3)",
+      "textcolor": "var(--course-level-1-dark)",
+      "description": "Wat heb je nodig om AI engineer te worden?"
+    }
+  ]
+}

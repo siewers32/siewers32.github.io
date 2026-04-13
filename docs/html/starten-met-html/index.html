@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Starten met HTML</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/html/html-ch020.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/html/starten-met-html/" aria-current="page" data-state="active">Starten met HTML</a>
+
+<a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+
+<a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+
+<a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+
+<a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+
+<a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+
+<a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+
+<a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+
+<a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+
+<a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/html/starten-met-html/" aria-current="page" data-state="active">Starten met HTML</a>
+    
+    <a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+    
+    <a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+    
+    <a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+    
+    <a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+    
+    <a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+    
+    <a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+    
+    <a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+    
+    <a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+    
+    <a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+    
+</div>
+
+            <h1 id="html-5">HTML 5</h1>
+<h2 id="starten-met-html">Starten met HTML</h2>
+<h3 id="opbouw-van-een-html-document">Opbouw van een HTML-document</h3>
+<p>Deze onderwerpen komen aan de orde:</p>
+<ul>
+<li>Waar is HTML voor en wat kun je er mee</li>
+<li>Hoe maak je HTML</li>
+<li>Hoe bekijk je HTML</li>
+<li>Het world wide web consortium (W3C)</li>
+<li>De opbouw van een HTML pagina
+<ul>
+<li>De header</li>
+<li>body</li>
+</ul>
+</li>
+</ul>
+<h2 id="waar-is-html-voor-en-wat-kun-je-er-mee">Waar is HTML voor en wat kun je er mee</h2>
+<p>HTML is een pagina-beschrijvingstaal. Je browser kan op basis van de HTML-code bepalen hoe een pagina moet worden weergegeven.
+HTML beschrijft de elementen waarmee een pagina is opgebouwd. Met HTML maak je de structuur van een webpagina.</p>
+<h2 id="hoe-maak-je-html">Hoe maak je HTML</h2>
+<p>HTML is gewoon tekst. Je kunt HTML maken met een tekst-editor. Een tekst-editor is geen word-processor!
+Met Microsoft Word kun je geen HTML pagina's maken. Een Word document (.doc) is geen tekst document (.txt).
+Een HTML document is een tekstdocument, maar dan met de extensie '.htm' of '.html'.</p>
+<blockquote>
+<h4 id="opdracht">Opdracht</h4>
+<ul>
+<li>Gebruik onderstaande code. Hier zie je de basis-code van een HTML-pagina</li>
+<li>Plak de code in een nieuw tekstdocument in je HTML editor en bewaar het in een nieuwe map.</li>
+<li>Controleer of je de pagina kunt openen in een browser zoals bijvoorbeeld Safari, Google Chrome, Edge of Firefox.</li>
+</ul>
+</blockquote>
+<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Titel van de pagina<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>>Dit is een heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Dit is een paragraaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="tip%3A">Tip:</h3>
+<p>Gebruik in mappen en namen van HTML-documenten geen hoofdletters, spaties of andere vreemde tekens.
+Zo zorg je ervoor dat je bestanden op andere platforms (zoals Linux of Mac OS) ook goed werken!</p>
+<p>In onderstaande video worden alle stappen die je moet doen nog eens voorgedaan.</p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/y0u3hrvR5Eo">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#starten-met-html">Starten met HTML</a></li><li><a href="#waar-is-html-voor-en-wat-kun-je-er-mee">Waar is HTML voor en wat kun je er mee</a></li><li><a href="#hoe-maak-je-html">Hoe maak je HTML</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/html/introductie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Introductie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/html/html-structuur/">
+        <span class="title">HTML structuur</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

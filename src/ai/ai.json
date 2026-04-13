@@ -1,0 +1,6 @@
+{
+    "course-title": "Artificial Intelligence",
+    "layout": "course.njk",
+    "permalink": "/ai/{{ title | slug }}/{{ page.index }}",
+    "tags": "ai"
+}

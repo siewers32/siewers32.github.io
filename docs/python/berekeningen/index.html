@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Berekeningen</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch035.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/" aria-current="page" data-state="active">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/" aria-current="page" data-state="active">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/Gke1mGBNIRc">
+        </iframe>
+    </div>
+<h2 id="berekeningen">Berekeningen</h2>
+<p>Zoals veel andere script- en programmeertalen kun je in python verbluffend goed rekenen. Je kunt natuurlijk optellen, aftrekken, vermenigvuldigen en delen maar er zijn nog een aantal bewerkingen die handig zijn zoals de modulus, machtsverheffen.
+Met de modulus bewerking (%) kun je bepalen of een getal deelbaar is door een ander getal. Als het niet deelbaar is de restwaarde de uitkomst</p>
+<blockquote>
+<p>5 % 3 = 2 want als je 5 door 3 deelt dan kan dat 1 keer en hou je 2 over<br>
+6 % 3 = 0 want als je 6 door 3 deelt dan kan dat 2 keer en hou je niks over<br>
+0.3 % 3 = 0.3 want als je 0.3 deelt door 3 dan kan dat 0 keer en hou je 0.3 over
+8.3 % 0.3 = 0.2 want 0.3 x 27 = 8.1 dus hou je 0.2 over.</p>
+</blockquote>
+<p>Machtsverheffen doe je met (**)</p>
+<blockquote>
+<p>2 ** 2 = 4 want 2 tot de macht 2 = 2 x 2 = 4<br>
+2 ** 3 = 8 want 2 tot de macht 3 = 2 x 2 x 2 = 8<br>
+5 ** 4 = 625 want 5 x 5 x 5 x 5 = 625</p>
+</blockquote>
+<p>Delen is altijd tricky</p>
+<blockquote>
+<p>9 / 3 = 3<br>
+19 / 3 = 6.33333333 (float)
+21 / 0 = ZeroDivisionError: division by zero</p>
+</blockquote>
+<p>Als je een integer deelt door een andere integer dan kan de uitkomst een float zijn. Python kan niet door 0 delen dus zie een division by zero error op het scherm. Je kunt ook delen en altijd een integer als uitkomst hebben. Je gebruikt dan <code>//</code> ipv <code>/</code></p>
+<blockquote>
+<p>9 // 3 = 3<br>
+19 // 3 = 6<br>
+21 // 0 = ZeroDivisionError: integer division or modulo by zero</p>
+</blockquote>
+<h2 id="bewerkingen-en-prioriteiten">Bewerkingen en prioriteiten</h2>
+<p>Als je meer dan 2 waarden moet bewerken, dan moet je opletten in welke volgorde de berekening wordt uitgevoerd...</p>
+<blockquote>
+<p>24 / 4 - 3 = 3 en niet 24 (eest delen dan aftrekken)<br>
+8 + 16 // 4 = 12 en niet 8 (eerst delen dan optellen)</p>
+</blockquote>
+<p>Je kunt prioriteit afdwingen door haakjes te gebruiken:</p>
+<blockquote>
+<p>(8 + 16) // 4 = 6 en niet 12 (eerst haakjes dan delen)</p>
+</blockquote>
+<h2 id="opdrachten">Opdrachten</h2>
+<p>De opdrachten bij dit hoofdstuk staan op...</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#berekeningen">Berekeningen</a></li><li><a href="#bewerkingen-en-prioriteiten">Bewerkingen en prioriteiten</a></li><li><a href="#opdrachten">Opdrachten</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/variabelen/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Variabelen</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/tekstfuncties/">
+        <span class="title">Tekstfuncties</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

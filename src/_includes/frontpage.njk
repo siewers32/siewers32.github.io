@@ -1,0 +1,23 @@
+{% extends "serviceworker.njk" %}
+
+{% block courses %}
+<main>
+    <div class="courses-overview">
+        {% for course in courses.courses|sort(attribute='style')%}
+        <a href="{{ course.url }}">
+            <div class="course-holder">
+                <div class="course-top" style="background-color:{{ course.style }};">
+                    <div class="course-name" style="color:{{ course.textcolor }};">
+                        {{ course.name }}
+                    </div>
+                    <img src="{{ course.image }}" class="course-picture" alt="{{ course.name }}">
+                </div>
+                <div class="course-bottom">
+                    {{ course.description }}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

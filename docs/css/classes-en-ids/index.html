@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Classes en Ids</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/css/css-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+
+<a class="page-link" href="/edutorial/css/classes-en-ids/" aria-current="page" data-state="active">Classes en Ids</a>
+
+<a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+
+<a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+
+<a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+
+<a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+
+<a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+
+<a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+
+<a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+
+<a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+    
+    <a class="page-link" href="/edutorial/css/classes-en-ids/" aria-current="page" data-state="active">Classes en Ids</a>
+    
+    <a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+    
+    <a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+    
+    <a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+    
+    <a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+    
+    <a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+    
+    <a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+    
+    <a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+    
+    <a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+    
+</div>
+
+            <h1 id="css">CSS</h1>
+<h2 id="classes-en-ids">Classes en Ids</h2>
+<p>In het vorige hoofdstuk heb je gezien hoe je tags kunt koppelen aan een css-stijl. Soms komt het voor dat je verschillende stijlen toe
+wil passen op dezelfde tag. In het voorbeeld van Wilkens zijn de navigatielinks in de header en de footer wit geworden met een zwarte achtergrond.
+Wat nou als je in de footer zwarte links op een witte achtergrond wil!<br>
+Dat kan als je gebruik maakt van een class-attribuut of een id-attribuut.</p>
+<h2 id="class">Class</h2>
+<p>Een class-attribuut maak je op de volgende manier:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.mijnstijl</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In bovenstaand voorbeeld heb ik een class gemaakt met de naam 'mijnstijl'. Een class herken je aan de punt die je voor de naam zet.
+Om de class toe te passen op een html-element maak je gebruik van het class-attribuut.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mijnstijl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Deze tekst krijgt een rode achtergrond<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<p style="background-color: red">Deze tekst krijgt een rode achtergrond</p>
+</div>
+<p>Een class kun je meerdere keren toepassen op verschillende html-elementen. Dus:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mijnstijl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Deze tekst krijgt een rode achtergrond<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mijnstijl<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/bidibidi.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link naar een andere pagina<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="id">Id</h2>
+<p>Een id werkt op dezelfde manier als een class, maar de naamaanduiding begint met een '#' en een id kan maar op 1 html-element worden toegepast.
+Bijvoorbeeld:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">#title</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In html...</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>title<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Deze titel krijgt een groene lijn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<h1 style="line-height:1em; margin:0; padding:2px; border: 1px solid green;">Deze titel krijgt een groene lijn</h1>
+</div>
+<p>Een id is een zgn. identifier. Er kan maar 1 element met het id 'title' zijn. Het gebruik van id t.o.v. classes is daarom beperkt.</p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/VgPKZEt3J_g">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#classes-en-ids">Classes en Ids</a></li><li><a href="#class">Class</a></li><li><a href="#id">Id</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/css/starten-met-css/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Starten met CSS</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/css/boxmodel/">
+        <span class="title">Boxmodel</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}{% endblock %}
+    {% block serviceworker %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/"><img id="logo" class="standard" src="/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                {% for item in nav.items %}
+                <a href="{{ item.url }}" class="nav-link" {% if item.url==page.url %}aria-current="page"
+                    data-state="active" {% endif %}>{{ item.name }}</a>
+                {% endfor %}
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/{{ page.inputPath }}"><span
+                        class="material-icons">edit</span></a>
+
+                {% block menu %}
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                {% endblock %}
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            {% block aside_left %}{% endblock %}
+        </aside>
+        <div id="content">
+            {% block menu_panel %}{% endblock %}
+            {{ content | safe }}
+        </div>
+        <aside id="right">
+            {% block aside_right %}{% endblock %}
+        </aside>
+        {% block courses %}{% endblock %}
+    </main>
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+    <script src="/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Fonts</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/css/css-ch060.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+
+<a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+
+<a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+
+<a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+
+<a class="page-link" href="/edutorial/css/fonts/" aria-current="page" data-state="active">Fonts</a>
+
+<a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+
+<a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+
+<a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+
+<a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+
+<a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+    
+    <a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+    
+    <a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+    
+    <a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+    
+    <a class="page-link" href="/edutorial/css/fonts/" aria-current="page" data-state="active">Fonts</a>
+    
+    <a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+    
+    <a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+    
+    <a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+    
+    <a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+    
+    <a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+    
+</div>
+
+            <h1 id="css">CSS</h1>
+<h2 id="fonts">Fonts</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/PWWw99TyLBU">
+        </iframe>
+    </div>
+<p>In moderne webapplicaties worden verschillende lettertypen gebruikt. Je kunt lettertypen indelen in 3 categorieën:</p>
+<ul>
+<li>Systeemlettertypen</li>
+<li>Webfonts</li>
+<li>Variable fonts</li>
+</ul>
+<h4 id="wat-is-een-lettertype">Wat is een lettertype</h4>
+<p>Een lettertype bestaat uit een verzameling vectorafbeeldingen van letters. Een vectorafbeelding is eigenlijk een soort wiskundige formule waarmee je de vorm van een letter of afbeelding beschrijft. Als je een svg-bestand opent zie je hoe de code voor een vectorafbeelding eruit ziet.
+In een tekst maak je heel vaak gebruik van dezelfde afbeeldingen. De letter 'e' komt in deze tekst al tientallen keren voor. Het is voor een computer nogal overbodig om voor iedere letter 'e' uit te rekenen hoe die op het scherm getekend moet worden. Het is voldoende om een letter 1 keer uit te rekenen en vervolgens meerdere keren op dezelfde manier te tekenen op het scherm.</p>
+<h4 id="systeemlettertypen">Systeemlettertypen</h4>
+<p>De systeemlettertypen zijn fonts die op iedere computer standaard voorkomen. Voorbeelden zijn Arial, Times, Verdana en meer. Je kunt deze letterstypen zo opnemen in je css-code zonder extra handelingen.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">h1</span> <span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Arial'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Hierboven wordt voor 'h1' het lettertype 'Arial' ingesteld. Als dit lettertype niet voorkomt in het systeem van de gebruiker, dan maakt de browser gebruik van het sans-serif font. Het sans-serif font is altijd beschikbaar in de browser.</p>
+<h4 id="webfonts">Webfonts</h4>
+<p>Webfonts zijn lettertypen van andere leveranciers die standaard niet voorkomen op de computer van gebruikers. Er zijn gratis webfonts te vinden op o.a. <a href="https://fonts.google.com">google fonts</a>.
+Om webfonts te gebruiken moet je 2 handelingen uitvoeren. Je moet er voor zorgen dat het font (=lettertype) naar de computer van de gebruiker wordt gedownload en je moet het in css toevoegen aan een html-element.
+Op de site van Google Fonts krijg je uitleg over het gebruik van de beschikbare lettertypen. Stel dat je het font Roboto wilt gebruken met een dikte van 300.
+In de head van je html-bestand moet je ervoor zorgen dat het font wordt gedownload naar de computer van de gebruiker</p>
+<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">h1</span> <span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Roboto'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Als je een letter cursief wilt maken of dikker wilt afdrukken, dan heb je daar een ander lettertype voor nodig. Veel verschillende dikten levert veel verschillende lettertypes op. Probeer het aantal lettertypen dat je gebruikt in een site zoveel mogelijk te beperken. All you need is speed, dus minder lettertypes betekent een snellere site!</p>
+<h4 id="variable-fonts">Variable fonts</h4>
+<p>Als laatste optie heb je de variable fonts. Anders dan bij de webfonts heb je bij variable fonts geen verschillende lettertypen nodig als je letters dikker of dunner wilt maken. Het verdikken of verdunnen van de letters gaat dan electronisch.
+Op <a href="https://v-fonts.com/">v-fonts.com</a> kun je heel mooi zien hoe variable fonts werken. Op de site van Google Fonts vind je ook variable fonts.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#fonts">Fonts</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/css/units-en-maten/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Units en maten</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/css/display-en-position/">
+        <span class="title">Display en position</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

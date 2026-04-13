@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Hoe werkt een database</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbo/dbo-ch022.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+
+<a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+
+<a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/" aria-current="page" data-state="active">Hoe werkt een database</a>
+
+<a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+
+<a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+
+<a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+
+<a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+
+<a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+
+<a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+
+<a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+
+<a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/" aria-current="page" data-state="active">Hoe werkt een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+    
+    <a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+    
+    <a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+    
+    <a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+    
+    <a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+    
+    <a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+    
+    <a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+    
+    <a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+    
+</div>
+
+            <style>
+    .block, .criteria {
+        display:inline-block;
+        width:30px;
+        height:30px;
+        vertical-align:middle;
+        text-align:center;
+        border:1px solid black;
+        padding: 3px;
+    }
+    .criteria {
+        border:none;
+        width:100px;
+    }
+    .red {
+        background-color:indianred;
+    }
+    .green {
+        background-color:#005E7A;
+        color:white;
+    }
+    .reeks {
+        margin-bottom:10px;
+    }
+</style>
+<h1 id="database-ontwerp">Database ontwerp</h1>
+<h2 id="hoe-werkt-een-database">Hoe werkt een database</h2>
+<h3 id="snel-zoeken-en-filteren">Snel zoeken en filteren</h3>
+<p>Databases zijn vooral zo handig omdat je er razendsnel in kunt zoeken en data kunt filteren. Toch geldt voor databases ook 'garbage in, garbage out'. M.a.w. je moet zorgvuldig omgaan met je data.</p>
+<ul>
+<li>Sla alleen gegevens op die je ook 'echt' nodig hebt.</li>
+<li>Bedenk een goede structuur om je gegevens in op te slaan.</li>
+</ul>
+<h3 id="snel-zoeken">Snel zoeken</h3>
+<p>Databases kunnen snel zoeken in gegevens omdat ze slimme manieren (algoritmen) hebben om gegevens met elkaar te vergelijken.
+De meest eenvoudig manier van zoeken is 'linear search'. Bij deze methode ga je door alle gegevens heen, totdat je een match hebt. Het maakt niet uit of de gegevens op volgorde staan.
+In onderstaand voorbeeld zie je een reeks willekeurige getallen. Als je op zoek gaat naar het getal 12 dan heb je dat met een 'linear search' in 4 stappen gevonden.
+Om 29 te vinden zijn er 11 stappen nodig. Met deze methode moet je een beetje mazzel hebben dat hetgeen je zoekt vooraan in de zoekreeks is te vinden!</p>
+<p><strong>Linear search</strong></p>
+<div class="html">
+    <div class="reeks">
+        <div class="block green">2</div>
+        <div class="block green">3</div>
+        <div class="block green">6</div>
+        <div class="block green">12</div>
+        <div class="block">14</div>
+        <div class="block">17</div>
+        <div class="block">19</div>
+        <div class="block">21</div>
+        <div class="block">22</div>
+        <div class="block">27</div>
+        <div class="block">28</div>
+        <div class="block">29</div>
+        <div class="block">30</div>
+        <div class="block">40</div>
+        <div class="block">47</div>
+        <div class="block">48</div>
+        <div class="block">52</div>
+        <div class="criteria">12 == 12</div>
+    </div>
+</div>
+<div class="html">
+    <div class="reeks">
+        <div class="block green">2</div>
+        <div class="block green">3</div>
+        <div class="block green">6</div>
+        <div class="block green">12</div>
+        <div class="block green">14</div>
+        <div class="block green">17</div>
+        <div class="block green">19</div>
+        <div class="block green">21</div>
+        <div class="block green">22</div>
+        <div class="block green">27</div>
+        <div class="block green">28</div>
+        <div class="block green">29</div>
+        <div class="block">30</div>
+        <div class="block">40</div>
+        <div class="block">47</div>
+        <div class="block">48</div>
+        <div class="block">52</div>
+        <div class="criteria">29 == 29</div>
+    </div>
+</div>
+Linear zoeken gaat in dit geval in 11 stappen!
+<h3 id="binary-search">Binary search</h3>
+<p>Bij 'binary search' start de zoektocht in het midden van de getallenreeks. Als de gevonden waarde lager is dan het getal dat wordt gezocht, dan worden alle lagere getallen genegeerd en wordt opnieuw het midden opgezocht van de resterende getallen.
+Deze stap wordt net zolang herhaald totdat het getal gevonden wordt.</p>
+<h4 id="op-zoek-naar-index-12...">Op zoek naar index 12...</h4>
+<div class="html">
+    <div class="reeks">
+        <div class="block">2</div>
+        <div class="block">3</div>
+        <div class="block">6</div>
+        <div class="block">12</div>
+        <div class="block">14</div>
+        <div class="block">17</div>
+        <div class="block">19</div>
+        <div class="block">21</div>
+        <div class="block green">22</div>
+        <div class="block">27</div>
+        <div class="block">28</div>
+        <div class="block">29</div>
+        <div class="block">30</div>
+        <div class="block">40</div>
+        <div class="block">47</div>
+        <div class="block">48</div>
+        <div class="block">52</div>
+        <div class="criteria">12 <= 22</div>
+    </div>
+    <div class="reeks">
+        <div class="block">2</div>
+        <div class="block">3</div>
+        <div class="block">6</div>
+        <div class="block">12</div>
+        <div class="block green">14</div>
+        <div class="block">17</div>
+        <div class="block">19</div>
+        <div class="block">21</div>
+        <div class="block">22</div>
+        <div class="criteria">12 <= 14</div>
+    </div>
+    <div class="reeks">
+        <div class="block">2</div>
+        <div class="block">3</div>
+        <div class="block green">6</div>
+        <div class="block">12</div>
+        <div class="block">14</div>
+        <div class="criteria">12 > 6</div>
+    </div>
+    <div class="reeks">
+        <div class="block green">12</div>
+        <div class="block">14</div>
+        <div class="criteria">12 == 12</div>
+    </div>
+</div>
+Binair zoeken gaat dus in 4 stappen!
+<h4 id="op-zoek-naar-index-29...">Op zoek naar index 29...</h4>
+<div class="html">
+    <div class="reeks">
+        <div class="block">2</div>
+        <div class="block">3</div>
+        <div class="block">6</div>
+        <div class="block">12</div>
+        <div class="block">14</div>
+        <div class="block">17</div>
+        <div class="block">19</div>
+        <div class="block">21</div>
+        <div class="block">22</div>
+        <div class="block">27</div>
+        <div class="block">28</div>
+        <div class="block green">29</div>
+        <div class="block">30</div>
+        <div class="block">40</div>
+        <div class="block">47</div>
+        <div class="block">48</div>
+        <div class="block">52</div>
+        <div class="criteria">29 >= 22</div>
+    </div>
+    <div class="reeks">
+        <div class="block">22</div>
+        <div class="block">27</div>
+        <div class="block">28</div>
+        <div class="block green">29</div>
+        <div class="block">30</div>
+        <div class="block">40</div>
+        <div class="block">47</div>
+        <div class="block">48</div>
+        <div class="block">52</div>
+        <div class="criteria">30 >= 29</div>
+    </div>
+    <div class="reeks">
+        <div class="block">22</div>
+        <div class="block">27</div>
+        <div class="block green">28</div>
+        <div class="block">29</div>
+        <div class="block">30</div>
+        <div class="criteria">28 <= 29</div>
+    </div>
+    <div class="reeks">
+        <div class="block">28</div>
+        <div class="block green">29</div>
+        <div class="criteria">29 == 29</div>
+    </div>
+</div>
+Binair zoeken gaat weer in 4 stappen!
+<h3 id="online-testen">Online testen</h3>
+<p>Je kunt <a href="/edutorial/_assets/dbo/search/index.php?records=286">de vergelijkig tussen binair en linaer zoeken online</a> doen!</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#hoe-werkt-een-database">Hoe werkt een database</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbo/onderdelen-van-een-database/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Onderdelen van een database</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbo/informatie-analyse/">
+        <span class="title">Informatie analyse</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

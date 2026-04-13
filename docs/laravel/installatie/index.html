@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Installatie</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/laravel/laravel-ch20.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+
+<a class="page-link" href="/edutorial/laravel/installatie/" aria-current="page" data-state="active">Installatie</a>
+
+<a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+
+<a class="page-link" href="/edutorial/laravel/views/">Views</a>
+
+<a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+
+<a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+
+<a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+
+<a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+    
+    <a class="page-link" href="/edutorial/laravel/installatie/" aria-current="page" data-state="active">Installatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+    
+    <a class="page-link" href="/edutorial/laravel/views/">Views</a>
+    
+    <a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+    
+    <a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+    
+    <a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+    
+</div>
+
+            <h1 id="laravel">Laravel</h1>
+<h2 id="installatie">Installatie</h2>
+<h3 id="installatie-met-composer">Installatie met composer</h3>
+<p>In de documentatie van Laravel worden grofweg 2 manieren beschreven waarop je Laravel kunt installeren. De methode om Laravel met Docker te installeren is vooral handig als je de docker-image ook daadwerkelijk in een productie-omgeving gaat gebruiken. (Bijvoorbeeld op AWS of Google Cloud).
+Tijdens testen en ontwikkelen kun je ook gebruik maken van composer en een installatie van php op je localhost. Het is wel belangrijk dat je dan php hebt toegevoegd aan de <a href="https://dinocajic.medium.com/add-xampp-php-to-environment-variables-in-windows-10-af20a765b0ce">path environment variable van je windows installatie</a> of aan de <a href="https://support.apple.com/nl-nl/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac">PATH variabele van je linux of mac-systeem</a>.
+Op dezelfde manier kun je er voor zorgen dat je composer overal op je <a href="https://www.chriscollins.me/notes/install-composer-globally-on-mac-os/">mac</a> kunt starten. Als je de installer gebruikt voor composer op windows, dan wordt automatisch de path-variabele ingesteld.</p>
+<p>Alles over installatie vind je natuurlijk op de <a href="https://laravel.com/docs/12.x/installation">site van Laravel</a></p>
+<h3 id="voorbeeld-installatie-van-een-movie-app">Voorbeeld installatie van een movie-app</h3>
+<pre class="language-php"><code class="language-php"><span class="token comment">//Installeer in de directory waar je je projecten wilt bewaren</span>
+composer create<span class="token operator">-</span>project laravel<span class="token operator">/</span>laravel movie<span class="token operator">-</span>app</code></pre>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_EB7ZT2vHpCy9imqjq5aLvl">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/MYyJ4PuL4pY">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#installatie">Installatie</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/laravel/monolithische-applicaties/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Monolithische applicaties</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/laravel/request-lifecycle/">
+        <span class="title">Request lifecycle</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

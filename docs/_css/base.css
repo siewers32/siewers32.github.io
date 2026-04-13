@@ -1,0 +1,270 @@
+/* Reset */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+
+body {
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+    font-family: var(--fontfamily);
+    font-weight: 400;
+    font-size: var(--fontsize);
+    color: var(--c-text);
+    line-height: var(--lineheight);
+    background-color: var(--c-bg-light);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--c-text-light-1);
+}
+
+h1 {
+    line-height: calc(var(--lineheight) * 1.5);
+    padding-top: 132px;
+    margin-top:-100px;
+}
+
+
+h2 {
+    line-height: calc(var(--lineheight) * 1.2);
+    padding-top:62px;
+    margin-top:-46px;
+}
+
+h3 {
+    margin-top: 16px;
+}
+
+header, footer {
+    height: 100px;
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+header {
+    position:sticky;
+    top:-55px;
+    z-index:2;
+    background-color: var(--c-bg);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+footer {
+    background-color: var(--c-bg-dark);
+}
+
+
+div.container {
+    flex-grow:0.8;
+    bottom:0;
+    max-width:1280px;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* Logo settings */
+.standard {
+    width:150px;
+    flex-shrink: 0;
+    transition: width 0.4s;
+    padding-bottom: 8px;
+}
+
+.small {
+    width:105px;
+    flex-shrink: 0;
+    transition: width 0.4s;
+    padding-bottom: 2px;
+}
+
+img {
+    width:100%;
+}
+a#logolink {
+    display:block;
+    position:relative;
+    top:5px;
+    padding:0;
+    margin:0;
+}
+
+a#logolink:hover {
+    border:none;
+}
+
+main {
+    height:100%;
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top:0px;
+}
+
+
+div#content {
+    flex-grow:3;
+    align-self:flex-start;
+}
+
+
+
+/* Links */
+
+a {
+    color:var(--c-text);
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+nav {
+    text-align:right;
+}
+
+a.nav-link, a#menu {
+    display: inline-block;
+    margin-left:32px;
+}
+
+div#content a {
+    text-decoration: underline;
+}
+
+a:hover, a.active {
+    border-bottom: 2px solid var(--c-brand);
+    padding-bottom:0;
+    text-decoration: none;
+}
+
+.active, [aria-current] {
+    border-bottom: 2px solid var(--c-brand);
+    padding-bottom: 0;
+}
+a#menu {
+    display:none;
+    position:relative;
+    top:6px;
+}
+
+div#menu {
+    background-color: var(--c-bg);
+}
+
+div#menu-panel {
+    display:none;
+    padding-top:16px;
+    background-color: var(--c-bg);
+}
+
+div#menu-panel a {
+    display:block;
+    text-decoration: none;
+    padding-bottom: 1px;
+    padding-left:16px;
+    border-bottom: 1px solid var(--c-text);
+}
+
+div#menu-panel a:hover {
+    padding-bottom: 0px;
+    color: var(--c-bg-dark);
+    border-bottom:2px solid var(--c-brand);
+}
+a#menu:hover {
+    border-bottom:none;
+    color: var(--c-brand);
+}
+
+footer {
+
+    padding-top:16px;
+    margin-top:32px;
+}
+
+footer span.title {
+    position:relative;
+    bottom:3px;
+}
+
+footer a {
+    color: var(--c-bg-light);
+}
+
+footer a#previous-link {
+    display: flex;
+    align-self: flex-start;
+}
+
+footer a#next-link {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+
+/* Logo */
+
+
+/* Eleventy TOC */
+div.toc ul {
+    list-style-type: none;
+    padding:0px;
+    margin:0px;
+}
+
+/* Video */
+.video-wrapper {
+    position: relative;
+    z-index:1;
+    margin-top:2rem;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.video-wrapper iframe {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+blockquote {
+    background-color: var(--c-bg-blockquote);
+    border-left: 5px solid var(--c-text-light-1);
+    padding:8px;
+    border-radius:4px;
+    margin:0;
+}
+
+pre[class*="language-"] > code {
+    overflow-x:scroll;
+}
+
+pre[class*="language-"] {
+    z-index: -1;
+    display:block;
+    overflow-x:scroll;
+    /*white-space: pre-wrap;*/
+}
+
+div.html {
+    background-color: var(--c-bg);
+    padding:16px;
+    border-radius: 4px;
+}
+
+div.html table td, div.html table th {
+    border:1px solid var(--c-text);
+    padding: 4px;
+}
+div.html table {
+    border-collapse:collapse;
+}

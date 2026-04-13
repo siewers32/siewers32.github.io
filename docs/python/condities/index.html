@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Condities</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch070.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/" aria-current="page" data-state="active">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/" aria-current="page" data-state="active">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="condities">Condities</h2>
+<p>Op basis van condities kun je beslissen wat je programma moet doen in een bepaalde situatie. Stel je wil weten of een bepaalde waarde voorkomt in een list. Dan kan je dat zo doen....</p>
+<pre class="language-python"><code class="language-python">autos <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> auto <span class="token keyword">in</span> autos<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> auto <span class="token operator">==</span> <span class="token string">"bmw"</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"yep, er zit een bmw bij!"</span><span class="token punctuation">)</span></code></pre>
+<p>In bovenstaande code zie je het if-statement weer zijn eigen code-block heeft. Je ziet het if-commando - een conditie die wel of niet waar kan zijn - en een <code>:</code>
+Daarna zie je de ingesprongen tekst &lt;codeprint(&quot;yep, er zit een bmw bij!&quot;). Dit stukje code wordt alleen uitgevoerd als de conditie <code>auto == &quot;bmw&quot;</code> waar is (True).</p>
+<p>De dubbele <code>==</code>-tekens staan voor: 'gelijk aan'.</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># x krijgt de waarde 10 toegewezen</span>
+x <span class="token operator">=</span> <span class="token number">10</span> 
+
+<span class="token comment"># x wordt vergeleken met 10</span>
+x <span class="token operator">==</span> <span class="token number">10</span>
+
+<span class="token comment"># Als x gelijk is aan 10 dan is x == 10 gelijk aan True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token boolean">True</span></code></pre>
+<p>Vergelijken is dus iets anders dan toekennen waarbij je een waarde in een variabele stopt. Op <a href="https://www.w3schools.com/python/gloss_python_comparison_operators.asp">w3schools</a> vind je een heel overzicht van vergelijkings-operatoren. Dit is er ook een van:</p>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token boolean">True</span></code></pre>
+<h2 id="and-en-of">AND en OF</h2>
+<p>Je kunt meerdere vergelijkingen maken in 1 regel...<br>
+Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">10</span> <span class="token keyword">and</span> x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># output</span>
+<span class="token boolean">False</span></code></pre>
+<p>Met <code>or</code> moet een van de vergelijkingen <code>True</code> zijn</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">10</span> <span class="token keyword">or</span> x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment">#output</span>
+<span class="token boolean">True</span></code></pre>
+<p>Controleren of een element voorkomt in een list..</p>
+<pre class="language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token string">'audi'</span> <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'audi is in the list'</span><span class="token punctuation">)</span></code></pre>
+<p>of juist niet...</p>
+<pre class="language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token string">'mercedes'</span> <span class="token keyword">not</span> <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'mercedes is niet in list'</span><span class="token punctuation">)</span></code></pre>
+<h2 id="if-else-statements">if-else statements</h2>
+<p>Je kunt ook de uitkomst van een conditie koppelen aan code die wordt uitgevoerd als de uitkomst <code>True</code> is en weer ander code als de uitkomst juist <code>False</code> is....</p>
+<pre class="language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token string">'mercedes'</span> <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Mercedes is wel in de list'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Mercedes is niet in de list'</span><span class="token punctuation">)</span></code></pre>
+<p>En nog veelzijdiger wordt het als je ook nog verschillende condities kunt testen....</p>
+<pre class="language-python"><code class="language-python">clubs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'PEC Zwolle'</span><span class="token punctuation">,</span> <span class="token string">'Ajax'</span><span class="token punctuation">,</span> <span class="token string">'Feijenoord'</span><span class="token punctuation">,</span> <span class="token string">'AZ'</span><span class="token punctuation">,</span> <span class="token string">'FC Knudde'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> club <span class="token keyword">in</span> clubs<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> club<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'A'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>club<span class="token punctuation">}</span></span><span class="token string"> begint met de letter A"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> club<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'F'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>club<span class="token punctuation">}</span></span><span class="token string"> begint met de letter F"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"De eerste letter van </span><span class="token interpolation"><span class="token punctuation">{</span>club<span class="token punctuation">}</span></span><span class="token string"> begint niet met een A of F"</span></span><span class="token punctuation">)</span>
+</code></pre>
+<p>Zoals je ziet kun je met de rechte haken ook in een string refereren naar de plek waar een karakter zich bevindt. Je kunt ook teksten slicen met <code>[:]</code>!</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#condities">Condities</a></li><li><a href="#and-en-of">AND en OF</a></li><li><a href="#if-else-statements">if-else statements</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/loops-en-lists/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Loops en lists</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/werken-met-tekst/">
+        <span class="title">Werken met tekst</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

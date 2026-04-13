@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Bloemenzaak</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbo/dbo-ch060.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+
+<a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+
+<a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+
+<a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+
+<a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+
+<a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+
+<a class="page-link" href="/edutorial/dbo/bloemenzaak/" aria-current="page" data-state="active">Bloemenzaak</a>
+
+<a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+
+<a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+
+<a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+
+<a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+    
+    <a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+    
+    <a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+    
+    <a class="page-link" href="/edutorial/dbo/bloemenzaak/" aria-current="page" data-state="active">Bloemenzaak</a>
+    
+    <a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+    
+    <a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+    
+    <a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+    
+    <a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+    
+</div>
+
+            <h1 id="database-ontwerp">Database ontwerp</h1>
+<h2 id="bloemenzaak">Bloemenzaak</h2>
+<p>Hier wordt getoond hoe je een database ontwerpt voor Flower Power. Flower Power is een winkel die bloemen verkoopt. De eigenaar wil zijn zaak uitbreiden naar online verkoop.
+<strong>Functionaliteiten</strong></p>
+<ul>
+<li>De webapplicatie moet de volgende functionaliteiten hebben.</li>
+<li>Een hoofdpagina ter informatie met daarop wat informatie over FlowerPower, een foto van een duur en
+mooi boeket en een foto van een van de winkels.</li>
+<li>Een contactpagina ter informatie met daarop de adressen van de winkels met telefoonnummers en een
+e-mailadres.</li>
+<li>Klanten moeten zich kunnen registreren.</li>
+<li>Klanten moeten kunnen inloggen.</li>
+<li>Klanten moeten een bestelling kunnen plaatsen.</li>
+<li>Klanten moeten kunnen uitloggen.</li>
+<li>Klanten moeten hun gegevens kunnen wijzigen.</li>
+<li>Klanten moeten een factuur kunnen uitdraaien.</li>
+<li>Medewerkers van FlowerPower moeten kunnen inloggen.</li>
+<li>Medewerkers van FlowerPower moeten kunnen uitloggen.</li>
+<li>Medewerkers van FlowerPower moeten een lijst kunnen zien waarop de bestellingen staan voor hun
+winkel.</li>
+<li>Medewerkers van FlowerPower moeten artikelen kunnen toevoegen.</li>
+<li>Medewerkers van FlowerPower moeten gegevens van artikelen kunnen wijzigen.</li>
+<li>Medewerkers van FlowerPower moeten artikelen kunnen verwijderen.</li>
+<li>Gegevens van een medewerker moeten toegevoegd kunnen worden.</li>
+<li>Gegevens van een medewerker moeten gewijzigd kunnen worden.</li>
+<li>Gegevens van een medewerker moeten verwijderd kunnen worden.</li>
+</ul>
+<h3 id="bijlagen">Bijlagen</h3>
+<p><a href="/edutorial/_assets/dbo/bijlagen_flowerpower.pdf">Bijlagen Flower Power</a></p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_Hp8wLoEK4AwfBOIJw1aBC7">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#bloemenzaak">Bloemenzaak</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbo/normaliseren/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Normaliseren</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbo/reminder/">
+        <span class="title">Reminder</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

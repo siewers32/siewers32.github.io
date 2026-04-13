@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Aggregatie functies</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch50.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/" aria-current="page" data-state="active">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/" aria-current="page" data-state="active">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="aggregatie-functies">Aggregatie functies</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/ZH7nt0L6HLo">
+        </iframe>
+    </div>
+<h3 id="sorteren-van-data">Sorteren van data</h3>
+<p>Data kan gesorteerd worden weergegeven. Om de cursussen in de tabel te sorteren voeg je aan het einde van de query 'order by' en het veld waarop gesorteerd moet worden toe. Bijvoorbeeld:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> curs_prijs <span class="token keyword">from</span> cursus <span class="token keyword">order</span> <span class="token keyword">by</span> curs_prijs<span class="token punctuation">;</span> 
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> omschr              <span class="token operator">|</span> curs_prijs <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> Framework           <span class="token operator">|</span>     <span class="token number">850.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Wordperfect         <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Programmeren <span class="token operator">in</span> C<span class="token operator">+</span><span class="token operator">+</span> <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span>     <span class="token operator">|</span>    <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">3.0</span>     <span class="token operator">|</span>    <span class="token number">2600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Normaliseren        <span class="token operator">|</span>    <span class="token number">3000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus      <span class="token operator">|</span>    <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase IV            <span class="token operator">|</span>    <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span></code></pre>
+<p>De gegevens worden gesorteerd op prijs weergegeven.
+Standaard wordt er oplopend gesorteerd (ascending). Om aflopend te sorteren moet de afkorting 'desc' na de veldnaam komen. Bijvoorbeeld:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> curs_prijs <span class="token keyword">from</span> cursus <span class="token keyword">order</span> <span class="token keyword">by</span> curs_prijs <span class="token keyword">desc</span><span class="token punctuation">;</span> 
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> omschr              <span class="token operator">|</span> curs_prijs <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> Dbase IV            <span class="token operator">|</span>    <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus      <span class="token operator">|</span>    <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Normaliseren        <span class="token operator">|</span>    <span class="token number">3000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">3.0</span>     <span class="token operator">|</span>    <span class="token number">2600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span>     <span class="token operator">|</span>    <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Wordperfect         <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Programmeren <span class="token operator">in</span> C<span class="token operator">+</span><span class="token operator">+</span> <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Framework           <span class="token operator">|</span>     <span class="token number">850.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span></code></pre>
+<p>In bovenstaand voorbeeld hebben 'Wordperfect' en 'Programmeren in C++' dezelfde prijs. In de query kunnen we nog specificeren dat nadat er op prijs is gesorteerd er ook nog gesorteerd moet worden op omschrijving, zodat eerst 'Programmeren in C++' wordt weergegeven en dan pas 'Wordperfect'. Dat gaat zo:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> curs_prijs <span class="token keyword">from</span> cursus <span class="token keyword">order</span> <span class="token keyword">by</span> curs_prijs <span class="token keyword">desc</span><span class="token punctuation">,</span> omschr <span class="token keyword">asc</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> omschr              <span class="token operator">|</span> curs_prijs <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> Dbase IV            <span class="token operator">|</span>    <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus      <span class="token operator">|</span>    <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Normaliseren        <span class="token operator">|</span>    <span class="token number">3000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">3.0</span>     <span class="token operator">|</span>    <span class="token number">2600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span>     <span class="token operator">|</span>    <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Programmeren <span class="token operator">in</span> C<span class="token operator">+</span><span class="token operator">+</span> <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Wordperfect         <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Framework           <span class="token operator">|</span>     <span class="token number">850.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span></code></pre>
+<h2 id="berekeningen">Berekeningen</h2>
+<p>MySQL kan ook gebruikt worden om berekeningen uit te voeren op data. Het aantal records kan geteld worden of de gemiddelde prijs kan worden berekend. Hieronder 2 voorbeelden:
+Tel het aantal records in de tabel cursus</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> cursus<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+</span>
+<span class="token operator">|</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+</span>
+<span class="token operator">|</span>        <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+</span></code></pre>
+<p>Om de weergave wat interessanter te maken kun je de kop in de eerste regel aanpassen. In dit geval zit er een spatie tussen aantal en records. Hierdoor moet <code>aantal records</code> tussen 'backticks' worden geplaatst. Dit zijn niet de normale aanhalingstekens, maar een speciaal naar links hellend aanhalingsteken dat je meestal aan de linkerkant van je toetsenbord kunt vinden.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>aantal records<span class="token punctuation">`</span></span> <span class="token keyword">from</span> cursus<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------------+</span>
+<span class="token operator">|</span> aantal records <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+</span>
+<span class="token operator">|</span>              <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+</span></code></pre>
+<p>In dit voorbeeld wordt gekeken naar de cursus die het meeste kost.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>curs_prijs<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>kost het meest<span class="token punctuation">`</span></span> <span class="token keyword">from</span> cursus<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------------+----------------+</span>
+<span class="token operator">|</span> omschr         <span class="token operator">|</span> kost het meest <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+----------------+</span>
+<span class="token operator">|</span> Dbase III Plus <span class="token operator">|</span>        <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+----------------+</span></code></pre>
+<p>Vind nog meer voorbeelden op W3Schools.com:</p>
+<ul>
+<li>https://www.w3schools.com/sql/sql_min_max.asp</li>
+<li>https://www.w3schools.com/sql/sql_count_avg_sum.asp</li>
+</ul>
+<h2 id="groeperen-van-data">Groeperen van data</h2>
+<p>Om berekeningen te maken over groepen data kun je in mysql gebruik maken van 'group by'. Door data te groeperen kun je gemiddelden uitrekenen of data optellen en tellen hoe vaak gegevens voorkomen.
+Stel er moet een overzicht komen van het aantal cursussen per plaats. In het voorbeeld hieronder worden de unieke plaatsnamen weergegeven en er wordt met de functie <code>count()</code> geteld hoe vaak iedere naam voorkomt in de tabel.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> curs_plts<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>curs_plts<span class="token punctuation">)</span> <span class="token keyword">as</span> aantal <span class="token keyword">from</span> cursus <span class="token keyword">group</span> <span class="token keyword">by</span> curs_plts<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> curs_plts <span class="token operator">|</span> aantal <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> Breda     <span class="token operator">|</span>      <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Etten     <span class="token operator">|</span>      <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Made      <span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span></code></pre>
+<p>Je kunt gegevens die zijn gegenereerd met group by ook nog filteren. Je gebruikt dan 'having' in plaats van 'where'. 'Where' gebruik je voor groepering en 'having' erna.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> curs_plts<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>curs_plts<span class="token punctuation">)</span> <span class="token keyword">as</span> aantal 
+<span class="token keyword">from</span> cursus 
+<span class="token keyword">group</span> <span class="token keyword">by</span> curs_plts <span class="token keyword">having</span> aantal <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> curs_plts <span class="token operator">|</span> aantal <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> Breda     <span class="token operator">|</span>      <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Made      <span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span></code></pre>
+<p>In onderstaand voorbeeld wordt er eerst gefilterd op cursusprijs. Met die selectie wordt er gegroepeerd. Als er in een plaats meer dan 1 cursussen zijn die meer kosten dan 1400 euro, dan wordt de plaats weergegeven en het aantal cursussen dat voldoet aan de criteria.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> curs_plts<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>curs_plts<span class="token punctuation">)</span> <span class="token keyword">as</span> aantal 
+<span class="token keyword">from</span> cursus <span class="token keyword">where</span> curs_prijs <span class="token operator">></span> <span class="token number">1400</span> 
+<span class="token keyword">group</span> <span class="token keyword">by</span> curs_plts <span class="token keyword">having</span> aantal <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> curs_plts <span class="token operator">|</span> aantal <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> Breda     <span class="token operator">|</span>      <span class="token number">4</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Made      <span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#aggregatie-functies">Aggregatie functies</a></li><li><a href="#berekeningen">Berekeningen</a></li><li><a href="#groeperen-van-data">Groeperen van data</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/database-maken/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Database maken</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/tabellen-combineren/">
+        <span class="title">Tabellen combineren</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

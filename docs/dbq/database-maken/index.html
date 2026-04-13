@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Database maken</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch45.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/" aria-current="page" data-state="active">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/" aria-current="page" data-state="active">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="database-maken">Database maken</h2>
+<p>Tot nu toe heb je steeds gebruik gemaakt van een bestaande database. De queries om de database aan te maken vond je in een sql-bestand. In dit hoofdstuk ga je zelf een database maken.</p>
+<p>Stel je moet een database maken voor een bibliotheek. De database bestaat uit 3 tabellen:</p>
+<ul>
+<li>De tabel klanten bestaat uit de volgende velden: <code>voornaam</code>, <code>achternaam</code>, <code>emailadres</code></li>
+<li>De tabel boeken bestaat uit de velden: <code>titel</code>, <code>jaar</code> en <code>hoeveelste druk</code></li>
+<li>De tabel uitleen bestaat uit <code>uitleendatum</code>, <code>retourdatum</code>, <code>klant_id</code>, <code>boek_id</code></li>
+<li>Alle tabellen hebben een veld <code>id</code> dat tevens de primaire sleutel is.</li>
+<li>De tabel uitleen heeft 2 vreemde sleutels:
+<ul>
+<li><code>klant_id</code> die refereert naar de primaire sleutel <code>id</code> in de tabel klanten</li>
+<li>en <code>boek_id</code> die refereert naar de primaire sleutel <code>id</code> in de tabel boeken.</li>
+</ul>
+</li>
+</ul>
+<p>Hieronder zie je het script om de database aan te maken:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> bibliotheek<span class="token punctuation">;</span>
+<span class="token keyword">USE</span> bibliotheek<span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> klanten <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    voornaam <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    achternaam <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    emailadres <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> boeken <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    titel <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    jaar <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    druk <span class="token keyword">INT</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> uitleengegevens <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    uitleendatum <span class="token keyword">DATE</span><span class="token punctuation">,</span>
+    retourdatum <span class="token keyword">DATE</span><span class="token punctuation">,</span>
+    klant_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    boek_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>klant_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> klanten<span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>boek_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> boeken<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="uitleg">Uitleg</h4>
+<ul>
+<li>In de regel <code>id INT AUTO_INCREMENT PRIMARY KEY</code> geef je aan dat je een veld met de naam <code>id</code> wilt aanmaken van het type <code>INT</code>. <code>id</code> is een primaire sleutel. De waarde is een unieke integer die het record identificeert. Met <code>AUTO_INCREMENT</code> wordt aangegeven bij ieder nieuw record het <code>id</code> automatisch wordt gegenereerd naar het eerst volgende integer.</li>
+<li>Met <code>VAR_CHAR(50)</code> wordt aangegeven dat de waarde van het type <code>string</code> of <code>tekst</code> is. Het mag maximaal 50 karakters bevatten.</li>
+<li>Met <code>INT</code> wordt een geheel getal bedoeld</li>
+<li>Met <code>DATE</code> gaat het om een datum-veld.</li>
+<li>Onderaan bij uitleen zie je dat de vreemde sleutels <code>FOREIGN KEY</code> verwijzen naar de velden id in de klanten- en boekentabel.</li>
+</ul>
+<h2 id="oefeningen">Oefeningen</h2>
+<p>Voeg onderstaande records toe aan de tabel boeken van de database:</p>
+<pre class="language-shell"><code class="language-shell">+----+----------------------------+------+------+
+<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> titel                      <span class="token operator">|</span> jaar <span class="token operator">|</span> druk <span class="token operator">|</span>
++----+----------------------------+------+------+
+<span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> De Avonden                 <span class="token operator">|</span> <span class="token number">1947</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">|</span> Het Diner                  <span class="token operator">|</span> <span class="token number">2009</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">3</span> <span class="token operator">|</span> De Ontdekking van de Hemel <span class="token operator">|</span> <span class="token number">1992</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">4</span> <span class="token operator">|</span> De Aanslag                 <span class="token operator">|</span> <span class="token number">1982</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
++----+----------------------------+------+------+</code></pre>
+<p>Voeg onderstaande records toe aan de tabel klanten:</p>
+<pre class="language-shell"><code class="language-shell">+----+----------+------------+--------------------------+
+<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> voornaam <span class="token operator">|</span> achternaam <span class="token operator">|</span> emailadres               <span class="token operator">|</span>
++----+----------+------------+--------------------------+
+<span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> Jan      <span class="token operator">|</span> Jansen     <span class="token operator">|</span> jan.jansen@email.com     <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">|</span> Piet     <span class="token operator">|</span> Pietersen  <span class="token operator">|</span> piet.pietersen@email.com <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">3</span> <span class="token operator">|</span> Klaas    <span class="token operator">|</span> Klaassen   <span class="token operator">|</span> klaas.klaassen@email.com <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">4</span> <span class="token operator">|</span> Emma     <span class="token operator">|</span> de Vries   <span class="token operator">|</span> emma.devries@email.com   <span class="token operator">|</span>
++----+----------+------------+--------------------------+</code></pre>
+<p>Voeg onderstaande records toe aan de tabel uitleengegevens:</p>
+<pre class="language-shell"><code class="language-shell">+----+--------------+-------------+----------+---------+
+<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> uitleendatum <span class="token operator">|</span> retourdatum <span class="token operator">|</span> klant_id <span class="token operator">|</span> boek_id <span class="token operator">|</span>
++----+--------------+-------------+----------+---------+
+<span class="token operator">|</span>  <span class="token number">5</span> <span class="token operator">|</span> <span class="token number">2023</span>-01-01   <span class="token operator">|</span> <span class="token number">2023</span>-01-15  <span class="token operator">|</span>        <span class="token number">1</span> <span class="token operator">|</span>       <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">6</span> <span class="token operator">|</span> <span class="token number">2023</span>-01-02   <span class="token operator">|</span> <span class="token number">2023</span>-01-16  <span class="token operator">|</span>        <span class="token number">2</span> <span class="token operator">|</span>       <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">7</span> <span class="token operator">|</span> <span class="token number">2023</span>-01-03   <span class="token operator">|</span> <span class="token number">2023</span>-01-17  <span class="token operator">|</span>        <span class="token number">3</span> <span class="token operator">|</span>       <span class="token number">3</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">8</span> <span class="token operator">|</span> <span class="token number">2023</span>-12-29   <span class="token operator">|</span> <span class="token number">2024</span>-01-12  <span class="token operator">|</span>        <span class="token number">4</span> <span class="token operator">|</span>       <span class="token number">4</span> <span class="token operator">|</span>
++----+--------------+-------------+----------+---------+</code></pre>
+<p>Maak nu het sql-script voor een database met 3 tabellen:</p>
+<ul>
+<li>Voor een autoverhuurbedrijf moet je een database maken</li>
+<li>De tabel auto's bevat gegevens over het merk, kenteken, kilometerstand en aankoopdatum</li>
+<li>De tabel huurders bevat gegevens zoals voornaam, achternaam, rijbewijsnummer, adres, postcode, plaats en geboortedatum.</li>
+<li>De tabel verhuur bevat gegevens over de auto, de datum van verhuur, de verwachte datum waarop de auto wordt ingeleverd en de huurder.</li>
+<li>Gebruik logische namen voor de naam van velden en denk om primaire en vreemde sleutels!</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#database-maken">Database maken</a></li><li><a href="#oefeningen">Oefeningen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/crud/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">CRUD</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/aggregatie-functies/">
+        <span class="title">Aggregatie functies</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

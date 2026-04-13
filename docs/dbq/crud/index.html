@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | CRUD</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch40.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/" aria-current="page" data-state="active">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/" aria-current="page" data-state="active">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="crud">CRUD</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/poSbU9rdpoE">
+        </iframe>
+    </div>
+<p>CRUD staat voor CReate, Update en Delete. Het toevoegen, aanpassen of verwijderen van records uit een tabel. Stel dat er nieuwe cursist zich heeft aangemeld. De cursist moet worden toegevoegd aan de tabel <code>cursist</code>.</p>
+<h2 id="records-toevoegen">Records toevoegen</h2>
+<p>Om records toe te kunnen voegen aan de tabel moet helder zijn wat de structuur van de tabel is.
+Hieronder worden de velden weergegeven met hun eigenschappen. Zo kun je zien dat de postcode van het type <code>varchar</code> moet zijn en maximaal 7 karakters mag hebben. <code>varchar</code> staat voor variabel aantal karakters. In de kolom 'Null' staat bij ieder veld 'YES'. Dit betekent dat dit veld leeg gelaten mag worden. Het is dus niet nodig om alle gegevens te gebruiken voor het aanmaken van een nieuwe cursist!</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">fields</span> <span class="token keyword">from</span> cursist<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> Field     <span class="token operator">|</span> <span class="token keyword">Type</span>        <span class="token operator">|</span> <span class="token boolean">Null</span> <span class="token operator">|</span> <span class="token keyword">Key</span> <span class="token operator">|</span> <span class="token keyword">Default</span> <span class="token operator">|</span> Extra <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> cursistnr <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> naam      <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> roepnaam  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> straat    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> postcode  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> plaats    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> geslacht  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> geb_datum <span class="token operator">|</span> <span class="token keyword">date</span>        <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+------+-----+---------+-------+</span></code></pre>
+<p>Stel 'Kees Stofman' moet worden toegevoegd. Van 'Kees' is zijn naam, zijn postcode en plaats bekend...</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> cursist <span class="token punctuation">(</span>cursistnr<span class="token punctuation">,</span> roepnaam<span class="token punctuation">,</span> postcode<span class="token punctuation">,</span> plaats<span class="token punctuation">)</span> 
+<span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">92</span><span class="token punctuation">,</span> <span class="token string">'Kees'</span><span class="token punctuation">,</span> <span class="token string">'4889 HJ'</span><span class="token punctuation">,</span> <span class="token string">'Rotterdam'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">00</span> sec<span class="token punctuation">)</span></code></pre>
+<p>Met <code>insert into cursist</code> wordt aangegeven dat er een record toegevoegd gaat worden aan de tabel 'cursist'. Tussen aanhalingstekens volgen dan de veldnamen waar waarden voor beschikbaar zijn. De waarden die moeten worden toegevoegd staan tussen haakjes achter values. Ze corresponderen met de positie van de velden.</p>
+<h2 id="records-updaten">Records updaten</h2>
+<p>Stel dat inmiddels de geboortedatum van Kees bekend is. Het record van Kees wordt op de volgende manier aangepast.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">update</span> cursist <span class="token keyword">set</span> geb_datum <span class="token operator">=</span> <span class="token string">'1999-03-22'</span> <span class="token keyword">where</span> cursistnr <span class="token operator">=</span> <span class="token number">92</span><span class="token punctuation">;</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">00</span> sec<span class="token punctuation">)</span>
+<span class="token keyword">Rows</span> <span class="token keyword">matched</span>: <span class="token number">1</span>  Changed: <span class="token number">1</span>  <span class="token keyword">Warnings</span>: <span class="token number">0</span></code></pre>
+<p>Met <code>update cursist</code> wordt aangegeven dat het om de tabel cursist gaat. Met <code>set geb_datum = '1999-03-22'</code> wordt aangegeven welk veld aangepast moet worden. Gelukkig heeft Kees ook een uniek cursistnummer gekregen zo is precies bekend welke 'Kees' aangepast moet worden. Je kunt meerdere records tegelijk aanpassen, dus zorg ervoor dat de where-clause klopt! Zonder where-clause wordt van alle records in de tabel de geboortedatum aangepast.
+PS: De where-clause is het gedeelte van de query dat na <code>where</code> komt.</p>
+<h2 id="records-verwijderen">Records verwijderen</h2>
+<p>Om een record te kunnen verwijderen is weer een unieke waarde nodig zoals 'cursistnr'. Met cursistnr wordt aangegeven welk record precies verwijdert moet worden.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">delete</span> <span class="token keyword">from</span> cursist <span class="token keyword">where</span> cursistnr <span class="token operator">=</span> <span class="token number">92</span><span class="token punctuation">;</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">00</span> sec<span class="token punctuation">)</span><span class="token identifier"><span class="token punctuation">`</span><span class="token punctuation">`</span></span><span class="token punctuation">`</span></code></pre>
+<h2 id="oefeningen">Oefeningen</h2>
+<ul>
+<li>Maak een nieuwe database aan met de naam 'reisbureau' en voer de queries uit van <a href="/edutorial/_assets/projecten/reisbureau_001.sql">dit sql-bestand</a>.</li>
+<li>Geef de query om alle tabellen in de database 'reisbureau' weer te gegeven</li>
+<li>Voeg 2 nieuwe klanten toe aan de tabel 'customers' (je mag de waarden zelf bedenken)</li>
+<li>Geef de query om de eerste 10 boekingen te verwijderen (reservations)</li>
+<li>De klant met id 13 is verhuist naar 'De van der veldensteeg 81' in 'Apeldoorn'. Pas het record aan en geef de query om het record weer te geven. Controleer of de gegevens correct zijn.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#crud">CRUD</a></li><li><a href="#records-toevoegen">Records toevoegen</a></li><li><a href="#records-updaten">Records updaten</a></li><li><a href="#records-verwijderen">Records verwijderen</a></li><li><a href="#oefeningen">Oefeningen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/gegevens-filteren/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Gegevens filteren</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/database-maken/">
+        <span class="title">Database maken</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

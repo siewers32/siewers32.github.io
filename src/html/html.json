@@ -1,0 +1,6 @@
+{
+  "course-title": "HTML 5",
+  "layout": "course.njk",
+  "tags": "html",
+  "permalink": "/html/{{ title | slug }}/{{ page.index }}"
+}

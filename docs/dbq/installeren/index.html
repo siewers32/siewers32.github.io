@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Installeren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch2.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/" aria-current="page" data-state="active">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/" aria-current="page" data-state="active">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="installeren">Installeren</h2>
+<h2 id="installatie">Installatie</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/4N58313hftA">
+        </iframe>
+    </div>
+<p>Een database bevat gegevens die voor een langere periode bewaard dienen te worden. Je kunt gegevens toevoegen, opvragen, wijzigen en/of verwijderen. SQL (Structured Query Language) is een taal waarmee je een database opdrachten kunt geven.</p>
+<p>Om een database te kunnen gebruiken heb je een databasemanagementsysteem (DBMS) nodig. Dat is software waarmee een of meer databases gedefinieerd en onderhouden kunnen worden. Voorbeelden van DBMS-en zijn IBM DB2, Oracle en MySQL. Een computer waarop zo’n DBMS draait, wordt een databaseserver genoemd.</p>
+<h2 id="installatie-mariadb">Installatie MariaDB</h2>
+<p>In deze cursus gebruiken we het DBMS MariaDB. Dat is databasesoftware die op bijna elke computer kan draaien en gratis en legaal gedownload kan worden. Omdat je voor de cursus PHP gebruik gaat maken van een zogenaamde AMP-stack (een stuk software waarin Apache, MySQL of MariaDB en PHP gebundeld zitten) kun je voor deze SQL cursus het beste die AMP-stack al installeren.
+In de uitleg bij deze cursus gaan we er van uit dat je de <a href="https://www.apachefriends.org/download.html">XAMPP</a> stack hebt geïnstalleerd.</p>
+<p>In het control-panel van XAMPP kun je de MySQL of MariaDB server starten.
+Vanuit hetzelfde control-panel kun je ook een terminal starten met de knop 'shell'
+In deze 'shell' kun je nu een verbinding opzetten met de MariaDB databaseserver</p>
+<pre class="language-sql"><code class="language-sql"><span class="token comment"># mysql -u root</span>
+Welcome <span class="token keyword">to</span> the MariaDB monitor<span class="token punctuation">.</span>  Commands <span class="token keyword">end</span> <span class="token keyword">with</span> <span class="token punctuation">;</span> <span class="token operator">or</span> \g<span class="token punctuation">.</span>
+Your MariaDB connection id <span class="token operator">is</span> <span class="token number">112</span>
+Server version: <span class="token number">10.4</span><span class="token number">.21</span><span class="token operator">-</span>MariaDB<span class="token operator">-</span>log mariadb<span class="token punctuation">.</span>org <span class="token keyword">binary</span> distribution
+
+Copyright <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">2018</span><span class="token punctuation">,</span> Oracle<span class="token punctuation">,</span> MariaDB Corporation Ab <span class="token operator">and</span> others<span class="token punctuation">.</span>
+
+<span class="token keyword">Type</span> <span class="token string">'help;'</span> <span class="token operator">or</span> <span class="token string">'\h'</span> <span class="token keyword">for</span> help<span class="token punctuation">.</span> <span class="token keyword">Type</span> <span class="token string">'\c'</span> <span class="token keyword">to</span> clear the <span class="token keyword">current</span> input statement<span class="token punctuation">.</span>
+
+MariaDB <span class="token punctuation">[</span><span class="token punctuation">(</span>none<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">></span></code></pre>
+<p><video-element video="GbBBJPf_QyM"></video-element></p>
+<h2 id="cursus-bestanden">Cursus bestanden</h2>
+<p>Tijdens de cursus maken we gebruik van een database met de naam <code>school</code><br>
+Je kunt de database hier downloaden.... <a href="/edutorial/_assets/dbq/school.sql">School database</a><br>
+Als je op bovenstaande link klikt, wordt het bestand 'school.sql' in je downloadmap geplaatst.
+Ga naar de 'shell' waarin de MariaDB client draait en toets het volgende commando in...</p>
+<pre class="language-sql"><code class="language-sql">MariaDB <span class="token operator">></span> source C:\Users\<span class="token operator">&lt;</span>jouw accountnaam<span class="token operator">></span>\Downloads\
+school<span class="token punctuation">.</span><span class="token keyword">sql</span></code></pre>
+<p>Als alles goed is gegaan heb je nu een database geïnstalleerd! Je kunt dit controleren met:</p>
+<pre class="language-sql"><code class="language-sql">MariaDB <span class="token punctuation">[</span><span class="token punctuation">(</span>none<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token keyword">use</span> school<span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed
+MariaDB <span class="token punctuation">[</span>school<span class="token punctuation">]</span><span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> Tables_in_school <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> c_regel          <span class="token operator">|</span>
+<span class="token operator">|</span> cursist          <span class="token operator">|</span>
+<span class="token operator">|</span> cursus           <span class="token operator">|</span>
+<span class="token operator">|</span> docent           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.010</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>Zoals je ziet heb je nu een database met 4 tabellen!</p>
+<blockquote>
+<h4 id="recap">Recap</h4>
+<p>Je hebt een databaseserver geïnstalleerd door XAMPP te installeren. In XAMPP zitten verschillende servers en 1 daarvan is de MariaDB databaseserver.<br>
+Je het een database geïnstalleerd. Het bestand school.sql bevat een sql-script dat een database aanmaakt in je database-server.<br>
+Je hebt hebt een overzicht gezien van de tabellen in de database school. Met de opdrachten 'use school' en 'show tables' heb je de tabellen opgevraagd in de database school.</p>
+</blockquote>
+<h2 id="hulp%2C-hij-doet-het-niet-meer!">Hulp, hij doet het niet meer!</h2>
+<p>Het kan zijn dat MySQL niet meer werkt, doordat 1 van de tabellen beschadigd raakt. Dit kan komen doordat je laptop in sluimerstand gaat.
+Hieronder het stappenplan om je installatie weer aan de praat te krijgen:</p>
+<ul>
+<li>
+<p><strong>Stap 1</strong>:</p>
+<ul>
+<li>Verwijder in  C:\xampp\mysql\data\aria_log.00000001 en aria_log_control</li>
+</ul>
+</li>
+<li>
+<p><strong>Stap 2</strong>:</p>
+<ul>
+<li>In de xampp control panel klik op [Config] en dan [my.ini] op de mysql regel.</li>
+<li>Voeg onder [mysqld] de regel toe: <code>skip-grant-tables</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Stap 3</strong>:</p>
+<ul>
+<li>restart nu Mysql ( [Start] in xampp control panel).</li>
+</ul>
+</li>
+<li>
+<p><strong>stap 4</strong>:</p>
+<ul>
+<li>voer op de commandline (CMD.exe) uit:</li>
+<li><code>mysqlcheck -u root -p --auto-repair --check --all-databases</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Stap 5</strong>:</p>
+<ul>
+<li>Verwijder weer de <code>skip-grant-tables</code> regel uit stap 2</li>
+</ul>
+</li>
+<li>
+<p><strong>Stap 6</strong>:</p>
+<ul>
+<li>restart nu opnieuw op Mysql ( [Start] in xampp control panel).</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#installeren">Installeren</a></li><li><a href="#installatie">Installatie</a></li><li><a href="#installatie-mariadb">Installatie MariaDB</a></li><li><a href="#cursus-bestanden">Cursus bestanden</a></li><li><a href="#hulp%2C-hij-doet-het-niet-meer!">Hulp, hij doet het niet meer!</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/introductie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Introductie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/postgresql/">
+        <span class="title">Postgresql</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{
+  "course-title": "Javascript",
+  "layout": "course.njk",
+  "tags": "javascript",
+  "permalink": "/javascript/{{ title | slug }}/{{ page.index }}"
+}

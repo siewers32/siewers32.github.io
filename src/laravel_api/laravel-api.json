@@ -1,0 +1,6 @@
+{
+  "course-title": "Laravel API",
+  "layout": "course.njk",
+  "tags": "laravel_api",
+  "permalink": "/laravel_api/{{ title | slug }}/{{ page.index }}"
+}

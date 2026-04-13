@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Poor man&#39;s API</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/projecten/projecten-api-ch110.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/projecten/farout-project/">FarOut Project</a>
+
+<a class="page-link" href="/edutorial/projecten/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/projecten/projectmanagement/">Projectmanagement</a>
+
+<a class="page-link" href="/edutorial/projecten/documentatie/">Documentatie</a>
+
+<a class="page-link" href="/edutorial/projecten/userstories/">Userstories</a>
+
+<a class="page-link" href="/edutorial/projecten/klassediagram/">Klassediagram</a>
+
+<a class="page-link" href="/edutorial/projecten/activiteitendiagram/">Activiteitendiagram</a>
+
+<a class="page-link" href="/edutorial/projecten/planning-poker/">Planning poker</a>
+
+<a class="page-link" href="/edutorial/projecten/retrospective/">Retrospective</a>
+
+<a class="page-link" href="/edutorial/projecten/poor-man&#39;s-api/" aria-current="page" data-state="active">Poor man&#39;s API</a>
+
+<a class="page-link" href="/edutorial/projecten/simple-laravel-api/">Simple Laravel API</a>
+
+<a class="page-link" href="/edutorial/projecten/swaggie/">Swaggie</a>
+
+<a class="page-link" href="/edutorial/projecten/serial-downloader/">Serial downloader</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/projecten/farout-project/">FarOut Project</a>
+    
+    <a class="page-link" href="/edutorial/projecten/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/projectmanagement/">Projectmanagement</a>
+    
+    <a class="page-link" href="/edutorial/projecten/documentatie/">Documentatie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/userstories/">Userstories</a>
+    
+    <a class="page-link" href="/edutorial/projecten/klassediagram/">Klassediagram</a>
+    
+    <a class="page-link" href="/edutorial/projecten/activiteitendiagram/">Activiteitendiagram</a>
+    
+    <a class="page-link" href="/edutorial/projecten/planning-poker/">Planning poker</a>
+    
+    <a class="page-link" href="/edutorial/projecten/retrospective/">Retrospective</a>
+    
+    <a class="page-link" href="/edutorial/projecten/poor-man&#39;s-api/" aria-current="page" data-state="active">Poor man&#39;s API</a>
+    
+    <a class="page-link" href="/edutorial/projecten/simple-laravel-api/">Simple Laravel API</a>
+    
+    <a class="page-link" href="/edutorial/projecten/swaggie/">Swaggie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/serial-downloader/">Serial downloader</a>
+    
+</div>
+
+            <h1 id="projecten">Projecten</h1>
+<h2 id="poor-man's-api">Poor man's API</h2>
+<h2 id="sql-data">SQL Data</h2>
+<p>In onderstaand voorbeeld wordt gebruik gemaakt van een MySQL database. Het script kun je gebruiken om een enkele tabel met gebruikers aan te maken. Het doel is om de gebruikers te delen via een API. Maak in een MySQL client een database aan en gebruik het <a href="/edutorial/_assets/projecten/customers.sql">script</a> om de een tabel met klanten te genereren.
+In de MySQL client (terminal):</p>
+<pre class="language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">database</span> poormansapi<span class="token punctuation">;</span>
+mysql<span class="token operator">></span> <span class="token keyword">use</span> poormansapi<span class="token punctuation">;</span>
+mysql<span class="token operator">></span> source C:\customers<span class="token punctuation">.</span><span class="token keyword">sql</span><span class="token punctuation">;</span>
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> customers<span class="token punctuation">;</span>
+
+<span class="token operator">+</span><span class="token comment">----+------------+-------------+------------------------------+------------------------------+-------------+-------------+--------------+----------------+---------------------+------------+</span>
+<span class="token operator">|</span> id <span class="token operator">|</span> first_name <span class="token operator">|</span> last_name   <span class="token operator">|</span> email                        <span class="token operator">|</span> address                      <span class="token operator">|</span> postal_code <span class="token operator">|</span> city        <span class="token operator">|</span> country_code <span class="token operator">|</span> phone          <span class="token operator">|</span> created_at          <span class="token operator">|</span> updated_at <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+------------+-------------+------------------------------+------------------------------+-------------+-------------+--------------+----------------+---------------------+------------+</span>
+<span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> Leon       <span class="token operator">|</span> Lauritsen   <span class="token operator">|</span> fjeremiassen<span class="token variable">@live.dk</span>         <span class="token operator">|</span> Borch Have <span class="token number">30</span>                <span class="token operator">|</span> <span class="token number">9428</span>        <span class="token operator">|</span> Jerup       <span class="token operator">|</span> da_DK        <span class="token operator">|</span> <span class="token operator">+</span><span class="token number">385415834585</span>  <span class="token operator">|</span> <span class="token number">2022</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">31</span> <span class="token number">12</span>:<span class="token number">29</span>:<span class="token number">23</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">|</span> Kim        <span class="token operator">|</span> Voss        <span class="token operator">|</span> merete<span class="token punctuation">.</span>borup<span class="token variable">@hotmail.com</span>     <span class="token operator">|</span> Klarskov Boulevard <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6.</span> mf<span class="token punctuation">.</span> <span class="token operator">|</span> <span class="token number">6873</span>        <span class="token operator">|</span> Låsby       <span class="token operator">|</span> da_DK        <span class="token operator">|</span> <span class="token operator">+</span><span class="token number">37487824395</span>   <span class="token operator">|</span> <span class="token number">2022</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">31</span> <span class="token number">12</span>:<span class="token number">29</span>:<span class="token number">23</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">3</span> <span class="token operator">|</span> Elisabeth  <span class="token operator">|</span> Jeremiassen <span class="token operator">|</span> johansson<span class="token punctuation">.</span>ejgil<span class="token variable">@hotmail.dk</span>   <span class="token operator">|</span> Koch Gade <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6.</span> sal<span class="token punctuation">.</span>         <span class="token operator">|</span> <span class="token number">2263</span>        <span class="token operator">|</span> Bredebro    <span class="token operator">|</span> da_DK        <span class="token operator">|</span> <span class="token operator">+</span><span class="token number">3780273439214</span> <span class="token operator">|</span> <span class="token number">2022</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">31</span> <span class="token number">12</span>:<span class="token number">29</span>:<span class="token number">23</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">4</span> <span class="token operator">|</span> Jon        <span class="token operator">|</span> Svenningsen <span class="token operator">|</span> jakob<span class="token punctuation">.</span>meldgaard<span class="token variable">@hotmail.com</span>  <span class="token operator">|</span> Vestergaardgade <span class="token number">4</span>Q<span class="token punctuation">,</span> st<span class="token punctuation">.</span> mf<span class="token punctuation">.</span>  <span class="token operator">|</span> <span class="token number">2492</span>        <span class="token operator">|</span> Regstrup    <span class="token operator">|</span> da_DK        <span class="token operator">|</span> <span class="token operator">+</span><span class="token number">351358191177</span>  <span class="token operator">|</span> <span class="token number">2022</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">31</span> <span class="token number">12</span>:<span class="token number">29</span>:<span class="token number">23</span> <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+------------+-------------+------------------------------+------------------------------+-------------+-------------+--------------+----------------+---------------------+------------+</span></code></pre>
+<h2 id="rest-api">REST API</h2>
+<p>Om de klanten vanuit de database te exporteren via JSON kun je PHP gebruiken. In onderstaand voorbeeld is er vanuit gegaan dat je de database kunt benaderen met de gebruiker 'root' en password 'root'.</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token variable">$user</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'root'</span><span class="token punctuation">;</span>
+    <span class="token variable">$pass</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'root'</span><span class="token punctuation">;</span>
+    <span class="token variable">$dbh</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'mysql:host=localhost;dbname=poormansapi'</span><span class="token punctuation">,</span> <span class="token variable">$user</span><span class="token punctuation">,</span> <span class="token variable">$pass</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">PDOException</span> <span class="token variable">$e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">print</span> <span class="token string double-quoted-string">"Error!: "</span> <span class="token operator">.</span> <span class="token variable">$e</span><span class="token operator">-></span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"&lt;br/>"</span><span class="token punctuation">;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function-definition function">showCustomers</span><span class="token punctuation">(</span><span class="token variable">$dbh</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'SELECT * FROM customers'</span><span class="token punctuation">;</span>
+    <span class="token variable">$stmt</span> <span class="token operator">=</span> <span class="token variable">$dbh</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">fetchAll</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">FETCH_ASSOC</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">json_encode</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">echo</span> <span class="token function">showCustomers</span><span class="token punctuation">(</span><span class="token variable">$dbh</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token delimiter important">?></span></span>
+</code></pre>
+<p>Bewaar de code als <code>api.php</code>.
+Er wordt geprobeerd om een databaseconnectie op te zetten met PDO. Let op dat de naam van de database, de username en het password kloppen met je eigen gegevens. Als de connectie niet lukt krijg je een error! (Heb je de database-server wel aangezet?).
+Als de connectie wel lukt dan wordt het PDO-object geïnstantieerd en wordt het toegekend aan de variabele <code>$dbh</code>.
+Om <code>$dbh</code> binnen de functie <code>showCustomers($dbh)</code> te kunnen gebruiken wordt hij als argument aan de functie meegegeven.
+In de functie <code>showCustomers</code> wordt een select-query opgebouwd en uitgevoerd. Met <code>fetchAll()</code> worden alle rijen als een array opgehaald uit de database. <code>PDO::FETCH_ASSOC</code> zorgt ervoor dat de data als een associatieve array wordt opgehaald zodat de waarden uit de database worden gekoppeld aan de veldnamen waar ze bij horen [veldnaam =&gt; waarde] zoals <code>['first_name' =&gt; 'Jan']</code>.
+De associatieve array wordt vervolgens omgezet naar json met de json_encode methode. De functie wordt aangeroepen en het resultaat wordt weergegeven met <code>echo showCustomers($dbh)</code>.</p>
+<p>Dit is wat je in je browser krijgt te zien als je de pagina aanroept:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"first_name"</span><span class="token operator">:</span> <span class="token string">"Leon"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"last_name"</span><span class="token operator">:</span> <span class="token string">"Lauritsen"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"email"</span><span class="token operator">:</span> <span class="token string">"fjeremiassen@live.dk"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"address"</span><span class="token operator">:</span> <span class="token string">"Borch Have 30"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"postal_code"</span><span class="token operator">:</span> <span class="token string">"9428"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"city"</span><span class="token operator">:</span> <span class="token string">"Jerup"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"country_code"</span><span class="token operator">:</span> <span class="token string">"da_DK"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"phone"</span><span class="token operator">:</span> <span class="token string">"+385415834585"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2022-08-31 12:29:23"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token string">"2"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"first_name"</span><span class="token operator">:</span> <span class="token string">"Kim"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"last_name"</span><span class="token operator">:</span> <span class="token string">"Voss"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"email"</span><span class="token operator">:</span> <span class="token string">"merete.borup@hotmail.com"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"address"</span><span class="token operator">:</span> <span class="token string">"Klarskov Boulevard 4, 6. mf."</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"postal_code"</span><span class="token operator">:</span> <span class="token string">"6873"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"city"</span><span class="token operator">:</span> <span class="token string">"Låsby"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"country_code"</span><span class="token operator">:</span> <span class="token string">"da_DK"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"phone"</span><span class="token operator">:</span> <span class="token string">"+37487824395"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2022-08-31 12:29:23"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token string">"3"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"first_name"</span><span class="token operator">:</span> <span class="token string">"Elisabeth"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"last_name"</span><span class="token operator">:</span> <span class="token string">"Jeremiassen"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"email"</span><span class="token operator">:</span> <span class="token string">"johansson.ejgil@hotmail.dk"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"address"</span><span class="token operator">:</span> <span class="token string">"Koch Gade 7, 6. sal."</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"postal_code"</span><span class="token operator">:</span> <span class="token string">"2263"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"city"</span><span class="token operator">:</span> <span class="token string">"Bredebro"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"country_code"</span><span class="token operator">:</span> <span class="token string">"da_DK"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"phone"</span><span class="token operator">:</span> <span class="token string">"+3780273439214"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2022-08-31 12:29:23"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token string">"4"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"first_name"</span><span class="token operator">:</span> <span class="token string">"Jon"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"last_name"</span><span class="token operator">:</span> <span class="token string">"Svenningsen"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"email"</span><span class="token operator">:</span> <span class="token string">"jakob.meldgaard@hotmail.com"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"address"</span><span class="token operator">:</span> <span class="token string">"Vestergaardgade 4Q, st. mf."</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"postal_code"</span><span class="token operator">:</span> <span class="token string">"2492"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"city"</span><span class="token operator">:</span> <span class="token string">"Regstrup"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"country_code"</span><span class="token operator">:</span> <span class="token string">"da_DK"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"phone"</span><span class="token operator">:</span> <span class="token string">"+351358191177"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2022-08-31 12:29:23"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="frontend">Frontend</h2>
+<p>Je hebt nu een werkende API backend gemaakt. De API kan nu gebruikt worden met een frontend applicatie. Hieronder zie je de stappen hoe je dat kunt doen. In dit geval wordt er gebruik gemaakt van pure javascript! Dat noemen ze ook wel 'vanilla javascript'. Er wordt geen Vue, React of ander javascript-framework gebruikt.</p>
+<p>Het begint allemaal met een standaard html5-pagina....</p>
+<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Poormans API<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">#customers div</span> <span class="token punctuation">{</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span>yellow<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>customers<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>Bewaar de pagina als <code>index.html</code>.
+Wat opvalt is <code><div id="customers"></div></code>. Hier worden straks de gegevens van de klanten weergegeven.
+Om de gegevens op te halen is een beetje javascript nodig. Hieronder zie je welke code tussen <code><script></script></code>-tags komt te staan.
+Om data op te halen vanaf een url of een bestand gebruik je de methode <code>fetch</code>. In Vue heb je misschien met axios gewerkt. Axios maakt intern ook gebruik van dezelfde <code>fetch</code>-methode:</p>
+<pre class="language-javascript"><code class="language-javascript">        <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'http://localhost/api.php'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'cors'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Request successful'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Request failed'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Met fetch haal je een 'promise' op. Normaal gesproken werkt de javascript-code niet van boven naar beneden. Maar nu wil je eerst even wachten tot de data is opgehaald voordat het script verder gaat. Dit kan kan met een 'promise'!
+Als alles goed gaat worden bij de eerste <code>.then</code> de gegevens uit de response opgehaald met <code>response.json</code>.
+Als dan nog alles goed gaat, worden de gegevens in de variabele <code>data</code> doorgegeven aan de tweede <code>.then</code>.
+Met console.log kun je de verstuurde gegevens in de console van je browser weergegeven.
+Lukt het allemaal niet, dan wordt de derde <code>.then</code> aangeroepen.</p>
+<p>Als je webserver op poort 80 draait, kun je bovenstaande code uitvoeren door met <code>http://localhost/index.html</code> de html-pagina te openen in je browser. Kijk in de console van de developer-tools of de data wordt weergegeven...</p>
+<pre class="language-html"><code class="language-html">Request successful 
+0: {id: '1', first_name: 'Leon', last_name: 'Lauritsen', email....
+1: {id: '2', first_name: 'Kim', last_name: 'Voss', email: '
+etc.</code></pre>
+<h2 id="browser">Browser</h2>
+<p>Om de data niet in de console, maar in de html-pagina weer te geven moeten de javascript-objecten omgezet worden in html-elementen. Over het algemeen zijn frameworks als Vue en React hier heel handig in, maar je kunt het ook met 'vanilla javascript' doen.</p>
+<p>Eerst wordt de tweede <code>.then</code> aangepast van de fetch-promise.</p>
+<pre class="language-javascript"><code class="language-javascript">            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Request successful'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> data<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment">//addElement (data[i]);</span>
+                    <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>De data is een array javascript-objecten die wordt doolopen met een for-loop.
+Ieder javascript-object ( = customer) wordt meegegeven als argument in de functie <code>addElement</code>.</p>
+<p>Voeg onderstaande functie toe aan de <code>script</code>-tag:</p>
+<pre class="language-javascript"><code class="language-javascript">        <span class="token keyword">function</span> <span class="token function">addElement</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// create a new div element</span>
+            <span class="token keyword">const</span> newDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> firstName <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>el<span class="token punctuation">.</span>first_name <span class="token operator">+</span> <span class="token string">" - "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> lastName <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>el<span class="token punctuation">.</span>last_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// add the text nodes to the newly created div</span>
+            newDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>firstName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            newDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>lastName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// add the newly created element and its content into the DOM</span>
+            <span class="token keyword">const</span> currentDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"customers"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            currentDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newDiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+</code></pre>
+<p>Met de gegevens van iedere klant (customer) wordt nu een nieuw <code>div</code>-element gemaakt.
+Er worden twee regels tekst toegevoegd met de voor- en achternaam van iedere klant. Uiteindelijk worden de gegevens toegevoegd aan de <code>div</code> met id 'customers', zoals die in het html-document al was gedefinieerd.</p>
+<p>Dit is wat je in je browser te zien krijgt:</p>
+<div class="html" style="background-color:yellow">
+Leon - Lauritsen<br>
+Kim - Voss<br>
+Elisabeth - Jeremiassen<br>
+Jon - Svenningsen<br>
+Vilhelm - Brodersen<br>
+</div>
+<p>Proof of concept voltooid!!</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#poor-man's-api">Poor man's API</a></li><li><a href="#sql-data">SQL Data</a></li><li><a href="#rest-api">REST API</a></li><li><a href="#frontend">Frontend</a></li><li><a href="#browser">Browser</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/projecten/retrospective/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Retrospective</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/projecten/simple-laravel-api/">
+        <span class="title">Simple Laravel API</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

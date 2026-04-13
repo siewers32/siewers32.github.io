@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | API-Test</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="js/request.js" defer></script>
+    <script src="js/routes.js" defer></script>
+    <script src="js/prism.js" defer></script>
+    <link rel="stylesheet" href="css/swaggie.css">
+    <link rel="stylesheet" href="css/prism.css">
+</head>
+
+
+<body>
+    <div id="app">
+        <h1>Swaggie</h1>
+
+        <!-- /api/v1/api.php?q=login -->
+        <div id="login" class="endpoint post">
+            <input type="button" name="postLogin" value="POST" onclick="toggleOutput('login')">
+            <div class="route" onclick="toggleOutput('login')">
+                <div class="route-text">/api/v1/api.php?q=login</div>
+                <span class="material-symbols-outlined">lock_open</span>
+            </div>
+        </div>
+
+        <div class="output">
+            <form id="frmLogin">
+                <h3>Login</h3>
+                <label class="input">
+                    <span>Login</span>
+                    <input type="text" name="login" value="">
+                </label>
+                <label class="input">
+                    <span>Password</span>
+                    <input type="password" name="password" value="">
+                </label>
+                <div class="input">
+                    <input type="button" name="btn" value="login" onclick="flogin('login')">
+                </div>
+            </form>
+            <pre><code class="language-json"></code></pre>
+        </div>
+
+        <!-- /api/v1/api.php?q=logout -->
+        <div id="logout" class="endpoint post">
+            <input type="button" name="logout" value="POST" onclick="toggleOutput('logout')">
+            <div class="route" onclick="toggleOutput('logout')">
+                <div class="route-text">/api/v1/api.php?q=logout</div>
+                <span class="material-symbols-outlined">lock</span>
+            </div>
+        </div>
+        <div class="output">
+            <form id="frmLogout">
+                <h3>Logout</h3>
+                <label class="input">
+                    <input type="button" value="Send" onclick="flogout()">
+                </label>
+            </form>
+            <pre><code class="language-json"></code></pre>
+        </div>
+
+        <!-- /api/v1/api.php?q=car -->
+        <div id="car" class="endpoint get">
+            <input type="button" name="btnGet" value="GET" onclick="toggleOutput('car')">
+            <div class="route" onclick="toggleOutput('car')">
+                <div class="route-text">/api/v1/api.php?q=car</div>
+                <span class="material-symbols-outlined">lock</span>
+            </div>
+        </div>
+        <div class="output">
+            <form id="frmCar">
+                <h3>Add a Car</h3>
+                <label class="input">
+                    <span>Merk</span>
+                    <input type="text" name="merk" value="">
+                </label>
+                <label class="input">
+                    <span>Type</span>
+                    <input type="text" name="type" value="">
+                </label>
+                <div class="input">
+                    <input type="button" value="GET" onclick="fcar()">
+                </div>
+            </form>
+            <pre><code class="language-json"></code></pre>
+        </div>
+
+        <!-- /api/v1/api.php?q=cars -->
+        <div id="cars" class="endpoint post">
+            <input type="button" name="btnShow" value="POST" onclick="toggleOutput('cars')">
+            <div class="route" onclick="toggleOutput('cars')">
+                <div class="route-text">/api/v1/api.php?q=cars</div>
+                <span class="material-symbols-outlined">lock_open</span>
+            </div>
+        </div>
+        <div class="output">
+            <form id="frmCars">
+                <h3>Cars</h3>
+                <label class="input">
+                    <input type="button" value="Send" onclick="fcars()">
+                </label>
+            </form>
+            <pre><code class="language-json"></code></pre>
+        </div>
+
+        <!-- /api/v1/api.php?q=delete_car -->
+        <div id="delete_car" class="endpoint delete">
+            <input type="button" name="btnShow" value="DELETE" onclick="toggleOutput('delete_car')">
+            <div class="route" onclick="toggleOutput('delete_car')">
+                <div class="route-text">/api/v1/api.php?q=delete_car</div>
+                <span class="material-symbols-outlined">lock</span>
+            </div>
+        </div>
+        <div class="output">
+            <form id="frmDelete_car">
+                <h3>Delete a car</h3>
+                <label class="input">
+                    <span>Kenteken</span>
+                    <input type="text" name="kenteken" value="">
+                </label>
+                <label class="input">
+                    <input type="button" value="Send" onclick="fdelete_car()">
+                </label>
+            </form>
+            <pre><code class="language-json"></code></pre>
+        </div>
+    </div>
+</body>
+
+</html>

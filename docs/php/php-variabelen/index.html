@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | PHP variabelen</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/" aria-current="page" data-state="active">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/" aria-current="page" data-state="active">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="php-variabelen">PHP variabelen</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/bekcjI9VLyc">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/1m-e5XBEfXo">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/8RWxC1jfklo">
+        </iframe>
+    </div>
+<h2 id="wat-ga-je-leren">Wat ga je leren</h2>
+<ul>
+<li>Je leert verschillende type data op te slaan in variabelen</li>
+<li>Je leert data te manipuleren door berekeningen uit te voeren met variabelen.</li>
+<li>Je leert verschillende datatypen kennen
+<ul>
+<li>String</li>
+<li>Integer</li>
+<li>Double</li>
+<li>Array</li>
+</ul>
+</li>
+<li>Je leert variabelen te combineren met tekst.</li>
+</ul>
+<h2 id="wat-is-een-variabele">Wat is een variabele</h2>
+<p>Een variabele is een label dat gekoppeld is aan een plek in het geheugen van de computer. In deze geheugenplek kun je een waarde opslaan. Een waarde kan een getal zijn, een stuk tekst of 1 van de mogelijke datatypen waar PHP mee kan werken.<br>
+Hieronder zie je hoe de waarde 5 aan het label 'var' wordt toegekend. De waarde 5 is nu opgeslagen in het computergeheugen en kan weer opgevraagd worden met $var. Het dollar-teken geeft in php aan dat het om een variabele gaat.</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+  <span class="token variable">$var</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token keyword">echo</span> <span class="token variable">$var</span><span class="token punctuation">;</span> 
+  <span class="token comment">// De output op het scherm is 5.</span>
+  
+  <span class="token variable">$mijn_tekst</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"Dit is een stuk tekst dat ik wil bewaren."</span>
+  <span class="token keyword">echo</span> <span class="token variable">$mijn_tekst</span><span class="token punctuation">;</span> 
+  <span class="token comment">// De output op het scherm is "Dit is een stuk tekst dat ik wil bewaren."</span>
+  
+  <span class="token variable">$a</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token variable">$b</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">echo</span> <span class="token variable">$a</span> <span class="token operator">*</span> <span class="token variable">$b</span><span class="token punctuation">;</span>
+  <span class="token comment">// De output op het scherm is 10, want 5 maal 2 is 10!</span>
+<span class="token delimiter important">?></span></span></code></pre>
+<p>PHP kan zelf bepalen wat voor soort waarde er wordt toegekend aan een variabele.</p>
+<ul>
+<li>Bij $var = 5, bepaalt PHP dat 5 een geheel getal (=integer) is.</li>
+<li>Een getal waar een komma in voorkomt is een double.</li>
+<li>Een variabele waar wat tekst in is bewaard is van het type 'string'.</li>
+</ul>
+<p>Je kunt op allerlei manieren berekeningen maken met PHP. Zoals optellen, aftrekken, vermenigvuldigen, delen en nog veel meer. Op <a href="https://www.w3schools.com/php/php_operators.asp">W3Schools</a> vind je een overzicht van de mogelijke opties.</p>
+<p>Je kunt aan PHP ook vragen wat het type is van een variabele....</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$var</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token function">gettype</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// De output is 'integer'</span>
+
+<span class="token variable">$var</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"Stukkie tekst..."</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token function">gettype</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// De output is 'string'</span>
+
+<span class="token variable">$var</span> <span class="token operator">=</span> <span class="token number">5.324</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token function">gettype</span><span class="token punctuation">(</span><span class="token variable">$var</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// De output is 'double'</span>
+</code></pre>
+<h3 id="werken-met-tekst">Werken met tekst</h3>
+<p>Met tekst kun je weliswaar geen berekeningen maken, maar je kunt variabelen en tekst wel met elkaar verbinden. Je gebruikt een &quot;.&quot; om een variabele met een tekst te verbinden.</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token variable">$a</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"rood"</span><span class="token punctuation">;</span>
+   <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Het stoplicht staat op "</span><span class="token operator">.</span><span class="token variable">$a</span>
+   <span class="token comment">// Output is "Het stoplicht staat op rood"</span>
+<span class="token delimiter important">?></span></span></code></pre>
+<h3 id="arrays">Arrays</h3>
+<p>Arrays zijn variabelen die meerdere waarden kunnen bevatten.
+Je kunt arrays op verschillende manieren maken....</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$var</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"banaan"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"peer"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment">// of</span>
+ <span class="token variable">$var</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string double-quoted-string">"banaan"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"peer"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+ <span class="token comment">// of</span>
+ <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string double-quoted-string">"banaan"</span><span class="token punctuation">;</span>
+ <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string double-quoted-string">"peer"</span><span class="token punctuation">;</span>
+ <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+ <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">432</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wel gek, maar dit kan ook!!!"</span></code></pre>
+<p>Als je een waarde uit een array wilt weergeven, moet je dat doen op basis van de index.</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">echo</span> <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// output: banaan</span>
+<span class="token keyword">echo</span> <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// output: peer</span>
+<span class="token keyword">echo</span> <span class="token variable">$var</span><span class="token punctuation">[</span><span class="token number">432</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// output: wel gek, maar dit kan ook!!!</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#php-variabelen">PHP variabelen</a></li><li><a href="#wat-ga-je-leren">Wat ga je leren</a></li><li><a href="#wat-is-een-variabele">Wat is een variabele</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/php-code-maken/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">PHP code maken</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/condities/">
+        <span class="title">Condities</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Jan-Dec 2024</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/blog/blog-ch1.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/blog/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/blog/jan-dec-2024/" aria-current="page" data-state="active">Jan-Dec 2024</a>
+
+<a class="page-link" href="/edutorial/blog/jan-dec-2023/">Jan-Dec 2023</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/blog/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/blog/jan-dec-2024/" aria-current="page" data-state="active">Jan-Dec 2024</a>
+    
+    <a class="page-link" href="/edutorial/blog/jan-dec-2023/">Jan-Dec 2023</a>
+    
+</div>
+
+            <h1 id="blog">Blog</h1>
+<h2 id="december-2024">December 2024</h2>
+<ul>
+<li>Uitleg php</li>
+<li>Toevoegen van records aan een <a href="/edutorial/_assets/dbq/wereld_v3.sql">wereld-database</a></li>
+<li><a href="/edutorial/_assets/blog/crud.zip">PHP-bestanden</a></li>
+</ul>
+<h4 id="mysqi-procudureel">mysqi procudureel</h4>
+<pre class="language-php"><code class="language-php">
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+ <span class="token variable">$servername</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"localhost"</span><span class="token punctuation">;</span>
+ <span class="token variable">$username</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wim"</span><span class="token punctuation">;</span>
+ <span class="token variable">$password</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wim"</span><span class="token punctuation">;</span>
+ <span class="token variable">$db</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wereld"</span><span class="token punctuation">;</span>
+
+ <span class="token comment">// Create connection</span>
+ <span class="token variable">$conn</span> <span class="token operator">=</span> <span class="token function">mysqli_connect</span><span class="token punctuation">(</span><span class="token variable">$servername</span><span class="token punctuation">,</span> <span class="token variable">$username</span><span class="token punctuation">,</span> <span class="token variable">$password</span><span class="token punctuation">,</span> <span class="token variable">$db</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+ <span class="token comment">// Toevoegen</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">isset</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'knop'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Ik ga iets toevoegen"</span><span class="token punctuation">;</span>
+    <span class="token comment">// prepare and bind</span>
+    <span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"INSERT INTO land (werelddeelcode, landcode, landnaam) VALUES (?,?,?)"</span><span class="token punctuation">;</span>
+    <span class="token variable">$stmt</span> <span class="token operator">=</span> <span class="token function">mysqli_stmt_init</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">mysqli_stmt_prepare</span><span class="token punctuation">(</span><span class="token variable">$stmt</span><span class="token punctuation">,</span> <span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">mysqli_stmt_bind_param</span><span class="token punctuation">(</span><span class="token variable">$stmt</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"sss"</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"wc"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"lc"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"ln"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">mysqli_stmt_execute</span><span class="token punctuation">(</span><span class="token variable">$stmt</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+ <span class="token comment">// Check connection</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$conn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Connection failed: "</span> <span class="token operator">.</span> <span class="token function">mysqli_connect_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"SELECT * FROM land"</span><span class="token punctuation">;</span>
+ <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">mysqli_query</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token punctuation">,</span> <span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">mysqli_num_rows</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// output data of each row</span>
+    <span class="token variable">$html</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"&lt;table>"</span><span class="token punctuation">;</span>
+    <span class="token variable">$html</span> <span class="token operator">.=</span> <span class="token string double-quoted-string">"&lt;tr>&lt;th>landcode&lt;/th>&lt;th>werelddeelcode&lt;/th>&lt;th>landnaam&lt;/th>&lt;/tr>"</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token variable">$row</span> <span class="token operator">=</span> <span class="token function">mysqli_fetch_assoc</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token variable">$html</span> <span class="token operator">.=</span> <span class="token string double-quoted-string">"&lt;tr>&lt;td>"</span><span class="token operator">.</span><span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"landcode"</span><span class="token punctuation">]</span><span class="token operator">.</span><span class="token string double-quoted-string">"&lt;/td>&lt;td>"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"werelddeelcode"</span><span class="token punctuation">]</span><span class="token operator">.</span> <span class="token string double-quoted-string">"&lt;/td>&lt;td>"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"landnaam"</span><span class="token punctuation">]</span><span class="token operator">.</span> <span class="token string double-quoted-string">"&lt;/td>&lt;/tr>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token variable">$html</span> <span class="token operator">.=</span> <span class="token string double-quoted-string">"&lt;/table>"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"0 results"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">mysqli_close</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token delimiter important">?></span></span> 
+
+ <span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$html</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>toevoegen.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Voeg nog een land toe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="mysqli-object-oriented">mysqli object oriented</h4>
+<ul>
+<li>zie ook <a href="https://www.w3schools.com/php/php_mysql_prepared_statements.asp">w3schools</a></li>
+</ul>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+ <span class="token variable">$servername</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"localhost"</span><span class="token punctuation">;</span>
+ <span class="token variable">$username</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wim"</span><span class="token punctuation">;</span>
+ <span class="token variable">$password</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wim"</span><span class="token punctuation">;</span>
+ <span class="token variable">$db</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"wereld"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Create connection</span>
+<span class="token variable">$conn</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mysqli</span><span class="token punctuation">(</span><span class="token variable">$servername</span><span class="token punctuation">,</span> <span class="token variable">$username</span><span class="token punctuation">,</span> <span class="token variable">$password</span><span class="token punctuation">,</span> <span class="token variable">$db</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Check connection</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">connect_error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Connection failed: "</span> <span class="token operator">.</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">connect_error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+ <span class="token comment">// Toevoegen</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">isset</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'knop'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Ik ga iets toevoegen"</span><span class="token punctuation">;</span>
+    <span class="token comment">// prepare and bind</span>
+    <span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"INSERT INTO land (werelddeelcode, landcode, landnaam) VALUES (?,?,?)"</span><span class="token punctuation">;</span>
+    <span class="token comment">// prepare and bind</span>
+    <span class="token variable">$stmt</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">bind_param</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"sss"</span><span class="token punctuation">,</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"wc"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"lc"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"ln"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+<span class="token punctuation">}</span>
+
+
+ <span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"SELECT * FROM land"</span><span class="token punctuation">;</span>
+ <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$result</span><span class="token operator">-></span><span class="token property">num_rows</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token comment">// output data of each row</span>
+    <span class="token variable">$html</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"&lt;table>"</span><span class="token punctuation">;</span>
+    <span class="token variable">$html</span> <span class="token operator">.=</span> <span class="token string double-quoted-string">"&lt;tr>&lt;th>landcode&lt;/th>&lt;th>werelddeelcode&lt;/th>&lt;th>landnaam&lt;/th>&lt;/tr>"</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token variable">$row</span> <span class="token operator">=</span> <span class="token variable">$result</span><span class="token operator">-></span><span class="token function">fetch_assoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+      <span class="token variable">$html</span> <span class="token operator">.=</span> <span class="token string double-quoted-string">"&lt;tr>&lt;td>"</span><span class="token operator">.</span><span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"landcode"</span><span class="token punctuation">]</span><span class="token operator">.</span><span class="token string double-quoted-string">"&lt;/td>&lt;td>"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"werelddeelcode"</span><span class="token punctuation">]</span><span class="token operator">.</span> <span class="token string double-quoted-string">"&lt;/td>&lt;td>"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"landnaam"</span><span class="token punctuation">]</span><span class="token operator">.</span> <span class="token string double-quoted-string">"&lt;/td>&lt;/tr>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token variable">$html</span> <span class="token operator">.=</span> <span class="token string double-quoted-string">"&lt;/table>"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"0 results"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+ <span class="token delimiter important">?></span></span> </code></pre>
+<h2 id="november-2024">November 2024</h2>
+<ul>
+<li>Uitleg pip en venv</li>
+<li>Uitleg self-made modules</li>
+<li>Uitleg externe apachelogs module (installatie pip)
+<ul>
+<li><a href="https://httpd.apache.org/docs/current/mod/mod_log_config.html">Uitleg apache log entries</a></li>
+</ul>
+</li>
+<li>Uitleg pymysql</li>
+<li>Nieuwe user toevoegen mysql met permissies</li>
+<li>Connectie maken met db</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token comment"># apachelog module</span>
+<span class="token keyword">def</span> <span class="token function">connect</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> password<span class="token punctuation">,</span> db<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    con <span class="token operator">=</span>   pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>
+            user<span class="token operator">=</span>user<span class="token punctuation">,</span>
+            password<span class="token operator">=</span>password<span class="token punctuation">,</span>
+            database<span class="token operator">=</span>db<span class="token punctuation">,</span>
+            charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">,</span>
+            cursorclass<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> con
+
+<span class="token keyword">def</span> <span class="token function">write_to_db</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'rt'</span><span class="token punctuation">)</span>
+    parser <span class="token operator">=</span> LogParser<span class="token punctuation">(</span><span class="token string">"%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\""</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> fo<span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            parser<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>request_time<span class="token punctuation">)</span><span class="token punctuation">,</span> entry<span class="token punctuation">.</span>request_line<span class="token punctuation">)</span>
+            rl <span class="token operator">=</span> entry<span class="token punctuation">.</span>request_line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>rl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token comment"># Create a new record</span>
+            <span class="token keyword">with</span> con<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cursor<span class="token punctuation">:</span>
+                sql <span class="token operator">=</span> <span class="token string">"INSERT INTO `apache_log` (`useragent`, `time`, `method`, `page`) VALUES (%s, %s, %s, %s)"</span>
+                cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token punctuation">(</span>entry<span class="token punctuation">.</span>headers_in<span class="token punctuation">[</span><span class="token string">"User-Agent"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> entry<span class="token punctuation">.</span>request_time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rl<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> rl<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token comment"># connection is not autocommit by default. So you must commit to save</span>
+                <span class="token comment"># your changes.</span>
+                con<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span></code></pre>
+<h2 id="augustus-2024">Augustus 2024</h2>
+<p>Uitleg over variabelen: <a href="https://www.edutorial.nl/php/php-variabelen/">Edutorial.nl -&gt; Starten met PHP -&gt; Variabelen</a><br>
+Uitleg over variabelen en loops:<br>
+For-loop van <a href="https://www.w3schools.com/php/php_looping_for.asp">w3schools.com</a></p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token variable">$x</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token variable">$x</span> <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token variable">$x</span><span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">echo</span> <span class="token string double-quoted-string">"The number is: <span class="token interpolation"><span class="token variable">$x</span></span> \n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Arrays:</p>
+<pre class="language-php"><code class="language-php">    <span class="token variable">$programmeertalen</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string double-quoted-string">"PHP"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"C#"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"HTML"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"JavaScript"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"Java"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"C++"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"C"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token variable">$programmeertalen</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"Swift"</span><span class="token punctuation">;</span>
+    <span class="token variable">$programmeertalen</span><span class="token punctuation">[</span><span class="token number">34</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"Python"</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$programmeertalen</span> <span class="token keyword">as</span> <span class="token variable">$x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$x</span></span> \n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>Een webserver starten vanuit een willekeurige map:</p>
+<pre class="language-shell"><code class="language-shell">php <span class="token parameter variable">-S</span> localhost:8877</code></pre>
+<h2 id="februari-2024">Februari 2024</h2>
+<p>Uitleg inloggen met php:</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+ <span class="token function">var_dump</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">echo</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"login"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+ <span class="token keyword">echo</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string double-quoted-string">"password"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ <span class="token variable">$users</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string double-quoted-string">"Jan"</span> <span class="token operator">=></span> <span class="token string double-quoted-string">"123"</span><span class="token punctuation">,</span>
+    <span class="token string double-quoted-string">"Kees"</span> <span class="token operator">=></span> <span class="token string double-quoted-string">"456"</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$username</span> <span class="token operator">=></span> <span class="token variable">$password</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$username</span> <span class="token operator">==</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'login'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Goed bezig!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre>
+<h2 id="januari-2024">Januari 2024</h2>
+<ul>
+<li><a href="https://github.com/siewers32/javascript_form_validatie/blob/master/index.php">19-01 Javascript formulier validatie voorbeeldcode</a></li>
+<li><a href="https://github.com/siewers32/javascript_form_validatie/blob/master/index2.php">23-01 Nog een formulier met js validatie</a></li>
+<li><a href="https://github.com/siewers32/javascript_form_validatie/blob/master/index3.php">24-01 Formulier dat alleen verzonden wordt als alle velden goed zijn ingevuld</a></li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#december-2024">December 2024</a></li><li><a href="#november-2024">November 2024</a></li><li><a href="#augustus-2024">Augustus 2024</a></li><li><a href="#februari-2024">Februari 2024</a></li><li><a href="#januari-2024">Januari 2024</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/blog/introductie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Introductie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/blog/jan-dec-2023/">
+        <span class="title">Jan-Dec 2023</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

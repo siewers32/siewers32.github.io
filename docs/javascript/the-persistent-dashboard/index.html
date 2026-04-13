@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | The Persistent Dashboard</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/js/js-ch110.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/">Javascript loops en condities</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/">Javascript en Formulieren</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+
+<a class="page-link" href="/edutorial/javascript/events-in-javascript/">Events in javascript</a>
+
+<a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+
+<a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/" aria-current="page" data-state="active">The Persistent Dashboard</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/">Javascript loops en condities</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/">Javascript en Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+    
+    <a class="page-link" href="/edutorial/javascript/events-in-javascript/">Events in javascript</a>
+    
+    <a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/" aria-current="page" data-state="active">The Persistent Dashboard</a>
+    
+</div>
+
+            <h1 id="javascript">Javascript</h1>
+<h2 id="the-persistent-dashboard">The Persistent Dashboard</h2>
+<h2 id="context">Context</h2>
+<p>Stel je voor: je hebt een dashboard gebouwd, maar elke keer als de gebruiker de pagina ververst, springt het thema terug naar wit en is de gebruikersnaam verdwenen. Dat is irritant. Jij gaat dit oplossen met <code>localStorage</code>.</p>
+<h2 id="de-leerdoelen">De Leerdoelen</h2>
+<ol>
+<li>Gegevens opslaan met <code>localStorage.setItem()</code>.</li>
+<li>Gegevens ophalen met <code>localStorage.getItem()</code>.</li>
+<li>Begrijpen hoe je complexe data (zoals een object) opslaat met <code>JSON.stringify()</code> en <code>JSON.parse()</code>.</li>
+</ol>
+<h4 id="stap-1%3A-de-basis-html">Stap 1: De Basis HTML</h4>
+<p>Maak een eenvoudige pagina met: (zie een zip met opdrachtbestanden onderaan de pagina!)</p>
+<ul>
+<li>Een inputveld voor een <strong>gebruikersnaam</strong>.</li>
+<li>Een dropdown (select) om een <strong>thema</strong> te kiezen (bijv. Licht, Donker, Blauw).</li>
+<li>Een &quot;Opslaan&quot; knop.</li>
+<li>Een &quot;Reset&quot; knop.</li>
+<li>Een <code>&lt;h1&gt;</code> waarin staat: &quot;Welkom, [Naam]&quot;.</li>
+</ul>
+<h4 id="stap-2%3A-event-listeners">Stap 2: Event Listeners</h4>
+<p>Schrijf JavaScript die luistert naar de klik op de &quot;Opslaan&quot; knop. Wanneer er geklikt wordt, moet de waarde van de naam en het gekozen thema in <code>localStorage</code> worden gezet.</p>
+<h4 id="stap-3%3A-de-'init'-functie-(cruciaal!)">Stap 3: De 'Init' Functie (Cruciaal!)</h4>
+<p>Schrijf een functie die wordt uitgevoerd zodra de pagina laadt (<code>window.onload</code>). Deze functie moet:</p>
+<ol>
+<li>Kijken of er een naam in <code>localStorage</code> staat. Zo ja: vul de <code>&lt;h1&gt;</code> met die naam.</li>
+<li>Kijken of er een thema is opgeslagen. Zo ja: pas de CSS van de pagina direct aan (bijv. verander de <code>backgroundColor</code>).</li>
+</ol>
+<h4 id="stap-4%3A-het-object-(bonus)">Stap 4: Het Object (Bonus)</h4>
+<p>In plaats van twee losse regels in <code>localStorage</code>, probeer je nu de instellingen als één <strong>object</strong> op te slaan:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token string">"Jan"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token string">"dark"</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p><em>Tip: Gebruik <code>JSON.stringify(settings)</code> om het op te slaan en <code>JSON.parse()</code> om het weer bruikbaar te maken in JS.</em></p>
+<h2 id="hoe-check-je-of-het-werkt%3F">Hoe check je of het werkt?</h2>
+<ol>
+<li>Open de browser en vul je naam in. Kies een thema en klik op Opslaan.</li>
+<li><strong>Ververs de pagina.</strong> Als je naam blijft staan en de kleur niet verspringt, heb je het goed gedaan!</li>
+<li>Open de <strong>Developer Tools</strong> (F12) -&gt; Tabblad <strong>Application</strong> -&gt; <strong>Local Storage</strong>. Hier kun je jouw data &quot;live&quot; zien staan.</li>
+</ol>
+<h2 id="uitleg">Uitleg</h2>
+<h3 id="1.-de-basiscommando's">1. De Basiscommando's</h3>
+<p>LocalStorage werkt altijd met een <strong>Key</strong> (de naam van het kluisje) en een <strong>Value</strong> (wat je erin stopt).</p>
+<table>
+<thead>
+<tr>
+<th>Actie</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Opslaan</strong></td>
+<td><code>localStorage.setItem('sleutel', 'waarde');</code></td>
+</tr>
+<tr>
+<td><strong>Ophalen</strong></td>
+<td><code>const data = localStorage.getItem('sleutel');</code></td>
+</tr>
+<tr>
+<td><strong>Verwijderen</strong></td>
+<td><code>localStorage.removeItem('sleutel');</code></td>
+</tr>
+<tr>
+<td><strong>Alles wissen</strong></td>
+<td><code>localStorage.clear();</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2.-werken-met-objecten-(json)">2. Werken met Objecten (JSON)</h3>
+<p>LocalStorage kan alleen <strong>strings</strong> (tekst) opslaan. Wil je een heel object met instellingen opslaan? Dan moet je het omzetten.</p>
+<ul>
+<li><strong>Van Object naar String (om op te slaan):</strong></li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> instellingen <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">naam</span><span class="token operator">:</span> <span class="token string">"Jan"</span><span class="token punctuation">,</span> <span class="token literal-property property">thema</span><span class="token operator">:</span> <span class="token string">"dark"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'user_settings'</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>instellingen<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li><strong>Van String naar Object (om te gebruiken):</strong></li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> data <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'user_settings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> object <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>object<span class="token punctuation">.</span>naam<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: Jan</span>
+</code></pre>
+<h3 id="3.-het-uiterlijk-aanpassen-(thema's)">3. Het uiterlijk aanpassen (Thema's)</h3>
+<p>Om de kleuren van de pagina aan te passen, kun je CSS-classes aan- of uitzetten op de <code>body</code>.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Verwijder eerst alle thema-opties</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'light'</span><span class="token punctuation">,</span> <span class="token string">'dark'</span><span class="token punctuation">,</span> <span class="token string">'ocean'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Voeg het gekozen thema toe</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'dark'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<h3 id="de-f12-check">De F12-check</h3>
+<p>Je kunt precies zien wat je doet zonder dat je de code hoeft te vertrouwen:</p>
+<ol>
+<li>Druk op <strong>F12</strong> in de browser.</li>
+<li>Ga naar het tabblad <strong>Application</strong> (soms achter een <code>&gt;&gt;</code> pijltje).</li>
+<li>Klik links op <strong>Local Storage</strong>.</li>
+<li>Zie je jouw 'sleutels' en 'waarden' verschijnen terwijl je op Opslaan klikt? Dan zit je goed!</li>
+</ol>
+<h2 id="opdrachtbestanden">Opdrachtbestanden</h2>
+<ul>
+<li><a href="/edutorial/_assets/js/localstorage.zip">localstorage.zip start</a></li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#the-persistent-dashboard">The Persistent Dashboard</a></li><li><a href="#context">Context</a></li><li><a href="#de-leerdoelen">De Leerdoelen</a></li><li><a href="#hoe-check-je-of-het-werkt%3F">Hoe check je of het werkt?</a></li><li><a href="#uitleg">Uitleg</a></li><li><a href="#opdrachtbestanden">Opdrachtbestanden</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/javascript/nodejs-express-en-mysql/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">NodeJS, Express en MySQL</span>
+    </a>
+    
+    
+    <div></div>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

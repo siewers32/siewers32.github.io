@@ -1,0 +1,116 @@
+<h1 id=""></h1>
+<h2 id="migrations">Migrations</h2>
+<p>In het voorbeeld met movies en ratings is de rating-tabel een pivot-table. Een movie kan meerdere keren een rating ontvangen van een user en een user kan op zijn beurt meerdere movies een rating geven.
+In de pivot-table 'ratings' wordt dit bijgehouden. Aangezien een user maar 1 keer dezelfde film een rating kan geven wordt de primaire sleutel voor de ratings-table een combinatie van het 'id' van de 'movie' en het 'id' van de 'user'.
+Eerst maak je een migration-file</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>migration create_ratings_table
+</code></pre>
+<p>Van de gecombineerde primaire sleutel wordt opgebouwd uit 'movie_id' en 'user_id'. Beide velden zijn ook nog eens vreemde sleutel van het 'id' in resp. de 'movie' en de user 'tabel'. In de migration moeten de volgende stappen worden genomen:</p>
+<ul>
+<li>Aanmaken van 'user_id' en 'movie_id' als 'unsigned bigInteger'.</li>
+<li>Beide velden combineren tot 1 primaire sleutel</li>
+<li>Relaties maken de 'user' en 'movie' tabel</li>
+</ul>
+<p>De up-methode voor deze migration ziet er nu zo uit:</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Schema</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'ratings'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Blueprint</span> <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">unsignedbigInteger</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'movie_id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">unsignedbigInteger</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'user_id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">primary</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'movie_id'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'user_id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">foreign</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'user_id'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">references</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'id'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">foreign</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'movie_id'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">references</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'id'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'movies'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">smallinteger</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'rating'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h2 id="seeders">Seeders</h2>
+<p>Nu de tabellen zijn gecreëerd hebben we nog een aantal records nodig om straks mee te kunnen testen.
+Laravel biedt hiervoor de mogelijkheid om 'factories' en 'seeders' aan te maken. Mapjes voor deze bestanden vind je in <code>databases</code>.
+Laravel kan gebruik maken van een <code>faker</code>. Dit is een library die automatisch fake-data kan genereren. In dit geval willen we graag fake-movies aanmaken.
+Hiervoor moeten we een faker-library installeren.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">composer</span> require xylis/faker-cinema-providers</code></pre>
+<p>Vervolgens maken we een <code>MovieFactory</code> met</p>
+<pre class="language-shell"><code class="language-shell">php artisan make:factory MovieFactory</code></pre>
+<p>Met de MovieFactory in combinatie met Faker kun je een fake movie maken....</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">definition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">array</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$faker</span> <span class="token operator">=</span> <span class="token class-name class-name-fully-qualified static-context"><span class="token punctuation">\</span>Faker<span class="token punctuation">\</span>Factory</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$faker</span><span class="token operator">-></span><span class="token function">addProvider</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FakeMovie</span><span class="token punctuation">(</span><span class="token variable">$faker</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token string single-quoted-string">'title'</span> <span class="token operator">=></span> <span class="token variable">$faker</span><span class="token operator">-></span><span class="token property">movie</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'year'</span> <span class="token operator">=></span> <span class="token function">random_int</span><span class="token punctuation">(</span><span class="token number">1975</span><span class="token punctuation">,</span> <span class="token number">2022</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>De <code>MovieFactory</code> produceert maar 1 movie, maar met een seeder kunnen we er meer maken...<br>
+Creeër een MovieSeeder-class met <code>php artisan</code></p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>seeder MovieSeeder</code></pre>
+<p>Vul de <code>MovieSeeder</code> aan met onderstaande code....</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>Movie</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">MovieSeeder</span> <span class="token keyword">extends</span> <span class="token class-name">Seeder</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Run the database seeds.
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Movie</span><span class="token operator">::</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Hetzelfde kun je doen om een aantal test-gebruikers toe te voegen....</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>factory UserFactory</code></pre>
+<p>Dit is de factory om 1 user te maken...</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">definition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">array</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token string single-quoted-string">'name'</span> <span class="token operator">=></span> <span class="token function">fake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'email'</span> <span class="token operator">=></span> <span class="token function">fake</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">unique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">safeEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'email_verified_at'</span> <span class="token operator">=></span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'password'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'</span><span class="token punctuation">,</span> <span class="token comment">// password</span>
+            <span class="token string single-quoted-string">'remember_token'</span> <span class="token operator">=></span> <span class="token class-name static-context">Str</span><span class="token operator">::</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<pre class="language-shell"><code class="language-shell">php artisan make:seeder UserSeeder</code></pre>
+<p>Maak 10 users aan op basis van de <code>UserFactory</code></p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">User</span><span class="token operator">::</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>En nu de ratings. Ook hiervoor kun je een seeder maken. Je moet er alleen rekening mee houden dat je geen ratings aanmaakt van users of movies die niet bestaan. In dit geval is er voor gekozen om alle movies door een gebruiker een random rating te laten geven.</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>seeder RatingSeeder</code></pre>
+<pre class="language-php"><code class="language-php"><span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>Movie</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>User</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>Rating</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">RatingSeeder</span> <span class="token keyword">extends</span> <span class="token class-name">Seeder</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$movies</span> <span class="token operator">=</span> <span class="token class-name static-context">Movie</span><span class="token operator">::</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$users</span> <span class="token operator">=</span> <span class="token class-name static-context">User</span><span class="token operator">::</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$movies</span> <span class="token keyword">as</span> <span class="token variable">$movie</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token variable">$rating</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rating</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token variable">$rating</span><span class="token operator">-></span><span class="token property">user_id</span> <span class="token operator">=</span> <span class="token variable">$user</span><span class="token operator">-></span><span class="token property">id</span><span class="token punctuation">;</span>
+                <span class="token variable">$rating</span><span class="token operator">-></span><span class="token property">movie_id</span> <span class="token operator">=</span> <span class="token variable">$movie</span><span class="token operator">-></span><span class="token property">id</span><span class="token punctuation">;</span>
+                <span class="token variable">$rating</span><span class="token operator">-></span><span class="token property">rating</span> <span class="token operator">=</span> <span class="token function">random_int</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token variable">$rating</span><span class="token operator">-></span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Om de seeders hun werk te laten doen moeten ze worden aangeroepen vanuit <code>DatabaseSeeder</code></p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token class-name static-context">MovieSeeder</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name static-context">UserSeeder</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name static-context">RatingSeeder</span><span class="token operator">::</span><span class="token keyword">class</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>En dan de migration uitvoeren om oude tabellen te verwijderen en een <code>fresh</code> installatie uit te laten voeren van de tabellen in de database.
+Met<code>--seed</code> wordt <code>DatabaseSeeder</code> aangeroepen om alle gegevens toe te voegen aan de tabellen.</p>
+<pre class="language-php"><code class="language-php">php artisan migrate<span class="token punctuation">:</span>fresh <span class="token operator">--</span>seed</code></pre>

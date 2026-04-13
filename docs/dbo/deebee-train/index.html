@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | DeeBee Train</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbo/dbo-ch080.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+
+<a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+
+<a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+
+<a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+
+<a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+
+<a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+
+<a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+
+<a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+
+<a class="page-link" href="/edutorial/dbo/deebee-train/" aria-current="page" data-state="active">DeeBee Train</a>
+
+<a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+
+<a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+    
+    <a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+    
+    <a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+    
+    <a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+    
+    <a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+    
+    <a class="page-link" href="/edutorial/dbo/deebee-train/" aria-current="page" data-state="active">DeeBee Train</a>
+    
+    <a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+    
+    <a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+    
+</div>
+
+            <h1 id="database-ontwerp">Database ontwerp</h1>
+<h2 id="deebee-train">DeeBee Train</h2>
+<h2 id="database-trainingcentre">Database trainingcentre</h2>
+<p><strong>DeebeeTrain trainingen</strong><br>
+Voor een groot bedrijf (DeebeeTrain) moet worden vastgelegd welke cursussen allemaal worden aangeboden aan eigen medewerkers en wie welke cursus wanneer volgt. Het bedrijf heeft een aantal trainers in dienst die bijvoorbeeld projectmanagementcursussen aanbieden aan de andere medewerkers. Ook zijn er cursussen op het gebied van software engineering en databases.
+Het bedrijf kent een aantal afdelingen en iedere afdeling wordt geleid door een afdelingshoofd. Het afdelingshoofd is één van de medewerkers op de afdeling. Medewerkers hebben een chef. Een chef kan meerdere medewerkers onder zich hebben. Een medewerker werkt altijd maar op 1 afdeling.
+Een cursus wordt op meerdere momenten/datums uitgevoerd. De cursus wordt altijd uitgevoerd door een medewerker. Een medewerker kan als docent meerdere cursussen uitvoeren. Het kan ook zo zijn dat een cursus op verschillende momenten door verschillende medewerkers wordt uitgevoerd.
+Alle medewerkers kunnen zich inschrijven voor cursussen. Je geeft dan altijd aan welke cursus je op welk moment wilt volgen. Na afloop van een cursus vindt een evaluatie plaats. Een cursist geeft de desbetreffende cursus een aantal sterren: 1 is het laagst, 5 is het hoogst.</p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_HQCqY71Jwu8odX7WpPhj1g">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#deebee-train">DeeBee Train</a></li><li><a href="#database-trainingcentre">Database trainingcentre</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbo/reminder/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Reminder</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbo/voorbeelden/">
+        <span class="title">Voorbeelden</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

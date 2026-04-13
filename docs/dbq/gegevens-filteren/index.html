@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Gegevens filteren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch35.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/" aria-current="page" data-state="active">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/" aria-current="page" data-state="active">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="gegevens-filteren">Gegevens filteren</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/9_5Ey_3oi30">
+        </iframe>
+    </div>
+<p>Stel dat je niet alle records uit een tabel wil opvragen maar je wilt gegevens filteren.<br>
+In onderstaand voorbeeld worden alleen de kolommen <code>doc_naam</code> en <code>telefoon</code> weergegeven uit de tabel docent. Met <code>where</code> worden de gegevens gefilterd. De data uit de kolom <code>doc_naam</code> moet overeenkomen met de tekst 'Witlok'. Omdat het om tekst gaat, moet 'Witlok' tussen aanhalingstekens worden geplaatst.</p>
+<pre class="language-sql"><code class="language-sql"> <span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> doc_naam <span class="token operator">=</span> <span class="token string">'Witlok'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> Witlok   <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span></code></pre>
+<p>Filteren op plaatsnaam:</p>
+<pre class="language-sql"><code class="language-sql"> <span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> plaats <span class="token operator">=</span> <span class="token string">'Oosterhout'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> Witlok   <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters   <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span></code></pre>
+<h2 id="like">LIKE</h2>
+<p>Zowel Peters al Witlok wonen in Oosterhout!</p>
+<p>Er kan ook gefilterd worden op een deel van de data. Stel dat alle namen en telefoonnumers van docenten uit plaatsen die beginnen met de letter 'B' moeten worden weergegeven. Dan kan dat door weer gebruik te maken van <code>where</code> en de operator <code>like</code>.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> plaats<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> plaats <span class="token operator">like</span> <span class="token string">'B%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> plaats <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> Breda  <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers    <span class="token operator">|</span> Bavel  <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> Mol        <span class="token operator">|</span> Breda  <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+</code></pre>
+<p>Met bovenstaande query worden de docenten uit 'Bavel' en 'Breda' weergegeven.
+Het '%'-tekentje in de query staat voor een 'wildcard'. Je kunt voor een %-teken iedere reeks van karakters in de plaats zetten. Zo moet een plaats in ieder geval beginnen met de letter 'B', maar maakt het niet uit welke karakters daar nog achteraan komen.</p>
+<h2 id="filters-combineren">Filters combineren</h2>
+<p>Het is ook mogelijk om op meerdere criteria te filteren.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> plaats<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> plaats <span class="token operator">=</span> <span class="token string">'Bavel'</span> <span class="token operator">or</span> plaats <span class="token operator">=</span> <span class="token string">'Oosterhout'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+------------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> plaats     <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+------------+</span>
+<span class="token operator">|</span> Witlok   <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters   <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers  <span class="token operator">|</span> Bavel      <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+------------+</span></code></pre>
+<p>In <code>where plaats = 'Bavel' or plaats = 'Oosterhout'</code> uit bovenstaand voorbeeld worden alle docenten getoond die wonen in Bavel <strong>of</strong> Oosterhout. Beide plaatsen worden in het overzicht getoond.</p>
+<p>Je kunt de criteria ook aanscherpen zodat data aan meerdere voorwaarden moet voldoen.
+Hieronder worden alle docenten getoond waarvan de naam eindigt op 'rs' <strong>en</strong> de plaats begint met een 'B'. Met <code>where doc_naam like '%rs' and plaats like 'B%'</code> gelden beide voorwaarden alleen voor Hooymayers en Sengers!</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> plaats<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> doc_naam <span class="token operator">like</span> <span class="token string">'%rs'</span> <span class="token operator">and</span> plaats <span class="token operator">like</span> <span class="token string">'B%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> plaats <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> Breda  <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers    <span class="token operator">|</span> Bavel  <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span></code></pre>
+<h2 id="is-null">IS NULL</h2>
+<p>Er kan ook gefilterd worden op velden die leeg zijn. Sommige docenten hebben geen telefoon. Om te bepalen wie dat zijn kan de volgende query worden gebruikt:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> telefoon <span class="token operator">is</span> <span class="token boolean">null</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+----------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> telefoon <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+----------+</span>
+<span class="token operator">|</span> Sengers  <span class="token operator">|</span> <span class="token boolean">NULL</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+----------+</span></code></pre>
+<p>Met <code>is null</code> vind je alle lege velden.</p>
+<p>De omgekeerde select kan ook handig zijn. In onderstaand voorbeeld worden alle docenten met een telefoon weergegeven:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> <span class="token operator">not</span> telefoon <span class="token operator">is</span> <span class="token boolean">null</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> Witlok     <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Grond      <span class="token operator">|</span> <span class="token number">013</span><span class="token operator">-</span><span class="token number">426786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters     <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Mol        <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+</code></pre>
+<p>Met <code>not</code> voor de veldnaam-operator-waarde (<code>telefoon is null</code>) wordt de omgekeerde selectie getoond.</p>
+<h2 id="distinct">Distinct</h2>
+<p>Als je een overzicht wilt opvragen van de verschillende woonplaatsen van de cursisten dan kun je de volgende query gebruiken:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> plaats <span class="token keyword">from</span> cursist<span class="token punctuation">;</span></code></pre>
+<pre class="language-shell"><code class="language-shell">+------------+
+<span class="token operator">|</span> plaats     <span class="token operator">|</span>
++------------+
+<span class="token operator">|</span> Made       <span class="token operator">|</span>
+<span class="token operator">|</span> Oosterhout <span class="token operator">|</span>
+<span class="token operator">|</span> Goirle     <span class="token operator">|</span>
+<span class="token operator">|</span> Breda      <span class="token operator">|</span>
+<span class="token operator">|</span> Dronten    <span class="token operator">|</span>
+<span class="token operator">|</span> Dronten    <span class="token operator">|</span>
++------------+</code></pre>
+<p>Zoals je ziet krijg je ook dubbele waarden. Er zijn meerdere cursisten die uit Dronten komen. Je kunt alleen unieke waarden opvragen door de dubbele waarnden te filteren met <code>distinct</code>.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> plaats <span class="token keyword">from</span> cursist<span class="token punctuation">;</span></code></pre>
+<pre class="language-shell"><code class="language-shell">+------------+
+<span class="token operator">|</span> plaats     <span class="token operator">|</span>
++------------+
+<span class="token operator">|</span> Made       <span class="token operator">|</span>
+<span class="token operator">|</span> Oosterhout <span class="token operator">|</span>
+<span class="token operator">|</span> Goirle     <span class="token operator">|</span>
+<span class="token operator">|</span> Breda      <span class="token operator">|</span>
+<span class="token operator">|</span> Dronten    <span class="token operator">|</span>
++------------+</code></pre>
+<p>Dronten komt nog maar 1 keer voor in de uitvoer.</p>
+<h2 id="oefeningen">Oefeningen</h2>
+<ul>
+<li>Geef de query voor een overzicht van de naam en roepnaam van alle cursisten die in Oosterhout wonen.</li>
+<li>Geef de query voor een overzicht van het cursistnummer en de roepnaam van alle cursisten die niet in Oosterhout wonen.</li>
+<li>Geef de query voor een overzicht van alle cursisten die vrouw zijn.</li>
+<li>Geef de query voor een overzicht van alle cursisten die niet man zijn. (dit is een andere query dan de vorige vraag, maar met hetzelfde resultaat)</li>
+<li>Geef de query voor een overzicht van alle cursisten die in Breda wonen en vrouw zijn.</li>
+<li>Geef de query voor een overzicht van alle cursisten die in Oosterhout of Made wonen.</li>
+<li>Geef de query voor een overzicht van alle plaatsen waar cursussen worden gegeven.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#gegevens-filteren">Gegevens filteren</a></li><li><a href="#like">LIKE</a></li><li><a href="#filters-combineren">Filters combineren</a></li><li><a href="#is-null">IS NULL</a></li><li><a href="#distinct">Distinct</a></li><li><a href="#oefeningen">Oefeningen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/eenvoudige-queries/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Eenvoudige queries</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/crud/">
+        <span class="title">CRUD</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

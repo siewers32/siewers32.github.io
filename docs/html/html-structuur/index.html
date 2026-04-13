@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | HTML structuur</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/html/html-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+
+<a class="page-link" href="/edutorial/html/html-structuur/" aria-current="page" data-state="active">HTML structuur</a>
+
+<a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+
+<a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+
+<a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+
+<a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+
+<a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+
+<a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+
+<a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+
+<a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+    
+    <a class="page-link" href="/edutorial/html/html-structuur/" aria-current="page" data-state="active">HTML structuur</a>
+    
+    <a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+    
+    <a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+    
+    <a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+    
+    <a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+    
+    <a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+    
+    <a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+    
+    <a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+    
+    <a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+    
+</div>
+
+            <h1 id="html-5">HTML 5</h1>
+<h2 id="html-structuur">HTML structuur</h2>
+<p>Als je het html-bestand in je browser kon openen, dan heb je gezien dat je browser verschillende lettertypen en lettergroottes weergeeft.
+HTML-code beschrijft op een logische manier wat de inhoud voor moet stellen. Een h1 is een heading, dus het gaat om de titel van een tekst.
+Een p is een paragraaf en beschrijft een paragraaf met tekst. Er zijn nog veel meer tags.
+Je kunt alle tags met uitleg vinden op <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN webdocs van Mozilla</a> of op <a href="https://www.w3schools.com/html/">W3 Schools</a></p>
+<pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span></code></pre>
+<p>Dit vertelt de browser welke versie of type HTML code er is gebruikt.
+De browser kan zo bepalen hoe de code omgezet moet worden naar een pagina.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>Met de HTML-tag wordt aangegeven dat de uit te voeren HTML-code hier begint.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>Onderaan zie je dat de code wordt afgesloten met een / en de naam van de tag.
+Alle HTML code staat tussen de &lt;html&gt; en de &lt;/html&gt; tags.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Titel van de pagina<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>In de head wordt nog meer informatie gegeven over de pagina.
+Bijvoorbeeld de titel zoals die in de titelbalk of tab van het venster verschijnt.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>>Dit is een heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Dit is een paragraaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<p>De body-tag bepaalt wat er in je browser-venster wordt getoond.
+Alle elementen die binnen de body-tag staan worden gepresenteerd in de browser.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Dit is een heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Dit is een paragraaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Deze code zorgt ervoor dat er twee regels tekst worden weergegeven. De heading is de grote tekst, de paragraaf is kleinere tekst.</p>
+<h2 id="opbouw-van-een-html-pagina">Opbouw van een HTML pagina</h2>
+<p>Zoals je ziet bestaat een HTML-pagina uit tags. Bijna alle tags hebben een openingstag (bijv. <title>) en een sluitingstag (</title>).
+Er zijn wel eens uitzonderingen, maar 95% van HTML werkt op die manier.
+Je kunt ook zien dat je binnen de html-tags ook weer andere tags kunt gebruiken. Bijvoorbeeld de head-tags. Binnen de head-tags kun je ook weer tags gebruiken.
+Dit wordt nesting genoemd.
+Dit kan bijvoorbeeld:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>Een beetje tekst<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Maar dit kan niet....</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Een beetje tekst<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>In bovenstaand voorbeeld zijn de tags niet goed genest!</p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/6E7GBZAtcos">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#html-structuur">HTML structuur</a></li><li><a href="#opbouw-van-een-html-pagina">Opbouw van een HTML pagina</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/html/starten-met-html/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Starten met HTML</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/html/veel-voorkomende-tags/">
+        <span class="title">Veel voorkomende tags</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

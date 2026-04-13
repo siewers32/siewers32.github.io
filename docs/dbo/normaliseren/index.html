@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Normaliseren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbo/dbo-ch040.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+
+<a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+
+<a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+
+<a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+
+<a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+
+<a class="page-link" href="/edutorial/dbo/normaliseren/" aria-current="page" data-state="active">Normaliseren</a>
+
+<a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+
+<a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+
+<a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+
+<a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+
+<a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+    
+    <a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+    
+    <a class="page-link" href="/edutorial/dbo/normaliseren/" aria-current="page" data-state="active">Normaliseren</a>
+    
+    <a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+    
+    <a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+    
+    <a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+    
+    <a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+    
+    <a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+    
+</div>
+
+            <h1 id="database-ontwerp">Database ontwerp</h1>
+<h2 id="normaliseren">Normaliseren</h2>
+<h3 id="wat-is-het">Wat is het</h3>
+<p>Normaliseren is het proces waarbij je een relationeel model ontwerpt. Je bepaalt welke gegevens worden opgeslagen, welke sleutels nodig zijn en hoe relaties tussen de verschillende tabellen worden gelegd.</p>
+<h2 id="normaliseren-1">Normaliseren</h2>
+<ul>
+<li>Inventariseer welke gegevens worden opgeslagen
+<ul>
+<li>Wel elementaire gegevens opslaan</li>
+<li>Geen procesgegevens. Dit zijn gegevens die je kunt berekenen. Bijvoorbeeld de totaalprijs van een bestelling</li>
+<li>Geen vaste gegevens. Dit zijn gegevens die niet veranderen. Bijvoorbeeld de naam 'Wehkamp' voor de database achter de website van 'Wehkamp'.</li>
+</ul>
+</li>
+<li>Bepaal welke gegevens een relatie met elkaar hebben
+<ul>
+<li>Welke gegevens horen bij elkaar. Bijvoorbeeld persoonsgegevens zoals voornaam, achternaam, adres. Deze gegevens horen bij 1 persoon.</li>
+<li>Geef een groep gegevens een sleutel</li>
+<li>Welke gegevens hebben een relatie met elkaar en wat voor relatie is dat dan. Een-op-meer of meer-op-meer.</li>
+</ul>
+</li>
+</ul>
+<h2 id="een-voorbeeld">Een voorbeeld</h2>
+<p>Een winkel in sportartikelen gaat een webshop beginnen. Welke gegevens zijn nodig om producten weer te geven en klanten bestellingen te laten doen.</p>
+<p><strong>Klanten</strong><br>
+<u style="text-decoration-style:double;">id</u>, voornaam, tussenvoegsel, achternaam, email, telefoon</p>
+<p><strong>Producten</strong><br>
+<u style="text-decoration-style:double;">id</u>, leverancier, omschrijving, prijs</p>
+<p><strong>Bestelling</strong><br>
+<u style="text-decoration-style:double;">id</u>, <u>klant-id</u>, datum</p>
+<p><strong>Bestelregel</strong><br>
+<u style="text-decoration-style:double;">bestelling_id</u>, <u style="text-decoration-style:double;">product_id</u>, aantal</p>
+<h2 id="normaalvormen">Normaalvormen</h2>
+<p>Download hier het <a href="/edutorial/_assets/dbo/normaliseren_voorbeeld.pdf">voorbeeld van een orderformulier van sportpaleis 'Snel, dat wel'</a></p>
+<h4 id="0e-normaalvorm">0e normaalvorm</h4>
+<ul>
+<li>Bepaal welke gegevens opgeslagen moeten worden in de database:
+<ul>
+<li>Elementaire gegevens opslaan</li>
+<li>Berekende gegevens niet opslaan</li>
+<li>Vaste gegevens niet opslaan.</li>
+</ul>
+</li>
+<li>Geef de groep een sleutel</li>
+</ul>
+<div class="html">
+  <div style="width:100%;display:flex;justify-content: space-between;gap:20px">
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      Ordernummer<br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      Artikelnummer<br>
+      Artikel<br>
+      Prijs<br>
+      Aantal<br>
+      Totaalprijs<br>
+    </div>
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>0e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      Artikelnummer<br>
+      Artikel<br>
+      Prijs<br>
+      Aantal<br>
+    </div>
+  </div>
+</div>
+<h4 id="1e-normaalvorm">1e normaalvorm</h4>
+<ul>
+<li>Verzamel repeterende groepen en verwijder ze uit de oorspronkelijke groep</li>
+<li>Voeg de sleutel uit de oorspronkelijke groep toe aan de nieuwe groepen</li>
+<li>Geef de nieuwe groepen een sleutel</li>
+</ul>
+<div class="html">
+  <div style="width:100%;display:flex;justify-content: space-between;gap:20px">
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>0e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      Artikelnummer<br>
+      Artikel<br>
+      Prijs<br>
+      Aantal<br>
+    </div>
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>1e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      <br>
+      <u>Ordernummer</u><br>
+      <u>Artikelnummer</u><br>
+      Artikel<br>
+      Prijs<br>
+      Aantal<br>
+    </div>
+  </div>
+</div>
+<h4 id="2e-normaalvorm">2e Normaalvorm</h4>
+<ul>
+<li>Plaats de attributen die functioneel afhankelijk zijn van slechts een deel van de sleutel in een nieuwe groep samen met het attribuut waarvan zij wel functioneel afhankelijk zijn.</li>
+<li>Geef de nieuwe groep een sleutel.</li>
+</ul>
+<div class="html">
+  <div style="width:100%;display:flex;justify-content: space-between;gap:20px">
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>1e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      <br>
+      <u>Ordernummer</u><br>
+      <u>Artikelnummer</u><br>
+      Artikel<br>
+      Prijs<br>
+      Aantal<br>
+    </div>
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>2e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      <br>
+      <u>Ordernummer</u><br>
+      <u>Artikelnummer</u><br>
+      Aantal<br>
+      <br>
+      <u>Artikelnummer</u><br>
+      Artikel<br>
+      Prijs<br>
+    </div>
+  </div>
+</div>
+<h4 id="3e-normaalvorm">3e Normaalvorm</h4>
+<ul>
+<li>Plaats alle attributen die functioneel afhankelijk zijn van niet sleutelvelden in een nieuwe groep, samen met het attribuut waar ze van afhankelijk zijn.</li>
+<li>Geef deze nieuwe groep een sleutel</li>
+<li>Verwijder al deze attributen uit de oorspronkelijke groep, behalve het attribuut waar ze van afhankelijk zijn.</li>
+</ul>
+<div class="html">
+  <div style="width:100%;display:flex;justify-content: space-between;gap:20px">
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>2e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      Klantnummer<br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+      <br>
+      <u>Ordernummer</u><br>
+      <u>Artikelnummer</u><br>
+      Aantal<br>
+      <br>
+      <u>Artikelnummer</u><br>
+      Artikel<br>
+      Prijs<br>
+    </div>
+    <div style="padding:10px;min-height:100px;flex-grow:1;background-color: white">
+      <b>3e normaalvorm</b><br>
+      <u>Ordernummer</u><br>
+      Orderdatum<br>
+      <u style="text-decoration-style: dashed">Klantnummer</u><br>
+      <br>
+      <u style="text-decoration-style: double">Ordernummer</u><br>
+      <u style="text-decoration-style: double">Artikelnummer</u><br>
+      Aantal<br>
+      <br>
+      <u>Artikelnummer</u><br>
+      Artikel<br>
+      Prijs<br>
+      <br>
+      <u>Klantnummer</u><br>
+      Klantnaam<br>
+      Adres<br>
+      Plaats<br>
+    </div>
+  </div>
+</div>
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#normaliseren">Normaliseren</a></li><li><a href="#normaliseren-1">Normaliseren</a></li><li><a href="#een-voorbeeld">Een voorbeeld</a></li><li><a href="#normaalvormen">Normaalvormen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbo/relationeel-model/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Relationeel model</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbo/bloemenzaak/">
+        <span class="title">Bloemenzaak</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Migrations</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/laravel/laravel-ch35.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+
+<a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+
+<a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+
+<a class="page-link" href="/edutorial/laravel/views/">Views</a>
+
+<a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+
+<a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+
+<a class="page-link" href="/edutorial/laravel/migrations/" aria-current="page" data-state="active">Migrations</a>
+
+<a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+    
+    <a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+    
+    <a class="page-link" href="/edutorial/laravel/views/">Views</a>
+    
+    <a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+    
+    <a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/migrations/" aria-current="page" data-state="active">Migrations</a>
+    
+    <a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+    
+</div>
+
+            <h1 id="laravel">Laravel</h1>
+<h2 id="migrations">Migrations</h2>
+<p>In het onderdeel Authenticatie heb je gezien hoe <code>Breeze</code> gebruik maakt van gegevens uit een database. Het creeëren van tabellen en het toevoegen van gegevens kun je doen met migrations.</p>
+<p>In de map database vind je de volgende bestanden:</p>
+<pre class="language-shell"><code class="language-shell">database
+<span class="token operator">|</span>-- factories
+   <span class="token operator">|</span>-- <span class="token punctuation">..</span>.
+<span class="token operator">|</span>-- seeders
+   <span class="token operator">|</span>-- <span class="token punctuation">..</span>.
+<span class="token operator">|</span>-- migrations
+   <span class="token operator">|</span>-- 2014_10_12_000000_create_users_table.php
+   <span class="token operator">|</span>-- 2014_10_12_100000_create_password_reset_tokens_table.php
+   <span class="token operator">|</span>-- 2019_08_19_000000_create_failed_jobs_table.php
+   <span class="token operator">|</span>-- 2019_12_14_000001_create_personal_access_tokens_table.php</code></pre>
+<p>Deze bestanden bevatten code om de verschillende tabellen aan te maken die nodig zijn voor authenticatie voor zowel webapplicaties als API's.
+Hieronder een deel van de inhoud van 2014_10_12_000000_create_users_table.php</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Schema</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'users'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Blueprint</span> <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token keyword type-declaration">string</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token keyword type-declaration">string</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'email'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">unique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamp</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'email_verified_at'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">nullable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token keyword type-declaration">string</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">rememberToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>De <code>up()</code> functie bevat de code om een tabel 'users' aan te maken. In het <code>$table</code>-object wordt aangegeven welke velden er zijn en van welk type de velden zijn.</p>
+<p>Iedere tabel die wordt gemaakt met migrations bevat <code>timestamps()</code>. Dit zijn 2 velden waarmee de datum van aanmaak en de datum van wijziging van een record in een tabel wordt opgeslagen.</p>
+<p>Om zelf een nieuwe tabel aan te maken gebruik je het volgende commando:</p>
+<pre class="language-shell"><code class="language-shell">php artisan make:migration create_menu_items</code></pre>
+<p>Er wordt een nieuwe migration aangemaakt</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Schema</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'menu_items'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Blueprint</span> <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>Om menu-items op te kunnen slaan zijn 2 velden nodig. Een naam van het menu-item en een categorie-id (verderop wordt hier gebruik van gemaakt).
+De <code>up()</code>-functie ziet er nu zo uit:</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword return-type">void</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Schema</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'menu_items'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Blueprint</span> <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">integer</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'category_id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token keyword type-declaration">string</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>Om de nieuwe tabel in de database aan te maken voer je het volgende commando uit:</p>
+<pre class="language-shell"><code class="language-shell">php artisan migrate</code></pre>
+<p>De up-functie wordt uitgevoerd en de tabel wordt aangemaakt.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#migrations">Migrations</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/laravel/authenticatie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Authenticatie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/laravel/formulier/">
+        <span class="title">Formulier</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

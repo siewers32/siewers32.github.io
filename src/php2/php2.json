@@ -1,0 +1,6 @@
+{
+  "course-title": "PHP Object georiënteerd",
+  "layout": "course.njk",
+  "tags": "php2",
+  "permalink": "/php2/{{ title | slug }}/{{ page.index }}"
+}

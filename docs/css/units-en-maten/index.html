@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Units en maten</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/css/css-ch050.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+
+<a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+
+<a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+
+<a class="page-link" href="/edutorial/css/units-en-maten/" aria-current="page" data-state="active">Units en maten</a>
+
+<a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+
+<a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+
+<a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+
+<a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+
+<a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+
+<a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+    
+    <a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+    
+    <a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+    
+    <a class="page-link" href="/edutorial/css/units-en-maten/" aria-current="page" data-state="active">Units en maten</a>
+    
+    <a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+    
+    <a class="page-link" href="/edutorial/css/display-en-position/">Display en position</a>
+    
+    <a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+    
+    <a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+    
+    <a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+    
+    <a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+    
+</div>
+
+            <h1 id="css">CSS</h1>
+<h2 id="units-en-maten">Units en maten</h2>
+<p>Je kunt op meerdere manieren maten definiëren met CSS.
+Je kunt werken met vaste waarden (zoals pixels)
+Je kunt werken met relatieve waarden (zoals een percentage)
+Welke maateenheid je kiest hangt  af van wat je wil bereiken.
+Op het Mozilla Developer Network vind je het complete overzicht over maten en waarden.
+Hieronder heb ik de belangrijkste uitgelicht.</p>
+<p><strong>Vaste waarden</strong><br>
+Er zijn meerdere mogelijkheden, maar vaste waarden worden meestal weergegeven in pixels (px).<br>
+Je beeldscherm is opgebouwd uit kleine puntjes. Een waarde van 1 px komt overeen met 1 punt van je beeldscherm.
+Je zult ook merken dat een 4k beeldscherm een website kleiner weergeeft dan een full HD scherm van dezelfde grootte.
+Bij een 4k scherm staan de beeldpunten dichter bij elkaar.</p>
+<p><strong>Relatieve waarden</strong><br>
+Soms wil je dat elementen vanzelf meeschalen als je bijvoorbeeld een venster groter maakt.<br>
+Hieronder zie je de maateenheden en de relatie die ze hebben met omliggende elementen.</p>
+<table>
+<thead>
+<tr>
+<th>Maateenheid</th>
+<th>Relatief tot..</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>em</td>
+<td>Deze eenheid wordt meestal gebruikt voor lettergrootte. Bij gebruik van em is de lettergrootte relatief aan de lettergrootte van het omliggende element. Je kunt bijvoorbeeld de lettergrootte voor een &lt;div&gt; instellen op 16 pixels. De tekst van een element in die &lt;div&gt; (bijv. &lt;p&gt;) met een waarde van 1 em is zodoende ook 16 pixels. of bij 1.5 em =  1.5 x 16px = 24 px.</td>
+</tr>
+<tr>
+<td>rem</td>
+<td>De rem-eenheid is te vergelijken met em, maar nu is de waarde afhankelijk van een vaste waarde in het root-element.</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Percentage relatief tot omliggende element.</td>
+</tr>
+<tr>
+<td>vw</td>
+<td>1% van de viewport. De viewport is vergelijkbaar met de grootte van het venster</td>
+</tr>
+<tr>
+<td>vh</td>
+<td>1% van de hoogte van de viewport.</td>
+</tr>
+</tbody>
+</table>
+<p>Op codepen kun je uitproberen wat onderstaande code doet...</p>
+<pre class="language-html"><code class="language-html">	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+		<span class="token selector">:root</span> <span class="token punctuation">{</span>
+			<span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	
+		<span class="token selector">.px,
+		.vw,
+		.em</span> <span class="token punctuation">{</span>
+			<span class="token property">background-color</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+			<span class="token property">border</span><span class="token punctuation">:</span> 1px solid blue<span class="token punctuation">;</span>
+			<span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	
+		<span class="token selector">.px</span> <span class="token punctuation">{</span>
+			<span class="token property">font-size</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	
+		<span class="token selector">.vw</span> <span class="token punctuation">{</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 10vw<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	
+		<span class="token selector">.em</span> <span class="token punctuation">{</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>    
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>
+      Maten en units in css
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Deze is 10vw breed.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>em<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Deze is 10em breed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>deze is 200px breed en de tekst is 2rem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#units-en-maten">Units en maten</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/css/boxmodel/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Boxmodel</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/css/fonts/">
+        <span class="title">Fonts</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Loops</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch060.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/" aria-current="page" data-state="active">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/" aria-current="page" data-state="active">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="loops">Loops</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/4Cscmo5lqJY">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/P2ittuO3MhM">
+        </iframe>
+    </div>
+<p>Wat ga je leren</p>
+<ul>
+<li>Je gaat leren hoe je opdrachten in een herhaal-lus kunt uit laten voeren.</li>
+<li>Je weet hoe je een herhaal-lus met de opdracht 'for' kunt maken</li>
+<li>Je kunt een herhaal-lus maken met de opdracht 'while'.</li>
+<li>Je gaat leren hoe je een array met waarden kunt doorlopen met 'foreach'</li>
+</ul>
+<p>Hieronder zie een voorbeeld van een for-lus. Een for-lus start met het initialiseren van een variabele.</p>
+<ul>
+<li>Tussen de haakjes krijgt de variabele $i de waarde 0.</li>
+<li>Na de eerste ';' wordt een voorwaarde gesteld voor het doorlopen van de lus. $i moet kleinder zijn dan 5 om verder te kunnen.</li>
+<li>Na de tweede ';' wordt de waarde van $i met 1 verhoogd. ($i++ is hetzelfde als $i = $i + 1).</li>
+</ul>
+<p>De code 'echo $i' wordt uitgevoerd zolang $i kleiner is dan 5.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">lus</th>
+<th style="text-align:center">waarde $i</th>
+<th style="text-align:center">conditie</th>
+<th style="text-align:center">output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">$i &lt; 5</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$i &lt; 5</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">$i &lt; 5</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">$i &lt; 5</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">$i &lt; 5</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">$i &lt; 5</td>
+<td style="text-align:center">geen</td>
+</tr>
+<tr>
+<td style="text-align:center">Einde lus</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token variable">$i</span> <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token variable">$i</span><span class="token operator">.</span><span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token delimiter important">?></span></span></code></pre>
+<p>Hetzelfde voorbeeld werkt met een while-lus. Een while-lus heeft wel een conditie, maar het initialiseren en ophogen van een variabele moet je zelf doen!</p>
+<pre class="language-php"><code class="language-php">
+<span class="token variable">$i</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//initialiseren variabele</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//Doe iets...</span>
+    <span class="token variable">$i</span><span class="token operator">++</span> <span class="token comment">//ophogen variabele</span>
+<span class="token punctuation">}</span>
+    </code></pre>
+<p>Arrays kun je met een foreach-lus doorlopen.</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$fruitmand</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string double-quoted-string">"banaan"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"appel"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"citroen"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$fruitmand</span> <span class="token keyword">as</span> <span class="token variable">$fruit</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token variable">$fruit</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+   </code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#loops">Loops</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/tekstbewerkingen/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Tekstbewerkingen</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/formulieren/">
+        <span class="title">Formulieren</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

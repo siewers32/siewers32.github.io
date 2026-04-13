@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Monolithische applicaties</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/laravel/laravel-ch10.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/laravel/monolithische-applicaties/" aria-current="page" data-state="active">Monolithische applicaties</a>
+
+<a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+
+<a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+
+<a class="page-link" href="/edutorial/laravel/views/">Views</a>
+
+<a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+
+<a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+
+<a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+
+<a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/monolithische-applicaties/" aria-current="page" data-state="active">Monolithische applicaties</a>
+    
+    <a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+    
+    <a class="page-link" href="/edutorial/laravel/views/">Views</a>
+    
+    <a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+    
+    <a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+    
+    <a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+    
+</div>
+
+            <h1 id="laravel">Laravel</h1>
+<h2 id="monolithische-applicaties">Monolithische applicaties</h2>
+<h2 id="waar-gaat-deze-cursus-over%3F">Waar gaat deze cursus over?</h2>
+<p>Je kunt het Laravel framework op verschillende manieren inzetten om een webapplicatie te bouwen. In deze cursus volg je de aanpak voor een monolithische applicatie.</p>
+<h2 id="wat-is-een-monolithische-applicatie%3F">Wat is een monolithische applicatie?</h2>
+<p>Monolithische applicaties, zijn applicaties waarbij alle componenten in één enkele eenheid zijn gebouwd, ze hebben hun eigen set voor- en nadelen. Dus zowel de front-end als de back-end maken onderdeel van een en dezelfde applicatie.</p>
+<p><strong>Voordelen:</strong></p>
+<ul>
+<li><strong>Eenvoudige ontwikkeling, testen en implementatie:</strong>  Omdat alles in één codebase zit, zijn de beginfases van ontwikkeling en implementatie vaak eenvoudiger met monolithische applicaties.</li>
+<li><strong>Horizontale schaalbaarheid:</strong> Hoewel vaak gedacht wordt dat monolieten moeilijk te schalen zijn, kunnen ze horizontaal geschaald worden door meerdere kopieën achter een load balancer te draaien.</li>
+<li><strong>Minder cross-cutting concerns:</strong>  Met één codebase zijn er minder zorgen over zaken als logging en prestatiemonitoring die meerdere componenten doorkruisen.</li>
+<li><strong>Verbeterde prestatie:</strong> Componenten in een monoliet delen hetzelfde geheugen, wat de communicatie sneller maakt dan tussen services in een microservices architectuur.</li>
+</ul>
+<p><strong>Nadelen:</strong></p>
+<ul>
+<li><strong>Stijve structuur en sterke componentkoppeling:</strong> Monolieten zijn inherent minder flexibel door hun vaste, lineaire structuur. Dit maakt beheer, schaling en updates op lange termijn complex.</li>
+<li><strong>Gevoeligheid voor fouten:</strong> Een fout in één module kan de hele applicatie onbruikbaar maken door de sterke afhankelijkheid tussen componenten.</li>
+<li><strong>Omslachtige updates:</strong> Elke update vereist een herimplementatie van de volledige applicatie, wat tijdrovend kan zijn.</li>
+<li><strong>Technologische beperkingen:</strong> Dezelfde technologische stack moet voor de hele applicatie gebruikt worden, waardoor latere aanpassingen kostbaar kunnen zijn.</li>
+</ul>
+<p><strong>Conclusie:</strong></p>
+<p>Hoewel monolithische applicaties voordelen hebben zoals eenvoud in de beginfase, maken de nadelen op het gebied van flexibiliteit, schaalbaarheid en onderhoud ze minder geschikt voor complexe applicaties of snelgroeiende omgevingen.</p>
+<h2 id="wanneer-een-monolithische-applicatie%3F">Wanneer een monolithische applicatie?</h2>
+<p>Hoewel microservices aan populariteit winnen, zijn er nog steeds situaties waarin een monolithische applicatie de juiste keuze is. De bronnen beschrijven verschillende scenario's waarin een monolithische architectuur de voorkeur heeft:</p>
+<p><strong>Wanneer eenvoud en snelheid belangrijk zijn:</strong></p>
+<ul>
+<li><strong>Klein team:</strong> Als u alleen of met een klein team werkt, is de complexiteit van microservices waarschijnlijk niet nodig. Een monolithische applicatie is eenvoudiger te bouwen, testen en implementeren, omdat alles in één codebase zit.</li>
+<li><strong>Eenvoudige applicatie:</strong> Voor kleine applicaties met beperkte eisen aan flexibiliteit en schaalbaarheid is een monolithische aanpak vaak voldoende.</li>
+<li><strong>Snelle lancering:</strong>  Een monoliet helpt u om de oplossing snel te ontwikkelen en te lanceren, waardoor u uw idee sneller kunt valideren en de initiële kosten laag blijven.</li>
+</ul>
+<p><strong>Wanneer microservices-expertise ontbreekt:</strong></p>
+<ul>
+<li><strong>Gebrek aan kennis:</strong> Microservices vereisen veel kennis en ervaring. Zonder de nodige expertise in huis, zullen de voordelen van microservices niet worden gerealiseerd.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#monolithische-applicaties">Monolithische applicaties</a></li><li><a href="#waar-gaat-deze-cursus-over%3F">Waar gaat deze cursus over?</a></li><li><a href="#wat-is-een-monolithische-applicatie%3F">Wat is een monolithische applicatie?</a></li><li><a href="#wanneer-een-monolithische-applicatie%3F">Wanneer een monolithische applicatie?</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/laravel/introductie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Introductie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/laravel/installatie/">
+        <span class="title">Installatie</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

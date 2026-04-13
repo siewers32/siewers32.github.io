@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | RAG</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/ai_engineer/ai_eng-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/ai_engineer/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/software-developer/">Software Developer</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/development-tools/">Development Tools</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/pydantic/">Pydantic</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/api/">API</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/structured-output/">Structured Output</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/streamlit-chatbot/">Streamlit chatbot</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/rag/" aria-current="page" data-state="active">RAG</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/agents/">Agents</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/links/">Links</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/ai_engineer/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/software-developer/">Software Developer</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/development-tools/">Development Tools</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/pydantic/">Pydantic</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/api/">API</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/structured-output/">Structured Output</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/streamlit-chatbot/">Streamlit chatbot</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/rag/" aria-current="page" data-state="active">RAG</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/agents/">Agents</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/links/">Links</a>
+    
+</div>
+
+            <h1 id="ai-engineer">AI-engineer</h1>
+<h2 id="rag">RAG</h2>
+<p>Retrieval augmented generation</p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/hAdEuDBN57g">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/T-D1OfcDW1M">
+        </iframe>
+    </div>
+<p><a href="https://github.com/siewers32/rag">RAG-code in python op github</a></p>
+<h3 id="wat-betekent-retrieval-augmented-generation%3F">Wat betekent Retrieval Augmented Generation?</h3>
+<p>Het is een techniek waarbij een AI extra informatie opzoekt voordat hij een antwoord geeft. Je kunt het vergelijken met een student die een vraag krijgt en eerst even iets opzoekt op internet of in een boek, en daarna pas antwoord geeft.</p>
+<h3 id="stap-voor-stap-uitgelegd">Stap voor stap uitgelegd</h3>
+<h4 id="1.-je-stelt-een-vraag">1. Je stelt een vraag</h4>
+<p>Bijvoorbeeld:<br>
+<em>&quot;Hoe werkt zonne-energie?&quot;</em></p>
+<h4 id="2.-de-ai-gaat-op-zoek-(retrieval)">2. De AI gaat op zoek (retrieval)</h4>
+<p>In plaats van meteen te antwoorden, zoekt de AI eerst naar betrouwbare teksten of documenten waar iets staat over zonne-energie. Dit kunnen dingen zijn als artikelen, websites, of een interne kennisbank.</p>
+<h4 id="3.-ai-leest-en-haalt-informatie-op">3. AI leest en haalt informatie op</h4>
+<p>De AI kiest stukjes tekst die het meest lijken op wat jij vroeg. Bijvoorbeeld een alinea uit een Wikipedia-pagina over zonne-energie.</p>
+<h4 id="4.-de-ai-maakt-een-antwoord-(generation)">4. De AI maakt een antwoord (generation)</h4>
+<p>Nu gebruikt de AI die gevonden informatie om een nieuw antwoord te maken dat goed past bij jouw vraag.</p>
+<h4 id="5.-je-krijgt-een-slimmer-antwoord">5. Je krijgt een slimmer antwoord</h4>
+<p>Omdat de AI eerst informatie heeft opgezocht, krijg je een antwoord dat vaak nauwkeuriger en actueler is dan wanneer de AI het helemaal uit z’n eigen &quot;geheugen&quot; haalt.</p>
+<h3 id="simpele-vergelijking">Simpele vergelijking</h3>
+<ul>
+<li>Zonder RAG: De AI probeert alles te herinneren, zoals een student zonder aantekeningen.</li>
+<li>Met RAG: De AI zoekt het eerst even op, net zoals een student die in zijn boek kijkt voordat hij antwoordt.</li>
+</ul>
+<h3 id="wanneer-wordt-dit-gebruikt%3F">Wanneer wordt dit gebruikt?</h3>
+<ul>
+<li>Bij chatbots van klantenservice</li>
+<li>In zoekmachines met slimme AI-antwoorden</li>
+<li>Voor bedrijven die willen dat AI antwoorden geeft op basis van hun eigen documenten</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#rag">RAG</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/ai_engineer/streamlit-chatbot/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Streamlit chatbot</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/ai_engineer/agents/">
+        <span class="title">Agents</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

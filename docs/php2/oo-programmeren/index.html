@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | OO Programmeren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch10.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/" aria-current="page" data-state="active">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/" aria-current="page" data-state="active">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="oo-programmeren">OO Programmeren</h2>
+<p>OO programmeren is een afkorting voor Objectgeoriënteerd programmeren. Deze vorm van programmeren is erg populair geworden omdat het developers een structuur biedt waardoor het mogelijk is om complexe applicaties beheersbaar te maken. Een ander groot voordeel van objectgeoriënteerd programmeren is dat het de mogelijkheid biedt om op een gestructureerde manier code her te gebruiken.
+Bijna alle php-frameworks zijn gebaseerd op deze aanpak. Niet allemaal, want je ziet dat populaire CMS-frameworks (zoals Wordpress) een objectgeorienteerde aanpak maar deels omarmen.</p>
+<h2 id="wat-is-oo-programmeren">Wat is oo-programmeren</h2>
+<p>De term objectgeoriënteerd (oo) is afgeleid van het gebruik van zgn. 'objecten' in programmeertalen. Een object is vergelijkbaar met andere typen zoals string, int en array. In een object kun je (net als in een array) meerdere eigenschappen opslaan. Daarnaast kun je in een object ook methoden (=functies) opslaan. Een object heeft dus eigenschappen en het kan een aantal dingen.
+Je kunt objecten vergelijken met 'dingen' in de echte wereld. Een 'auto' is een object of een 'fiets'. Een fiets heeft eigenschappen, zoals: kleur en formaat, maar een fiets kan ook van alles: rijden, bellen, remmen, sturen etc.
+Een fiets-object ziet er in php zo uit:</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">Fiets</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$kleur</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$hoogte</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$lengte</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">int</span> <span class="token variable">$snelheid</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">snelheid</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// Deze code wordt uitgevoerd bij iedere nieuwe fiets!</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">rijden</span><span class="token punctuation">(</span><span class="token variable">$km_per_uur</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//code om de fiets te laten rijden..</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">remmen</span><span class="token punctuation">(</span><span class="token variable">$km_per_uur</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//code om de fiets te laten stoppen..</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">snelheidWeergeven</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Je fietst nu "</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">snelheid</span><span class="token operator">.</span> <span class="token string double-quoted-string">" km/uur.&lt;br>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$nieuwe_fiets</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fiets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token property">kleur</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"rood"</span><span class="token punctuation">;</span>
+<span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token property">hoogte</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"120"</span><span class="token punctuation">;</span>
+
+<span class="token comment">//Voila, je hebt een nieuwe fiets!</span></code></pre>
+<p>Je maakt een fiets-object door eerst een 'class' te definiëren. Zo kun je meerdere fietsen maken die dezelfde functionaliteit hebben, maar wel een andere kleur of hoogte.
+Je kunt kijken hoe snel de fiets gaat:</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token function">snelheidWeergeven</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>De fiets gaat in eerste instantie 0 km/per uur.
+Hieronder wordt er voor gezorgd dat de fiets sneller gaat rijden. Eerst wordt de methode rijden() gemaakt...</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function-definition function">rijden</span><span class="token punctuation">(</span><span class="token variable">$km_per_uur</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//$km_per_uur wordt opgetelt bij de snelheid</span>
+    <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">snelheid</span> <span class="token operator">+=</span> <span class="token variable">$km_per_uur</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>De snelheid wordt aangepast met de methode 'rijden()', daarna wordt de snelheid opnieuw weergegeven...</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token function">rijden</span><span class="token punctuation">(</span><span class="token number">34</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token function">snelheidWeergeven</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Output: Je fietst nu 34 km/uur.</span></code></pre>
+<p>De methode om te remmen werkt precies andersom....</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function-definition function">remmen</span><span class="token punctuation">(</span><span class="token variable">$km_per_uur</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//$km_per_uur wordt afgetrokken van de snelheid</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">snelheid</span> <span class="token operator">></span> <span class="token variable">$km_per_uur</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">snelheid</span> <span class="token operator">-=</span> <span class="token variable">$km_per_uur</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">snelheid</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>en dan...</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token function">remmen</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$nieuwe_fiets</span><span class="token operator">-></span><span class="token function">snelheidWeergeven</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Output: Je fietst nu 30 km/uur.</span></code></pre>
+<h2 id="this">This</h2>
+<p>Je ziet dat er geregeld wordt verwezen naar $this-&gt;snelheid. Het key-word $this verwijst naar het object zelf. Naar variabelen die in de klasse worden gedeclareerd kun je refereren door $this te gebruiken.</p>
+<h2 id="opdracht-voor-garagebedrijf-mrwheely">Opdracht voor garagebedrijf MrWheely</h2>
+<p>Voor autobedrijf 'Mr. Wheely' moet een app worden gebouwd waarmee je het aanbod aan occasions op een website kunt bekijken.</p>
+<ul>
+<li>Maak een php-bestand met de naam 'Auto.php'.</li>
+<li>Maak in Auto.php een class Auto.</li>
+<li>Een Auto heeft de volgende eigenschappen:
+<ul>
+<li>string Merk</li>
+<li>string Type</li>
+<li>string Kleur</li>
+<li>int Prijs</li>
+</ul>
+</li>
+<li>Een Auto heeft de volgende methodes:
+<ul>
+<li>Een constructor die 4 variabelen accepteert voor merk, type, kleur en prijs. <code>__constructor($merk, $type, $kleur, $prijs)</code></li>
+<li>In de constructor worden de klasse-variabelen geïnitialiseerd.</li>
+<li>Getter-methodes om de verschillende eigenschappen op te vragen van een auto. (zoals <code>getPrijs()</code>)</li>
+</ul>
+</li>
+<li>Maak een php-bestand met de naam 'AutoOverzicht.php'</li>
+<li>Maak in AutoOverzicht.php een class AutoOverzicht</li>
+<li>Een AutoOverzicht heeft de volgende eigenschappen:
+<ul>
+<li>array Autos</li>
+</ul>
+</li>
+<li>Een AutoOverizcht heeft de methodes
+<ul>
+<li><code>addAuto()</code></li>
+<li><code>getAutoos()</code></li>
+</ul>
+</li>
+</ul>
+<p>Gebruik onderstaande code om een aantal auto's toe te voegen aan een AutoOverzicht.</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$ao</span><span class="token operator">-></span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Auto</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"BMW"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"316"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"rood"</span><span class="token punctuation">,</span> <span class="token number">27500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$ao</span><span class="token operator">-></span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Auto</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Audi"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"A8"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"blauw"</span><span class="token punctuation">,</span> <span class="token number">37000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$ao</span><span class="token operator">-></span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Auto</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Mercedes"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"C200"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"grijs"</span><span class="token punctuation">,</span> <span class="token number">41000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$ao</span><span class="token operator">-></span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Auto</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Ford"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"Mondeo"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"zwart"</span><span class="token punctuation">,</span> <span class="token number">18700</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$ao</span><span class="token operator">-></span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Auto</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Ford"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"Focus"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"paars"</span><span class="token punctuation">,</span> <span class="token number">14300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$ao</span><span class="token operator">-></span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Auto</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Volkswagen"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"Tiguan"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"groen"</span><span class="token punctuation">,</span> <span class="token number">22500</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Voeg nieuwe methoden toe aan de AutoOverzicht-class en/of aan de Auto-class om de onderstaande functionaliteit te realiseren.</p>
+<p><a href="/edutorial/_assets/oop/wheely/index.php">Zie hier een voorbeeld van de website van 'Mr Wheely'</a></p>
+<h2 id="uitleg-en-videoplaylist">Uitleg en videoplaylist</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_FyhyCJ3KZCprpzAaexwEnr">
+        </iframe>
+    </div>
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#oo-programmeren">OO Programmeren</a></li><li><a href="#wat-is-oo-programmeren">Wat is oo-programmeren</a></li><li><a href="#this">This</a></li><li><a href="#opdracht-voor-garagebedrijf-mrwheely">Opdracht voor garagebedrijf MrWheely</a></li><li><a href="#uitleg-en-videoplaylist">Uitleg en videoplaylist</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/werken-met-bestanden/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Werken met bestanden</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/access-modifiers/">
+        <span class="title">Access Modifiers</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

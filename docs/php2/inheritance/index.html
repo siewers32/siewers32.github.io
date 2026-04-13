@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Inheritance</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch14.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/" aria-current="page" data-state="active">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/" aria-current="page" data-state="active">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="inheritance">Inheritance</h2>
+<p>Een eigenschap van een klasse is de mogelijkheid van overerving (= nederlands voor inheritance).
+Overerving kun je toepassen als je objecten hebt die op elkaar lijken en eigenschappen van elkaar kunnen overnemen.
+Neem bijvoorbeeld een applicatie over koeien! We starten met een klasse Koe!
+Een koe heeft 4 poten, hij roept boe en hij eet gras
+Dus:</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">Koe</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">int</span> <span class="token variable">$aantal_poten</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$kleur</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$voer</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$geluid</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">kleur</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"geel met wit"</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"gras"</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">geluid</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"Boe"</span><span class="token punctuation">;</span>        
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string single-quoted-string">'Ik ben een koe met '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span><span class="token operator">.</span> <span class="token string single-quoted-string">' poten,  
+        ik ben grotendeels '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">kleur</span><span class="token operator">.</span><span class="token string single-quoted-string">' en ik lust graag '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span><span class="token operator">.</span><span class="token string double-quoted-string">" en 
+        ik roep "</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">geluid</span><span class="token operator">.</span><span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Toch zijn een bruine koe, en een lakenvel allebei koeien, maar wel van een andere soort.
+Er zijn dus overeenkomsten en een aantal verschillen. De klasse bruine koe overerft het aantal_poten en het geluid, maar het voer van de koe en de kleur verschillen.</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">BruineKoe</span> <span class="token keyword">extends</span> <span class="token class-name">Koe</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword static-context">parent</span><span class="token operator">::</span><span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">kleur</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'bruin'</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'gras en bix'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">LakenVel</span> <span class="token keyword">extends</span> <span class="token class-name">Koe</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword static-context">parent</span><span class="token operator">::</span><span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">kleur</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'zwart met wit'</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'gras'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In de constructor van de bruine koe en de lakenvel wordt met parent::__construct() de constructor van de Koe aangeroepen. Alle koeien hebben 4 poten. In de constructor van Koe worden die 4 poten geïnitialiseerd (= van een beginwaarde voorzien).
+Bij de bruine koe wordt de constructor nog aangevuld met de kleur 'bruin' en het voer 'gras en bix'. Op dezelfde manier wordt de Lakenvel aangepast.</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$bkoe</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BruineKoe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$bkoe</span><span class="token operator">-></span><span class="token function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$lkoe</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LakenVel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$lkoe</span><span class="token operator">-></span><span class="token function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>De volgende teksten worden op het scherm getoond:</p>
+<ul>
+<li>Ik ben een koe met 4 poten, ik ben grotendeels bruin en ik lust graag gras en bix en ik roep Boe.</li>
+<li>Ik ben een koe met 4 poten, ik ben grotendeels zwart met wit en ik lust graag gras en ik roep Boe.</li>
+</ul>
+<h2 id="toets">Toets</h2>
+<p>Schrijf je in op <a href="https://mdl.edutorial.nl">de site</a> en schrijf je in voor de cursus OOPHP.
+Volg <a href="https://mdl.edutorial.nl/mod/quiz/view.php?id=4">deze link</a> om de toets te maken.</p>
+<h2 id="opdracht-models">Opdracht Models</h2>
+<p>Een model is in dit geval een klasse voor een tabel in een database. Door gebruik te maken van deze klasse en vervolgens een subklasse te maken voor iedere tabel in de database kun je veel code hergebruiken.
+Het ophalen van alle records uit een tabel is steeds weer dezelfde sql-query. Het enige dat steeds verandert is de tabelnaam.</p>
+<ul>
+<li>Clone de repository: <a href="https://github.com/siewers32/models">https://github.com/siewers32/models</a></li>
+<li>importeer mdb.sql in je mysql-server</li>
+<li>Bestudeer de code:
+<ul>
+<li>Er zijn 3 klassen</li>
+<li>DB met een methode om een databaseconnectie op te zetten</li>
+<li>Model is een abstracte klasse. Je kunt de functionaliteit uit deze klasse alleen gebruiken als je een subklasse aanmaakt</li>
+<li>UserModel is een subklasse van Model</li>
+</ul>
+</li>
+<li>Maak een nieuwe klasse MovieModel aan
+<ul>
+<li>Bestudeer mdb.sql</li>
+<li>Net als in UserModel pas je de waarden voor table, fields en primary key (pk) aan.</li>
+</ul>
+</li>
+<li>Gebruik MovieModel om alle movies weer te geven</li>
+<li>Maak een formulier om nieuwe movies toe te kunnen voegen</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#inheritance">Inheritance</a></li><li><a href="#toets">Toets</a></li><li><a href="#opdracht-models">Opdracht Models</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/access-modifiers/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Access Modifiers</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/project-gallery/">
+        <span class="title">Project Gallery</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

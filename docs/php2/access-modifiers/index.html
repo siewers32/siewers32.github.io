@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Access Modifiers</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch12.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/" aria-current="page" data-state="active">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/" aria-current="page" data-state="active">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="access-modifiers">Access Modifiers</h2>
+<p>Access modifiers geven een manier om gegevens in een object te beschermen. Er zijn 3 mogelijkheden:</p>
+<ul>
+<li>public
+<ul>
+<li>Een variabele die met de access modifier 'public' is gedeclareerd, kan direct worden aangepast vanuit een applicatie. (geen bescherming)</li>
+</ul>
+</li>
+<li>protected
+<ul>
+<li>Protected variabelen kunnen alleen door methoden uit de klasse of door afgeleiden van die klasse worden aangepast.</li>
+</ul>
+</li>
+<li>private
+<ul>
+<li>Private variabelen kunnen alleen vanuit de eigen klasse worden aangepast.</li>
+</ul>
+</li>
+</ul>
+<p>Het is gebruikelijk om variabelen die gevoelige gegevens kunnen bevatten af te schermen. In onderstaand voorbeeld, willen we niet dat het bankrekening-saldo direct kan worden aangepast door code in de applicatie. Om fouten te voorkomen wordt het saldo afgeschermd door een methode. De methode controleert of data waarmee het saldo wordt aangepast, voldoet aan een aantal voorwaarden.
+In deze code wordt er nog niets gecontroleerd. Wat zou er gebeuren als iemand -1200 probeert toe te voegen aan het saldo?</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">Bankrekening</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword type-declaration">int</span> <span class="token variable">$saldo</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword type-declaration">int</span> <span class="token variable">$max</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">saldo</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">max</span> <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+        <span class="token comment">// Op een nieuwe bankrekening staat 0 euro.</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getSaldo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">saldo</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">addSaldo</span><span class="token punctuation">(</span><span class="token variable">$amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">saldo</span> <span class="token operator">+=</span> <span class="token variable">$amount</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span></code></pre>
+<p>Om te voorkomen dat je het saldo negatief kunt beïnvloeden door juist geld toe te voegen, wordt de methode aangepast.</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function-definition function">addSaldo</span><span class="token punctuation">(</span><span class="token variable">$amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">is_numeric</span><span class="token punctuation">(</span><span class="token variable">$amount</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$amount</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">saldo</span> <span class="token operator">+=</span> <span class="token variable">$amount</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Je kunt ook voorkomen dat er te grote bedragen in 1 keer worden afgeschreven...</p>
+<pre class="language-php"><code class="language-php">
+<span class="token keyword">function</span> <span class="token function-definition function">withdrawSaldo</span><span class="token punctuation">(</span><span class="token variable">$amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">is_numeric</span><span class="token punctuation">(</span><span class="token variable">$amount</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$amount</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$amount</span> <span class="token operator">&lt;=</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">saldo</span> <span class="token operator">-=</span> <span class="token variable">$amount</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string single-quoted-string">'per keer mag er maximaal '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">max</span><span class="token operator">.</span> <span class="token string single-quoted-string">' worden opgenomen'</span><span class="token operator">.</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Het aanpassen van het saldo is nu gebonden aan een aantal strenge regels!</p>
+<h2 id="opdracht">Opdracht</h2>
+<h4 id="el-credito">El Credito</h4>
+<p>El Credito is een bank waar je geld kunt betalen en ontvangen van de rekeninghouders. De applicatie bestaat uit 3 klassen. Bank, Rekeningen en Transacties. Bestudeer de code van de applicatie en breidt deze uit met de volgende functionaliteit:</p>
+<ol>
+<li>Creëer een nieuwe rekening voor &quot;elvis&quot;</li>
+<li>De bank betaalt 50 euro aan elvis.</li>
+<li>Op dit moment kan je ieder gewenst bedrag overmaken aan een andere rekeninghouder. Zorg ervoor dat je niet meer geld kan overmaken dan er op een rekening staat! De bank zelf mag wel rood staan!</li>
+<li>Je kan nu nog negatieve bedragen aan elkaar overmaken. Zorg ervoor dat dit niet meer kan.</li>
+</ol>
+<blockquote>
+<p>De voorbeeld applicatie kun je vinden op:<br>
+<a href="https://github.com/siewers32/el-credito">https://github.com/siewers32/el-credito</a></p>
+</blockquote>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#access-modifiers">Access Modifiers</a></li><li><a href="#opdracht">Opdracht</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/oo-programmeren/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">OO Programmeren</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/inheritance/">
+        <span class="title">Inheritance</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

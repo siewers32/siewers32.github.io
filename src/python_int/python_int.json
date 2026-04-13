@@ -1,0 +1,6 @@
+{
+  "layout": "course.njk",
+  "tags": "python_int",
+  "course-title": "Python intermediate",
+  "permalink": "/python_int/{{ title | slug }}/{{ page.index }}"
+}

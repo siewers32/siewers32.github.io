@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Serial downloader</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/projecten/projecten-api-ch135.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/projecten/farout-project/">FarOut Project</a>
+
+<a class="page-link" href="/edutorial/projecten/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/projecten/projectmanagement/">Projectmanagement</a>
+
+<a class="page-link" href="/edutorial/projecten/documentatie/">Documentatie</a>
+
+<a class="page-link" href="/edutorial/projecten/userstories/">Userstories</a>
+
+<a class="page-link" href="/edutorial/projecten/klassediagram/">Klassediagram</a>
+
+<a class="page-link" href="/edutorial/projecten/activiteitendiagram/">Activiteitendiagram</a>
+
+<a class="page-link" href="/edutorial/projecten/planning-poker/">Planning poker</a>
+
+<a class="page-link" href="/edutorial/projecten/retrospective/">Retrospective</a>
+
+<a class="page-link" href="/edutorial/projecten/poor-man&#39;s-api/">Poor man&#39;s API</a>
+
+<a class="page-link" href="/edutorial/projecten/simple-laravel-api/">Simple Laravel API</a>
+
+<a class="page-link" href="/edutorial/projecten/swaggie/">Swaggie</a>
+
+<a class="page-link" href="/edutorial/projecten/serial-downloader/" aria-current="page" data-state="active">Serial downloader</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/projecten/farout-project/">FarOut Project</a>
+    
+    <a class="page-link" href="/edutorial/projecten/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/projectmanagement/">Projectmanagement</a>
+    
+    <a class="page-link" href="/edutorial/projecten/documentatie/">Documentatie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/userstories/">Userstories</a>
+    
+    <a class="page-link" href="/edutorial/projecten/klassediagram/">Klassediagram</a>
+    
+    <a class="page-link" href="/edutorial/projecten/activiteitendiagram/">Activiteitendiagram</a>
+    
+    <a class="page-link" href="/edutorial/projecten/planning-poker/">Planning poker</a>
+    
+    <a class="page-link" href="/edutorial/projecten/retrospective/">Retrospective</a>
+    
+    <a class="page-link" href="/edutorial/projecten/poor-man&#39;s-api/">Poor man&#39;s API</a>
+    
+    <a class="page-link" href="/edutorial/projecten/simple-laravel-api/">Simple Laravel API</a>
+    
+    <a class="page-link" href="/edutorial/projecten/swaggie/">Swaggie</a>
+    
+    <a class="page-link" href="/edutorial/projecten/serial-downloader/" aria-current="page" data-state="active">Serial downloader</a>
+    
+</div>
+
+            <h1 id="projecten">Projecten</h1>
+<h2 id="serial-downloader">Serial downloader</h2>
+<h2 id="aanleiding">Aanleiding</h2>
+<p>Op school wordt er vaak gewerkt met licenties van leveranciers. Studenten krijgen een serienummer of sleutel waarmee ze software kunnen activeren.
+Het uitdelen van deze sleutels is vaak een lastige en tijdrovende klus.</p>
+<ul>
+<li>Studenten kunnen maar 1 sleutel ontvangen en gebruiken</li>
+<li>Er moet worden bijghouden wie welke sleutel heeft gekregen, want het komt nogal eens voor dat studenten hun nummer of sleutel niet meer kunnen vinden.</li>
+<li>Het digitaal versturen (per mail) is tijdrovend en foutgevoelig.</li>
+<li>De administratie is tijdrovend en foutgevoelig.</li>
+</ul>
+<h2 id="resultaat">Resultaat</h2>
+<p>Er is behoefte aan een applicatie die het uitdelen van serienummers en sleutels vergemakkelijkt. Medewerkers kunnen in de applicatie makkelijk opzoeken welke student al een serienummer heeft ontvangen.</p>
+<h2 id="backlog">Backlog</h2>
+<ul>
+<li>Als gebruiker wil ik een serial nummer op kunnen vragen zodat ik de software die ik heb geïnstalleerd kan activeren.</li>
+<li>Als gebruiker wil ik instructies kunnen volgen zodat ik de procedure om software te activeren kan volgen.</li>
+<li>Als medewerker wil ik op basis van een excel-sheet studentgegevens en serienummers kunnen toevoegen aan de applicatie.</li>
+</ul>
+<h2 id="eisen">Eisen</h2>
+<ul>
+<li>De software moet veilig zijn</li>
+<li>Er wordt zorgvuldig omgegaan met gegevens van gebruikers, alleen de gegevens die nodig zijn voor de beveiliging van de applicatie worden in het systeem opgeslagen.
+<ul>
+<li>Een gebruiker geeft een id-nummer, zijn/haar geboortedatum en een huisnummer</li>
+<li>Gegevens in de database zijn encrypted, zodat gegevens niet teruggeleid kunnen worden naar een specifieke persoon</li>
+<li>De installatieprocedure en serial-gegevens worden naar het email-adres van de gebruiker gestuurd.</li>
+</ul>
+</li>
+</ul>
+<h2 id="activity-diagram">Activity diagram</h2>
+<p><img src="/edutorial/_assets/projecten/activity_serial_number_app.svg" alt="Activity diagram serial number app"></p>
+<h2 id="software">Software</h2>
+<p>Het systeem wordt gebouwd op basis van een REST API.</p>
+<ul>
+<li>Frontend
+<ul>
+<li>HTML/CSS en (vanilla) javascript om met de api te communiceren</li>
+</ul>
+</li>
+<li>Backend
+<ul>
+<li>De API zelf wordt gebouwd in PHP</li>
+<li>Er wordt gebruik gemaakt van het Laravel framework</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#serial-downloader">Serial downloader</a></li><li><a href="#aanleiding">Aanleiding</a></li><li><a href="#resultaat">Resultaat</a></li><li><a href="#backlog">Backlog</a></li><li><a href="#eisen">Eisen</a></li><li><a href="#activity-diagram">Activity diagram</a></li><li><a href="#software">Software</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/projecten/swaggie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Swaggie</span>
+    </a>
+    
+    
+    <div></div>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

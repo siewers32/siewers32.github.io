@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | CRUD applicatie</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch03.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/" aria-current="page" data-state="active">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/" aria-current="page" data-state="active">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="crud-applicatie">CRUD applicatie</h2>
+<h2 id="connectie-maken">Connectie maken</h2>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+  <span class="token comment">// zie https://phpdelusions.net/pdo</span>
+
+  <span class="token variable">$host</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'127.0.0.1'</span><span class="token punctuation">;</span>
+  <span class="token variable">$db</span>   <span class="token operator">=</span> <span class="token string single-quoted-string">'test'</span><span class="token punctuation">;</span>
+  <span class="token variable">$user</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'root'</span><span class="token punctuation">;</span>
+  <span class="token variable">$pass</span> <span class="token operator">=</span> <span class="token string single-quoted-string">''</span><span class="token punctuation">;</span>
+  <span class="token variable">$charset</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'utf8mb4'</span><span class="token punctuation">;</span>
+
+  <span class="token variable">$dsn</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"mysql:host=<span class="token interpolation"><span class="token variable">$host</span></span>;dbname=<span class="token interpolation"><span class="token variable">$db</span></span>;charset=<span class="token interpolation"><span class="token variable">$charset</span></span>"</span><span class="token punctuation">;</span>
+  <span class="token variable">$options</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_ERRMODE</span>            <span class="token operator">=></span> <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ERRMODE_EXCEPTION</span><span class="token punctuation">,</span>
+      <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_DEFAULT_FETCH_MODE</span> <span class="token operator">=></span> <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">FETCH_ASSOC</span><span class="token punctuation">,</span>
+      <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_EMULATE_PREPARES</span>   <span class="token operator">=></span> <span class="token constant boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token variable">$pdo</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token variable">$dsn</span><span class="token punctuation">,</span> <span class="token variable">$user</span><span class="token punctuation">,</span> <span class="token variable">$pass</span><span class="token punctuation">,</span> <span class="token variable">$options</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</span></code></pre>
+<ul>
+<li>De host is altijd je eigen machine/laptop dus: localhost of 127.0.0.1</li>
+<li>De database is de database die je wilt gaan gebruiken (voor iedere database kun je eigen rechten en permissies instellen)</li>
+<li>In Xampp kun je inloggen met de gebruiker 'root' zonder wachtwoord</li>
+<li>Charset zorgt ervoor dat ook de é en de ä en andere vreemde karakters goed worden weergegeven.</li>
+<li>De options kun je zo laten staan.</li>
+<li>in de laatste regel wordt een nieuw PDO object aangemaakt met de juiste gegevens.</li>
+</ul>
+<h2 id="een-database-aanmaken">Een database aanmaken</h2>
+<p>In de terminal of in phpMyAdmin kun je een nieuwe database aanmaken met <code>create database &lt;databasenaam&gt;</code></p>
+<h2 id="gegevens-importeren-in-phpmyadmin">Gegevens importeren in phpMyAdmin</h2>
+<p>In phpMyAdmin kun je bij de tab SQL data van een sql-bestand importeren. Open het sql-bestand in een code-editor en kopieer alle tekst met ctrl-a. Plak alle tekst met ctrl-v in het sql-venster in phpMyAdmin.
+Of
+In de terminal doe je <code>source c:\pad\naar\mijndata.sql</code></p>
+<h2 id="gegevens-weergeven-in-html">Gegevens weergeven in HTML</h2>
+<h2 id="een-record-toevoegen">Een record toevoegen</h2>
+<h2 id="een-record-aanpassen">Een record aanpassen</h2>
+<h2 id="een-record-verwijderen">Een record verwijderen</h2>
+<h3 id="xampp">XAMPP</h3>
+<p>Xampp wordt geleverd met Apache, PHP en MySQL. Daarnaast wordt er met Xampp een php-applicatie meegeleverd met de naam 'phpMyAdmin'. 'phpMyAdmin' is gemaakt met php en het is bedoeld om een databaseserver mee te beheren. Je kunt phpMyAdmin openen vanuit het Xampp control-panel of je gaat direct naar http://localhost/phpmyadmin/.<br>
+In phpMyAdmin kun je databases aanmaken en configureren.</p>
+<h3 id="testen">Testen</h3>
+<p>Als je een php-pagina maakt met bovenstaande code, dan kan het zijn dat e.e.a. nog niet meteen werkt.</p>
+<ul>
+<li>Je ziet niks!
+<ul>
+<li>Dat is juist prima. De code genereert geen output en er treden kennelijk geen errors op!</li>
+<li>Blijkbaar kun je vanaf hier geweldige applicaties gaan bouwen!</li>
+</ul>
+</li>
+<li>Je ziet een foutmelding
+<ul>
+<li>Lees goed wat er staat bij de foutmelding!</li>
+<li>Controleer in het Xampp control-panel:
+<ul>
+<li>Komt het portnummer in de code overeen met het portnummer van MySQL.</li>
+</ul>
+</li>
+<li>Controleer in 'phpMyAdmin':
+<ul>
+<li>Bestaat er een database met een naam van die overeenkomst met de databasenaam in je code.</li>
+<li>Kijk bij 'user accounts' of de gebruiker met de naam en wachtwoord in je code overeenkomt met 1 van de user accounts.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="opdrachten">Opdrachten</h2>
+<blockquote>
+<h4 id="opdracht-1.1">Opdracht 1.1</h4>
+<p>Download het bestand <a href="/edutorial/_assets/php2/school.sql">school.sql</a><br>
+Installeer de database school:<br>
+Open phpMyAdmin en klik op de tab &quot;SQL&quot;. Plak de inhoud van het bestand school.sql in het venster en klik op 'Go'.
+Verifieer of er in de linker-kolom van phpMyAdmin een nieuwe database met de naam 'school' verschijnt.
+Pas de code voor de databaseconnectie aan zodat PHP een connectie maakt met de database 'school'.
+Voeg onderstaande code toe en test of je de gegevens van alle cursisten uit de database school te zien krijgt!</p>
+</blockquote>
+<pre class="language-php"><code class="language-php">
+<span class="token comment">// Bouw een query</span>
+<span class="token variable">$query</span> <span class="token operator">=</span> <span class="token variable">$connection</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"SELECT *  FROM cursist"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Voer de query uit</span>
+<span class="token variable">$query</span><span class="token operator">-></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Haal alle records op en maak van de gegevens een associatieve array</span>
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$query</span><span class="token operator">-></span><span class="token function">fetchAll</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">FETCH_ASSOC</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Geef alle elementen uit de array $result weer.</span>
+<span class="token function">print_r</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<h4 id="opdracht-1.2">Opdracht 1.2</h4>
+<p>Maak met behulp van phpmyadmin een extra password veld in de tabel cursist.
+Verzin passwords voor de verschillende cursisten en voeg ze toe aan de tabel.
+Maak een login-systeem waarbij er wordt gecontroleerd op de naam en het password van de cursisten</p>
+</blockquote>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#crud-applicatie">CRUD applicatie</a></li><li><a href="#connectie-maken">Connectie maken</a></li><li><a href="#een-database-aanmaken">Een database aanmaken</a></li><li><a href="#gegevens-importeren-in-phpmyadmin">Gegevens importeren in phpMyAdmin</a></li><li><a href="#gegevens-weergeven-in-html">Gegevens weergeven in HTML</a></li><li><a href="#een-record-toevoegen">Een record toevoegen</a></li><li><a href="#een-record-aanpassen">Een record aanpassen</a></li><li><a href="#een-record-verwijderen">Een record verwijderen</a></li><li><a href="#opdrachten">Opdrachten</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/php-en-mysql/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">PHP en MySQL</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/werken-met-bestanden/">
+        <span class="title">Werken met bestanden</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

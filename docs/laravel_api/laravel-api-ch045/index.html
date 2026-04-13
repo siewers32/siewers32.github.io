@@ -1,0 +1,55 @@
+<h1 id=""></h1>
+<h2 id="models">Models</h2>
+<p>Voor dit project is een laravel-backend en een vue3-frontend de basis. Aangezien er een verschil is tussen de functionaliteit voor bezoekers en gebruikers moet de mogelijkheid er zijn om je als bezoeker te kunnen registreren. Een geregistreerde bezoeker is een gebruiker. Gebruikers hebben meer bevoegdheden in de applicatie dan bezoekers.</p>
+<p>Laravel wordt met verschillende start-pakketten geleverd. In deze cursus maak je gebruik van <code>Breeze</code>. Je kunt breeze op verschillende manieren installeren. In dit geval maak je gebruik van de optie om <code>Breeze</code> als backend van een <code>API</code> te installeren.</p>
+<ul>
+<li>Maak een database met een mysql-client</li>
+<li>Installeer een blanco laravel project</li>
+<li>Installeer breeze met de optie <code>api</code></li>
+<li>Start de migration om de database tabellen aan te maken.</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">php artisan create-project laravel/laravel breeze_backend
+php artisan breeze:install api
+php artisan migrate</code></pre>
+<p>De start is aan de 'achterkant' van de applicatie. De data voor de applicatie wordt opgeslagen in de database. De 'models' van de applicatie zorgen voor de communicatie met de database en ze leveren de gevraagde gegevens aan de 'controllers'.
+Je maakt een nieuw model om movie-gegevens in op te slaan met onderstaande code:</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>model Movie <span class="token operator">-</span>m
+</code></pre>
+<p>Met bovenstaand commando wordt een model-class aangemaakt en er wordt een migration-class aangemaakt. De migration zorgt voor het aanmaken van de tabel in de database.
+Laravel maakt in de map app&gt;Models een bestand aan met de naam van het model</p>
+<pre class="language-shell"><code class="language-shell">movie-app 
+ <span class="token operator">|</span>-- app
+      <span class="token operator">|</span>-- Models
+           <span class="token operator">|</span>-- Movie.php</code></pre>
+<h2 id="migrations">Migrations</h2>
+<p>Laravel maakt in de map database-&gt;migrations een bestand aan met als naam de creatiedatum en de titel die je zelf hebt meegegeven.</p>
+<pre class="language-shell"><code class="language-shell">movie-app 
+ <span class="token operator">|</span>-- database 
+      <span class="token operator">|</span>-- 2021_11_07_140728_create_movie_table.php
+</code></pre>
+<p>In de migration moet je aangeven welke velden je nodig hebt. Zoals je ziet is er al een veld 'id' voor de primaire sleutel. De methode timestamps creëert twee velden om de aanmaakdatum vast te leggen en eventueel een datum waarop records zijn aangepast.</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Schema</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'movies'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Blueprint</span> <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>De migration wordt aangevuld met de velden die nodig zijn om de informatie voor movies vast te leggen.
+<a href="https://laravel.com/docs/8.x/migrations#available-column-types">Hier</a> vind je alle mogelijke veld-typen die je kunt gebruiken</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Schema</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'movies'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token class-name type-declaration">Blueprint</span> <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token keyword type-declaration">string</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">,</span> <span class="token number">125</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">smallinteger</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'year'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token variable">$table</span><span class="token operator">-></span><span class="token function">timestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>De migration zorgt ervoor dat de tabel in de database wordt aangemaakt, zodat het model via een pdo connectie data kan opvragen of manipuleren. Je start de migration vanaf de command-line:</p>
+<pre class="language-php"><code class="language-php">php artisan migrate
+<span class="token comment">// of</span>
+php artisan migrate<span class="token punctuation">:</span>fresh 
+<span class="token comment">// zodat 'oude' data eerst wordt verwijderd en de tabel opnieuw wordt aangemaakt</span>
+</code></pre>
+<p>Inmiddels heb je in de map app-&gt;Models nu 2 models. 'User' en 'Movie'. User is bij de installatie al aangemaakt door Laravel. Bij het uitvoeren van de migration zijn nog een aantal andere tabellen aangemaakt, waaronder de users-tabel.</p>

@@ -1,0 +1,22 @@
+{
+  "name": "Edutorial",
+  "short_name": "Edutorial",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FF8000",
+  "description": "Tutorials about anything web programming and design",
+  "theme_color": "#052c44",
+
+  "icons": [
+    {
+      "src": "./_assets/android/edutorial-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./_assets/android/edutorial-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

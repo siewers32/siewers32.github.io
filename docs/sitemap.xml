@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/introductie/index.html</loc>
+        <lastmod>2022-02-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/blockchain/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/starten-met-css/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/examen/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/examen/loopbaanbegeleiding/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/git/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/introductie/index.html</loc>
+        <lastmod>2022-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/wat-is-een-database/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/installeren/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/postgresql/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/examen/examen-25187/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/git/git-en-github/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/starten-met-html/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-basis/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-loops-en-condities/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/php-code-maken/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/project-gallery/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/python-installeren/index.html</loc>
+        <lastmod>2022-03-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/classes-en-ids/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/hoe-werkt-een-database/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/eenvoudige-queries/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/git/git-branches/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/html-structuur/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/php-variabelen/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/php-en-mysql/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/crud-applicatie/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/werkwijze/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/variabelen/index.html</loc>
+        <lastmod>2022-03-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/boxmodel/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/onderdelen-van-een-database/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/gegevens-filteren/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/git/conflicten/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/veel-voorkomende-tags/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/condities/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/werken-met-bestanden/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/tekstfuncties/index.html</loc>
+        <lastmod>2022-03-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/units-en-maten/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/informatie-analyse/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/crud/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/database-maken/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/bestanden-beheren/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/tekstbewerkingen/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/oo-programmeren/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/berekeningen/index.html</loc>
+        <lastmod>2022-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/fonts/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/relationeel-model/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/aggregatie-functies/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/eerste-website/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/loops/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/access-modifiers/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/lists/index.html</loc>
+        <lastmod>2022-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/display-en-position/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/normaliseren/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/tabellen-combineren/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/tabellen/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/formulieren/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/inheritance/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/input-functions/index.html</loc>
+        <lastmod>2022-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/flexbox/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/permissies/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbq/csv-bestanden-importeren/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/afbeeldingen-aanpassen/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-en-dom/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/sessions/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/interfaces/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/loops-en-lists/index.html</loc>
+        <lastmod>2022-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/css-grid/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/bloemenzaak/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/formulieren/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-en-formulieren/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/functions/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/mvc/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/condities/index.html</loc>
+        <lastmod>2022-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/media-queries/index.html</loc>
+        <lastmod>2022-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/website-vanaf-schets/index.html</loc>
+        <lastmod>2022-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/opdracht-pokerio/index.html</loc>
+        <lastmod>2022-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/composer/index.html</loc>
+        <lastmod>2022-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/werken-met-tekst/index.html</loc>
+        <lastmod>2022-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/css/projecten/index.html</loc>
+        <lastmod>2022-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/hosting/index.html</loc>
+        <lastmod>2022-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/opdracht-casino/index.html</loc>
+        <lastmod>2022-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/opdracht-top-10-app/index.html</loc>
+        <lastmod>2022-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/foutafhandeling/index.html</loc>
+        <lastmod>2022-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/html/tot-slot/index.html</loc>
+        <lastmod>2022-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-arrays/index.html</loc>
+        <lastmod>2022-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/proeftoetsen/index.html</loc>
+        <lastmod>2022-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/functions/index.html</loc>
+        <lastmod>2022-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/modules/index.html</loc>
+        <lastmod>2022-03-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/pypi/index.html</loc>
+        <lastmod>2022-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python/projectopdrachten/index.html</loc>
+        <lastmod>2022-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/deebee-train/index.html</loc>
+        <lastmod>2022-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/easytiger-patio/index.html</loc>
+        <lastmod>2022-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-functies/index.html</loc>
+        <lastmod>2022-03-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/voorbeelden/index.html</loc>
+        <lastmod>2022-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/dbo/reminder/index.html</loc>
+        <lastmod>2022-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/javascript-listeners/index.html</loc>
+        <lastmod>2022-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/events-in-javascript/index.html</loc>
+        <lastmod>2022-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/nodejs-express-en-mysql/index.html</loc>
+        <lastmod>2022-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php2/radiostation-kraeken/index.html</loc>
+        <lastmod>2022-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/toets/index.html</loc>
+        <lastmod>2022-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/php/hertoets/index.html</loc>
+        <lastmod>2022-04-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/introductie/index.html</loc>
+        <lastmod>2022-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/documentatie/index.html</loc>
+        <lastmod>2022-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/projectmanagement/index.html</loc>
+        <lastmod>2022-08-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/poor-man&#39;s-api/index.html</loc>
+        <lastmod>2022-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/simple-laravel-api/index.html</loc>
+        <lastmod>2022-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/farout-project/index.html</loc>
+        <lastmod>2022-08-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/swaggie/index.html</loc>
+        <lastmod>2022-08-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/serial-downloader/index.html</loc>
+        <lastmod>2022-09-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/blog/introductie/index.html</loc>
+        <lastmod>2022-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/examen/examen-25604/index.html</loc>
+        <lastmod>2023-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/introductie/index.html</loc>
+        <lastmod>2023-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/monolithische-applicaties/index.html</loc>
+        <lastmod>2023-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/installatie/index.html</loc>
+        <lastmod>2023-05-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/request-lifecycle/index.html</loc>
+        <lastmod>2023-05-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/views/index.html</loc>
+        <lastmod>2023-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/models-en-controllers/index.html</loc>
+        <lastmod>2023-05-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/authenticatie/index.html</loc>
+        <lastmod>2023-05-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/migrations/index.html</loc>
+        <lastmod>2023-05-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel/formulier/index.html</loc>
+        <lastmod>2023-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch001/index.html</loc>
+        <lastmod>2023-06-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch002/index.html</loc>
+        <lastmod>2023-06-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch045/index.html</loc>
+        <lastmod>2023-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch047/index.html</loc>
+        <lastmod>2023-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch048/index.html</loc>
+        <lastmod>2023-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch049/index.html</loc>
+        <lastmod>2023-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch050/index.html</loc>
+        <lastmod>2023-07-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch060/index.html</loc>
+        <lastmod>2023-07-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/laravel_api/laravel-api-ch090/index.html</loc>
+        <lastmod>2023-07-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/blog/jan-dec-2023/index.html</loc>
+        <lastmod>2023-10-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/introductie/index.html</loc>
+        <lastmod>2024-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/rol-van-het-practoraat/index.html</loc>
+        <lastmod>2024-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/de-docentonderzoeker/index.html</loc>
+        <lastmod>2024-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/onderzoekend-werken/index.html</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/responsief-onderwijs/index.html</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/zorglogistiek/index.html</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/immersive-rooms/index.html</loc>
+        <lastmod>2024-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/datascience/index.html</loc>
+        <lastmod>2024-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/links/index.html</loc>
+        <lastmod>2024-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/zt/kwalificatiedossier-ict/index.html</loc>
+        <lastmod>2024-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/retrospective/index.html</loc>
+        <lastmod>2024-09-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/planning-poker/index.html</loc>
+        <lastmod>2024-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/blog/jan-dec-2024/index.html</loc>
+        <lastmod>2024-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/introductie/index.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/uitleg-keuzedeel/index.html</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/wat-is-ai/index.html</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/starten-met-prompting/index.html</loc>
+        <lastmod>2025-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/examen/examen-25998/index.html</loc>
+        <lastmod>2025-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/examen/casus-briefing/index.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/ethiek-en-privacy/index.html</loc>
+        <lastmod>2025-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/ethiek-en-privacy-2/index.html</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/userstories/index.html</loc>
+        <lastmod>2025-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/klassediagram/index.html</loc>
+        <lastmod>2025-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/projecten/activiteitendiagram/index.html</loc>
+        <lastmod>2025-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/studeren-met-ai/index.html</loc>
+        <lastmod>2025-02-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/introductie/index.html</loc>
+        <lastmod>2025-02-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/realities/index.html</loc>
+        <lastmod>2025-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/rag/index.html</loc>
+        <lastmod>2025-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/links/index.html</loc>
+        <lastmod>2025-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/robotica/index.html</loc>
+        <lastmod>2025-02-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/software-developer/index.html</loc>
+        <lastmod>2025-02-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/development-tools/index.html</loc>
+        <lastmod>2025-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/pydantic/index.html</loc>
+        <lastmod>2025-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/api/index.html</loc>
+        <lastmod>2025-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/structured-output/index.html</loc>
+        <lastmod>2025-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/streamlit-chatbot/index.html</loc>
+        <lastmod>2025-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/internet-of-things/index.html</loc>
+        <lastmod>2025-02-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/ai-en-healthcare/index.html</loc>
+        <lastmod>2025-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/zorgrobots/index.html</loc>
+        <lastmod>2025-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai_engineer/agents/index.html</loc>
+        <lastmod>2025-02-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/sound-and-vision/index.html</loc>
+        <lastmod>2025-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/design-thinking/index.html</loc>
+        <lastmod>2025-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python_int/introductie/index.html</loc>
+        <lastmod>2025-05-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python_int/python-classes/index.html</loc>
+        <lastmod>2025-05-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/python_int/python-ai/index.html</loc>
+        <lastmod>2025-05-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/serious-games/index.html</loc>
+        <lastmod>2025-08-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/machine-learning/index.html</loc>
+        <lastmod>2025-08-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/ai-opdrachten/index.html</loc>
+        <lastmod>2025-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/links/index.html</loc>
+        <lastmod>2025-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/ai/ai-en-design-thinking/index.html</loc>
+        <lastmod>2025-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/javascript/the-persistent-dashboard/index.html</loc>
+        <lastmod>2026-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.edutorial.nl/index.html</loc>
+        <lastmod>2026-02-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>

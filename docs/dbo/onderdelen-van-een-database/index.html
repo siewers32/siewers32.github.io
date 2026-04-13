@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Onderdelen van een database</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbo/dbo-ch020.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+
+<a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/" aria-current="page" data-state="active">Onderdelen van een database</a>
+
+<a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+
+<a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+
+<a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+
+<a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+
+<a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+
+<a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+
+<a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+
+<a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+
+<a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/" aria-current="page" data-state="active">Onderdelen van een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+    
+    <a class="page-link" href="/edutorial/dbo/relationeel-model/">Relationeel model</a>
+    
+    <a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+    
+    <a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+    
+    <a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+    
+    <a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+    
+    <a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+    
+    <a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+    
+</div>
+
+            <h1 id="database-ontwerp">Database ontwerp</h1>
+<h2 id="onderdelen-van-een-database">Onderdelen van een database</h2>
+<h3 id="database-server">Database server</h3>
+<ul>
+<li>Een database server zorgt voor de opslag van gegevens.
+<ul>
+<li>Een database server beheert meerdere databases.</li>
+</ul>
+</li>
+<li>De server regelt toegang voor verschillende typen gebruikers.</li>
+<li>De server regelt toegang tot gegevens.</li>
+</ul>
+<h2 id="database-clients">Database clients</h2>
+<ul>
+<li>MySQL (commandline)</li>
+<li>MySQL Workbench</li>
+<li>PHPMyAdmin</li>
+<li>HeidiSQL</li>
+<li>DBeaver</li>
+</ul>
+<h2 id="database">Database</h2>
+<ul>
+<li>Een database is een verzameling van tabellen (vergelijkbaar met een spreadsheet)</li>
+<li>Een database is een systeem waarin data op een gestructureerde manier kan worden opgeslagen
+<ul>
+<li>Je kan dan makkelijk gegevens terugvinden</li>
+</ul>
+</li>
+</ul>
+<h2 id="tabellen">Tabellen</h2>
+<ul>
+<li>Een tabel lijkt een soort spreadsheet.
+<ul>
+<li>Een tabel heeft een naam</li>
+<li>Een tabel heeft rijen en kolommen met data</li>
+<li>Iedere kolom heeft een naam</li>
+</ul>
+</li>
+</ul>
+<h2 id="velden">Velden</h2>
+<ul>
+<li>Een veld is de naam van een kolom in een tabel</li>
+</ul>
+<h2 id="records">Records</h2>
+<ul>
+<li>Een record is een rij in een tabel.</li>
+</ul>
+<h2 id="voorbeeld">Voorbeeld</h2>
+<h4 id="bibliotheek">Bibliotheek</h4>
+<p>Tabel: <strong>Boek</strong></p>
+<div class="html">
+<table style="border: 1px solid #000; border-collapse: collapse;">
+<tr>
+  <th>book_id</th>
+  <th>title</th>
+  <th>author</th>
+  <th>genre</th>
+  <th>isbn</th>
+  <th>stock_status</th>
+</tr>
+<tr>
+  <td style="text-align: center;">1</td>
+  <td>Guide to SQL</td>
+  <td>Joe Bloggs</td>
+  <td>Computing</td>
+  <td>123456789</td>
+  <td style="text-align: center;">25</td>
+</tr>
+<tr>
+  <td style="text-align: center;">2</td>
+  <td>Database design</td>
+  <td>Deborah Smith</td>
+  <td>Computing</td>
+  <td>987654321</td>
+  <td style="text-align: center;">4</td>
+</tr>
+<tr>
+  <td style="text-align: center;">3</td>
+  <td>Database basics</td>
+  <td>Joel Bily</td>
+  <td>Computing</td>
+  <td>456738274</td>
+  <td style="text-align: center;">0</td>
+</tr>
+</table>
+</div>
+<p>Tabel: <strong>Uitleen</strong></p>
+<div class="html">
+<table style="border: 1px solid #000; border-collapse: collapse;">
+<tr>
+  <th>uitleen_id</th>
+  <th>date</th>
+  <th>customer</th>
+  <th>return</th>
+  <th>book</th>
+</tr>
+<tr>
+  <td style="text-align: center;">23</td>
+  <td>22-12-2020</td>
+  <td>12443</td>
+  <td>01-02-2021</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td style="text-align: center;">24</td>
+  <td>11-11-2020</td>
+  <td>21233</td>
+  <td>01-12-2020</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td style="text-align: center;">28</td>
+  <td>11-10-2020</td>
+  <td>23399</td>
+  <td></td>
+  <td>1</td>
+</tr>
+</table>
+</div>
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#onderdelen-van-een-database">Onderdelen van een database</a></li><li><a href="#database-clients">Database clients</a></li><li><a href="#database">Database</a></li><li><a href="#tabellen">Tabellen</a></li><li><a href="#velden">Velden</a></li><li><a href="#records">Records</a></li><li><a href="#voorbeeld">Voorbeeld</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbo/wat-is-een-database/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Wat is een database</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbo/hoe-werkt-een-database/">
+        <span class="title">Hoe werkt een database</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

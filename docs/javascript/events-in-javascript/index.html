@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Events in javascript</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/js/js-ch090.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/">Javascript loops en condities</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/">Javascript en Formulieren</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+
+<a class="page-link" href="/edutorial/javascript/events-in-javascript/" aria-current="page" data-state="active">Events in javascript</a>
+
+<a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+
+<a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/">The Persistent Dashboard</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/">Javascript loops en condities</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/">Javascript en Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+    
+    <a class="page-link" href="/edutorial/javascript/events-in-javascript/" aria-current="page" data-state="active">Events in javascript</a>
+    
+    <a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/">The Persistent Dashboard</a>
+    
+</div>
+
+            <h1 id="javascript">Javascript</h1>
+<h2 id="events-in-javascript">Events in javascript</h2>
+<p>Een 'event' is een gebeurtenis in Javascript. Als je op een element klikt dan is dat een 'klik'-gebeurtenis oftewel een 'click'-event.
+Als een 'event' plaatsvindt, dan kan je applicatie daarop reageren. Bijv. je klikt op een div-element en daardoor verandert de kleur van het div-element.
+Om dit voor elkaar te krijgen moet je de volgende stappen ondernemen:</p>
+<ol>
+<li>Refereer naar een element met getElementById()</li>
+<li>Gebruik de referentie om een element naar bepaalde 'events' te laten luisteren
+<ol>
+<li>Dit noem je een 'event-listener'</li>
+<li>Met een 'event-listener' kun je element laten luisteren naar een 'click-event'</li>
+</ol>
+</li>
+<li>Reageer op het 'click-event'</li>
+</ol>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>knop<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">background-color</span><span class="token punctuation">:</span> lightblue<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Klik me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>view<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Bla<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+   <span class="token keyword">const</span> el <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'knop'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> target <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'view'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      target<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+      target<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"Ik ben geklikt!"</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="een-imageslider-maken">Een imageslider maken</h3>
+<p>Bij een imageslider wil je dat je met een klik een andere afbeelding laat zien.</p>
+<h3 id="hoe-maak-je-een-imageslider.">Hoe maak je een imageslider.</h3>
+<p>Maak een html-pagina waarin een afbeelding wordt omgewisseld voor een andere afbeelding op het moment dat je er op klikt. Hoe is de aanpak:</p>
+<ul>
+<li>Maak een div-tag waarin een afbeelding wordt weergegeven van bijv. 300 x 400 pixels.</li>
+<li>Maak een achtergrondafbeelding van 3 aanelkaar gemaakte plaatjes. Totaal wordt de afbeelding 300 x 1200 pixels.</li>
+<li>Maak de javascript die de achtergrond-afbeelding steeds 400 pixels naar links verschuift.</li>
+</ul>
+<div class="html" style="height:230px;">
+   <div id="apen" style="width:800px;
+         height:200px;
+         border:1px solid black;
+         background-image:url('/_assets/js/apen-800.jpg');
+         position:absolute;">
+   </div>
+   <div style="width:266px;border:4px solid red;position:absolute;height:200px;"></div>
+</div>
+<p>Dit is de css-stijl:</p>
+<pre class="language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+     <span class="token selector">#apen</span> <span class="token punctuation">{</span>
+         <span class="token property">width</span><span class="token punctuation">:</span>400px<span class="token punctuation">;</span>
+         <span class="token property">height</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span>
+         <span class="token property">border</span><span class="token punctuation">:</span>4px solid black<span class="token punctuation">;</span>
+         <span class="token property">background-image</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/_assets/js/apen.jpg'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+         <span class="token property">transition</span><span class="token punctuation">:</span> background-position 2s<span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+ </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p>In de body van het html-document:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Onderaan de html-pagina in de body komt het script:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">const</span> apen <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'apen'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> pos <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  apen<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>pos <span class="token operator">>=</span> <span class="token number">800</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          pos <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          pos <span class="token operator">+=</span> <span class="token number">400</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      apen<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundPosition <span class="token operator">=</span> pos <span class="token operator">+</span> <span class="token string">"px"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#events-in-javascript">Events in javascript</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/javascript/javascript-listeners/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Javascript listeners</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/javascript/nodejs-express-en-mysql/">
+        <span class="title">NodeJS, Express en MySQL</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

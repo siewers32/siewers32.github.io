@@ -1,0 +1,19 @@
+<?php
+    $imgUrl = "/_assets/php/cards/img/";
+    $cardTypes = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
+    $cardColors = ['Diamond','Spade','Heart','Club'];
+    foreach($cardTypes as $cardType) {
+        foreach($cardColors as $cardColor) {
+            $cards[] = "Cards-".$cardType."-".$cardColor.".svg";
+        }
+    }
+    //shuffle($cards);
+?>
+
+<?php include('header.php'); ?>
+<?php foreach($cards as $card) { ?>
+
+<img class="card" src="<?= $imgUrl ?><?= $card ?>">
+
+<?php } ?>
+<?php include('footer.php'); ?>

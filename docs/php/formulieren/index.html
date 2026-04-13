@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Formulieren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch070.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/" aria-current="page" data-state="active">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/" aria-current="page" data-state="active">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="formulieren">Formulieren</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/7iKGEmmBnhM">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/95D5qUh4a6M">
+        </iframe>
+    </div>
+<p>PHP is ideaal om websites dynamisch te maken. Je kan een webapplicatie laten reageren op input van gebruikers. Formulieren zijn hierbij een fantastisch hulpmiddel. Denk bijvoorbeeld aan een inlogscherm of een registratieformulier. Je kunt de pagina's voor gebruikers personaliseren!
+Met PHP kun je de input van gebruikers afvangen en verwerken. De basis hiervoor is een formulier:</p>
+<pre class="language-html"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>check_credentials.php<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>login<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>login<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>login<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Password<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+    <form action="/edutorial/_assets/php/check_credentials.php" method="post">
+        <label for="login">Login</label>
+        <input type="email" id="login" name="login" required="">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required="">
+        <input type="submit">
+    </form>
+</div>
+<p>Met bovenstaand formulier kun je de inloggegevens van de gebruiker checken. De code hieronder laat de code zien van &quot;check_credentials.php&quot;. De pagina wordt aangeroepen als de gebruiker op de submit-button klikt.</p>
+<pre class="language-php"><code class="language-php"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Dit zijn de gegevens uit het formulier<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Login: <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'login'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>password: <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>Gegevens uit een formulier die met de methode 'POST' zijn verstuurd, worden door PHP opgevangen in $_POST.
+$_POST is een associatieve array die door PHP wordt beheerd. In een associatieve array worden alle gegevens gelabeled. Het label wordt overgenomen uit de 'name' van het formulier.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>broodje_kaas<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>De ingevoerde waarde in het tekstveld kun je opvragen en weergeven met:</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token keyword">echo</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'broodje_kaas'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span></code></pre>
+<p>Door condities toe te passen kun je ervoor zorgen dat je op basis van gebruikersinput de content van je applicatie aanpast.
+Bijvoorbeeld door de naam en het wachtwoorde te controleren...</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'username'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string double-quoted-string">"admin"</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'password'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string double-quoted-string">"1234"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Hey administratoortje. Lekker bezig!"</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"No way administrator-wannabee, geen toegang voor jou!"</span>
+     <span class="token punctuation">}</span>
+     
+     <span class="token comment">//Merk op dat bovenstaande code leuk is om te testen, maar in productie niet gebruikt kan worden!</span>
+     <span class="token comment">//Don't try this at home, deze code is absoluut niet veilig!!</span>
+<span class="token delimiter important">?></span></span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#formulieren">Formulieren</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/loops/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Loops</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/sessions/">
+        <span class="title">Sessions</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

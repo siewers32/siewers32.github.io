@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Condities</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch040.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/" aria-current="page" data-state="active">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/" aria-current="page" data-state="active">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="condities">Condities</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/MuG4vXQ5YSo">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/wbC3kI9ygHA">
+        </iframe>
+    </div>
+<h2 id="wat-ga-je-leren">Wat ga je leren</h2>
+<ul>
+<li>Je leert hoe je code uit kunt laten voeren als er wordt voldaan aan een conditie.</li>
+<li>Je leert de volgende code elementen
+<ul>
+<li>if statement</li>
+<li>ternary operator</li>
+<li>switch statement.</li>
+</ul>
+</li>
+</ul>
+<h2 id="het-if-statement">Het if-statement</h2>
+<p>Met het if-statement kun je een conditie inbouwen die bepaalt welke code uitgevoerd moet worden.</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+	
+<span class="token variable">$a</span> <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+<span class="token variable">$b</span> <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$a</span> <span class="token operator">></span> <span class="token variable">$b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//voer deze code uit als het waar is;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+	<span class="token comment">//voer deze code uit als het niet waar is;</span>
+<span class="token punctuation">}</span>
+
+</span></code></pre>
+<blockquote>
+<h4 id="opdracht-4.0">Opdracht 4.0</h4>
+<p>Met de functie <code>in_array('10', $mijnarray)</code> kun je controleren of het getal <code>10</code> in de array <code>$mijnarray</code> voorkomt.
+Maak een conditie waarin je controleert of 'appel' voorkomt in een array met fruit.
+De code geeft &quot;appel komt wel degelijk voor in de array&quot; op het scherm, maar als je de appel uit de array fruit verwijderd zie je &quot;Er is geen appel in de array!&quot;</p>
+</blockquote>
+<pre class="language-php"><code class="language-php"><span class="token variable">$fruit</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string double-quoted-string">"appel"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"banaan"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"meloen"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token function">in_array</span><span class="token punctuation">(</span><span class="token operator">...</span> <span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">echo</span> <span class="token string double-quoted-string">"appel komt wel degelijk voor in de array"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token operator">...</span><span class="token operator">.</span><span class="token operator">.</span> <span class="token punctuation">{</span>
+  <span class="token keyword">echo</span> <span class="token operator">...</span><span class="token operator">...</span><span class="token operator">.</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Je kunt condities ook combineren met '&amp;&amp;' en '||'. '&amp;&amp;' betekent dat je twee of meer condities wilt combineren. Alle condities moeten dan 'waar' zijn. Met '||' kun je eveneens twee of meer condities combineren. Dan geldt dat 1 van de condities 'waar' moet zijn.</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$cijfer</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">11</span><span class="token punctuation">;</span>
+<span class="token comment">// &amp;&amp; betekent "en"! Beide condities moeten "waar" zijn.</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span> <span class="token operator">&lt;</span> <span class="token number">5.5</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$cijfer</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"onvoldoende"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">elseif</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span> <span class="token operator">>=</span> <span class="token number">5.5</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$cijfer</span> <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"voldoende"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"niet valide!"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">echo</span> <span class="token variable">$waardering</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Twee strepen || betekent "of"</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span> <span class="token operator">></span> <span class="token number">5.5</span> <span class="token operator">||</span> <span class="token variable">$cijfer</span> <span class="token operator">&lt;</span> <span class="token number">4.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"Je cijfer is groter dan 5.5. of kleinder dan 4.5"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<h4 id="opdracht-4.1">Opdracht 4.1</h4>
+<p>Een rondvaartboot op de Seine in Parijs heeft speciale tarieven voor mensen die een tochtje willen maken.</p>
+<ul>
+<li>Normaal kost een kaartje 12 euro</li>
+<li>Baby's kunnen gratis mee</li>
+<li>Kinderen 3 t/m 16 jaar krijgen 50% korting</li>
+<li>Ouderen 65+ krijgen 25% korting</li>
+</ul>
+<p>Maak een programma in PHP met een variable voor een leeftijd<br>
+Het programma berekent de prijs die betaald moet worden voor een tochtje<br>
+Maak gebruik gebruik van een 'if'- 'else'-constructie om het juiste bedrag te berekenen.
+Voer onderstaand testplan uit:</p>
+<table>
+<thead>
+<tr>
+<th>leeftijd    </th>
+<th>bedrag    </th>
+<th>resultaat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>6 euro</td>
+<td>?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>gratis</td>
+<td>?</td>
+</tr>
+<tr>
+<td>24</td>
+<td>12 euro</td>
+<td>?</td>
+</tr>
+<tr>
+<td>66</td>
+<td>9 euro</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="ternary-operator">Ternary operator</h3>
+<p>Het if-statement kun je ook nog verkort weergeven.
+Als de leeftijd groter is dan 65 dan wordt er 25% korting gegeven op het tarief.
+Als de leeftijd niet groter is dan 65 dan wordt het volledige tarief in rekening gebracht.
+Met de ternary-operator werkt dit zoals hieronder weergegeven:</p>
+<pre class="language-php"><code class="language-php"><span class="token punctuation">(</span><span class="token variable">$leeftijd</span> <span class="token operator">></span> <span class="token number">65</span> <span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token variable">$tarief</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">25</span> <span class="token operator">*</span> <span class="token variable">$tarief</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token variable">$tarief</span> <span class="token punctuation">;</span></code></pre>
+<blockquote>
+<h4 id="opdracht-4.2">Opdracht 4.2</h4>
+<p>Voor een toets geldt de volgende cesuur ( = welke cijfer je krijgt bij een aantal gescoorde punten)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Aantal punten</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">16</th>
+<th style="text-align:center">17</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Cijfer</td>
+<td style="text-align:center">1,0</td>
+<td style="text-align:center">1,6</td>
+<td style="text-align:center">2,1</td>
+<td style="text-align:center">2,6</td>
+<td style="text-align:center">3,2</td>
+<td style="text-align:center">3,7</td>
+<td style="text-align:center">4,2</td>
+<td style="text-align:center">4,8</td>
+<td style="text-align:center">5,3</td>
+<td style="text-align:center">5,8</td>
+<td style="text-align:center">6,3</td>
+<td style="text-align:center">6,9</td>
+<td style="text-align:center">7,4</td>
+<td style="text-align:center">7,9</td>
+<td style="text-align:center">8,5</td>
+<td style="text-align:center">9,0</td>
+<td style="text-align:center">9,5</td>
+<td style="text-align:center">10,0</td>
+</tr>
+</tbody>
+</table>
+<p>Laat het programma berekenen of opzoeken wat je cijfer is bij het behalen van een willekeurig aantal punten.<br>
+Je laat op het scherm weergeven of je een voldoende of een onvoldoende hebt behaald.<br>
+TIP: Kijk bij het onderdeel variabelen hoe je waarden uit een array op kunt vragen!</p>
+</blockquote>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+  <span class="token variable">$cesuur</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">1.6</span><span class="token punctuation">,</span> <span class="token number">2.1</span> <span class="token operator">...</span><span class="token operator">...</span><span class="token operator">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token variable">$aantal_punten</span> <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+  <span class="token variable">$cijfer</span> <span class="token operator">=</span> <span class="token operator">...</span><span class="token operator">.</span><span class="token operator">.</span>
+  
+  <span class="token variable">$if</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token operator">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  
+  <span class="token punctuation">}</span>
+<span class="token delimiter important">?></span></span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#condities">Condities</a></li><li><a href="#wat-ga-je-leren">Wat ga je leren</a></li><li><a href="#het-if-statement">Het if-statement</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/php-variabelen/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">PHP variabelen</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/tekstbewerkingen/">
+        <span class="title">Tekstbewerkingen</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Functions</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch090.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/" aria-current="page" data-state="active">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/" aria-current="page" data-state="active">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="functions">Functions</h2>
+<p>Wat ga je leren</p>
+<ul>
+<li>Je gaat leren hoe je code kunt hergebruiken.</li>
+<li>Je kunt 3 verschillende typen functies maken.</li>
+</ul>
+<h3 id="wat-zijn-functions%3F">Wat zijn functions?</h3>
+<p>Functions zijn stukjes code die je vaker gebruikt in je applicatie. Door de code in een function op te nemen kun je met 1 commando een heel stuk code uit laten voeren.
+Stel dat je in een webpagina vaak een dubbele lijn wilt tekenen. Dan kun je natuurlijk steeds 40 x een &quot;=&quot;-teken typen, maar dit kun je makkelijk automatiseren met een function!</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">function</span> <span class="token function-definition function">tekenDubbeleLijn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token variable">$i</span> <span class="token operator">&lt;=</span> <span class="token number">40</span><span class="token punctuation">;</span> <span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string double-quoted-string">"="</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token delimiter important">?></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Hier een stukje tekst met daaronder een mooie dubbele lijn!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">tekenDubbelelijn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>En dan nog wat tekst en opnieuw een dubbele lijn....<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">tekenDubbelelijn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>
+</code></pre>
+<p>Resultaat:</p>
+<div class="html">
+<p>Hier een stukje tekst met daaronder een mooie dubbele lijn!</p>
+========================================
+<p>En dan nog wat tekst en opnieuw een dubbele lijn....</p>
+========================================
+</div>
+<h4 id="functions-die-je-argumenten-mee-kunt-geven">Functions die je argumenten mee kunt geven</h4>
+<p>Stel dat je een toetscijfer om moet zetten in een (O)nvoldoende, (V)oldoende of (G)oed waardering.
+De formule is dan:</p>
+<ul>
+<li>Als het cijfer gelijk of hoger is dan een 8, dan wordt de waardering (G).</li>
+<li>Als het cijfer gelijk of hoger is dan een 5.5 dan wordt de waardering (V).</li>
+<li>Als het cijfer lager is dan een 5.5 dan wordt de waardering (O).</li>
+</ul>
+<p>Als je meerdere cijfers om moet zetten naar een OVG-waardering, dan is het handg als je de code kunt herhalen met steeds een ander cijfer!</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function-definition function">ovgWaardering</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span> <span class="token operator">>=</span> <span class="token number">8</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$cijfer</span> <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"G"</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> <span class="token keyword">elseif</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span> <span class="token operator">>=</span> <span class="token number">5.5</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$cijfer</span> <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"V"</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> <span class="token keyword">elseif</span><span class="token punctuation">(</span><span class="token variable">$cijfer</span> <span class="token operator">&lt;</span> <span class="token number">5.5</span> <span class="token operator">&amp;&amp;</span> <span class="token variable">$cijfer</span> <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"O"</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token variable">$waardering</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"invalid!"</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">echo</span> <span class="token variable">$waardering</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Je kunt de function aanroepen met een cijfer als argument.</p>
+<pre class="language-php"><code class="language-php"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>De OVG-waardering voor het cijfer 4 is: <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">ovgWaardering</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span> //Output: O
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>De OVG-waardering voor het cijfer 9 is: <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">ovgWaardering</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span> //Output: G
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>De OVG-waardering voor het cijfer 11 is: <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">ovgWaardering</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span> //Output: invalid!</code></pre>
+<h4 id="functions-die-een-waarde-retourneren">functions die een waarde retourneren</h4>
+<p>Bij een functie die wordt gebruikt om iets te berekenen kun je de uitkomst van de berekening retourneren</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function-definition function">telOp</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token punctuation">,</span> <span class="token variable">$b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token variable">$a</span> <span class="token operator">+</span> <span class="token variable">$b</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token variable">$c</span> <span class="token operator">=</span> <span class="token function">telOp</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//$c is 9</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#functions">Functions</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/sessions/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Sessions</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/opdracht-pokerio/">
+        <span class="title">Opdracht Pokerio</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

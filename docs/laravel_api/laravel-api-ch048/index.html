@@ -1,0 +1,128 @@
+<h1 id=""></h1>
+<h2 id="movie-relations">Movie-Relations</h2>
+<p>Om gegevens weer te geven moeten we gebruik maken van de request cycle.</p>
+<ul>
+<li>Er moet een route worden gedefinieerd (in routes/web.php)</li>
+<li>Er moet een controller worden gemaakt die de gegevens omzet naar json, zodat we kunnen zien wat er uit de database is opgehaald. (download hiervoor een json extensie voor je browser voor een betere weergave of maak gebruik van een tool om met api's te communiceren zoals postman).</li>
+</ul>
+<h2 id="controllers">Controllers</h2>
+<p>Maak een nieuwe controller waarin alle movie-acties komen....</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>controller MovieController</code></pre>
+<p>De controller komt in de map App/Http/Controllers. De controller gaat intensief gebruik maken van het Movie-model. Dit is de code om in ieder geval alle movies weer te geven als json-data...
+Voeg deze route toe aan routes/web.php...</p>
+<pre class="language-php"><code class="language-php"><span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/movies'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">MovieController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'index'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>De route verwijst naar de methode index in de MovieController. Deze methode moeten we aanmaken...</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">MovieController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function-definition function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name static-context">Movie</span><span class="token operator">::</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">toJson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Ga naar 'http://127.0.0.1/8000/movies' en zie...</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string">"Tokyo Story"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token number">1953</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string">"Sunrise"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token number">1927</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre>
+<h2 id="relaties-met-eloquent">Relaties met Eloquent</h2>
+<p>Om alle movies en hun ratings weer te geven kunnen we gebruik maken van de mogelijkheden van Eloquent of van de Querybuilder van Laravel. Eloquent is een zgn. ORM een object-relational-manager. Het doel is om het opzoeken en manipuleren van data zoveel mogelijk te integereren in de programmeeromgeving. Dat betekent dat het opvragen zoveel mogelijk object-georiënteerd gaat en dat resources uit de database zo goed mogelijk worden vertaald naar objecten en arrays.
+Eloquent maakt gebruik van informatie uit de models om dit te doen. Als we alle movies en hun ratings op willen halen dan moeten we in de models definiëren wat hun relatie is.</p>
+<h2 id="een-op-meer">Een-op-meer</h2>
+<p>Voor movies betekent dit:</p>
+<ul>
+<li>Een movie has-many ratings.</li>
+<li>Een rating belongs-to one movie.</li>
+</ul>
+<p>Er is dan nog wel een model nodig voor de tabel ratings.</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>model Rating</code></pre>
+<p>In de models ziet dat er als volgt uit:</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">Movie</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token package">HasFactory</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">ratings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">hasMany</span><span class="token punctuation">(</span><span class="token class-name static-context">Rating</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In routes/web.php (of api.php als je een api bouwt) wordt er een route toegevoegd.</p>
+<pre class="language-php"><code class="language-php"><span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/movies-with-ratings'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">MovieController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'withRatings'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>In de MovieController wordt een query opgebouwd die de ratings aggregeerd op basis van het gemiddelde (withAvg).</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">function</span> <span class="token function-definition function">withRatings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name static-context">Movie</span><span class="token operator">::</span><span class="token function">withAvg</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'ratings'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'rating'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">toJson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>Met http://127.0.0.1/movies-with-ratings/ is dit het resultaat..</p>
+<pre class="language-javascript"><code class="language-javascript"> <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string">"Sunrise"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token number">1927</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"ratings_avg_rating"</span><span class="token operator">:</span> <span class="token string">"4.0000"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string">"A Space Odyssey"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token number">1968</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"ratings_avg_rating"</span><span class="token operator">:</span> <span class="token string">"3.5000"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<h2 id="many-to-many">Many-to-Many</h2>
+<p>In het volgende voorbeeld gaan we een weergave maken van een user met de movies die hij/zij een rating heeft gegeven. In het model van de 'User' moeten we de relatie met 'Movie' opnemen. Deze relatie gaat op basis van de tussentabel 'ratings' omdat het een meer-op-meer relatie is. In het 'User'-model gebruik je daarom 'belongsToMany' in plaats van 'hasMany'. De methode 'withPivot' zorgt ervoor dat we ook een waarde uit de tussentabel weer kunnen geven. De 'rating' is immers opgeslagen in de tussentabel 'ratings'.</p>
+<p>In 'App/Models/User.php'...</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">movies</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token function">belongsToMany</span><span class="token punctuation">(</span><span class="token class-name static-context">Movie</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'ratings'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">withPivot</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'rating'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>In App/Http/Controllers/UsersController gebruiken we de relatie om de movies bij 1 user op te halen op basis van het 'id'.</p>
+<pre class="language-php"><code class="language-php">    <span class="token keyword">function</span> <span class="token function-definition function">withMovies</span><span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name static-context">User</span><span class="token operator">::</span><span class="token function">with</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'movies'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">where</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'id'</span><span class="token punctuation">,</span> <span class="token variable">$id</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">toJson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>en in routes/web.php</p>
+<pre class="language-php"><code class="language-php"><span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/user-with-movies/{id}'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">UserController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'withMovies'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Resultaat:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"spock"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"email"</span><span class="token operator">:</span> <span class="token string">"spock@gmail.com"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"email_verified_at"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"movies"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string">"Tokyo Story"</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token number">1953</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"pivot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">"user_id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"movie_id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"rating"</span><span class="token operator">:</span> <span class="token number">5</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"title"</span><span class="token operator">:</span> <span class="token string">"Sunrise"</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token number">1927</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2021-11-07T17:47:11.000000Z"</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"updated_at"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      <span class="token string-property property">"pivot"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">"user_id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"movie_id"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"rating"</span><span class="token operator">:</span> <span class="token number">3</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>

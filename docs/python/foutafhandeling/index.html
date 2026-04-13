@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Foutafhandeling</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch085.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/" aria-current="page" data-state="active">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/" aria-current="page" data-state="active">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="foutafhandeling">Foutafhandeling</h2>
+<p>Om er voor te zorgen dat gebruikers niet met foutmeldingen worden geconfronteerd en applicaties niet instorten als een gebruiker iets verkeerd doet, is het belangrijk dat fouten worden afgevangen.</p>
+<p>Bij applicaties waarbij om invoer wordt gevraagd kan niet van tevoren worden voorspeld wat een gebruiker gaat invoeren. Alles is mogelijk, maar een applicatie kan niet altijd met de invoer van een gebruiker overweg....</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span></code></pre>
+<p>Als de gebruiker nu <code>sdfdsf</code> invult wordt onderstaande error getoond:</p>
+<pre class="language-python"><code class="language-python">ValueError<span class="token punctuation">:</span> invalid literal <span class="token keyword">for</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">with</span> base <span class="token number">10</span><span class="token punctuation">:</span> <span class="token string">'sdfdsf'</span>
+<span class="token punctuation">(</span>venv<span class="token punctuation">)</span> janjaap@iMac<span class="token operator">-</span>Pro<span class="token operator">-</span>van<span class="token operator">-</span>Jan pythoncisco <span class="token operator">%</span> </code></pre>
+<p>Python probeert de input om te zetten naar een <code>int</code>, maar dat lukt niet met <code>sdfs</code>.
+Het programma wordt onderbroken.</p>
+<p>Om te voorkomen dat de programma abrupt stopt nadat er een fout optreedt, kan de code eerst getest worden en kan de developer bepalen wat het programma moet doen bij een fout.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+    getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Oeps, er ging iets mis'</span><span class="token punctuation">)</span></code></pre>
+<p>Door het try/except block wordt de code getest en als er iets fout gaat wordt de regel 'Oeps er ging iets mis' getoond. Nog niet geweldig, maar beter dan een lelijke foutmelding.
+Het programma wordt uitgebreid met een while-lus, zodat de gebruiker net zo lang invoer kan geven totdat het programma een waarde krijgt waarmee de berekening kan worden uitgevoerd....</p>
+<pre class="language-python"><code class="language-python">doorgaan <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">while</span> doorgaan<span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+        getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span>
+        doorgaan <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Geef een getal anders kan het programma geen berekening uitvoeren!'</span><span class="token punctuation">)</span></code></pre>
+<p>Hieronder de output van het programma....</p>
+<pre class="language-python"><code class="language-python">Geef een getal tussen <span class="token number">1</span> en <span class="token number">10</span>
+bla
+Geef een getal anders kan het programma geen berekening uitvoeren!
+Geef een getal tussen <span class="token number">1</span> en <span class="token number">10</span>
+<span class="token number">3</span>
+<span class="token number">13</span></code></pre>
+<p>Het programma kan nog robuuster worden gemaakt. De gebruiker moet een getal tussen 1 en 10 geven. Python kan wel controleren of de invoer van het juiste type is, maar de programmeur bepaalt of een getal zich binnen de gewenste range bevindt. Als er een getal hoger dan 10 en lager dan 1 wordt gegeven kan je zelf een error programmeren...</p>
+<pre class="language-python"><code class="language-python">doorgaan <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">while</span> doorgaan<span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+        getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> getal <span class="token operator">></span> <span class="token number">10</span> <span class="token keyword">or</span> getal <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span>
+            doorgaan <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Geef een getal anders kan het programma geen berekening uitvoeren!'</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Alleen getallen tussen 1 en 10 zijn geldig!"</span><span class="token punctuation">)</span></code></pre>
+<p>Nu is het vrijwel onmogelijk om het programma nog over zijn toeren te krijgen. Alle input die niet geldig is wordt afgevangen en er wordt een passende melding gegeven. Het programma draait net zo lang door tot de gewenste input is gegeven.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#foutafhandeling">Foutafhandeling</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/werken-met-tekst/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Werken met tekst</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/functions/">
+        <span class="title">Functions</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

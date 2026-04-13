@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Composer</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch20.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/" aria-current="page" data-state="active">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/" aria-current="page" data-state="active">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="composer">Composer</h2>
+<p>Composer is verantwoordelijk voor het automatisch laden van class-bestanden. Dit vereist wel het een en ander aan configuratie zodat composer 'weet' waar classes zich bevinden op je systeem.<br>
+Om composer te gebruiken moet het eerst geïnstalleerd worden. Dat kun je doen op <a href="https://getcomposer.org/">https://getcomposer.org/</a>.
+Na installatie met de installer kun je direct vanuit iedere directory composer gebruiken. Tijdens de installatie voegt de installer de directory waar composer zich bevindt toe aan de PATH directive.</p>
+<h2 id="opdracht">Opdracht</h2>
+<ul>
+<li>Clone de repository <a href="https://github.com/siewers32/composer-test.git">siewers32/composer-test</a> naar je  laptop.</li>
+<li>Installeer de mdb-database</li>
+<li>run <code>composer</code> install vanuit de directory van de applicatie
+<ul>
+<li>Dit zorgt er voor dat alle 'dependencies' en classes worden gedownload en geconfigureerd.</li>
+<li>Je kunt de pakketten die zijn geïnstalleerd zien in composer.json</li>
+</ul>
+</li>
+<li>Start een lokale webserver vanuit de directory composer-test/public/index.php
+<ul>
+<li>public/index.php is de single-point-entry voor de website.</li>
+</ul>
+</li>
+<li>Op dit moment wordt iedere keer dat index.php wordt opgevraagd een film toegevoegd aan de database.</li>
+<li>Zorg ervoor dat de bij het aanroepen van index.php de laatste film van james bond wordt toegevoegd!</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#composer">Composer</a></li><li><a href="#opdracht">Opdracht</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/mvc/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">MVC</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/radiostation-kraeken/">
+        <span class="title">Radiostation Kraeken</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

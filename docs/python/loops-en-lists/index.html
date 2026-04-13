@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Loops en lists</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch060.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/" aria-current="page" data-state="active">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/" aria-current="page" data-state="active">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="loops-en-lists">Loops en lists</h2>
+<p>Vaak komt het voor dat je een bewerking wilt uitvoeren op alle elementen in een list. Als je een list print, dan zie je ook de haken van de list en komma's tussen de elementen. Stel dat je alle elementen gewoon onder elkaar wilt printen, hoe gaat dat?</p>
+<pre class="language-python"><code class="language-python">tovenaars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tita'</span><span class="token punctuation">,</span> <span class="token string">'merlin'</span><span class="token punctuation">,</span> <span class="token string">'hans klok'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>tovenaars<span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token punctuation">[</span><span class="token string">'tita'</span><span class="token punctuation">,</span> <span class="token string">'merlin'</span><span class="token punctuation">,</span> <span class="token string">'hans klok'</span><span class="token punctuation">]</span></code></pre>
+<p>Hieronder worden de tovenaars 1 voor 1 in een loop getoond op het scherm.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">for</span> tovenaar <span class="token keyword">in</span> tovenaars<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tovenaar<span class="token punctuation">)</span>
+ 
+<span class="token comment">#output</span>
+tita
+merlin
+hans klok</code></pre>
+<p>In de regel <code>for tovenaar in tovenaars</code> wordt voor alle tovenaars 1 voor 1 een waarde aan de variabele tovenaar toegekend. Je noemt dit een 'loop' omdat deze actie net zo lang wordt herhaald totdat alle elementen in tovenaars een keer aan de beurt zijn geweest.</p>
+<ul>
+<li>De eerste keer wordt de waarde 'tita' toegekend aan de variabele tovenaar.</li>
+<li>De waarde van tovenaar wordt geprint</li>
+<li>De volgende waarde uit tovenaars wordt opgehaald en opnieuw wordt er geprint</li>
+<li>Dit proces wordt herhaald totdat alle elementen uit de list aan de beurt zijn geweest.</li>
+<li></li>
+</ul>
+<p>Je ziet dat de regel <code>print(tovenaar)</code> iets van de kant af staat. Deze regel is ingesprongen. In Python betekent dit dat de print-opdracht is ingebed in de for-loop. Hier moet je goed op letten, want Python is streng. Als je slordig omgaat met inspringingen dan krijg je foutmeldingen.</p>
+<pre class="language-python"><code class="language-python">counter <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> tovenaar <span class="token keyword">in</span> tovenaars<span class="token punctuation">:</span>
+    counter <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment"># Dit is hetzelfde als counter = counter + 1</span>
+    <span class="token comment"># counter wordt dus steeds 1 meer in de loop</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tovenaar<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span> tovenaar<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span></span><span class="token string"> is tovenaar </span><span class="token interpolation"><span class="token punctuation">{</span> counter <span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token comment"># Je kunt meerdere opdrachten uitvoeren in een loop!</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Zo, dat was het"</span><span class="token punctuation">)</span></code></pre>
+<p>Zoals je ziet wordt alle code die is ingesprongen herhaald in de for-loop. Als laatste wordt nog &quot;Zo, dat was het&quot; getoond. Dit is niet ingesprongen. Het valt buiten de loop en wordt na de loop maar 1 keer uitgevoerd. De <code>:</code> in de eerste regel can de for-loop en de inspringing bepalen waar de code in de loop begint en waar die eindigt.</p>
+<h2 id="code-herhalen-zonder-list">Code herhalen zonder list</h2>
+<p>Je kunt ook zelf definiëren hoe vaak een loop moet worden gebruikt. Hieronder een voorbeeld:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token number">1</span>
+<span class="token number">2</span></code></pre>
+<p>Met <code>range()</code> kun je aangeven hoe vaak de code in de for-loop moet worden herhaald. De variabele v krijgt steeds de eerstvolgende waarde uit de range.
+Je ziet dat de loop maar 2x wordt uitgevoerd. De eerste waarde in range wordt getoond, maar de laatste niet!</p>
+<p>Je kunt ook nummers overslaan in een range...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token number">2</span>
+<span class="token number">4</span>
+<span class="token number">6</span></code></pre>
+<p>Het derde argument in de functie <code>range()</code> bepaalt hoeveel er wordt opgeteld bij huidig getal.
+De eerste keer wordt 2 weergegeven. Bij 2 wordt 2 opgeteld, dus wordt 4 weergegeven etc. etc.
+Het laatste getal 8 wordt niet meer weergegeven!</p>
+<h2 id="berekeningen-in-een-loop">Berekeningen in een loop</h2>
+<p>Je kunt de variabele <code>v</code> gebruiken om berekeningen mee uit te voeren. Onderstaand voorbeeld laat zien hoe je iedere v kunt vermenigvuldigen met zichzelf (kwadraat). Het resultaat wordt toegevoegd aan een list!</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Een lege list maken</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># kwadraat van zichzelf</span>
+    lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>v <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">]</span></code></pre>
+<h2 id="list-comprehensions">List comprehensions</h2>
+<p>Bovenstaand voorbeeld kun je ook nog korter weergeven. Python heeft hiervoor de list comprehension. Je kunt tussen de rechte haken van een list een klein stukje code opnemen waarmee je de list genereert...</p>
+<pre class="language-python"><code class="language-python">kwadraten <span class="token operator">=</span> <span class="token punctuation">[</span>v <span class="token operator">**</span> <span class="token number">2</span> <span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kwadraten<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">]</span></code></pre>
+<h2 id="lists-to-copy-or-not-to-copy">Lists to copy or not to copy</h2>
+<p>Bekijk onderstaande code...</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> a
+b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></code></pre>
+<p>Wat gebeurt hier? Er wordt een lijst <code>a</code> gemaakt. <code>b</code> wordt gelijk aan <code>a</code>. <code>b</code> wordt veranderd, maar uit de print-opdracht blijkt dat <code>a</code> ook is veranderd!
+De opdracht <code>b = a</code> levert alleen een verwijzing op in plaats van een kopie. <code>a</code> en <code>b</code> verwijzen beide naar dezelfde list!</p>
+<h2 id="lists-slicen">Lists slicen</h2>
+<p>We herhalen het bovenstaande nog een keer maar met 1 klein verschil..</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span></code></pre>
+<p>Door de toevoeging van <code>[:]</code> wordt er wel een echte kopie gemaakt van <code>a</code>!
+Met de <code>[:]</code>-syntax kun je met een gedeelte van een list een nieuwe list maken. Met <code>[:]</code> geef je aan dat je van alle elementen in een bestaande list een nieuwe list wilt maken.<br>
+Als je alle elementen vanaf het 1e element in de list wil hebben dan doe je dat zo...</p>
+<pre class="language-python"><code class="language-python">my_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+nw_list <span class="token operator">=</span> my_lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nw_list<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></code></pre>
+<p>Alle elementen tot aan list-element 4...</p>
+<pre class="language-python"><code class="language-python">my_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+nw_list <span class="token operator">=</span> my_lst<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nw_list<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span></code></pre>
+<p>Alle elementen vanaf 1 tot 4</p>
+<pre class="language-python"><code class="language-python">my_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+nw_list <span class="token operator">=</span> my_lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nw_list<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#loops-en-lists">Loops en lists</a></li><li><a href="#code-herhalen-zonder-list">Code herhalen zonder list</a></li><li><a href="#berekeningen-in-een-loop">Berekeningen in een loop</a></li><li><a href="#list-comprehensions">List comprehensions</a></li><li><a href="#lists-to-copy-or-not-to-copy">Lists to copy or not to copy</a></li><li><a href="#lists-slicen">Lists slicen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/input-functions/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Input functions</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/condities/">
+        <span class="title">Condities</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

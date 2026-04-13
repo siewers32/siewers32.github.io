@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Sessions</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch080.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/" aria-current="page" data-state="active">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/" aria-current="page" data-state="active">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="sessions">Sessions</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/VyvjyZbv_6M">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/6Rk5-W-_jYM">
+        </iframe>
+    </div>
+<h3 id="wat-ga-je-leren">Wat ga je leren</h3>
+<ul>
+<li>Je gaat leren hoe je variabelen kunt bewaren van de ene pagina naar de andere.</li>
+<li>Je gaat leren hoe je sessions kunt gebruiken voor het bewaren van gebruikers-informatie.</li>
+</ul>
+<h3 id="wat-is-een-session%3F">Wat is een session?</h3>
+<p>Als een php-pagina wordt opgevraagd van de server, dan zijn alle variabelen beschikbaar totdat er een andere pagina wordt opgevraagd.
+Met een sessie wordt bedoeld dat variabelen bewaard blijven ondanks dat er andere pagina's worden geladen.
+Een gebruiker die is ingelogd kan op meerdere pagina's zijn naam zien. Dit kan doordat zijn naam in een sessie-variabele is opgeslagen.</p>
+<h3 id="hoe-werkt-een-sessie">Hoe werkt een sessie</h3>
+<p>Een sessie in PHP wordt gestart met de functie....</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token function">session_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>Voordat je sessie-variabelen kunt gebruiken moet de php-functie session_start() worden aangeroepen. Dit moet je op alle pagina's doen waar je sessie-variabelen wilt gebruiken.
+Nadat een session is gestart kun je waarden bewaren in de '$_SESSION'-array;</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token function">session_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$_SESSION</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'username'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"piet"</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span>
+/*--------------Andere pagina-----------------*/
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token comment">//Op een andere pagina kun je de waarde van $_SESSION['username'] weergeven met:  </span>
+    <span class="token function">session_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token variable">$_SESSION</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'username'</span><span class="token punctuation">]</span>
+<span class="token delimiter important">?></span></span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#sessions">Sessions</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/formulieren/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Formulieren</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/functions/">
+        <span class="title">Functions</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

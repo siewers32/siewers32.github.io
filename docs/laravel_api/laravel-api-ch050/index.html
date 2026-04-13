@@ -1,0 +1,78 @@
+<h1 id=""></h1>
+<h2 id="validatie">Validatie</h2>
+<p>Met de nodig routes en controllers op hun plek, kunnen we nu de methoden bouwen waarmee gegevens worden opgehaald, opgeslagen en verwijderd.</p>
+<h2 id="gegevens-opslaan">Gegevens opslaan</h2>
+<p>Om een movie op te slaan hebben we een aantal gegevens nodig. In de app is er minimaal een 'title' en een 'year' nodig, aangezien het 'id' automatisch wordt aangemaakt (auto-increment) hoef je daar niks voor te doen!
+Dit is de code voor de store-methode in de MovieController:</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">store</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$movie</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Movie</span><span class="token punctuation">;</span>
+    <span class="token variable">$movie</span><span class="token operator">-></span><span class="token property">title</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token property">title</span><span class="token punctuation">;</span>
+    <span class="token variable">$movie</span><span class="token operator">-></span><span class="token property">year</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token property">year</span><span class="token punctuation">;</span>
+    <span class="token variable">$movie</span><span class="token operator">-></span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+        <span class="token string single-quoted-string">'message'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'Movie is succesvol toegevoegd'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Een manier om bovenstaande code te testen is om een post-request te sturen naar de api met de benodigde gegevens.
+Dit kan met Postman. In Postman maak je een url: http://127.0.0.1:8000/api/movies die je aanroept met de methode POST. In de body stuur je de form data mee (x-www-form-urlencoded). Geef een waarde voor 'title' en een waarde voor 'year'.
+Om alles goed te laten werken moet je er ook nog voor zorgen dat je Postman de gegevens verstuurt als JSON en ook de response weer als JSON-code ontvangt. Dit doe je door de volgende headers mee te sturen:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token literal-property property">Accept</span><span class="token operator">:</span> application<span class="token operator">/</span>json
+Content<span class="token operator">-</span>type<span class="token operator">:</span> application<span class="token operator">/</span>json</code></pre>
+<p>Als je de url aanroept, maakt Laravel een nieuw record aan in de movie-tabel en geeft de melding terug dat de movie succesvol is toegevoegd!</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+    <span class="token string-property property">"message"</span><span class="token operator">:</span> <span class="token string">"Movie is succesvol toegevoegd"</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="gegevens-controleren">Gegevens controleren</h2>
+<p>Het is natuurlijk geen goed idee om willekeurige data van een client zo maar op te slaan. Vanuit security-oogpunt moet alle data die van gebruikers of andere systemen komt vooraf gechecked worden op geldigheid en validiteit.
+In Laravel moet je daarom de gegevens valideren voordat je ze opslaat.
+In het request-object is een functie 'validate' beschikbaar die dit voor je kan doen:</p>
+<pre class="language-php"><code class="language-php">  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">store</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token variable">$validated</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+        <span class="token string single-quoted-string">'title'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'required|max:255'</span><span class="token punctuation">,</span>
+        <span class="token string single-quoted-string">'year'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'required|numeric'</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>
+        <span class="token string single-quoted-string">'year.numeric'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'Een jaar moet worden uitgedrukt in cijfers!'</span>
+      <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+       
+      <span class="token variable">$movie</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Movie</span><span class="token punctuation">;</span>
+      <span class="token variable">$movie</span><span class="token operator">-></span><span class="token property">title</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token property">title</span><span class="token punctuation">;</span>
+      <span class="token variable">$movie</span><span class="token operator">-></span><span class="token property">year</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token property">year</span><span class="token punctuation">;</span>
+      <span class="token variable">$movie</span><span class="token operator">-></span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+          <span class="token string single-quoted-string">'message'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'Movie is succesvol toegevoegd'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">)</span>             
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>Als je opnieuw probeert een movie aan te maken waarbij 'year' de waarde 'abcd' heeft, dan krijg je een foutmelding terug omdat 'year', 'numeric' moet zijn. In bovenstaand voorbeeld is de foutmelding handmatig aangepast. Het resultaat is:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+    <span class="token string-property property">"message"</span><span class="token operator">:</span> <span class="token string">"The given data was invalid."</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"errors"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">"year"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"Een jaar moet worden uitgedrukt in cijfers!"</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="formrequest">Formrequest</h2>
+<p>Aangezien je bij een 'update' van een record weer dezelfde data moet controleren als bij 'store' is het misschien niet altijd logisch om de validatieregels op te nemen in een methode in de controller. Je gaat dan al snel dezelfde code kopiëren. Om dit te ondervangen kun je ook gebruik maken van een formrequest. Een formrequest is een class die je kunt aanroepen wanneer je hem nodig hebt in een controller. Zo kun je dezelfde validatie-logic op meerdere plekken in je controller gebruiken zonder dat je code kopieert.
+Zo maak je een formrequest aan:</p>
+<pre class="language-php"><code class="language-php">php artisan make<span class="token punctuation">:</span>request StoreMovieRequest</code></pre>
+<p>Een formrequest biedt nog extra functionaliteit. Naast het feit dat je op basis van 'rules' kunt bepalen of de gegevens geschikt zijn om op te slaan, kun je ook controleren of de gebruiker voldoende rechten 'authorize' heeft om de gewenste actie uit te voeren.
+In bovenstaand voorbeeld kun je dezelfde validatieregels gebruiken als in de controller:</p>
+<pre class="language-php"><code class="language-php"><span class="token comment">//StoreMovieRequest</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">authorize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span> <span class="token comment">//We doen nog niks met authorisatie, dus deze moet 'true' zijn.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">rules</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">[</span>
+      <span class="token string single-quoted-string">'title'</span> <span class="token operator">=></span> <span class="token punctuation">[</span><span class="token string single-quoted-string">'required'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'max:255'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string single-quoted-string">'year'</span> <span class="token operator">=></span> <span class="token punctuation">[</span><span class="token string single-quoted-string">'required'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'numeric'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">messages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+      <span class="token string single-quoted-string">'year.numeric'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'Een jaar moet worden uitgedrukt in cijfers!'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>

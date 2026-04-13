@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Development Tools</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/ai_engineer/ai_eng-ch020.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/ai_engineer/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/software-developer/">Software Developer</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/development-tools/" aria-current="page" data-state="active">Development Tools</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/pydantic/">Pydantic</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/api/">API</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/structured-output/">Structured Output</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/streamlit-chatbot/">Streamlit chatbot</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/rag/">RAG</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/agents/">Agents</a>
+
+<a class="page-link" href="/edutorial/ai_engineer/links/">Links</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/ai_engineer/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/software-developer/">Software Developer</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/development-tools/" aria-current="page" data-state="active">Development Tools</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/pydantic/">Pydantic</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/api/">API</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/structured-output/">Structured Output</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/streamlit-chatbot/">Streamlit chatbot</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/rag/">RAG</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/agents/">Agents</a>
+    
+    <a class="page-link" href="/edutorial/ai_engineer/links/">Links</a>
+    
+</div>
+
+            <h1 id="ai-engineer">AI-engineer</h1>
+<h2 id="development-tools">Development Tools</h2>
+<h2 id="ai-tools">AI Tools</h2>
+<ul>
+<li><strong>Python</strong>: Programmeertaal (zie ook cursus <a href="https://www.edutorial.nl/python/introductie/">Python</a>)</li>
+<li><strong>Pydantic</strong>: Een data validatie library.</li>
+<li><strong>Python-dotenv</strong>: Zorgt ervoor dat gevoelige informatie zoals API keys veilig buiten de versiebeheeropslagplaats blijft.</li>
+<li><strong>Streamlit</strong>: Een Python-framework waarmee je snel interactieve webapplicaties kunt bouwen voor AI. Het maakt het eenvoudig om Python-code om te zetten in een visuele interface.</li>
+<li><strong>FastAPI</strong>: Een library voor het bouwen van API's, vooral handig vanwege de integratie met Pydantic.</li>
+<li><strong>Celery</strong>: Voor het bouwen van task queues om werk te verdelen over meerdere threads of machines.</li>
+<li><strong>PostgreSQL</strong>: Een SQL database. (zie ook cursus <a href="https://www.edutorial.nl/dbq/introductie/">Database queries</a> en <a href="https://www.edutorial.nl/dbo/introductie/">Database ontwerp</a>)</li>
+<li><strong><a href="https://www.timescale.com/">Timescale</a></strong>: Een extensie op PostgreSQL voor vector-opslag (ai-toepassingen)</li>
+<li><strong>Pycopg</strong>: Python library voor PostgreSQL.</li>
+<li><strong>SQLAlchemy</strong>: Vereenvoudigt operaties met SQL databases zoals PostgreSQL.</li>
+<li><strong>Alembic</strong>: Beheert database migraties in combinatie met SQLAlchemy.</li>
+<li><strong>Pandas</strong>: Voor het structureren en manipuleren van data in rijen en kolommen.</li>
+<li><strong>OpenAI API, Anthropic API, Google's API</strong>: Verschillende API's van model providers.</li>
+<li><strong>Instructor</strong>: Wordt gebruikt om gestructureerde uitvoer te halen uit modellen.</li>
+<li><strong>PG Vector</strong>: Vector databases voor het opslaan en ophalen van context.</li>
+<li><strong>PiMuPDF, PyPDF2</strong>: Libraries om informatie te extraheren uit documenten of PDFs.</li>
+<li><strong>Jinja</strong>: Een templating engine voor Python, handig voor het bouwen van dynamische prompts.</li>
+</ul>
+<h4 id="links">Links</h4>
+<ul>
+<li><a href="https://github.com/open-webui/open-webui">OpenWebUI</a>
+<ul>
+<li>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.</li>
+</ul>
+</li>
+<li><a href="https://github.com/BerriAI/litellm">LiteLLM</a>
+<ul>
+<li>Call all LLM APIs using the OpenAI format [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#development-tools">Development Tools</a></li><li><a href="#ai-tools">AI Tools</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/ai_engineer/software-developer/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Software Developer</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/ai_engineer/pydantic/">
+        <span class="title">Pydantic</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

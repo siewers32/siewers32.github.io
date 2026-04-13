@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Formulieren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/html/html-ch090.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+
+<a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+
+<a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+
+<a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+
+<a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+
+<a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+
+<a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+
+<a class="page-link" href="/edutorial/html/formulieren/" aria-current="page" data-state="active">Formulieren</a>
+
+<a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+
+<a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+
+<a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+    
+    <a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+    
+    <a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+    
+    <a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+    
+    <a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+    
+    <a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+    
+    <a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+    
+    <a class="page-link" href="/edutorial/html/formulieren/" aria-current="page" data-state="active">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+    
+    <a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+    
+    <a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+    
+</div>
+
+            <h1 id="html-5">HTML 5</h1>
+<h2 id="formulieren">Formulieren</h2>
+<p>Formulieren worden gebruikt om een gebruiker input te laten geven. Vervolgens kan met javascript of een serverside script (bijv. php) iets gedaan worden met die input.<br>
+Een formulier start met de &lt;form&gt;-tag.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>In een formulier kun je gebruik maken van form-elementen. Bijvoorbeeld om je naam in te voeren of om een datum op te geven...</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>verwerk_gegevens.php<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Voornaam: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>voornaam<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+    Geboortedatum: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>geboortedatum<span class="token punctuation">"</span></span>
+       <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2015-05-05<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>verstuur<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<form onSubmit="return false;">
+    Voornaam: <input type="text" name="voornaam" value=""><br>
+    Geboortedatum: <input type="date" name="geboortedatum" value="2015-05-05"><br>
+    <input type="submit" value="verstuur">
+</form>
+</div>
+<p>Je hebt nu kennis gemaakt met het &lt;form&gt; element.
+Je ziet dat een form een attribuut 'action' en een attribuut 'method' heeft. De waarde van 'action' (= verwerk_gegevens.php) is in dit geval een server-script dat de gegevens gaat verwerken. De 'method' geeft aan hoe de gegevens naar de server worden verstuurd. In de cursus over PHP krijg je hier meer over.</p>
+<p>Je hebt nu kennis gemaakt met 3 formulier-elementen:</p>
+<ul>
+<li>Een input-element van het type text</li>
+<li>Een input-element van het type datum</li>
+<li>Een input-element van het type submit.
+<ul>
+<li>Hiermee krijg je een knop waarmee je de gegevens kunt versturen.</li>
+</ul>
+</li>
+</ul>
+<h2 id="checkboxes-en-radiobuttons">Checkboxes en radiobuttons</h2>
+<p>Hieronder zie je voorbeelden van een rij checkboxjes en radiobuttons.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snoep<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">></span></span> Drop
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snoep<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Kauwgom
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snoep<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Zure mat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>   
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gebak<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">></span></span> Cheesecake
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gebak<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Limburgse vlaai
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gebak<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Chocolade fudge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span> </code></pre>
+<div class="html">
+<form>
+    <p><input type="checkbox" name="snoep" value="0" checked=""> Drop
+    <input type="checkbox" name="snoep" value="1"> Kauwgom
+    <input type="checkbox" name="snoep" value="3"> Zure mat</p>
+    <p><input type="radio" name="gebak" value="0" checked=""> Cheesecake
+    <input type="radio" name="gebak" value="1"> Limburgse vlaai
+    <input type="radio" name="gebak" value="2"> Chocolade fudge</p>
+</form>
+</div>
+<p>Bij de checkbox kun je meer dingen selecteren. Je kunt kiezen voor kauwgom en een zure mat.
+Bij de radiobuttons kun je altijd maar 1 element selecteren
+De eerste elementen zijn al voorgeselecteerd. Dat komt door het woordje 'checked'. Je kunt dus van te voren instellen of er al een keuze is voorgeselecteerd.</p>
+<h2 id="text-area">Text-area</h2>
+<p>Met de 'text-area' kun je een flinke lap tekst versturen.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flinke_lap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Zoals je ziet heeft een text-area zowel een openingstag als een sluit-tag,  
+    dit in tegenstelling tot de input-elementen en het br-element die je niet hoeft af te sluiten. 
+    Dit is een beetje inconsequent in html5!
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">></span></span></code></pre>
+<p>Probeer op codepen het formulier aan te passen. Kijk wat er gebeurt als je andere waarden invult bij 'value' en bij 'name'</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#formulieren">Formulieren</a></li><li><a href="#checkboxes-en-radiobuttons">Checkboxes en radiobuttons</a></li><li><a href="#text-area">Text-area</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/html/afbeeldingen-aanpassen/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Afbeeldingen aanpassen</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/html/website-vanaf-schets/">
+        <span class="title">Website vanaf schets</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

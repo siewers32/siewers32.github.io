@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Javascript en Formulieren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/js/js-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/">Javascript loops en condities</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/" aria-current="page" data-state="active">Javascript en Formulieren</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+
+<a class="page-link" href="/edutorial/javascript/events-in-javascript/">Events in javascript</a>
+
+<a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+
+<a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/">The Persistent Dashboard</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/">Javascript loops en condities</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/" aria-current="page" data-state="active">Javascript en Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+    
+    <a class="page-link" href="/edutorial/javascript/events-in-javascript/">Events in javascript</a>
+    
+    <a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/">The Persistent Dashboard</a>
+    
+</div>
+
+            <h1 id="javascript">Javascript</h1>
+<h2 id="javascript-en-formulieren">Javascript en Formulieren</h2>
+<h3 id="leerdoelen">Leerdoelen</h3>
+<ul>
+<li>Je kunt waarden in formulieren aanpassen</li>
+<li>Je kunt eenvoudige berekeningen maken met javascript</li>
+</ul>
+<p>Stel je hebt een formulier en je wilt dat hetgeen je invult in het formulier getoond wordt op de pagina....</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>naam<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">kopieerTekst</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Klik hier<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>output<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hier komt wat je invult in het formulier!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+    <input type="text" id="naam" value=""><br>
+    <button onclick="kopieerTekst()">Klik hier</button>
+    <div id="output">Hier komt wat je invult in het formulier!</div>
+</div>
+<p>Om dit werkend te krijgen moet je de volgende stappen maken:</p>
+<ul>
+<li>Maak een script-tag aan</li>
+<li>Gebruik <code>getElementById()</code> om de het object waar de naam in staat op aan een variabele toe te voegen</li>
+<li>Lees de waarde uit het input-veld</li>
+<li>Gebruik opnieuw <code>getElementById()</code> om te refereren naar het div-element met id 'output'</li>
+<li>Voeg de waarde toe aan <code>innerHTML</code>.</li>
+<li>Stop alle code in een function met de naam 'kopieerTekst()'</li>
+</ul>
+<p>In javascript ziet dat er zo uit...</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">function</span> <span class="token function">kopieerTekst</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> invoerveld <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'naam'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> invoer <span class="token operator">=</span> invoerveld<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> outputdiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        outputdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> invoer<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h2 id="rekenmachine">Rekenmachine</h2>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>waarde1<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span> +
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>waarde2<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">Bereken</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Klik hier<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>output<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hier komt de uitkomst<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<input type="text" id="waarde1" value=""> +
+<input type="text" id="waarde2" value=""><br>
+<button onclick="Bereken()">Klik hier</button>
+<div id="output">Hier komt de uitkomst</div>
+</div>
+<p>Om dit werkend te krijgen moet je de volgende stappen maken:</p>
+<ul>
+<li>Maak een script-tag aan</li>
+<li>Gebruik <code>getElementById()</code> om de het object waar <code>waarde1</code> in staat op aan een variabele toe te voegen</li>
+<li>Gebruik <code>getElementById()</code> om de het object waar <code>waarde2</code> in staat op aan een variabele toe te voegen</li>
+<li>Bereken de uitkomst door waarde1 en waarde2 op te tellen</li>
+<li>Gebruik opnieuw <code>getElementById()</code> om te refereren naar het div-element met id 'output'</li>
+<li>Voeg de berekende waarde toe aan <code>innerHTML</code>.</li>
+<li>Stop alle code in een function met de naam 'bereken()'</li>
+</ul>
+<p>In javascript ziet dat er zo uit...</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">function</span> <span class="token function">bereken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> waarde1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'waarde1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> waarde2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'waarde2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> uitkomst <span class="token operator">=</span> waarde1<span class="token punctuation">.</span>value <span class="token operator">+</span> waarde2<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> outputdiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        outputdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> uitkomst<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<ul>
+<li>Test of alles goed werkt</li>
+<li>Waarschijnlijk gaat er nog iets fout:
+<ul>
+<li>Als je 7 en 8 invult krijg je als antwoord 78!</li>
+</ul>
+</li>
+<li>Je moet de invoer nog converteren naar een getal!</li>
+<li>Javascript ziet invoer altijd als tekst vandaar dat de 7 en de 8 gewoon tegen elkaar aan worden geplakt!</li>
+<li>Het omzetten van tekst (string) naar getal (int) doe je met parseInt()</li>
+<li>Uiteindelijk ziet het script er dus zo uit:</li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">function</span> <span class="token function">bereken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> waarde1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'waarde1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> waarde2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'waarde2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> uitkomst <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>waarde1<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>waarde2<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> outputdiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'output'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        outputdiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> uitkomst<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#javascript-en-formulieren">Javascript en Formulieren</a></li><li><a href="#rekenmachine">Rekenmachine</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/javascript/javascript-en-dom/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Javascript en DOM</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/javascript/javascript-functies/">
+        <span class="title">Javascript functies</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

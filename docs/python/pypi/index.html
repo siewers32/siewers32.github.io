@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | PyPi</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch097.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/" aria-current="page" data-state="active">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/" aria-current="page" data-state="active">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="pypi">PyPi</h2>
+<p>PyPi staat voor Python Package index. Het is de plek waar ontwikkelaars hun open source modules beschikbaar stellen voor anderen. Python heeft veel van zijn populariteit te danken aan de eigen developer gemeenschap en de wil om code te delen.
+In dit onderdeel worden de volgende modules behandeld:</p>
+<ul>
+<li>PSUtil</li>
+<li>Netmiko</li>
+</ul>
+<h2 id="psutil">PSUtil</h2>
+<p>PSUtil is een module waarmee je gegevens over processen en gegevens over het gebruik van resources zoals CPU, geheugen en netwerkverkeer kunt meten.</p>
+<h2 id="externe-module">Externe module</h2>
+<p>PSUtil is een externe module. Deze module moet je dus eerst installeren.
+Dit doe je met <code>pip</code>...</p>
+<pre class="language-python"><code class="language-python">python <span class="token operator">-</span>m pip install psutil
+</code></pre>
+<p>Stel je maakt een nieuw <code>main.py</code>-bestand, dan kun je gebruik maken van de module door deze te importeren...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> psutil
+<span class="token keyword">print</span><span class="token punctuation">(</span>psutil<span class="token punctuation">.</span>cpu_times<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="opdracht">Opdracht</h2>
+<p>Bekijk de <a href="https://pypi.org/project/psutil/">PSUtil documentatie</a> en probeer uit te vogelen hoe je met
+een python-script de IPv4 adressen opvraagt van alle netwerkinterfaces in je computer.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#pypi">PyPi</a></li><li><a href="#psutil">PSUtil</a></li><li><a href="#externe-module">Externe module</a></li><li><a href="#opdracht">Opdracht</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/modules/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Modules</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/projectopdrachten/">
+        <span class="title">Projectopdrachten</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

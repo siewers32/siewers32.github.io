@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Starten met prompting</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/ai/ai-ch016.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/ai/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/ai/uitleg-keuzedeel/">Uitleg keuzedeel</a>
+
+<a class="page-link" href="/edutorial/ai/wat-is-ai/">Wat is AI</a>
+
+<a class="page-link" href="/edutorial/ai/starten-met-prompting/" aria-current="page" data-state="active">Starten met prompting</a>
+
+<a class="page-link" href="/edutorial/ai/studeren-met-ai/">Studeren met AI</a>
+
+<a class="page-link" href="/edutorial/ai/machine-learning/">Machine learning</a>
+
+<a class="page-link" href="/edutorial/ai/robotica/">Robotica</a>
+
+<a class="page-link" href="/edutorial/ai/ai-en-healthcare/">AI en Healthcare</a>
+
+<a class="page-link" href="/edutorial/ai/zorgrobots/">Zorgrobots</a>
+
+<a class="page-link" href="/edutorial/ai/realities/">Realities</a>
+
+<a class="page-link" href="/edutorial/ai/internet-of-things/">Internet of things</a>
+
+<a class="page-link" href="/edutorial/ai/serious-games/">Serious Games</a>
+
+<a class="page-link" href="/edutorial/ai/sound-and-vision/">Sound and Vision</a>
+
+<a class="page-link" href="/edutorial/ai/ethiek-en-privacy/">Ethiek en privacy</a>
+
+<a class="page-link" href="/edutorial/ai/ethiek-en-privacy-2/">Ethiek en privacy 2</a>
+
+<a class="page-link" href="/edutorial/ai/design-thinking/">Design Thinking</a>
+
+<a class="page-link" href="/edutorial/ai/ai-opdrachten/">AI Opdrachten</a>
+
+<a class="page-link" href="/edutorial/ai/links/">Links</a>
+
+<a class="page-link" href="/edutorial/ai/ai-en-design-thinking/">AI en design thinking</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/ai/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/ai/uitleg-keuzedeel/">Uitleg keuzedeel</a>
+    
+    <a class="page-link" href="/edutorial/ai/wat-is-ai/">Wat is AI</a>
+    
+    <a class="page-link" href="/edutorial/ai/starten-met-prompting/" aria-current="page" data-state="active">Starten met prompting</a>
+    
+    <a class="page-link" href="/edutorial/ai/studeren-met-ai/">Studeren met AI</a>
+    
+    <a class="page-link" href="/edutorial/ai/machine-learning/">Machine learning</a>
+    
+    <a class="page-link" href="/edutorial/ai/robotica/">Robotica</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-en-healthcare/">AI en Healthcare</a>
+    
+    <a class="page-link" href="/edutorial/ai/zorgrobots/">Zorgrobots</a>
+    
+    <a class="page-link" href="/edutorial/ai/realities/">Realities</a>
+    
+    <a class="page-link" href="/edutorial/ai/internet-of-things/">Internet of things</a>
+    
+    <a class="page-link" href="/edutorial/ai/serious-games/">Serious Games</a>
+    
+    <a class="page-link" href="/edutorial/ai/sound-and-vision/">Sound and Vision</a>
+    
+    <a class="page-link" href="/edutorial/ai/ethiek-en-privacy/">Ethiek en privacy</a>
+    
+    <a class="page-link" href="/edutorial/ai/ethiek-en-privacy-2/">Ethiek en privacy 2</a>
+    
+    <a class="page-link" href="/edutorial/ai/design-thinking/">Design Thinking</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-opdrachten/">AI Opdrachten</a>
+    
+    <a class="page-link" href="/edutorial/ai/links/">Links</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-en-design-thinking/">AI en design thinking</a>
+    
+</div>
+
+            <h1 id="artificial-intelligence">Artificial Intelligence</h1>
+<h2 id="starten-met-prompting">Starten met prompting</h2>
+<p>Hier is een gestructureerd stappenplan om effectief te leren <strong>prompten</strong> voor AI-modellen zoals ChatGPT, DALL·E en andere generatieve AI-tools.</p>
+<hr>
+<h3 id="stap-1%3A-basisbegrip-van-prompting"><strong>Stap 1: Basisbegrip van Prompting</strong></h3>
+<p>✅ <strong>Leer wat een prompt is</strong><br>
+Een <strong>prompt</strong> is de input die je geeft aan een AI-model om een gewenst antwoord te krijgen. Goede prompts zijn duidelijk, specifiek en doelgericht.</p>
+<p>✅ <strong>Begrijp de invloed van je woorden</strong></p>
+<ul>
+<li>Hoe specifieker je bent, hoe beter het resultaat.</li>
+<li>Gebruik context om betere antwoorden te krijgen.</li>
+<li>Experimenteer met de lengte: soms werkt een korte prompt beter, soms een langere.</li>
+</ul>
+<hr>
+<h3 id="stap-2%3A-prompting-strategie%C3%ABn"><strong>Stap 2: Prompting Strategieën</strong></h3>
+<p>🔹 <strong>Gebruik duidelijke instructies</strong><br>
+💡 <em>Voorbeeld (slecht)</em>: &quot;Vertel iets over AI.&quot;<br>
+💡 <em>Voorbeeld (goed)</em>: &quot;Geef een uitleg over AI voor mbo-studenten zonder technische achtergrond in max. 200 woorden.&quot;</p>
+<p>🔹 <strong>Voeg context toe</strong><br>
+💡 <em>Voorbeeld (slecht)</em>: &quot;Schrijf een artikel over softwareontwikkeling.&quot;<br>
+💡 <em>Voorbeeld (goed)</em>: &quot;Schrijf een artikel van 500 woorden over softwareontwikkeling, gericht op mbo-studenten, met praktische voorbeelden en een afsluitende samenvatting.&quot;</p>
+<p>🔹 <strong>Bepaal de stijl en toon</strong><br>
+💡 <em>Voorbeeld</em>: &quot;Schrijf een informele blogpost over AI alsof je tegen een vriend praat.&quot;<br>
+💡 <em>Voorbeeld</em>: &quot;Geef een academische uitleg over AI zoals in een wetenschappelijk artikel.&quot;</p>
+<p>🔹 <strong>Vraag om specifieke output formats</strong><br>
+💡 <em>Voorbeeld</em>: &quot;Geef me een lijst met 5 tips over AI, elk met een korte uitleg.&quot;<br>
+💡 <em>Voorbeeld</em>: &quot;Genereer een tabel waarin verschillende AI-modellen worden vergeleken op snelheid, nauwkeurigheid en kosten.&quot;</p>
+<hr>
+<h3 id="stap-3%3A-testen-en-verbeteren"><strong>Stap 3: Testen en Verbeteren</strong></h3>
+<p>🔄 <strong>Pas je prompt aan als het resultaat niet is wat je wilt</strong></p>
+<ul>
+<li><strong>Te vaag?</strong> Voeg details toe.</li>
+<li><strong>Te lang antwoord?</strong> Vraag om een kortere versie.</li>
+<li><strong>Niet relevant?</strong> Geef extra context of herformuleer je vraag.</li>
+</ul>
+<p>🎯 <strong>Experimenteer met variaties</strong></p>
+<ul>
+<li>Probeer dezelfde vraag op verschillende manieren te stellen en bekijk hoe de AI reageert.</li>
+</ul>
+<hr>
+<h3 id="stap-4%3A-geavanceerde-technieken"><strong>Stap 4: Geavanceerde Technieken</strong></h3>
+<p>🚀 <strong>Chain-of-Thought (stap-voor-stap redenering)</strong><br>
+Vraag AI om stap voor stap na te denken.<br>
+💡 <em>Voorbeeld</em>: &quot;Leg stap voor stap uit hoe een neuraal netwerk werkt, alsof je het aan een beginner uitlegt.&quot;</p>
+<p>🎭 <strong>Rolgebaseerde prompts</strong><br>
+Laat AI een rol aannemen voor betere resultaten.<br>
+💡 <em>Voorbeeld</em>: &quot;Je bent een ervaren softwareontwikkelaar. Leg uit hoe AI de toekomst van programmeren beïnvloedt.&quot;</p>
+<p>📌 <strong>Few-shot en Zero-shot prompting</strong></p>
+<ul>
+<li><strong>Zero-shot</strong>: Geen voorbeelden geven, AI moet het zelf bedenken.</li>
+<li><strong>Few-shot</strong>: Een paar voorbeelden geven om de AI te sturen.<br>
+💡 <em>Voorbeeld</em>: &quot;Hier zijn drie voorbeelden van AI-toepassingen in de zorg. Kun je nog drie nieuwe bedenken?&quot;</li>
+</ul>
+<hr>
+<h3 id="stap-5%3A-oefenen-in-verschillende-domeinen"><strong>Stap 5: Oefenen in Verschillende Domeinen</strong></h3>
+<p>🔹 <strong>Tekstgeneratie</strong> (ChatGPT)</p>
+<ul>
+<li>Schrijf een verhaal, artikel, samenvatting of dialoog.</li>
+<li>Vraag om alternatieve formuleringen.</li>
+</ul>
+<p>🔹 <strong>Afbeeldinggeneratie</strong> (DALL·E)</p>
+<ul>
+<li>Geef een gedetailleerde beschrijving van een scène.</li>
+<li>Voeg stijlen en kleuren toe: <em>&quot;Een futuristische stad in neonkleuren, cyberpunkstijl, nachtelijke setting.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Codegeneratie</strong></p>
+<ul>
+<li>Vraag AI om een specifiek script te genereren: <em>&quot;Schrijf een Python-script om een CSV-bestand te analyseren en de gemiddelde waarde te berekenen.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Data-analyse</strong></p>
+<ul>
+<li>Vraag AI om tabellen, grafieken of samenvattingen van datasets.</li>
+</ul>
+<hr>
+<h3 id="stap-6%3A-gebruik-prompting-voor-onderwijs-en-werk"><strong>Stap 6: Gebruik Prompting voor Onderwijs en Werk</strong></h3>
+<p>🎓 <strong>In het onderwijs</strong></p>
+<ul>
+<li>Maak quizvragen of oefenopdrachten met AI.</li>
+<li>Gebruik AI als sparringpartner voor lesvoorbereiding.</li>
+<li>Laat AI complexe onderwerpen uitleggen op verschillende niveaus.</li>
+</ul>
+<p>💼 <strong>In de praktijk</strong></p>
+<ul>
+<li>Genereer marketingteksten of e-mails.</li>
+<li>Laat AI code debuggen of verbeteren.</li>
+<li>Gebruik AI als brainstormtool voor innovatie.</li>
+</ul>
+<hr>
+<h3 id="stap-7%3A-blijf-verbeteren-en-experimenteren"><strong>Stap 7: Blijf Verbeteren en Experimenteren</strong></h3>
+<p>🔄 <strong>Feedback verwerken</strong></p>
+<ul>
+<li>Bekijk hoe AI reageert en verbeter je prompt.</li>
+<li>Vergelijk verschillende prompts en leer wat het beste werkt.</li>
+</ul>
+<p>🧪 <strong>Experimenteer met nieuwe technieken</strong></p>
+<ul>
+<li>Test <strong>langere prompts</strong> met meer context.</li>
+<li>Probeer <strong>multimodale AI</strong> (zoals ChatGPT met beeldherkenning).</li>
+</ul>
+<p>🌍 <strong>Deel je kennis</strong></p>
+<ul>
+<li>Bespreek je beste prompts met collega’s of studenten.</li>
+<li>Experimenteer met AI in groepsopdrachten.</li>
+</ul>
+<h2 id="%F0%9F%93%9A-leren-%26-begrijpen"><strong>📚 Leren &amp; Begrijpen</strong></h2>
+<p>🔹 <strong>Uitleg van moeilijke concepten</strong></p>
+<ul>
+<li>Vraag om een simpele uitleg alsof je 12 jaar oud bent.<br>
+💡 <em>&quot;Leg uit wat een neuraal netwerk is alsof ik 12 ben.&quot;</em></li>
+<li>Vraag om meerdere uitlegstijlen (technisch, eenvoudig, met analogieën).</li>
+</ul>
+<p>🔹 <strong>Samenvattingen maken</strong></p>
+<ul>
+<li>Laat ChatGPT een hoofdstuk of artikel samenvatten.<br>
+💡 <em>&quot;Vat deze tekst samen in 5 kernpunten.&quot;</em></li>
+<li>Vraag om een samenvatting op verschillende niveaus (korte versie, diepgaande versie).</li>
+</ul>
+<p>🔹 <strong>Flashcards genereren</strong></p>
+<ul>
+<li>Laat ChatGPT flashcards maken voor snelle herhaling.<br>
+💡 <em>&quot;Maak 10 flashcards met vragen en antwoorden over de werking van databases.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Snel begrippen opzoeken</strong></p>
+<ul>
+<li>Gebruik ChatGPT als snelle encyclopedie om definities en context te krijgen.<br>
+💡 <em>&quot;Wat is het verschil tussen supervised en unsupervised learning?&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%9D-schrijven-%26-structureren"><strong>📝 Schrijven &amp; Structureren</strong></h2>
+<p>🔹 <strong>Essays &amp; Scripties verbeteren</strong></p>
+<ul>
+<li>Laat je tekst nakijken op grammatica en stijl.<br>
+💡 <em>&quot;Verbeter deze paragraaf en maak de zinnen vloeiender.&quot;</em></li>
+<li>Vraag om een heldere structuur voor je essay.<br>
+💡 <em>&quot;Geef een logische opbouw voor een betoog over AI in het onderwijs.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Herschrijven &amp; Samenvatten</strong></p>
+<ul>
+<li>Laat een tekst compacter of duidelijker herschrijven.<br>
+💡 <em>&quot;Herschrijf deze alinea korter en krachtiger.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Titels en inleidingen genereren</strong></p>
+<ul>
+<li>Vraag om pakkende titels of inleidingen.<br>
+💡 <em>&quot;Geef 5 pakkende titels voor een essay over cybersecurity.&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%8E%93-studeren-%26-examenvoorbereiding"><strong>🎓 Studeren &amp; Examenvoorbereiding</strong></h2>
+<p>🔹 <strong>Oefenvragen maken</strong></p>
+<ul>
+<li>Laat ChatGPT meerkeuzevragen of open vragen genereren.<br>
+💡 <em>&quot;Maak 5 meerkeuzevragen over de Franse Revolutie.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Tentamens oefenen</strong></p>
+<ul>
+<li>Simuleer een mondeling examen met AI.<br>
+💡 <em>&quot;Stel me 5 kritische vragen over de werking van een blockchain en geef daarna feedback op mijn antwoorden.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Leren met de Feynman-techniek</strong></p>
+<ul>
+<li>Laat AI je uitleg checken en verbeteren.<br>
+💡 <em>&quot;Ik ga de wet van Newton uitleggen. Geef feedback op mijn uitleg en stel vragen als ik iets mis.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Samenvattingen laten controleren</strong></p>
+<ul>
+<li>Vraag AI om te checken of je samenvatting compleet is.<br>
+💡 <em>&quot;Vergelijk deze samenvatting met de originele tekst en geef aan wat ontbreekt.&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%92%BB-coderen-%26-technische-vaardigheden"><strong>💻 Coderen &amp; Technische Vaardigheden</strong></h2>
+<p>🔹 <strong>Code uitleggen &amp; debuggen</strong></p>
+<ul>
+<li>Vraag AI om code te verklaren.<br>
+💡 <em>&quot;Leg uit wat deze Python-code doet en verbeter de leesbaarheid.&quot;</em></li>
+<li>Laat AI bugs vinden en oplossingen voorstellen.<br>
+💡 <em>&quot;Ik krijg een foutmelding in deze code. Wat gaat er mis?&quot;</em></li>
+</ul>
+<p>🔹 <strong>Code optimaliseren</strong></p>
+<ul>
+<li>Vraag AI om efficiëntere code te schrijven.<br>
+💡 <em>&quot;Optimaliseer deze SQL-query voor betere prestaties.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Programmeren leren</strong></p>
+<ul>
+<li>Vraag AI om stap-voor-stap uitleg van programmeerconcepten.<br>
+💡 <em>&quot;Leg uit hoe een for-loop werkt in JavaScript en geef een voorbeeld.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Nieuwe technologieën begrijpen</strong></p>
+<ul>
+<li>Leer snel over AI, cybersecurity, webdevelopment, etc.<br>
+💡 <em>&quot;Geef een korte introductie over machine learning in de gezondheidszorg.&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%8A-onderzoek-%26-data-analyse"><strong>📊 Onderzoek &amp; Data-analyse</strong></h2>
+<p>🔹 <strong>Hypotheses formuleren</strong></p>
+<ul>
+<li>Vraag AI om onderzoeksvragen of hypothesen.<br>
+💡 <em>&quot;Bedenk 3 onderzoeksvragen over de impact van AI op onderwijs.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Data interpreteren</strong></p>
+<ul>
+<li>Laat AI datasets analyseren en patronen ontdekken.<br>
+💡 <em>&quot;Analyseer deze data en vat de belangrijkste trends samen.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Grafieken en tabellen genereren</strong></p>
+<ul>
+<li>Vraag om visuele weergaven van data.<br>
+💡 <em>&quot;Maak een overzichtstabel van de voor- en nadelen van Python versus Java.&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%9B%A0%EF%B8%8F-productiviteit-%26-tijdbeheer"><strong>🛠️ Productiviteit &amp; Tijdbeheer</strong></h2>
+<p>🔹 <strong>Planning en time management</strong></p>
+<ul>
+<li>Vraag AI om een studieplanning.<br>
+💡 <em>&quot;Maak een 4-weken studieplan voor een tentamen wiskunde.&quot;</em></li>
+</ul>
+<p>🔹 <strong>To-do lijsten genereren</strong></p>
+<ul>
+<li>Laat AI helpen bij het prioriteren van taken.<br>
+💡 <em>&quot;Maak een takenlijst voor mijn project over AI in de zorg.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Pomodoro-timer en motivatie-tips</strong></p>
+<ul>
+<li>Vraag AI om focusstrategieën.<br>
+💡 <em>&quot;Hoe kan ik me beter concentreren tijdens het studeren?&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%8E%A4-presentaties-%26-creativiteit"><strong>🎤 Presentaties &amp; Creativiteit</strong></h2>
+<p>🔹 <strong>Presentaties voorbereiden</strong></p>
+<ul>
+<li>Vraag AI om een gestructureerde opzet.<br>
+💡 <em>&quot;Maak een PowerPoint-outline over klimaatverandering.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Spreekvaardigheid oefenen</strong></p>
+<ul>
+<li>Simuleer een publiek en krijg feedback op je pitch.<br>
+💡 <em>&quot;Ik ga een presentatie geven over AI. Kun je kritische vragen stellen?&quot;</em></li>
+</ul>
+<p>🔹 <strong>Creatieve ideeën genereren</strong></p>
+<ul>
+<li>Vraag AI om originele invalshoeken voor projecten.<br>
+💡 <em>&quot;Geef 5 unieke projectideeën over duurzame technologie.&quot;</em></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%8C%8D-talen-leren"><strong>🌍 Talen leren</strong></h2>
+<p>🔹 <strong>Vertalingen &amp; taalcorrecties</strong></p>
+<ul>
+<li>Laat AI helpen met vertalingen en grammaticacontrole.<br>
+💡 <em>&quot;Vertaal deze zin naar professioneel Engels.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Conversaties oefenen</strong></p>
+<ul>
+<li>Simuleer een dialoog in een andere taal.<br>
+💡 <em>&quot;Voer een gesprek met me in het Frans over dagelijkse routines.&quot;</em></li>
+</ul>
+<p>🔹 <strong>Taalregels en nuances leren</strong></p>
+<ul>
+<li>Vraag om uitleg van grammatica en zinsstructuren.<br>
+💡 <em>&quot;Leg het verschil uit tussen 'ser' en 'estar' in het Spaans.&quot;</em></li>
+</ul>
+<hr>
+<h2 id="ai-en-de-waarheid">AI en de waarheid</h2>
+<h3 id="wat-is-bias%3F-%F0%9F%A7%A0%E2%9A%96%EF%B8%8F"><strong>Wat is bias?</strong> 🧠⚖️</h3>
+<p>Bias betekent <strong>vooringenomenheid</strong> of <strong>vertekening</strong> in informatie. Dit kan onbewust in AI-modellen zitten door de manier waarop ze zijn getraind of de datasets die ze gebruiken. Bias kan ervoor zorgen dat bepaalde groepen, perspectieven of informatie worden bevoordeeld of juist worden uitgesloten.</p>
+<h4 id="verschillende-soorten-bias-in-ai"><strong>Verschillende soorten bias in AI</strong></h4>
+<p>🔹 <strong>Data bias</strong> – Als de dataset waarop AI is getraind scheef is, dan zal het model die scheve informatie weerspiegelen.<br>
+💡 <em>Bijvoorbeeld: Als een AI-model vooral Westerse literatuur heeft gelezen, zal het minder goed presteren op niet-Westerse perspectieven.</em></p>
+<p>🔹 <strong>Algorithmic bias</strong> – Het model kan bepaalde patronen versterken door de manier waarop het is geprogrammeerd.<br>
+💡 <em>Bijvoorbeeld: Een AI-systeem dat cv’s beoordeelt en in het verleden vooral mannelijke kandidaten heeft gezien, kan onbewust vrouwen benadelen.</em></p>
+<p>🔹 <strong>Selection bias</strong> – Als de inputgegevens niet representatief zijn, kan AI een vertekend beeld geven.<br>
+💡 <em>Bijvoorbeeld: Als een AI voornamelijk nieuwsbronnen uit één politieke hoek gebruikt, kan het model bevooroordeeld lijken.</em></p>
+<p>🔹 <strong>Confirmation bias</strong> – AI-modellen kunnen patronen versterken die mensen al verwachten of vaak vragen.<br>
+💡 <em>Bijvoorbeeld: Als je AI vaak vraagt om negatieve informatie over een onderwerp, zal het dat ook eerder benadrukken.</em></p>
+<hr>
+<h3 id="waar-moet-je-op-letten-bij-de-juistheid-van-informatie%3F-%F0%9F%94%8D"><strong>Waar moet je op letten bij de juistheid van informatie?</strong> 🔍</h3>
+<p>Omdat AI-modellen niet zelf nadenken of waarheid controleren, is het belangrijk om kritisch te blijven. Hier zijn enkele <strong>tips om AI-informatie te checken</strong>:</p>
+<p>✅ <strong>Dubbelcheck bronnen</strong><br>
+AI geeft niet altijd real-time of actuele informatie. Zoek zelf verder in betrouwbare bronnen zoals wetenschappelijke artikelen, nieuwswebsites en officiële documenten.</p>
+<p>✅ <strong>Let op de datum</strong><br>
+AI kan verouderde informatie geven, omdat het model mogelijk niet is getraind op de nieuwste ontwikkelingen. Gebruik Google of andere zoekmachines om actuele gegevens te bevestigen.</p>
+<p>✅ <strong>Vraag om onderbouwing</strong><br>
+Als AI een feit presenteert, vraag dan door:<br>
+💡 <em>&quot;Kun je een bron of wetenschappelijk onderzoek noemen dat dit ondersteunt?&quot;</em><br>
+Als AI dat niet kan, moet je extra voorzichtig zijn met de informatie.</p>
+<p>✅ <strong>Vergelijk met meerdere bronnen</strong><br>
+Check of verschillende betrouwbare bronnen hetzelfde zeggen. Als AI iets beweert wat nergens anders wordt bevestigd, is er mogelijk iets mis.</p>
+<p>✅ <strong>Wees alert op absolute claims</strong><br>
+Als AI zegt: <em>&quot;Dit is 100% waar&quot;</em> of <em>&quot;Dit is altijd zo&quot;</em>, wees dan kritisch. Wetenschap en kennis veranderen, en er zijn vaak nuances.</p>
+<p>✅ <strong>Pas op met juridische of medische adviezen</strong><br>
+AI is geen vervanging voor een advocaat, arts of expert. Voor belangrijke beslissingen moet je altijd een professional raadplegen.</p>
+<p>✅ <strong>Check bias in AI’s antwoorden</strong><br>
+💡 <em>Tip: Stel een vraag op verschillende manieren en kijk of het antwoord verandert.</em> Bijvoorbeeld:</p>
+<ul>
+<li>&quot;Wat zijn de voordelen van AI?&quot;</li>
+<li>&quot;Wat zijn de nadelen van AI?&quot;<br>
+Door beide kanten te vragen, krijg je een evenwichtiger beeld.</li>
+</ul>
+<hr>
+<h3 id="hoe-kun-je-ai-bewust-gebruiken-zonder-misleid-te-worden%3F"><strong>Hoe kun je AI bewust gebruiken zonder misleid te worden?</strong></h3>
+<p>📌 <strong>Gebruik AI als een assistent, niet als een waarheidmachine.</strong><br>
+📌 <strong>Blijf zelf nadenken en kritisch evalueren.</strong><br>
+📌 <strong>Vraag altijd: &quot;Hoe weet ik dat dit klopt?&quot;</strong><br>
+📌 <strong>Gebruik AI om te brainstormen, niet om de absolute waarheid te krijgen.</strong></p>
+<p>(LLM = Large Language Model zoals chatGPT of Claude etc.)</p>
+<h2 id="opdracht">Opdracht</h2>
+<ul>
+<li>Zoek op <a href="https://s-bb.nl">s-bb.nl</a> naar het kwalificatiedossier van jouw opleiding</li>
+<li>Gebruik chatGPT (of een andere LLM) om een stappenplan te maken om je voor te bereiden op je studie.</li>
+<li>Blijf doorvragen zodat je een helder lesplan hebt en weet wat je komende week gaat doen voor je studie.
+<ul>
+<li>Houdt bij welke vragen je hebt gesteld (meestal doet je LLM dat al voor je).</li>
+<li>Wat werkte goed en wat werkte minder goed.</li>
+</ul>
+</li>
+<li>Hoe kan een LLM je helpen iets te leren (i.p.v. alleen maar goede antwoorden geven, waar jij zelf niet wijzer van wordt)</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://chatgpt.com/">ChatGPT (USA)</a></li>
+<li><a href="https://www.perplexity.ai/">Perplexity (chatten zonder inloggen!)</a></li>
+<li><a href="https://claude.ai">Claude (USA)</a></li>
+<li><a href="https://chat.mistral.ai/chat">Mistral le chat (Uit frankrijk)</a></li>
+<li><a href="https://chat.deepseek.com/sign_in">DeepSeek (Chinese LLM)</a></li>
+<li><a href="https://gemini.google.com/app?hl=nl">Gemini (van Google)</a></li>
+<li><a href="https://github.com/ollama/ollama">Een eigen large language model installeren met Ollama</a> of via <a href="https://ollama.com/">Ollama</a></li>
+<li><a href="https://notebooklm.google.com/">NotebookLM</a></li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#starten-met-prompting">Starten met prompting</a></li><li><a href="#%F0%9F%93%9A-leren-%26-begrijpen">📚 Leren &amp; Begrijpen</a></li><li><a href="#%F0%9F%93%9D-schrijven-%26-structureren">📝 Schrijven &amp; Structureren</a></li><li><a href="#%F0%9F%8E%93-studeren-%26-examenvoorbereiding">🎓 Studeren &amp; Examenvoorbereiding</a></li><li><a href="#%F0%9F%92%BB-coderen-%26-technische-vaardigheden">💻 Coderen &amp; Technische Vaardigheden</a></li><li><a href="#%F0%9F%93%8A-onderzoek-%26-data-analyse">📊 Onderzoek &amp; Data-analyse</a></li><li><a href="#%F0%9F%9B%A0%EF%B8%8F-productiviteit-%26-tijdbeheer">🛠️ Productiviteit &amp; Tijdbeheer</a></li><li><a href="#%F0%9F%8E%A4-presentaties-%26-creativiteit">🎤 Presentaties &amp; Creativiteit</a></li><li><a href="#%F0%9F%8C%8D-talen-leren">🌍 Talen leren</a></li><li><a href="#ai-en-de-waarheid">AI en de waarheid</a></li><li><a href="#opdracht">Opdracht</a></li><li><a href="#links">Links</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/ai/wat-is-ai/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Wat is AI</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/ai/studeren-met-ai/">
+        <span class="title">Studeren met AI</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

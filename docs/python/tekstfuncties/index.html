@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Tekstfuncties</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch037.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/" aria-current="page" data-state="active">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/" aria-current="page" data-state="active">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="tekstfuncties">Tekstfuncties</h2>
+<p>Een function of methode is een actie die je kunt uitvoeren op een stukje data. Je kunt bijvoorbeeld in een stukje tekst automatisch alle woorden met een hoofdletter wil laten beginnen. Hiervoor gebruik je de methode title()</p>
+<pre class="language-python"><code class="language-python">stukje_tekst <span class="token operator">=</span> <span class="token string">"dit is een stukje tekst"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>stukje_tekst<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output: Dit Is Een Stukje Tekst</span></code></pre>
+<p>Je kunt ook alle letters hoofletters maken...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>stukje_tekst<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output: DIT IS EEN STUKJE TEKST</span></code></pre>
+<p>... of juist weer kleine letters....</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>stukje_tekst<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># output: dit is een stukje tekst</span></code></pre>
+<h2 id="variabelen-en-functies">Variabelen en functies</h2>
+<p>Je kunt ook variabelen printen en aanpassen.</p>
+<pre class="language-python"><code class="language-python">fname <span class="token operator">=</span> <span class="token string">"ariane"</span>
+lname<span class="token operator">=</span> <span class="token string">"grande"</span>
+fullname <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>fname<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>lname<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fullname<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output: Ariane Grande</span></code></pre>
+<p>De letter f bij fullname staat voor format.  Met format kun je variabelen en tekst door elkaar gebruiken. Aan <code>fullname</code> wordt nu de string &quot;ariane grande&quot; toegekend. Door de title-methode krijgen alle woorden een hoofdletter aan het begin.</p>
+<h2 id="gedoe-met-aanhalingstekens">Gedoe met aanhalingstekens</h2>
+<p>Aanhalingstekens heb je in 2 smaken <code>'</code> en <code>&quot;</code>. Je gebruikt ze vaak in teksten, maar ze worden ook gebruikt om aan python aan te geeven dat een string ergens begint of eindigt.</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Dit kan wel...</span>
+kroegnaam <span class="token operator">=</span> <span class="token string">"The World's Best Place to Be"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kroegnaam<span class="token punctuation">)</span>
+
+<span class="token comment"># Maar dit kan niet....</span>
+kroegnaam <span class="token operator">=</span> <span class="token string">'The World'</span>s Best Place to Be'
+<span class="token keyword">print</span><span class="token punctuation">(</span>kroegnaam<span class="token punctuation">)</span></code></pre>
+<p>Je kunt best gebruik maken van aanhalingstekens in een string, maar gebruik dan niet dezelfde aanhalingstekens om een string te beginnen en te eindigen.
+Soms ontkom je er niet aan. Je kunt dan een \ voor een speciaal karakter (bijv. een aanhalingsteken) zetten...</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Zo kan het ook....</span>
+kroegnaam <span class="token operator">=</span> <span class="token string">'The World\'s Best Place to Be'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kroegnaam<span class="token punctuation">)</span></code></pre>
+<p>Een zogenaamd escape-karakter \ heeft dus een speciale functie in python. Je kunt een escape-karakter ook printen...</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Zo kan het ook....</span>
+<span class="token comment"># locatie = "C:\python\mapje wordt dan"</span>
+locatie <span class="token operator">=</span> <span class="token string">"C:\\python\\mapje"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>locatie<span class="token punctuation">)</span>
+
+<span class="token comment">#output C:\python\mapje</span></code></pre>
+<p>Door een escape-karakter \ voor een karakter met een speciale betekenis te zetten, acteert het weer als een gewoon karakter.</p>
+<p>In teksten heb je ook te maken met karakters die je niet kunt zien! Denk aan een karakter om naar de volgende regel te gaan of een tab. In python kun je deze karakters wel gebruiken. Een volgende-regel of next-line charakter is een <code>\n</code>. Een tab wordt aangeduid met een <code>\t</code>.</p>
+<pre class="language-python"><code class="language-python">eerste <span class="token operator">=</span> <span class="token string">"Deze tekst staat op de eerste regel"</span>
+tweede <span class="token operator">=</span> <span class="token string">"Deze tekst staat op de tweede regel"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>eerste<span class="token punctuation">}</span></span><span class="token string">\n</span><span class="token interpolation"><span class="token punctuation">{</span>tweede<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+Deze tekst staat op de eerste regel
+Deze tekst staat op de tweede regel</code></pre>
+<h2 id="berekeningen-met-tekst">Berekeningen met tekst</h2>
+<p>Met teksten kun je natuurlijk niet echt rekenen, maar python neemt berekeningen wel serieus. Bekijk onderstaande code maar eens:</p>
+<pre class="language-python"><code class="language-python">mijn_tekst <span class="token operator">=</span> <span class="token string">"***"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mijn_tekst <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment">#output is twee keer zoveel sterren!!</span>
+<span class="token operator">**</span><span class="token operator">**</span><span class="token operator">**</span></code></pre>
+<pre class="language-python"><code class="language-python">mijn_tekst <span class="token operator">=</span> <span class="token string">"***"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mijn_tekst <span class="token operator">+</span> mijn_tekst<span class="token punctuation">)</span>
+
+<span class="token comment">#output is twee keer zoveel sterren!!</span>
+<span class="token operator">**</span><span class="token operator">**</span><span class="token operator">**</span></code></pre>
+<p>Je kunt niet alle bewerkingstekens gebruiken. Je kunt tekst niet delen en teksten van elkaar aftrekken werkt ook niet.</p>
+<h2 id="opdrachten">Opdrachten</h2>
+<p>De opdrachten bij dit hoofdstuk vind je op <a href="https://github.com/DeltionICT/python_basis/tree/main/opdrachten/tekstfuncties">github</a></p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#tekstfuncties">Tekstfuncties</a></li><li><a href="#variabelen-en-functies">Variabelen en functies</a></li><li><a href="#gedoe-met-aanhalingstekens">Gedoe met aanhalingstekens</a></li><li><a href="#berekeningen-met-tekst">Berekeningen met tekst</a></li><li><a href="#opdrachten">Opdrachten</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/berekeningen/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Berekeningen</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/lists/">
+        <span class="title">Lists</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

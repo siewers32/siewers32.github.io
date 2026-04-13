@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | AI en Healthcare</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/ai/ai-ch025.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/ai/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/ai/uitleg-keuzedeel/">Uitleg keuzedeel</a>
+
+<a class="page-link" href="/edutorial/ai/wat-is-ai/">Wat is AI</a>
+
+<a class="page-link" href="/edutorial/ai/starten-met-prompting/">Starten met prompting</a>
+
+<a class="page-link" href="/edutorial/ai/studeren-met-ai/">Studeren met AI</a>
+
+<a class="page-link" href="/edutorial/ai/machine-learning/">Machine learning</a>
+
+<a class="page-link" href="/edutorial/ai/robotica/">Robotica</a>
+
+<a class="page-link" href="/edutorial/ai/ai-en-healthcare/" aria-current="page" data-state="active">AI en Healthcare</a>
+
+<a class="page-link" href="/edutorial/ai/zorgrobots/">Zorgrobots</a>
+
+<a class="page-link" href="/edutorial/ai/realities/">Realities</a>
+
+<a class="page-link" href="/edutorial/ai/internet-of-things/">Internet of things</a>
+
+<a class="page-link" href="/edutorial/ai/serious-games/">Serious Games</a>
+
+<a class="page-link" href="/edutorial/ai/sound-and-vision/">Sound and Vision</a>
+
+<a class="page-link" href="/edutorial/ai/ethiek-en-privacy/">Ethiek en privacy</a>
+
+<a class="page-link" href="/edutorial/ai/ethiek-en-privacy-2/">Ethiek en privacy 2</a>
+
+<a class="page-link" href="/edutorial/ai/design-thinking/">Design Thinking</a>
+
+<a class="page-link" href="/edutorial/ai/ai-opdrachten/">AI Opdrachten</a>
+
+<a class="page-link" href="/edutorial/ai/links/">Links</a>
+
+<a class="page-link" href="/edutorial/ai/ai-en-design-thinking/">AI en design thinking</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/ai/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/ai/uitleg-keuzedeel/">Uitleg keuzedeel</a>
+    
+    <a class="page-link" href="/edutorial/ai/wat-is-ai/">Wat is AI</a>
+    
+    <a class="page-link" href="/edutorial/ai/starten-met-prompting/">Starten met prompting</a>
+    
+    <a class="page-link" href="/edutorial/ai/studeren-met-ai/">Studeren met AI</a>
+    
+    <a class="page-link" href="/edutorial/ai/machine-learning/">Machine learning</a>
+    
+    <a class="page-link" href="/edutorial/ai/robotica/">Robotica</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-en-healthcare/" aria-current="page" data-state="active">AI en Healthcare</a>
+    
+    <a class="page-link" href="/edutorial/ai/zorgrobots/">Zorgrobots</a>
+    
+    <a class="page-link" href="/edutorial/ai/realities/">Realities</a>
+    
+    <a class="page-link" href="/edutorial/ai/internet-of-things/">Internet of things</a>
+    
+    <a class="page-link" href="/edutorial/ai/serious-games/">Serious Games</a>
+    
+    <a class="page-link" href="/edutorial/ai/sound-and-vision/">Sound and Vision</a>
+    
+    <a class="page-link" href="/edutorial/ai/ethiek-en-privacy/">Ethiek en privacy</a>
+    
+    <a class="page-link" href="/edutorial/ai/ethiek-en-privacy-2/">Ethiek en privacy 2</a>
+    
+    <a class="page-link" href="/edutorial/ai/design-thinking/">Design Thinking</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-opdrachten/">AI Opdrachten</a>
+    
+    <a class="page-link" href="/edutorial/ai/links/">Links</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-en-design-thinking/">AI en design thinking</a>
+    
+</div>
+
+            <h1 id="artificial-intelligence">Artificial Intelligence</h1>
+<h2 id="ai-en-healthcare">AI en Healthcare</h2>
+<h3 id="datascience-in-de-gezondheidszorg">Datascience in de gezondheidszorg</h3>
+<ul>
+<li>Beeldherkenning</li>
+<li>Genomics</li>
+<li>Ontwikkeling van medicijnen</li>
+<li>Predictieve analyse</li>
+<li>Monitoring van de gezondheid</li>
+<li>Ziekten opsporen en voorkomen</li>
+<li>Virtuele hulp
+<ul>
+<li>Voorbeelden van apps</li>
+</ul>
+</li>
+</ul>
+<h3 id="wat-is-data-science%3F">Wat is Data Science?</h3>
+<p>Data Science is een manier om grote hoeveelheden gegevens (data) te verzamelen, te organiseren en te analyseren. Hierbij gebruikt men slimme computerprogramma's en wiskunde om patronen en verbanden te ontdekken die mensen misschien niet zo snel zouden zien.</p>
+<h2 id="beeldherkenning">Beeldherkenning</h2>
+<p><strong>Beeldherkenning</strong> betekent dat computers of machines beelden kunnen &quot;lezen&quot; en begrijpen. In de gezondheidszorg wordt dit vooral gebruikt voor <strong>medische beelden</strong> zoals röntgenfoto’s, MRI-scans of CT-scans. Dit helpt artsen om snel en nauwkeurig te zien wat er mis is in het lichaam.</p>
+<h3 id="hoe-werkt-ai-bij-diagnostiek-en-beeldherkenning%3F">Hoe werkt AI bij diagnostiek en beeldherkenning?</h3>
+<p><strong>Diagnostiek</strong> is het proces waarbij artsen proberen uit te vinden wat er met iemand aan de hand is als die ziek is. Dit gebeurt meestal door naar symptomen te kijken, maar artsen gebruiken ook <strong>testen</strong> en <strong>beelden</strong> om een beter beeld te krijgen van wat er in het lichaam gebeurt. Kunstmatige intelligentie (AI) kan artsen helpen om medische beelden te analyseren. Dit werkt als volgt:</p>
+<ol>
+<li>
+<p><strong>Verzamelen van medische beelden:</strong></p>
+<ul>
+<li>Artsen gebruiken <strong>apparaten</strong> zoals röntgenfoto’s, MRI’s of CT-scans om beelden te maken van de binnenkant van je lichaam. Deze beelden laten bijvoorbeeld zien hoe je botten, organen of weefsels eruit zien.</li>
+<li>De beelden worden digitaal opgeslagen, zodat computers ermee aan de slag kunnen.</li>
+</ul>
+</li>
+<li>
+<p><strong>AI leert van deze beelden:</strong></p>
+<ul>
+<li>AI-programma’s worden &quot;getraind&quot; met duizenden of miljoenen medische beelden. Deze beelden worden gecategoriseerd door artsen om te leren welke afwijkingen er te zien zijn (bijvoorbeeld een breuk in een bot of een tumor).</li>
+<li>Het AI-systeem kijkt naar de beelden en leert hoe het bepaalde patronen kan herkennen. Bijvoorbeeld, het kan leren hoe een gezonde long eruit ziet versus een long met longkanker.</li>
+</ul>
+</li>
+<li>
+<p><strong>AI maakt voorspellingen:</strong></p>
+<ul>
+<li>Zodra AI goed getraind is, kan het nieuwe beelden analyseren.</li>
+<li>Het systeem kijkt naar het nieuwe beeld en vergelijkt het met wat het heeft geleerd om te zien of er iets mis is. Het kan bijvoorbeeld een kanker in een scan herkennen voordat het zelfs door een arts wordt opgemerkt.</li>
+</ul>
+</li>
+<li>
+<p><strong>AI helpt artsen sneller en nauwkeuriger te zijn:</strong></p>
+<ul>
+<li>AI kan <strong>snel en automatisch</strong> bepaalde afwijkingen aangeven in beelden, zoals een breuk, tumor of bloedingen.</li>
+<li>Dit helpt artsen om <strong>sneller diagnoses</strong> te stellen en de juiste behandeling te beginnen.</li>
+</ul>
+</li>
+</ol>
+<h3 id="voorbeeld-van-beeldherkenning-in-de-gezondheidszorg">Voorbeeld van beeldherkenning in de gezondheidszorg</h3>
+<p>Stel je voor dat een arts een <strong>röntgenfoto van een long</strong> moet bekijken:</p>
+<ul>
+<li>De arts kan de foto zelf analyseren, maar dat kost tijd en soms is het moeilijk om kleine problemen te zien.</li>
+<li><strong>AI kan helpen</strong> door automatisch te kijken naar de röntgenfoto en te melden of er iets mis is, zoals een verdachte plek die op kanker kan wijzen.</li>
+<li>Als AI een probleem detecteert, kan de arts sneller beslissen of verder onderzoek nodig is.</li>
+</ul>
+<h3 id="voorbeelden-van-ai-in-medische-beeldherkenning%3A">Voorbeelden van AI in medische beeldherkenning:</h3>
+<ol>
+<li><strong>Hersenscans:</strong> AI kan hersenscans analyseren om te kijken naar tumoren, bloedingen of andere afwijkingen in de hersenen.</li>
+<li><strong>Kankeropsporing:</strong> In sommige ziekenhuizen gebruikt AI beeldherkenning om <strong>borstkanker</strong> op te sporen via mammogrammen (röntgenfoto’s van de borsten).</li>
+<li><strong>Botbreuken:</strong> Als iemand een ongeluk heeft gehad, kan AI helpen bij het snel identificeren van <strong>botbreuken</strong> op röntgenfoto's.</li>
+</ol>
+<h2 id="genomics">Genomics</h2>
+<h3 id="wat-zijn-genetische-sequenties%3F">Wat zijn genetische sequenties?</h3>
+<p>Genen zijn als een soort handleiding in ons lichaam die bepalen hoe we eruitzien, hoe onze organen werken, en hoe we op ziekten reageren. Deze handleiding zit in onze DNA-moleculen, en een genetische sequentie is gewoon een hele lange code gemaakt van vier letters: A, T, C en G. Denk eraan als een superlange zin met alleen deze vier letters.</p>
+<h3 id="hoe-helpt-data-science-bij-genetica%3F">Hoe helpt Data Science bij genetica?</h3>
+<p>Onze genetische code is enorm groot: miljarden van die A's, T's, C's en G's. Zonder computers zou het eeuwen duren om uit te zoeken wat een bepaald stukje code betekent. Data Science versnelt dit proces.</p>
+<p>Met speciale technieken kunnen computers:</p>
+<ul>
+<li><strong>Genen vergelijken:</strong> Bijvoorbeeld kijken welke stukjes DNA vaak voorkomen bij mensen met dezelfde ziekte.</li>
+<li><strong>Ziekten opsporen:</strong> Bepalen of een bepaald gen een ziekte veroorzaakt.</li>
+<li><strong>Medicijnen ontwikkelen:</strong> Sneller begrijpen welke genen kunnen worden beïnvloed door een medicijn.</li>
+</ul>
+<h3 id="waarom-is-dit-belangrijk%3F">Waarom is dit belangrijk?</h3>
+<p>Door Data Science in genetica:</p>
+<ol>
+<li><strong>Snellere diagnoses:</strong> Artsen kunnen eerder zien of iemand een genetische aanleg heeft voor een ziekte.</li>
+<li><strong>Persoonlijke behandelingen:</strong> Iedereen reageert anders op medicijnen, en met genetische informatie kan een behandeling speciaal op jou worden afgestemd.</li>
+<li><strong>Nieuwe ontdekkingen:</strong> Het helpt om verbanden te vinden die we zonder computers misschien nooit zouden ontdekken.</li>
+</ol>
+<h2 id="ontwikkeling-van-medicijnen">Ontwikkeling van medicijnen</h2>
+<p>Bij het ontwikkelen van medicijnen moet je duizenden of zelfs miljoenen chemische stoffen testen om te zien welke goed werken tegen een ziekte. Vroeger deden wetenschappers dit stuk voor stuk in een laboratorium. Dat kostte veel tijd en geld.</p>
+<p>Met Data Science en Machine Learning kan het veel sneller en slimmer:</p>
+<ol>
+<li><strong>Leren van gegevens:</strong> De computer kijkt naar gegevens over bestaande medicijnen en hoe die werken tegen bepaalde ziektes.</li>
+<li><strong>Patronen vinden:</strong> D.m.v. machine learning ontdek je welke eigenschappen een stof effectief maken. Denk aan de vorm, grootte of chemische samenstelling van de moleculen.</li>
+<li><strong>Voorspellen:</strong> Met deze kennis kan je met machine learning voorspellen welke nieuwe stoffen waarschijnlijk goed zullen werken.</li>
+</ol>
+<h3 id="een-praktisch-voorbeeld%3A">Een praktisch voorbeeld:</h3>
+<p>Stel je voor dat we een medicijn zoeken tegen griep. Wetenschappers hebben al gegevens over duizenden stoffen die ooit zijn getest. De ML-computer leert welke stoffen goed tegen griep werken en welke niet. Daarna kan hij voorspellen welke nieuwe stoffen potentieel succesvol zijn, zonder dat alles handmatig getest hoeft te worden.</p>
+<h3 id="wat-gebeurt-daarna%3F">Wat gebeurt daarna?</h3>
+<ol>
+<li><strong>Kandidaat-geneesmiddelen selecteren:</strong> De computer stelt een lijst voor van stoffen die veelbelovend lijken.</li>
+<li><strong>Laboratoriumtesten:</strong> Alleen de meest kansrijke stoffen worden getest in het laboratorium, waardoor veel tijd wordt bespaard.</li>
+<li><strong>Effectiviteit voorspellen:</strong> ML kan zelfs voorspellen hoe een stof zich in het lichaam gedraagt, zoals of het bijwerkingen kan veroorzaken.</li>
+</ol>
+<h2 id="predictieve-analyse">Predictieve analyse</h2>
+<p>Met behulp van Data Science en slimme programma’s (algoritmen) kunnen computers heel veel medische gegevens bekijken en analyseren. Hierdoor kunnen ze artsen waarschuwen als er iets niet goed lijkt te gaan met de gezondheid van een patiënt. Denk aan een slimme assistent voor artsen: hij houdt alles in de gaten en geeft een seintje als er iets vreemds gebeurt.</p>
+<h3 id="hoe-werkt-dit%3F">Hoe werkt dit?</h3>
+<ol>
+<li>
+<p><strong>Verzamelen van gegevens:</strong></p>
+<ul>
+<li>Computers verzamelen <strong>historische gegevens</strong>: Informatie over hoe ziektes zich bij andere patiënten hebben ontwikkeld.</li>
+<li>Ze gebruiken ook <strong>realtime gegevens</strong>: Dit is informatie die op dit moment wordt verzameld, zoals bloeddruk, hartslag of suikerniveaus in het bloed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Patronen herkennen:</strong></p>
+<ul>
+<li>Het algoritme leert hoe een normaal patroon eruitziet (bijvoorbeeld een gezonde hartslag of bloeddruk).</li>
+<li>Het herkent ook hoe een patroon eruitziet vlak voordat iemand bijvoorbeeld een hartaanval krijgt.</li>
+</ul>
+</li>
+<li>
+<p><strong>Waarschuwing geven:</strong></p>
+<ul>
+<li>Als de computer merkt dat de hartslag, bloeddruk of iets anders afwijkend is, kan hij de arts of verpleegkundige waarschuwen.</li>
+<li>Dit gebeurt vaak via een melding in een computersysteem, zodat ze snel kunnen ingrijpen.</li>
+</ul>
+</li>
+</ol>
+<h3 id="een-voorbeeld%3A">Een voorbeeld:</h3>
+<p>Stel dat een patiënt in het ziekenhuis ligt en zijn bloeddruk wordt continu gemeten.</p>
+<ul>
+<li><strong>Normaal:</strong> De bloeddruk blijft stabiel. Geen probleem.</li>
+<li><strong>Probleem:</strong> De computer merkt dat de bloeddruk langzaam begint te dalen, en dat dit in het verleden vaak een teken was van een beginnende bloeding.</li>
+<li><strong>Actie:</strong> Het systeem stuurt een melding naar de arts, zodat hij of zij meteen kan controleren wat er aan de hand is en kan ingrijpen voordat het erger wordt.</li>
+</ul>
+<h2 id="monitoring-van-de-gezondheid">Monitoring van de gezondheid</h2>
+<p>Thuismonitoring betekent dat artsen en zorgverleners je gezondheid in de gaten kunnen houden terwijl je gewoon thuis bent. Dit gebeurt met behulp van draagbare apparaten, zoals:</p>
+<ul>
+<li><strong>Smartwatches</strong> (zoals een Apple Watch of Fitbit) die je hartslag meten.</li>
+<li><strong>Bloeddrukmeters</strong> of <strong>suikermeters</strong> die via een app gegevens doorgeven.</li>
+<li><strong>Sensoren</strong> die je ademhaling of temperatuur meten.</li>
+</ul>
+<p>Deze apparaten sturen gegevens naar een computer of app, zodat je arts ze kan bekijken zonder dat je naar het ziekenhuis hoeft.</p>
+<h3 id="hoe-helpt-data-science-hierbij%3F">Hoe helpt Data Science hierbij?</h3>
+<p>Data Science maakt het mogelijk om alle gegevens die deze apparaten verzamelen te analyseren en om belangrijke patronen te ontdekken.</p>
+<ol>
+<li>
+<p><strong>Verzamelen van gegevens:</strong></p>
+<ul>
+<li>Een smartwatch meet bijvoorbeeld continu je hartslag.</li>
+<li>Een suikermeter houdt bij hoe je bloedsuiker verandert na het eten.</li>
+<li>Al deze gegevens worden naar een database gestuurd.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analyseren van gegevens:</strong></p>
+<ul>
+<li>De computer vergelijkt jouw gegevens met wat normaal is.</li>
+<li>Als er iets vreemds gebeurt (zoals een hoge hartslag terwijl je stilzit), merkt het systeem dat op.</li>
+</ul>
+</li>
+<li>
+<p><strong>Waarschuwingen sturen:</strong></p>
+<ul>
+<li>Als de computer ziet dat er een probleem kan zijn, stuurt hij een waarschuwing naar jou of je arts.</li>
+<li>Bijvoorbeeld: &quot;De bloeddruk is te hoog, neem contact op met je dokter.&quot;</li>
+</ul>
+</li>
+</ol>
+<h3 id="een-voorbeeld%3A-1">Een voorbeeld:</h3>
+<p>Stel dat iemand met diabetes thuis een apparaat gebruikt dat zijn bloedsuiker meet.</p>
+<ul>
+<li>De computer merkt op dat de bloedsuiker elke ochtend erg laag is.</li>
+<li>Het systeem waarschuwt de arts, die de patiënt kan adviseren om bijvoorbeeld een snack te eten voor het slapen gaan.</li>
+<li>Hierdoor kan een gevaarlijke situatie worden voorkomen, zonder dat de patiënt naar het ziekenhuis hoeft.</li>
+</ul>
+<h2 id="ziekten-opsporen-en-voorkomen">Ziekten opsporen en voorkomen</h2>
+<p>Chronische ziekten zijn langdurige aandoeningen zoals diabetes, hart- en vaatziekten of astma. Vaak merk je in het begin niet dat je ziek bent, maar later kunnen ze veel problemen veroorzaken. Daarom is het belangrijk om deze ziekten <strong>vroeg op te sporen</strong>, zodat je er iets aan kunt doen.</p>
+<h3 id="hoe-werkt-het%3F">Hoe werkt het?</h3>
+<ol>
+<li>
+<p><strong>Gegevens verzamelen:</strong></p>
+<ul>
+<li>Artsen en onderzoekers verzamelen gegevens van veel mensen, zoals:
+<ul>
+<li>Hun leeftijd, gewicht en levensstijl (bijvoorbeeld hoeveel ze bewegen of roken).</li>
+<li>Medische gegevens, zoals bloeddruk, cholesterol of bloedsuikerwaarden.</li>
+<li>Resultaten van onderzoeken, zoals scans of bloedtesten.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Patronen ontdekken:</strong></p>
+<ul>
+<li>De computer kijkt naar deze gegevens en leert hoe chronische ziekten ontstaan.</li>
+<li>Bijvoorbeeld: &quot;Mensen met een hoge bloeddruk en overgewicht krijgen vaker hartproblemen.&quot;</li>
+</ul>
+</li>
+<li>
+<p><strong>Voorspellen:</strong></p>
+<ul>
+<li>De computer vergelijkt jouw gegevens met wat het heeft geleerd.</li>
+<li>Als jouw profiel lijkt op dat van mensen die een chronische ziekte kregen, geeft het systeem een waarschuwing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vroegtijdige waarschuwing:</strong></p>
+<ul>
+<li>De tool kan artsen of jou zelf laten weten: &quot;Je hebt een verhoogd risico op diabetes. Zorg dat je gezonder gaat eten en meer beweegt.&quot;</li>
+</ul>
+</li>
+</ol>
+<h3 id="een-voorbeeld%3A-2">Een voorbeeld:</h3>
+<p>Stel dat je elk jaar een medische check-up doet:</p>
+<ul>
+<li>De dokter laat je bloed testen en je vult een vragenlijst in over je levensstijl.</li>
+<li>De gegevens worden in een slim systeem gezet.</li>
+<li>Het systeem ziet dat je bloedsuiker elk jaar iets hoger wordt en dat je weinig beweegt.</li>
+<li>Voordat je diabetes krijgt, geeft het systeem een waarschuwing: &quot;Je hebt een risico op diabetes. Pas nu je levensstijl aan!&quot;</li>
+</ul>
+<h3 id="waarom-is-dit-belangrijk%3F-1">Waarom is dit belangrijk?</h3>
+<ol>
+<li><strong>Ziekten voorkomen:</strong> Het is beter om gezond te blijven dan ziek te worden en behandeld te moeten worden.</li>
+<li><strong>Sneller handelen:</strong> Hoe eerder je een probleem opmerkt, hoe makkelijker het vaak is om het op te lossen.</li>
+<li><strong>Persoonlijke gezondheid verbeteren:</strong> Je krijgt advies dat specifiek voor jou is.</li>
+<li><strong>Minder kosten:</strong> Als je gezond blijft, hoef je minder vaak naar de dokter en zijn de medische kosten lager.</li>
+</ol>
+<h2 id="virtuele-hulp">Virtuele hulp</h2>
+<p>Virtuele platforms zijn online hulpmiddelen, zoals websites of apps, die mensen helpen om hun gezondheid te begrijpen en te beheren. Denk bijvoorbeeld aan een app die je vertelt hoe je fit kunt blijven of je waarschuwt voor een gezondheidsprobleem.</p>
+<h3 id="een-praktisch-voorbeeld%3A-1">Een praktisch voorbeeld:</h3>
+<p>Stel je voor dat je een app hebt waar je je dagelijkse activiteiten invoert (zoals hoeveel je sport en wat je eet).</p>
+<ul>
+<li>De app merkt op dat je weinig beweegt en vaak suikerhoudende dranken drinkt.</li>
+<li>De voorspelling is dat je over een paar jaar misschien diabetes kunt ontwikkelen als je zo doorgaat.</li>
+<li>De app geeft een waarschuwing: &quot;Begin met 30 minuten wandelen per dag en drink meer water om je risico te verlagen.&quot;</li>
+</ul>
+<p>Door dit soort voorspellingen kunnen mensen gezonder blijven <strong>voordat ze echt ziek worden</strong>.</p>
+<h3 id="waarom-is-dit-handig%3F">Waarom is dit handig?</h3>
+<ol>
+<li><strong>Vroege waarschuwingen:</strong> Je kunt gezondheidsproblemen aanpakken voordat ze echt ontstaan.</li>
+<li><strong>Persoonlijke begeleiding:</strong> Het advies is speciaal voor jou, gebaseerd op jouw gegevens.</li>
+<li><strong>Meer controle:</strong> Mensen kunnen beter begrijpen wat ze kunnen doen om gezond te blijven.</li>
+<li><strong>Minder doktersbezoeken:</strong> Je hoeft niet steeds naar de dokter, want de app helpt je al veel.</li>
+</ol>
+<h2 id="voorbeelden-van-apps">Voorbeelden van apps</h2>
+<p>Er zijn veel populaire apps in de gezondheidszorg die mensen helpen hun gezondheid te monitoren, verbeteren en beheren. Hier zijn enkele bekende categorieën en voorbeelden:</p>
+<h3 id="1.-apps-voor-fitness-en-welzijn">1. <strong>Apps voor fitness en welzijn</strong></h3>
+<p>Deze apps helpen gebruikers om fitter te worden, gezond te eten en een betere levensstijl te ontwikkelen.</p>
+<ul>
+<li><strong>MyFitnessPal</strong>: Helpt bij het bijhouden van calorieën en voeding, met een database van miljoenen voedingsmiddelen.</li>
+<li><strong>Nike Training Club</strong>: Biedt workouts en trainingsplannen voor thuis of in de sportschool.</li>
+<li><strong>Headspace</strong>: Focus op meditatie en mindfulness om stress te verminderen.</li>
+</ul>
+<h3 id="2.-apps-voor-slaapmonitoring">2. <strong>Apps voor slaapmonitoring</strong></h3>
+<p>Deze apps analyseren je slaappatroon en helpen je beter te slapen.</p>
+<ul>
+<li><strong>Sleep Cycle</strong>: Houdt je slaapritme bij en wekt je op het beste moment in je slaapcyclus.</li>
+<li><strong>Pillow</strong>: Combineert slaapmonitoring met hartslagmetingen (voor Apple Watch-gebruikers).</li>
+</ul>
+<h3 id="3.-medische-apps">3. <strong>Medische apps</strong></h3>
+<p>Deze apps zijn bedoeld voor het beheren van medische gegevens of het krijgen van advies.</p>
+<ul>
+<li><strong>GoodRx</strong>: Helpt gebruikers goedkope medicijnen te vinden en biedt kortingen op medicijnen.</li>
+<li><strong>Ada</strong>: Een AI-gestuurde app die je symptomen analyseert en advies geeft over wat je zou kunnen hebben.</li>
+<li><strong>Pill Reminder - Meds Alarm</strong>: Herinnert je eraan wanneer je je medicijnen moet innemen.</li>
+</ul>
+<h3 id="4.-apps-voor-chronische-ziektebeheer">4. <strong>Apps voor chronische ziektebeheer</strong></h3>
+<p>Deze apps helpen mensen met chronische aandoeningen, zoals diabetes of astma.</p>
+<ul>
+<li><strong>Glooko</strong>: Helpt diabetespatiënten bij het volgen van bloedsuiker, voeding en activiteit.</li>
+<li><strong>MySugr</strong>: Een dagboek-app speciaal voor mensen met diabetes.</li>
+<li><strong>AsthmaMD</strong>: Helpt astmapatiënten hun medicatie en symptomen bij te houden.</li>
+</ul>
+<h3 id="5.-telezorg--en-consultatie-apps">5. <strong>Telezorg- en consultatie-apps</strong></h3>
+<p>Met deze apps kun je direct contact opnemen met een arts of specialist.</p>
+<ul>
+<li><strong>Zocdoc</strong>: Een platform waar je afspraken met artsen kunt maken en medische specialisten kunt vinden.</li>
+<li><strong>Amwell</strong>: Biedt virtuele consultaties met artsen en therapeuten.</li>
+<li><strong>Babylon Health</strong>: Combineert AI-diagnoses met online consultaties door artsen.</li>
+</ul>
+<h3 id="6.-gezondheidsmonitoring-met-wearables">6. <strong>Gezondheidsmonitoring met wearables</strong></h3>
+<p>Deze apps werken samen met apparaten zoals smartwatches of fitness-trackers.</p>
+<ul>
+<li><strong>Apple Health</strong>: Een alles-in-één app die gegevens van je Apple Watch of andere apparaten verzamelt, zoals hartslag, stappen, slaap en meer.</li>
+<li><strong>Fitbit</strong>: Combineert fitnessdoelen met gezondheid, zoals het meten van hartslag en slaap.</li>
+<li><strong>Garmin Connect</strong>: Voor gebruikers van Garmin-wearables, met fitness- en gezondheidsanalyses.</li>
+</ul>
+<h3 id="7.-vrouwengezondheid-en-vruchtbaarheid">7. <strong>Vrouwengezondheid en vruchtbaarheid</strong></h3>
+<p>Apps gericht op menstruatie, ovulatie en zwangerschap.</p>
+<ul>
+<li><strong>Clue</strong>: Een menstruatie- en vruchtbaarheidsapp die je cyclus bijhoudt.</li>
+<li><strong>Flo</strong>: Voor het volgen van de menstruatiecyclus en vruchtbaarheid, met extra gezondheidstips.</li>
+<li><strong>Ovia Pregnancy</strong>: Ondersteunt vrouwen tijdens hun zwangerschap met dagelijkse tips en updates.</li>
+</ul>
+<h3 id="8.-geestelijke-gezondheidszorg">8. <strong>Geestelijke gezondheidszorg</strong></h3>
+<p>Deze apps richten zich op mentale gezondheid, therapie en ontspanning.</p>
+<ul>
+<li><strong>BetterHelp</strong>: Biedt online therapie via tekst, audio of video.</li>
+<li><strong>Calm</strong>: Voor meditatie, mindfulness en betere slaap.</li>
+<li><strong>Woebot</strong>: Een AI-chatbot die helpt bij stress en angst, gebaseerd op cognitieve gedragstherapie (CBT).</li>
+</ul>
+<h2 id="quantified-self">Quantified Self</h2>
+<p><strong>Quantified Self</strong> betekent letterlijk &quot;het meten van jezelf.&quot; Het is een trend waarbij mensen technologie gebruiken om <strong>gegevens over hun eigen lichaam en gedrag</strong> te verzamelen en te analyseren. Hiermee willen ze meer inzicht krijgen in hun gezondheid, gewoontes en prestaties.
+Denk bijvoorbeeld aan het dragen van een smartwatch of het gebruiken van een app om bij te houden hoeveel stappen je zet, hoe goed je slaapt of wat je eet.</p>
+<h3 id="een-voorbeeld%3A-3">Een voorbeeld:</h3>
+<p>Stel je hebt een smartwatch:</p>
+<ul>
+<li>Het meet je <strong>stappen</strong>, <strong>hartslag</strong> en <strong>slaap</strong>.</li>
+<li>Aan het eind van de dag zie je dat je maar 4.000 stappen hebt gezet, terwijl het doel 10.000 stappen is.</li>
+<li>Je besluit na het eten een wandeling te maken om je doel alsnog te halen.</li>
+<li>De volgende dag voel je je energieker en blijf je dit doen.</li>
+</ul>
+<h3 id="waarom-is-het-populair%3F">Waarom is het populair?</h3>
+<ul>
+<li><strong>Meer controle:</strong> Mensen willen meer weten over hun gezondheid en gedrag.</li>
+<li><strong>Zelfverbetering:</strong> Je kunt jezelf uitdagen om fitter, gezonder of gelukkiger te worden.</li>
+<li><strong>Technologie is overal:</strong> Door smartphones, apps en wearables is het makkelijker dan ooit om jezelf te meten.</li>
+<li><strong>Motivatie:</strong> Het bijhouden van je vooruitgang kan je aanmoedigen om door te gaan.</li>
+</ul>
+<h3 id="waar-wordt-het-voor-gebruikt%3F">Waar wordt het voor gebruikt?</h3>
+<ul>
+<li><strong>Gezondheid:</strong> Hartslag, bloeddruk, gewicht, slaap, voeding.</li>
+<li><strong>Sport:</strong> Hardlooptijden, afstand, krachttraining.</li>
+<li><strong>Mentale gezondheid:</strong> Stress, stemming, productiviteit.</li>
+<li><strong>Levensstijl:</strong> Hoeveel water je drinkt, hoeveel schermtijd je hebt, etc.</li>
+</ul>
+<h3 id="een-simpele-vergelijking%3A">Een simpele vergelijking:</h3>
+<p>Het is alsof je een persoonlijke score bijhoudt in een spel, maar dan voor je echte leven. Je probeert je eigen &quot;high score&quot; te verbeteren, zoals meer stappen zetten, beter slapen of gezonder eten.</p>
+<h3 id="is-het-iets-voor-iedereen%3F">Is het iets voor iedereen?</h3>
+<p>Het kan heel nuttig zijn, maar het hangt ervan af of je het leuk vindt om dingen te meten. Sommige mensen vinden het motiverend, terwijl anderen het teveel werk vinden.<br>
+Je kunt de gegevens die je verzamelt met je smartwatch, apps of andere apparaten vaak delen met je arts of in een ziekenhuis gebruiken. Steeds meer ziekenhuizen en artsen staan open voor het bekijken van deze persoonlijke gegevens, omdat ze kunnen helpen bij het stellen van diagnoses en het volgen van je gezondheid.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=8wqC6ad1V_Q">Quantified Self Explained</a></li>
+</ul>
+<h2 id="youtube">Youtube</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mkiDXTS6-mU">7 AI examples in healthcare</a></li>
+<li><a href="https://medicalfuturist.com/a-guide-to-the-future-for-medical-students/">The medical futurist website</a> en <a href="https://www.youtube.com/@Medicalfuturist/videos">youtube-channel</a></li>
+<li><a href="https://www.youtube.com/@StanfordMedicine/videos">Stanford Medicine youtube-channel</a></li>
+<li><a href="https://www.youtube.com/watch?v=LGyf8qla-vc">Uitzending van Focus op NPO over AI in de gezondheidszorg</a></li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#ai-en-healthcare">AI en Healthcare</a></li><li><a href="#beeldherkenning">Beeldherkenning</a></li><li><a href="#genomics">Genomics</a></li><li><a href="#ontwikkeling-van-medicijnen">Ontwikkeling van medicijnen</a></li><li><a href="#predictieve-analyse">Predictieve analyse</a></li><li><a href="#monitoring-van-de-gezondheid">Monitoring van de gezondheid</a></li><li><a href="#ziekten-opsporen-en-voorkomen">Ziekten opsporen en voorkomen</a></li><li><a href="#virtuele-hulp">Virtuele hulp</a></li><li><a href="#voorbeelden-van-apps">Voorbeelden van apps</a></li><li><a href="#quantified-self">Quantified Self</a></li><li><a href="#youtube">Youtube</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/ai/robotica/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Robotica</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/ai/zorgrobots/">
+        <span class="title">Zorgrobots</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

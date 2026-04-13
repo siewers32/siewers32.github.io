@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Git en github</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/git/git-ch10.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/git/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/git/git-en-github/" aria-current="page" data-state="active">Git en github</a>
+
+<a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+
+<a class="page-link" href="/edutorial/git/conflicten/">Conflicten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/git/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/git/git-en-github/" aria-current="page" data-state="active">Git en github</a>
+    
+    <a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+    
+    <a class="page-link" href="/edutorial/git/conflicten/">Conflicten</a>
+    
+</div>
+
+            <h1 id="versiebeheer-met-git">Versiebeheer met Git</h1>
+<h2 id="git-en-github">Git en github</h2>
+<h3 id="samenwerken-met-github">Samenwerken met github</h3>
+<p>Als je met meerdere mensen aan een project werkt, dan is het de kunst om allemaal met de laatste versie te werken zonder dat je elkaars werk overschrijft. Hiervoor moet je afspraken maken. Je moet natuurlijk niet tegelijkertijd dezelfde bestanden gaan bewerken. Git kan helpen om ervoor te zorgen dat je altijd de laatste versie hebt.</p>
+<h3 id="bestanden-synchroniseren">Bestanden synchroniseren</h3>
+<p>Je kunt een repository opzetten op github.com. Deze repository kun je delen met anderen, zodat je met je team gebruik kunt maken van dezelfde bestanden.</p>
+<h3 id="communicatie-met-github.com">Communicatie met github.com</h3>
+<p>Er zijn verschillende manieren waarop je kunt communiceren met Github, maar de meest veilige, handige en meestgebruikte manier is op basis van SSH. SSH is een protocol waarbij de authenticatie niet op basis een naam- en wachtwoord combinatie wordt afgehandeld, maar met 2 sleutels. Een publieke en een privé-sleutel. De publieke sleutel is afgeleid van de privé-sleutel. Door de publieke sleutel aan github.com te geven, kun je op basis van je privé-sleutel toegang krijgen tot je repositories op github.com.
+Om de communicatie op touw te zetten moet je de volgende stappen doen:</p>
+<ul>
+<li>SSH keys genereren op je lokale computer</li>
+<li>Je public key delen met Github.com</li>
+<li>Als je meerdere sleutelparen hebt, dan start je de ssh-agent op om aan te geven met welke sleutel je authenticeerd. Als je maar 1 sleutelpaar hebt, dan is deze stap niet nodig.</li>
+</ul>
+<p>Uitleg hoe je ssh-keys maakt en gebruikt lees je hier:</p>
+<ul>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Documentatie op github.com</a></li>
+</ul>
+<h2 id="starten-met-een-lokale-repository">Starten met een lokale repository</h2>
+<p>Je kunt op 2 manieren je bestanden synchroniseren met github.</p>
+<ul>
+<li>Je hebt al een working directory met bestanden en een lokale repository.
+<ul>
+<li>Je wil dan een remote repository opzetten op github.com</li>
+<li>Je lokale bestanden synchroniseren op github.com</li>
+</ul>
+</li>
+<li>Je hebt nog geen bestanden lokaal staan en je wilt een bestaande repository op github.com lokaal gebruiken
+<ul>
+<li>Je wil dan een remote repository clonen naar je laptop of pc</li>
+</ul>
+</li>
+</ul>
+<h2 id="lokale-bestanden-synchroniseren-met-github.com">Lokale bestanden synchroniseren met github.com</h2>
+<p>Op je eigen computer navigeer je naar de (project)directory met bestanden. Dit wordt je working-directory genoemd. Als je met een editor werkt en/of een framework gebruikt, dan wil je waarschijnlijk niet alle bestanden opslaan in een repository.
+Om dit te voorkomen neem je de mappen en bestanden die je niet wil opslaan op in een bestand met de naam .gitignore.
+Stel je werkt aan een laravel project en je maakt gebruik van Jetbrains' PHPStorm, dan neem je de volgende mappen en bestanden op in .gitignore</p>
+<pre class="language-php"><code class="language-php"><span class="token comment"># Als je op een mac werkt kom je metadata tegen in de vorm van .DS_Store files.</span>
+<span class="token operator">.</span>DS_Store
+<span class="token comment"># PHPStorm bewaart project-informatie in de map .idea</span>
+<span class="token operator">.</span>idea<span class="token operator">/</span>
+<span class="token comment"># Laravel gebruikt allerlei externe libraries die worden binnengehaald met composer</span>
+vendor<span class="token operator">/</span>
+<span class="token comment"># Front-ends frameworks zoals Vue en React gebruken npm packages</span>
+node_modules<span class="token operator">/</span>
+<span class="token comment"># wachtwoorden en sleutels heb je liever ook niet op github.com</span>
+<span class="token operator">.</span>env</code></pre>
+<p>Bovenstaand is een voorbeeld. De inhoud van een .gitignore-bestand verschilt per project dus je moet zelf goed kijken hoe jouw situatie is. Je kunt op google veel discussies en voorbeelden vinden.</p>
+<ul>
+<li><a href="https://github.com/github/gitignore">.gitignore voorbeelden</a></li>
+<li><a href="https://www.toptal.com/developers/gitignore">nog meer .gitignore voorbeelden</a></li>
+</ul>
+<p>Nadat je een .gitignore bestand hebt toegevoegd aan  je working-directory voer je de volgende commando's uit.</p>
+<pre class="language-php"><code class="language-php">git init
+git add <span class="token operator">.</span>
+git commit <span class="token operator">-</span>m <span class="token string double-quoted-string">"first commit"</span></code></pre>
+<ul>
+<li>
+<p>Met git init initialiseer je een nieuwe repository in je working-directory</p>
+</li>
+<li>
+<p>Met &quot;git add .&quot; voeg je alle bestanden uit je working-directory toe aan de stage van je repository</p>
+</li>
+<li>
+<p>Met git commit maak je een nieuwe versie aan met de bestanden in de stage.</p>
+</li>
+<li>
+<p>Ga naar github.com en maak een nieuwe lege repository. Belangrijk: Voeg nog geen bestanden toe aan de repository. Geen readme of gitignore!!</p>
+</li>
+<li>
+<p>Als je al lokaal een repository hebt gemaakt, dan kopieer je de url naar de repo op github.com en gebruik je 'git remote add' om de github repo te koppelen met je lokale repository.</p>
+</li>
+</ul>
+<pre class="language-php"><code class="language-php">git remote add origin git@github<span class="token operator">.</span>com<span class="token punctuation">:</span>jouw<span class="token operator">-</span>account<span class="token operator">-</span>naam<span class="token operator">/</span>je<span class="token operator">-</span>repository<span class="token operator">.</span>git </code></pre>
+<p>De naam van je remote repository is 'origin' en je bewaart je werk in de 'master' of 'main'-branch, afhankelijk van je standaard git-instellingen. Gebruik 'git status' om te zien in welke branch je aan het werk bent.
+Met het volgende commando synchroniseer je de lokale repository met de remote repository op github.com door de je lokale bestanden op github.com te zetten.</p>
+<pre class="language-php"><code class="language-php">git push origin master</code></pre>
+<p>Als alles goed is gegaan, zie je nu je bestanden op github.com!</p>
+<h3 id="starten-met-een-repository-op-github.com">Starten met een repository op github.com</h3>
+<p>Stel dat je nu je lokale repository op je laptop hebt staan en op github.com, maar je wilt verder werken aan je project op een desktop computer. Je wil dan een kopie van github.com op je desktop computer zetten.</p>
+<p>Ga naar github.com en kopieer de (ssh) link van je github-repository.
+Op je desktop computer ga je naar de directory waar je de repository wilt uitchecken, vervolgens haal je de repository op van github.com....</p>
+<pre class="language-php"><code class="language-php">git <span class="token keyword">clone</span> git@github<span class="token operator">.</span>com<span class="token punctuation">:</span>account<span class="token operator">-</span>naam<span class="token operator">/</span>je<span class="token operator">-</span>repository<span class="token operator">.</span>git</code></pre>
+<h3 id="workflow">Workflow</h3>
+<p>Stel je zit nog achter je desktop computer en je verandert een aantal bestanden.<br>
+Voordat je de computer uitzet doe je weer.....</p>
+<pre class="language-php"><code class="language-php">git add <span class="token operator">.</span>
+git commit <span class="token string single-quoted-string">'aanpassing aan login-scherm'</span>
+git push origin master</code></pre>
+<p>Je veranderingen zijn opgeslagen en je bent weer in sync op github.com
+Als je weer verder  wil werken op je laptop, dan start je weer met...</p>
+<pre class="language-php"><code class="language-php">git pull origin master</code></pre>
+<p>en je bent weer in sync!</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#git-en-github">Git en github</a></li><li><a href="#starten-met-een-lokale-repository">Starten met een lokale repository</a></li><li><a href="#lokale-bestanden-synchroniseren-met-github.com">Lokale bestanden synchroniseren met github.com</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/git/introductie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Introductie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/git/git-branches/">
+        <span class="title">Git branches</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

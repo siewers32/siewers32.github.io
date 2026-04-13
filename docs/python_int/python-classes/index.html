@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Python classes</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python_int/python-ch020.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python_int/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python_int/python-classes/" aria-current="page" data-state="active">Python classes</a>
+
+<a class="page-link" href="/edutorial/python_int/python-ai/">Python ai</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python_int/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python_int/python-classes/" aria-current="page" data-state="active">Python classes</a>
+    
+    <a class="page-link" href="/edutorial/python_int/python-ai/">Python ai</a>
+    
+</div>
+
+            <h1 id="python-intermediate">Python intermediate</h1>
+<h2 id="bouwstenen-voor-je-programma's">Bouwstenen voor je Programma's</h2>
+<p>Stel je voor dat je een game aan het maken bent. In die game heb je allerlei objecten: spelers, vijanden, wapens, items, enzovoort. Elk van deze objecten heeft bepaalde eigenschappen (bijvoorbeeld: een speler heeft een naam, levenspunten, een score) en kan bepaalde acties uitvoeren (bijvoorbeeld: een speler kan bewegen, aanvallen, items oppakken).</p>
+<p>Als je dit allemaal zonder classes zou doen, wordt je code al snel een grote warboel. Je zou dan misschien losse variabelen hebben zoals <code>speler1_naam</code>, <code>speler1_levens</code>, <code>speler2_naam</code>, <code>speler2_levens</code>, enzovoort. Dit is niet alleen onoverzichtelijk, maar ook lastig te onderhouden.</p>
+<p>Hier komen <strong>classes</strong> om de hoek kijken! Een class is als een blauwdruk of een sjabloon voor het maken van objecten. Het definieert de eigenschappen (data) en de acties (functies) die objecten van dat type zullen hebben.</p>
+<h3 id="waarom-classes-gebruiken%3F">Waarom classes gebruiken?</h3>
+<ol>
+<li><strong>Organisatie</strong>: Je groepeert gerelateerde data en functionaliteit bij elkaar. Dit maakt je code veel overzichtelijker en makkelijker te begrijpen.</li>
+<li><strong>Herbruikbaarheid</strong>: Als je eenmaal een class hebt gedefinieerd, kun je er zoveel objecten (ook wel 'instances' genoemd) van maken als je wilt. Je hoeft niet steeds dezelfde code te herhalen.</li>
+<li><strong>Modulariteit</strong>: Je kunt complexe programma's opdelen in kleinere, behapbare stukjes. Elke class is verantwoordelijk voor een specifiek deel van de functionaliteit.</li>
+</ol>
+<h3 id="hoe-ziet-een-class-eruit%3F">Hoe ziet een class eruit?</h3>
+<p>Laten we eens kijken naar een simpel voorbeeld van een <code>Speler</code> class:</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># 1. Class definitie</span>
+<span class="token keyword">class</span> <span class="token class-name">Speler</span><span class="token punctuation">:</span>
+    <span class="token comment"># 2. De '__init__' methode (constructor)</span>
+    <span class="token comment"># Deze methode wordt automatisch aangeroepen wanneer je een nieuw Speler-object maakt.</span>
+    <span class="token comment"># 'self' verwijst naar het object zelf.</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> levenspunten<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>naam <span class="token operator">=</span> naam  <span class="token comment"># Eigenschap: naam van de speler</span>
+        self<span class="token punctuation">.</span>levenspunten <span class="token operator">=</span> levenspunten <span class="token comment"># Eigenschap: levenspunten van de speler</span>
+        self<span class="token punctuation">.</span>score <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># Elke speler begint met een score van 0</span>
+
+    <span class="token comment"># 3. Methoden (functies binnen de class)</span>
+    <span class="token keyword">def</span> <span class="token function">beweeg</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> richting<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string"> beweegt naar </span><span class="token interpolation"><span class="token punctuation">{</span>richting<span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">neem_schade</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> schade<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>levenspunten <span class="token operator">-=</span> schade
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string"> heeft </span><span class="token interpolation"><span class="token punctuation">{</span>schade<span class="token punctuation">}</span></span><span class="token string"> schade geleden. Nog </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>levenspunten<span class="token punctuation">}</span></span><span class="token string"> levenspunten over."</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>levenspunten <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string"> is verslagen!"</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">verhoog_score</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> punten<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>score <span class="token operator">+=</span> punten
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string"> heeft </span><span class="token interpolation"><span class="token punctuation">{</span>punten<span class="token punctuation">}</span></span><span class="token string"> punten verdiend. Nieuwe score: </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>score<span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># 4. Objecten (instances) maken van de class</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"--- Spelers aanmaken ---"</span><span class="token punctuation">)</span>
+speler1 <span class="token operator">=</span> Speler<span class="token punctuation">(</span><span class="token string">"HeroBoy"</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment"># We maken een Speler-object genaamd speler1</span>
+speler2 <span class="token operator">=</span> Speler<span class="token punctuation">(</span><span class="token string">"DarkKnight"</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span> <span class="token comment"># We maken een ander Speler-object genaamd speler2</span>
+
+<span class="token comment"># 5. Eigenschappen van objecten benaderen</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Speler 1 naam: </span><span class="token interpolation"><span class="token punctuation">{</span>speler1<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string">, Levenspunten: </span><span class="token interpolation"><span class="token punctuation">{</span>speler1<span class="token punctuation">.</span>levenspunten<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Speler 2 naam: </span><span class="token interpolation"><span class="token punctuation">{</span>speler2<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string">, Levenspunten: </span><span class="token interpolation"><span class="token punctuation">{</span>speler2<span class="token punctuation">.</span>levenspunten<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># 6. Methoden van objecten aanroepen</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n--- Spelers in actie ---"</span><span class="token punctuation">)</span>
+speler1<span class="token punctuation">.</span>beweeg<span class="token punctuation">(</span><span class="token string">"noorden"</span><span class="token punctuation">)</span>
+speler2<span class="token punctuation">.</span>beweeg<span class="token punctuation">(</span><span class="token string">"oosten"</span><span class="token punctuation">)</span>
+
+speler1<span class="token punctuation">.</span>neem_schade<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+speler2<span class="token punctuation">.</span>verhoog_score<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+speler1<span class="token punctuation">.</span>verhoog_score<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+speler1<span class="token punctuation">.</span>neem_schade<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span> <span class="token comment"># Speler 1 wordt verslagen</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\nUiteindelijke score </span><span class="token interpolation"><span class="token punctuation">{</span>speler2<span class="token punctuation">.</span>naam<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>speler2<span class="token punctuation">.</span>score<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
+<h3 id="uitleg-van-de-code%3A">Uitleg van de code:</h3>
+<ol>
+<li><strong><code>class Speler:</code></strong>: Dit is de definitie van onze class. We geven het de naam <code>Speler</code>. Classnamen beginnen traditioneel met een hoofdletter.</li>
+<li><strong><code>def __init__(self, naam, levenspunten):</code></strong>: Dit is een speciale methode die de <strong>constructor</strong> wordt genoemd.
+<ul>
+<li>Het wordt <strong>automatisch aangeroepen</strong> wanneer je een nieuw object van deze class maakt (bijvoorbeeld <code>Speler(&quot;HeroBoy&quot;, 100)</code>).</li>
+<li><strong><code>self</code></strong>: Dit is een verplichte eerste parameter in elke methode van een class. Het verwijst naar het <em>object zelf</em> dat wordt gemaakt. Hiermee kun je eigenschappen aan dat specifieke object toewijzen (bijvoorbeeld <code>self.naam = naam</code>).</li>
+<li><strong><code>naam</code> en <code>levenspunten</code></strong>: Dit zijn parameters die je meegeeft wanneer je een nieuw <code>Speler</code>-object maakt. Deze worden gebruikt om de initiële eigenschappen van het object in te stellen.</li>
+<li><code>self.naam = naam</code>, <code>self.levenspunten = levenspunten</code>, <code>self.score = 0</code>: Hier worden de eigenschappen (<code>naam</code>, <code>levenspunten</code>, <code>score</code>) aan het object toegewezen. Elk <code>Speler</code>-object zal zijn eigen unieke waarden voor deze eigenschappen hebben.</li>
+</ul>
+</li>
+<li><strong><code>def beweeg(self, richting):</code></strong>, <strong><code>def neem_schade(self, schade):</code></strong>, <strong><code>def verhoog_score(self, punten):</code></strong>: Dit zijn gewone methoden (functies) die deel uitmaken van de <code>Speler</code>-class. Ze definiëren de acties die een <code>Speler</code>-object kan uitvoeren. Ook hier is <code>self</code> de eerste parameter om toegang te krijgen tot de eigenschappen van het object (<code>self.naam</code>, <code>self.levenspunten</code>, etc.).</li>
+<li><strong><code>speler1 = Speler(&quot;HeroBoy&quot;, 100)</code></strong>: Dit is hoe je een <strong>object</strong> (of <strong>instance</strong>) van de <code>Speler</code>-class maakt. Je 'roept' de class aan als een functie, en de <code>__init__</code> methode wordt uitgevoerd om het object te initialiseren. <code>speler1</code> is nu een uniek <code>Speler</code>-object.</li>
+<li><strong><code>speler1.naam</code></strong>, <strong><code>speler2.levenspunten</code></strong>: Je kunt toegang krijgen tot de eigenschappen van een object met behulp van de 'punt'-notatie (<code>objectnaam.eigenschap</code>).</li>
+<li><strong><code>speler1.beweeg(&quot;noorden&quot;)</code></strong>, <strong><code>speler2.neem_schade(30)</code></strong>: Je roept de methoden van een object aan met behulp van de 'punt'-notatie (<code>objectnaam.methode()</code>).</li>
+</ol>
+<h3 id="conclusie">Conclusie</h3>
+<p>Classes zijn een fundamenteel concept in objectgeoriënteerd programmeren (OOP), een programmeerparadigma dat heel veel wordt gebruikt in de softwareontwikkeling. Door classes te gebruiken, schrijf je code die:</p>
+<ul>
+<li>Beter georganiseerd is</li>
+<li>Makkelijker te begrijpen en te onderhouden is</li>
+<li>Eenvoudiger uit te breiden is</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#bouwstenen-voor-je-programma's">Bouwstenen voor je Programma's</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python_int/introductie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Introductie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python_int/python-ai/">
+        <span class="title">Python ai</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

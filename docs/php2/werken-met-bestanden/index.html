@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Werken met bestanden</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch04.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/" aria-current="page" data-state="active">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/" aria-current="page" data-state="active">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="werken-met-bestanden">Werken met bestanden</h2>
+<p>In php kun je de inhoud van een bestand toevoegen aan de inhoud van een ander bestand.<br>
+Dit is vooral handig als je dezelfde code op verschillende plaatsen in je applicatie wilt gebruiken.
+Een databaseconnectie wil je vaak op meerdere pagina's gebruiken. Om te voorkomen dat je op meerdere plekken in je applicatie de gegevens voor je server en gebruiker opnieuw in moet typen, kun je gebruik maken van een include:</p>
+<pre class="language-php"><code class="language-php"><span class="token comment">//Databaseconnectie in bestand db.php</span>
+<span class="token variable">$dbc</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'mysql:hostname=localhost;dbname=test'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'root'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Je kunt met include (of require) het bestand db.php opnemen in een ander bestand:</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">include</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'db.php'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Overzicht met gebruikers (overzicht.php)</span>
+<span class="token variable">$query</span> <span class="token operator">=</span> <span class="token variable">$dbc</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"select * from user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
+<p>Door include te gebruiken wordt de code uit db.php toegevoegd aan de code in overzicht.php. Hierdoor is ook de variabele $dbc in overzicht.php beschikbaar!<br>
+Include() wordt ook gebruikt om bijv. de layout van een pagina te kunnen hergebruiken:</p>
+<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- layout.html --></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css/stijl.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token prolog">&lt;?= $html['title'] ?></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token prolog">&lt;?= $html['heading'] ?></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token prolog">&lt;?= $html['tekst'] ?></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html">Overigens:
+<span class="token prolog">&lt;?= $var ?></span> is hetzelfde als <span class="token prolog">&lt;?php echo $var ?></span></code></pre>
+<p>De pagina in php....</p>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+  <span class="token variable">$html</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+    <span class="token string single-quoted-string">'title'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'Sportnieuws'</span><span class="token punctuation">,</span>
+    <span class="token string single-quoted-string">'heading'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'Koeman niet bang voor Clásico'</span>
+    <span class="token string single-quoted-string">'text'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'FC Barcelona-trainer Ronald Koeman leeft niet met angst en beven toe naar de Clásico tegen Real Madrid. Volgens Spaanse media zijn veel supporters van de Spaanse grootmacht pessimistisch over de kansen van het tegenvallende FC Barcelona in de derby met Real, die zondag op het programma staat.'</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">include</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'layout.html'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>Zo kun je dezelfde pagina-layout voor meerdere artikelen gebruiken.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#werken-met-bestanden">Werken met bestanden</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/crud-applicatie/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">CRUD applicatie</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/oo-programmeren/">
+        <span class="title">OO Programmeren</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

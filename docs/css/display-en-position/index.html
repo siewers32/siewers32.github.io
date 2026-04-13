@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Display en position</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/css/css-ch070.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+
+<a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+
+<a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+
+<a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+
+<a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+
+<a class="page-link" href="/edutorial/css/display-en-position/" aria-current="page" data-state="active">Display en position</a>
+
+<a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+
+<a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+
+<a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+
+<a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/css/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/css/starten-met-css/">Starten met CSS</a>
+    
+    <a class="page-link" href="/edutorial/css/classes-en-ids/">Classes en Ids</a>
+    
+    <a class="page-link" href="/edutorial/css/boxmodel/">Boxmodel</a>
+    
+    <a class="page-link" href="/edutorial/css/units-en-maten/">Units en maten</a>
+    
+    <a class="page-link" href="/edutorial/css/fonts/">Fonts</a>
+    
+    <a class="page-link" href="/edutorial/css/display-en-position/" aria-current="page" data-state="active">Display en position</a>
+    
+    <a class="page-link" href="/edutorial/css/flexbox/">Flexbox</a>
+    
+    <a class="page-link" href="/edutorial/css/css-grid/">CSS Grid</a>
+    
+    <a class="page-link" href="/edutorial/css/media-queries/">Media Queries</a>
+    
+    <a class="page-link" href="/edutorial/css/projecten/">Projecten</a>
+    
+</div>
+
+            <h1 id="css">CSS</h1>
+<h2 id="display-en-position">Display en position</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/xydZkhnZIWw">
+        </iframe>
+    </div>
+<p>Om elementen goed te kunnen positioneren is het belangrijk om te weten hoe je browser bepaald waar een element wordt geplaatst. Plaatsing wordt door een aantal eigenschappen beïnvloed. Te weten:</p>
+<ul>
+<li>de display-eigenschap</li>
+<li>de position-eigenschap</li>
+<li>de aanwezige ruimte</li>
+</ul>
+<h4 id="de-display-eigenschap">De display eigenschap</h4>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">div</span> <span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+        <span class="token property">margin</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    Dit is een div met tekst
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span>green</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+    Dit is nog een div met tekst
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<style>
+    div.test {
+        display: block;
+        height:100px;
+        width:100px;
+        background-color:red;
+        margin:10px;
+        padding:10px;
+    }
+    div.test2 {
+        display: inline;
+        height:100px;
+        width:100px;
+        background-color:red;
+        margin:10px;
+        padding:10px;   
+    }
+    div.test3 {
+        display: inline-block;
+        height:100px;
+        width:100px;
+        background-color:red;
+        margin:10px;
+        padding:10px;  
+    }
+    div.test4 {
+        display: block;
+        height:100px;
+        width:100px;
+        background-color:red;
+        margin:10px;
+        padding:10px;
+        position:relative;
+        left:50px;
+    }
+    div.test5 {
+        position:absolute;
+        left:50px;
+        top: 10px;
+        display: block;
+        height:100px;
+        width:100px;
+        background-color:red;
+        margin:10px;
+        padding:10px;
+    }
+</style>
+<div class="html">
+<div class="test">
+    Dit is een div met tekst
+</div>
+<div class="test" style="background-color:green">
+    Dit is nog een div met tekst
+</div>
+</div>
+<p>Doordat de waarde van de eigenschap 'display' op 'block' is ingesteld, komen de twee div's onder elkaar te staan.
+Als we de waarde van 'display' aanpassen naar 'inline', dan komen de div's naast elkaar te staan.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>inline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div class="html">
+<div class="test2">
+    Dit is een div met tekst
+</div>
+<div class="test2" style="background-color:green">
+    Dit is nog een div met tekst
+</div>
+</div>
+<p></p>
+Je ziet dat bij de waarde inline, voor de elementen geen hoogte of breedte kan worden ingesteld. Inline elementen lopen mee met de tekst in een document. Ze worden behandeld alsof het karakters zijn. De ruimte die ze innemen wordt bepaald door de inhoud van de box. De waarden voor padding en margin zijn alleen van toepassing op -left en -right. Boven en onder hebben ze geen invloed.
+<p>Je kunt de waarde voor display ook op inline-block instellen. Dan worden de eigenschappen height en width behouden en worden de elementen naast elkaar geplaatst.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>inline-block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div class="html">
+<div class="test3">
+    Dit is een div met tekst
+</div>
+<div class="test3" style="background-color:green">
+    Dit is nog een div met tekst
+</div>
+</div>
+<h4 id="de-position-eigenschap">De position eigenschap</h4>
+<p>De meest gebruikte waarden voor de eigenschap position zijn 'static', 'relative' en 'absolute'.
+Ook als je zelf niets instelt zijn elementen voorzien van waarden voor eigenschappen zoals display en position.
+Een &lt;div&gt; is standaard ingesteld op 'display: block;'
+Een &lt;img&gt; is standaard ingesteld op 'display: inline;'
+HTML elementen zijn standaard ingesteld op 'position: static;'. Dit houdt in dat elementen worden geplaatst volgens de normale flow van de pagina.
+Bij 'position: relative;', kun je een element aanpassen ten opzichte van de positie waar het element volgens de normale flow terecht zou komen. Bijvoorbeeld.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">div#groen</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div class="html">
+<div class="test">
+    Dit is een div met tekst
+</div>
+<div class="test4" style="background-color:green">
+    Dit is nog een div met tekst
+</div>
+</div>
+<p>De onderste div verschuift 50px naar links ten opzichte van zijn 'normale' positie.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div class="html" style="position:relative;">
+    <div class="test">
+        Dit is een div met tekst
+    </div>
+    <div class="test5" style="background-color:green">
+        Dit is nog een div met tekst
+    </div>
+    <p style="clear:both;"></p>
+</div>
+<p>Een div die met 'position: absolute;' is ingesteld, wordt geplaatst ten opzichte van het eerste omliggende element dat zelf gepositioneerd is. In dit geval is het omliggende grijze element voorzien van de instelling &quot;position: relative&quot;.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#display-en-position">Display en position</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/css/fonts/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Fonts</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/css/flexbox/">
+        <span class="title">Flexbox</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

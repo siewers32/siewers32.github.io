@@ -1,0 +1,17 @@
+@media only screen and (max-width: 1200px) {
+    aside#right {
+        display: none;
+    }
+
+    aside#left > div.sections {
+        display: block;
+    }
+
+    div#content {
+        max-width: 800px;
+    }
+
+    div#content p, pre[class*="language-"] {
+        width: 65vw;
+    }
+}

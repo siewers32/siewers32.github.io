@@ -1,0 +1,6 @@
+{
+  "layout": "course.njk",
+  "course-title": "Examenvoorbereiding",
+  "tags": "examen",
+  "permalink": "/examen/{{ title | slug }}/{{ page.index }}"
+}

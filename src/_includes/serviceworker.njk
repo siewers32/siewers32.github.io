@@ -1,0 +1,13 @@
+{% extends "head.njk" %}
+{% block serviceworker %}
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("/_js/service-worker.js")
+            .then(function() {
+                console.log("ServiceWorker has been registered!");
+            })
+            .catch(console.error);
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,6 @@
+{
+    "course-title": "Technologie en zorg",
+    "layout": "course.njk",
+    "permalink": "/zt/{{ title | slug }}/{{ page.index }}",
+    "tags": "zorgtechnologie"
+}

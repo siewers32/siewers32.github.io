@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Tabellen combineren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch60.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/" aria-current="page" data-state="active">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/" aria-current="page" data-state="active">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="tabellen-combineren">Tabellen combineren</h2>
+<p>De mooiste resultaten krijg je als je gegevens uit tabellen kunt combineren. In de school-database is het bijvoorbeeld handig als je een lijst kunt opvragen van de namen van cursisten die aan een cursus meedoen. Om dit overzicht te maken zijn de gegevens uit meerdere tabellen nodig.
+Bekijk hiervoor de inhoud uit de tabel cursisten en de tabel c_regel.<br>
+In c_regel wordt bijgehouden wie voor welke cursus is ingeschreven.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> c_regel<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+--------+---------+</span>
+<span class="token operator">|</span> curs_code <span class="token operator">|</span> cursistnr <span class="token operator">|</span> cijfer <span class="token operator">|</span> betaald <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+--------+---------+</span>
+<span class="token operator">|</span> DB3       <span class="token operator">|</span> <span class="token number">64</span>        <span class="token operator">|</span>      <span class="token number">8</span> <span class="token operator">|</span> <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> DB3       <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span>      <span class="token number">6</span> <span class="token operator">|</span>    <span class="token boolean">NULL</span> <span class="token operator">|</span>
+<span class="token operator">|</span> DB3       <span class="token operator">|</span> <span class="token number">68</span>        <span class="token operator">|</span>      <span class="token number">9</span> <span class="token operator">|</span> <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> OA2       <span class="token operator">|</span> <span class="token number">14</span>        <span class="token operator">|</span>      <span class="token number">5</span> <span class="token operator">|</span> <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> OA2       <span class="token operator">|</span> <span class="token number">88</span>        <span class="token operator">|</span>      <span class="token number">7</span> <span class="token operator">|</span> <span class="token number">2000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> OA2       <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span>      <span class="token number">9</span> <span class="token operator">|</span>    <span class="token boolean">NULL</span> <span class="token operator">|</span>
+<span class="token operator">|</span> DB4       <span class="token operator">|</span> <span class="token number">14</span>        <span class="token operator">|</span>      <span class="token number">6</span> <span class="token operator">|</span> <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+--------+---------+</span></code></pre>
+<p>Hieronder de gegevens uit de cursisten-tabel</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cursist<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+---------+----------+----------------+----------+------------+----------+------------+</span>
+<span class="token operator">|</span> cursistnr <span class="token operator">|</span> naam    <span class="token operator">|</span> roepnaam <span class="token operator">|</span> straat         <span class="token operator">|</span> postcode <span class="token operator">|</span> plaats     <span class="token operator">|</span> geslacht <span class="token operator">|</span> geb_datum  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+---------+----------+----------------+----------+------------+----------+------------+</span>
+<span class="token operator">|</span> <span class="token number">64</span>        <span class="token operator">|</span> Broeken <span class="token operator">|</span> Bram     <span class="token operator">|</span> Drimmelseweg <span class="token number">8</span> <span class="token operator">|</span> <span class="token number">4395</span> XX  <span class="token operator">|</span> Made       <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1988</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">24</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">88</span>        <span class="token operator">|</span> Vos     <span class="token operator">|</span> Henk     <span class="token operator">|</span> Besbeemd <span class="token number">64</span>    <span class="token operator">|</span> <span class="token number">4142</span> CE  <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1989</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">22</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> Krimpen <span class="token operator">|</span> Tanja    <span class="token operator">|</span> Tilburgseweg <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">4222</span> BB  <span class="token operator">|</span> Goirle     <span class="token operator">|</span> V        <span class="token operator">|</span> <span class="token number">1990</span><span class="token operator">-</span><span class="token number">02</span><span class="token operator">-</span><span class="token number">08</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">14</span>        <span class="token operator">|</span> Norbart <span class="token operator">|</span> Niels    <span class="token operator">|</span> Gershof <span class="token number">8</span>      <span class="token operator">|</span> <span class="token number">4841</span> PL  <span class="token operator">|</span> Breda      <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1987</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">89</span>        <span class="token operator">|</span> Stofman <span class="token operator">|</span> Kees     <span class="token operator">|</span> Lindenlaan <span class="token number">23</span>  <span class="token operator">|</span> <span class="token number">4998</span> XF  <span class="token operator">|</span> Dronten    <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1987</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">22</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">91</span>        <span class="token operator">|</span> Stofman <span class="token operator">|</span> Kees     <span class="token operator">|</span> Lindenlaan <span class="token number">23</span>  <span class="token operator">|</span> <span class="token number">4998</span> XF  <span class="token operator">|</span> Dronten    <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+---------+----------+----------------+----------+------------+----------+------------+</span></code></pre>
+<h2 id="join">Join</h2>
+<p>In tabel c_regel vind je de cursus-code, terwijl in de tabel cursisten de namen van de cursisten te vinden zijn. Je kunt beide tabellen combineren omdat in de tabel c_regel cursistnummers worden gebrukt om aan te geven wie aan welke cursus meedoet. In de eerste rij zie je dat cursist 64 meedoet met de cursus 'DB3'. De cursistnummers in de tabel c_regel komen overeen met cursistnummers in de tabel cursist. Met <code>join</code> worden de tabellen gecombineerd. Daarna wordt er met <code>on</code> aangegeven wat de relatie is tussen de tabellen. Het cursistnummer in tabel cursisten moet corresponderen met het cursistnummer in de tabel c_regel...</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> curs_code <span class="token keyword">from</span> cursist c <span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> curs_code <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span> DB3       <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> DB3       <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> OA2       <span class="token operator">|</span>
+<span class="token operator">|</span> Henk     <span class="token operator">|</span> Vos     <span class="token operator">|</span> OA2       <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> OA2       <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> DB4       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------+</span></code></pre>
+<p>In de query wordt de naam van de tabel cursist afgekort naar de letter c. Dat scheelt veel tekst en maakt de query overzichtelijker. De naam van de tabel c_regel wordt afgekort naar cr. Zo kun je beide tabellen combineren op basis van het cursistnummer.
+In het volgende voorbeeld willen we de volledige naam van de cursus weergeven. Deze naam komt wel voor in de cursus-tabel, maar niet in c_regel. Beide tabellen kunnen worden gecombineerd omdat de cursus-code wel in beide tabellen voorkomt. Op basis van de cursuscode kan in de cursus-tabel de omschrijving van de cursus worden opgehaald.</p>
+<h2 id="joins-combineren">Joins combineren</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> omschr <span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> omschr          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span> Dbase III Plus  <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> Dbase III Plus  <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> Dbase IV        <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Henk     <span class="token operator">|</span> Vos     <span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------------+</span>
+</code></pre>
+<p>Na het samenvoegen van tabellen kan er weer gefilterd en gegroepeerd worden. Met filtering worden alleen de Dbase-cursussen getoond:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> omschr <span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code 
+<span class="token keyword">where</span> omschr <span class="token operator">like</span> <span class="token string">'Dbase%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> omschr         <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span> Dbase III Plus <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> Dbase III Plus <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> Dbase IV       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------------+</span>
+</code></pre>
+<h2 id="berekeningen-en-filteren">Berekeningen en filteren</h2>
+<p>Een overzicht genereren van de cursussen met hoogst behaalde cijfers;</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>cijfer<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>highest score<span class="token punctuation">`</span></span> <span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code 
+<span class="token keyword">group</span> <span class="token keyword">by</span> cu<span class="token punctuation">.</span>curs_code <span class="token keyword">order</span> <span class="token keyword">by</span> cu<span class="token punctuation">.</span>curs_code <span class="token keyword">desc</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------------+---------------+</span>
+<span class="token operator">|</span> omschr          <span class="token operator">|</span> highest score <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------------+---------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>             <span class="token number">9</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase IV        <span class="token operator">|</span>             <span class="token number">6</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus  <span class="token operator">|</span>             <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------------+---------------+</span>
+</code></pre>
+<p>Een overzicht van de namen en resultaten van de studenten aflopend gesorteerd op gemiddeld cijfer:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>cijfer<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>gemiddelde score<span class="token punctuation">`</span></span> 
+<span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code 
+<span class="token keyword">group</span> <span class="token keyword">by</span> c<span class="token punctuation">.</span>cursistnr <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token function">avg</span><span class="token punctuation">(</span>cijfer<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+------------------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> gemiddelde score <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+------------------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span>           <span class="token number">8.0000</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span>           <span class="token number">7.5000</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Henk     <span class="token operator">|</span> Vos     <span class="token operator">|</span>           <span class="token number">7.0000</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span>           <span class="token number">5.5000</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+------------------+</span></code></pre>
+<h2 id="oefeningen">Oefeningen</h2>
+<p>Maak gebruik van de database <code>bibliotheek</code> die je bij het onderdeel 'Database maken' hebt gemaakt.<br>
+Zorg ervoor dat de gegevens correct zijn toegevoegd.</p>
+<p>Maak de queries bij onderstaande vragen:</p>
+<ul>
+<li>Schrijf een query om alle klanten met hun voornaam, achternaam en emailadres te tonen.</li>
+<li>Schrijf een query om de titel, het jaar en de druk van alle boeken te tonen die na het jaar 2000 zijn gepubliceerd.</li>
+<li>Schrijf een query om de voornaam en achternaam van klanten te tonen die een boek hebben geleend in 2023.</li>
+<li>Schrijf een query om de titel van de boeken te tonen die momenteel zijn uitgeleend (retourdatum is nog niet bereikt).</li>
+<li>Schrijf een query om het aantal keren dat elk boek is uitgeleend te tonen, samen met de titel van het boek.</li>
+<li>Schrijf een query om het totale aantal boeken dat in 2022 is uitgeleend te tonen.</li>
+<li>Schrijf een query om de voornaam en achternaam van klanten te tonen die meer dan 3 boeken hebben uitgeleend.</li>
+<li>Schrijf een query om de gemiddelde uitleenperiode (verschil tussen uitleendatum en retourdatum) van alle boeken te berekenen.</li>
+<li>Schrijf een query om alle boeken die na de 3e druk zijn gepubliceerd te tonen.</li>
+<li>Schrijf een query om de klantgegevens van klanten die nog geen enkel boek hebben uitgeleend te tonen.</li>
+<li>Schrijf een query om de 5 meest uitgeleende boeken te tonen, inclusief hun titel en het aantal keer dat ze zijn uitgeleend.</li>
+<li>Schrijf een query om de naam en emailadres van klanten te tonen die een boek met de titel 'De Hobbit' hebben uitgeleend.</li>
+<li>Schrijf een query om de titel van de boeken en de totale uitleenperiode per boek te tonen (het totaal aantal dagen dat elk boek is uitgeleend).</li>
+<li>Schrijf een query om de klant(en) te tonen die het vaakst een boek hebben geleend, samen met het aantal keer dat ze iets hebben geleend.</li>
+<li>Schrijf een query om de titel van boeken te tonen die zowel in 2022 als in 2023 zijn uitgeleend.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#tabellen-combineren">Tabellen combineren</a></li><li><a href="#join">Join</a></li><li><a href="#joins-combineren">Joins combineren</a></li><li><a href="#berekeningen-en-filteren">Berekeningen en filteren</a></li><li><a href="#oefeningen">Oefeningen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/aggregatie-functies/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Aggregatie functies</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/permissies/">
+        <span class="title">Permissies</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

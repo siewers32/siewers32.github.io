@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Authenticatie</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/laravel/laravel-ch34.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+
+<a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+
+<a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+
+<a class="page-link" href="/edutorial/laravel/views/">Views</a>
+
+<a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+
+<a class="page-link" href="/edutorial/laravel/authenticatie/" aria-current="page" data-state="active">Authenticatie</a>
+
+<a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+
+<a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+    
+    <a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+    
+    <a class="page-link" href="/edutorial/laravel/views/">Views</a>
+    
+    <a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+    
+    <a class="page-link" href="/edutorial/laravel/authenticatie/" aria-current="page" data-state="active">Authenticatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+    
+    <a class="page-link" href="/edutorial/laravel/formulier/">Formulier</a>
+    
+</div>
+
+            <h1 id="laravel">Laravel</h1>
+<h2 id="authenticatie">Authenticatie</h2>
+<p>Authenticatie kun je natuurlijk zelf programmeren. Je hebt een mogelijkheid nodig om je te registreren, vervolgens kun je inloggen in de applicatie. Authenticatie zegt nog niet veel over wat je allemaal mag in de applicatie, het betekent alleen dat je geen <code>bezoeker</code> meer bent, maar een <code>gebruiker</code> in het systeem.</p>
+<p>Authorisatie bepaald wel wat je wel en niet mag in een applicatie. Gebruikers worden meestal gekoppeld aan een rol in het systeem. De rol bepaald wat je wel en niet mag.
+Vaak is de rol <code>admin</code> toebedeeld aan een gebruiker die alles mag. De <code>admin</code> is de beheerder van de applicatie.</p>
+<p>Je kunt dit allemaal zelf maken, maar het idee van een framework als Laravel is juist dat je dat niet meer hoeft te doen en dat je gebruik kunt maken van bestaande modules in Laravel. De documentatie van Laravel stelt een aantal starterkits voor die je hiervoor kunt installeren. We gaan hier verder met Laravel Breeze!</p>
+<h2 id="breeze">Breeze</h2>
+<p>Bekijk de documentatie van Laravel om te zien hoe je Breeze installeert. In Laravel 10 gaat het als volgt:
+Ga naar de directory met de laravel installatie en open de terminal...</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">composer</span> require laravel/breeze <span class="token parameter variable">--dev</span></code></pre>
+<p>Met dit commmando haalt composer de pakketten op die nodig zijn en voegt ze toe aan een bestaande laravel installatie.</p>
+<p>Vervolgens:</p>
+<pre class="language-shell"><code class="language-shell">php artisan breeze:install</code></pre>
+<p>Je krijgt dan de keuze uit een paar opties:</p>
+<pre class="language-shell"><code class="language-shell">Which stack would you like to install?
+  blade <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. <span class="token number">0</span>  
+  react <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. <span class="token number">1</span>  
+  vue <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. <span class="token number">2</span>  
+  api <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>. <span class="token number">3</span>  </code></pre>
+<p>Kies <code>0</code> voor <code>Blade</code>. Vervolgens krijg je nog een aantal opties die je allemaal met <code>no</code> kunt beantwoorden. Uiteindelijk wordt je applicatie opgetuigd met routes, models en controllers (en meer) die het mogelijk maken om authenticatie toe te passen.</p>
+<p>Wat is er veranderd in je applicatie nadat Breeze is geïnstalleerd?
+In eerste instantie zie je dat er een aantal routes bij zijn gekomen, maar helaas zijn eerder gemaakt routes voor home en contact overschreven. (Let daar op!)</p>
+<pre class="language-php"><code class="language-php"><span class="token comment">// web.php</span>
+<span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/dashboard'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'dashboard'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'auth'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'verified'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'dashboard'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'auth'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">group</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">ProfileController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'edit'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile.edit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">patch</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">ProfileController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'update'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile.update'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">ProfileController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'destroy'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile.destroy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">require</span> <span class="token constant">__DIR__</span><span class="token operator">.</span><span class="token string single-quoted-string">'/auth.php'</span><span class="token punctuation">;</span></code></pre>
+<p>Onderaan zie je dat er nog een bestand wordt ingesloten (met <code>require __DIR__./'auth.php'</code>).
+In <code>auth.php</code> worden ook nog een aantal routes gedefinieerd zoals <code>/login</code>, <code>/register</code> etc.
+Breeze zorgt voor een compleet authenticatiesysteem inclusief registreren, inloggen, wachtwoorden aanpassen etc.
+De map <code>resources/views</code> is ook gevuld met een scala aan componenten en layout-bestanden die er voor zorgen dat er een mooi dashboard wordt weergegeven met alles wat nodig is voor authenticatie.</p>
+<h2 id="authenticatie-toepassen">Authenticatie toepassen</h2>
+<p>Het slechte nieuws is dat we eerder gedefinieerde routes zijn kwijtgeraakt, maar we kunnen de routes opnieuw aanmaken en er voor zorgen dat bepaalde routes alleen toegankelijk zijn voor gebruikers die zijn ingelogd.</p>
+<pre class="language-php"><code class="language-php"><span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/home'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'auth'</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">group</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">ProfileController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'edit'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile.edit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">patch</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">ProfileController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'update'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile.update'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token class-name static-context">ProfileController</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'destroy'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile.destroy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/contact'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'contact'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string single-quoted-string">'data'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'wereld'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>De url naar <code>/home</code> werkt nu altijd en voor iedereen, maar de url naar <code>/contact</code> werkt nu alleen voor mensen die zijn ingelogd. Als je niet bent ingelogd wordt je automatisch doorgestuurd naar het inlogformulier.</p>
+<h2 id="hoe-nu-verder">Hoe nu verder</h2>
+<p>Naast Laravel Breeze is er Laravel Jetstream. Zie documentatie Laravel. Jetstream gaat nog veel verder met o.a. teammanagement en gebruik van verschillende rollen.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#authenticatie">Authenticatie</a></li><li><a href="#breeze">Breeze</a></li><li><a href="#authenticatie-toepassen">Authenticatie toepassen</a></li><li><a href="#hoe-nu-verder">Hoe nu verder</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/laravel/models-en-controllers/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Models en Controllers</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/laravel/migrations/">
+        <span class="title">Migrations</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

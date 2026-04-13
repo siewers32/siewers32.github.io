@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Formulier</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/laravel/laravel-ch36.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+
+<a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+
+<a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+
+<a class="page-link" href="/edutorial/laravel/views/">Views</a>
+
+<a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+
+<a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+
+<a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+
+<a class="page-link" href="/edutorial/laravel/formulier/" aria-current="page" data-state="active">Formulier</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/laravel/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/monolithische-applicaties/">Monolithische applicaties</a>
+    
+    <a class="page-link" href="/edutorial/laravel/installatie/">Installatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/request-lifecycle/">Request lifecycle</a>
+    
+    <a class="page-link" href="/edutorial/laravel/views/">Views</a>
+    
+    <a class="page-link" href="/edutorial/laravel/models-en-controllers/">Models en Controllers</a>
+    
+    <a class="page-link" href="/edutorial/laravel/authenticatie/">Authenticatie</a>
+    
+    <a class="page-link" href="/edutorial/laravel/migrations/">Migrations</a>
+    
+    <a class="page-link" href="/edutorial/laravel/formulier/" aria-current="page" data-state="active">Formulier</a>
+    
+</div>
+
+            <h1 id="laravel">Laravel</h1>
+<h2 id="formulier">Formulier</h2>
+<p>Om gegevens aan een applicatie toe te voegen, aan te passen of te verwijderen maak je gebruik van formulieren.<br>
+Hier wordt getoond hoe je een bezoeker de mogelijkheid geeft om alle menu_items uit een tabel in de database weer te geven. Daarnaast kan een ingelogde gebruiker ook gegevens toevoegen.<br>
+Er wordt gebruik gemaakt van de blade-componenten die met de installatie van <code>Breeze</code> zijn geïnstalleerd.</p>
+<h2 id="gegevens-toevoegen">Gegevens toevoegen</h2>
+<p>Om gegevens toe te kunnen voegen is er een formulier nodig. Het formulier wordt gemaakt op basis van de layout zoals die met <code>Breeze</code> is geïnstalleerd.
+In de map <code>resources/views/layout</code> zijn de bestanden die de basislayout van <code>Breeze</code> bepalen. In <code>resources/views/auth</code> vind je het login-formulier.<br>
+Door een kopie van het login-formulier te maken en dit aan te passen, krijg je eenvoudig een formulier om menu_items toe te kunnen voegen.
+Dit is een stukje formulier uit <code>resources/views/auth/login.blade.php</code>.</p>
+<pre class="language-php"><code class="language-php">   <span class="token operator">&lt;</span>form method<span class="token operator">=</span><span class="token string double-quoted-string">"POST"</span> action<span class="token operator">=</span><span class="token string double-quoted-string">"{{ route('login') }}"</span><span class="token operator">></span>
+        @csrf
+        <span class="token operator">...</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">></span></code></pre>
+<p><code>route('login')</code> verwijst naar een named route. In web.php vind je meer named routes. Je kunt een route een naam geven door de methode <code>name('...')</code> aan te roepen:</p>
+<pre class="language-php"><code class="language-php"><span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/add_menu_item'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    <span class="token keyword">return</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'menu_items'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string single-quoted-string">'menu_items'</span> <span class="token operator">=></span> <span class="token variable">$menuItems</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'add_menu_item'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In bovenstaand formulier moet je de action dus aanpassen naar de route voor het toevoegen van een menu_item:</p>
+<pre class="language-php"><code class="language-php">   <span class="token operator">&lt;</span>form method<span class="token operator">=</span><span class="token string double-quoted-string">"POST"</span> action<span class="token operator">=</span><span class="token string double-quoted-string">"{{ route('add_menu_item') }}"</span><span class="token operator">></span></code></pre>
+<p>Daarnaast moet je nog de velden aanpassen. Om een menu_item toe te voegen heb je een <code>name</code> nodig en een <code>category_id</code></p>
+<pre class="language-php"><code class="language-php"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Menu Item <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>x<span class="token operator">-</span>input<span class="token operator">-</span>label <span class="token keyword">for</span><span class="token operator">=</span><span class="token string double-quoted-string">"name"</span> <span class="token punctuation">:</span>value<span class="token operator">=</span><span class="token string double-quoted-string">"__('Name')"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>x<span class="token operator">-</span>text<span class="token operator">-</span>input id<span class="token operator">=</span><span class="token string double-quoted-string">"name"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"block mt-1 w-full"</span> type<span class="token operator">=</span><span class="token string double-quoted-string">"text"</span> name<span class="token operator">=</span><span class="token string double-quoted-string">"name"</span> <span class="token punctuation">:</span>value<span class="token operator">=</span><span class="token string double-quoted-string">"old('name')"</span> required <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>x<span class="token operator">-</span>input<span class="token operator">-</span>error <span class="token punctuation">:</span>messages<span class="token operator">=</span><span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$errors</span><span class="token operator">-></span><span class="token property">get</span></span>('name')"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"mt-2"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>x<span class="token operator">-</span>input<span class="token operator">-</span>label <span class="token keyword">for</span><span class="token operator">=</span><span class="token string double-quoted-string">"category_id"</span> <span class="token punctuation">:</span>value<span class="token operator">=</span><span class="token string double-quoted-string">"__('Category')"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>x<span class="token operator">-</span>text<span class="token operator">-</span>input id<span class="token operator">=</span><span class="token string double-quoted-string">"category_id"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"block mt-1 w-full"</span> type<span class="token operator">=</span><span class="token string double-quoted-string">"number"</span> name<span class="token operator">=</span><span class="token string double-quoted-string">"category_id"</span> <span class="token punctuation">:</span>value<span class="token operator">=</span><span class="token string double-quoted-string">"old('category_id')"</span> required <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>x<span class="token operator">-</span>input<span class="token operator">-</span>error <span class="token punctuation">:</span>messages<span class="token operator">=</span><span class="token string double-quoted-string">"<span class="token interpolation"><span class="token variable">$errors</span><span class="token operator">-></span><span class="token property">get</span></span>('category_id')"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"mt-2"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+ 
+<span class="token operator">&lt;</span>x<span class="token operator">-</span>primary<span class="token operator">-</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string double-quoted-string">"ml-3"</span><span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">__</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'Add'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>x<span class="token operator">-</span>primary<span class="token operator">-</span>button<span class="token operator">></span></code></pre>
+<p>Als er op de <code>Add</code>-knop wordt gedrukt, gebeurt er het volgende:</p>
+<ul>
+<li>De <code>Route::post()</code> met de naam <code>add_menu_item</code> wordt getriggered door de <code>action</code> uit het formulier.</li>
+<li>Er wordt op basis van het <code>MenuItem</code>-model een nieuw <code>$menuItem</code>-object gemaakt.</li>
+<li>De naam en de category_id uit het formulier worden toegekend aan de attributen in het object (<code>$menuItem-&gt;name = $request-&gt;name</code>).</li>
+<li>Het object wordt bewaard (<code>$menuItem-&gt;save()</code>). Hier wordt het record opgeslagen in de database.</li>
+<li>Vervolgens wordt er een query uitgevoerd op alle records in de database (<code>MenuItem:all()</code>)</li>
+<li>De view wordt aangeroepen met de set gevonden records (<code>return view('menu_items', ['menu_items' =&gt; $menuItems])</code>)</li>
+</ul>
+<p>Zo ziet de route er nu uit:</p>
+<pre class="language-php"><code class="language-php"><span class="token class-name static-context">Route</span><span class="token operator">::</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'/add_menu_item'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token class-name type-declaration">Request</span> <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$menuItem</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MenuItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$menuItem</span><span class="token operator">-></span><span class="token property">name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token property">name</span><span class="token punctuation">;</span>
+    <span class="token variable">$menuItem</span><span class="token operator">-></span><span class="token property">category_id</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-></span><span class="token property">category_id</span><span class="token punctuation">;</span>
+    <span class="token variable">$menuItem</span><span class="token operator">-></span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$menuItems</span> <span class="token operator">=</span> <span class="token class-name static-context">MenuItem</span><span class="token operator">::</span><span class="token function">All</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'menu_items'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string single-quoted-string">'menu_items'</span> <span class="token operator">=></span> <span class="token variable">$menuItems</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'add_menu_item'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#formulier">Formulier</a></li><li><a href="#gegevens-toevoegen">Gegevens toevoegen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/laravel/migrations/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Migrations</span>
+    </a>
+    
+    
+    <div></div>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

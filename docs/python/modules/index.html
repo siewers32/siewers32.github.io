@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Modules</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch095.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/" aria-current="page" data-state="active">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/" aria-current="page" data-state="active">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="modules">Modules</h2>
+<p>Naarmate je code complex wordt, ga je steeds meer code onderbrengen in functies. Hierdoor blijft je code overzichtelijk. Als je logische namen voor functies en variabelen gebruikt houdt je veel meer overzicht over de structuur van je programma.<br>
+Naarmate het aantal functies groeit kun je ook overwegen om functies in aparte bestanden onder te brengen. Dit soort bestanden noem je modules.</p>
+<p>Een voorbeeld:<br>
+Stel je krijgt een .csv bestand met namen van gebruikers die je netjes uit moet printen.
+Het .csv bestand is een soort tekstbestand dat is geëxporteert uit Excel.
+In ons geval bevatten de rijen een voornaam, een tussenvoegsel en een achternaam.
+Dit is het .csv bestand...</p>
+<pre class="language-python"><code class="language-python">Jan<span class="token punctuation">,</span>van der<span class="token punctuation">,</span>vliet<span class="token punctuation">,</span> zandlaan <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4930</span> FJ<span class="token punctuation">,</span> Harsen
+Kees<span class="token punctuation">,</span><span class="token punctuation">,</span>Marijnissen<span class="token punctuation">,</span> Perenboomweg <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">3999</span> GG<span class="token punctuation">,</span> Plaaggeest
+GRIET<span class="token punctuation">,</span>van der<span class="token punctuation">,</span>Pol<span class="token punctuation">,</span> Harlekijnplein <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">4952</span> DN<span class="token punctuation">,</span> Den haag
+Tara<span class="token punctuation">,</span><span class="token punctuation">,</span>weeslanden<span class="token punctuation">,</span> Kreakenmolenweg <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3900</span> DG<span class="token punctuation">,</span> Muizegat
+clarijn<span class="token punctuation">,</span><span class="token punctuation">,</span>Ommezwaai<span class="token punctuation">,</span> Melemoor <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">4992</span> DS<span class="token punctuation">,</span> Haperen
+Piet<span class="token punctuation">,</span>De<span class="token punctuation">,</span>Vries<span class="token punctuation">,</span> Stelsprong <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4930</span> DF<span class="token punctuation">,</span> Harsen
+Jan jaap<span class="token punctuation">,</span><span class="token punctuation">,</span>Siewers<span class="token punctuation">,</span> De kaapstander <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8251</span> LH<span class="token punctuation">,</span> Dronten</code></pre>
+<p>Je ziet dat de namen soms met hoofdletters beginnen, maar soms ook weer niet.
+We hebben de taak om de namen netjes af te drukken op het scherm. Onderaan de lijst moet het aantal personen worden weergegeven.<br>
+Dit doen we in een aantal stappen:</p>
+<ul>
+<li>Open het .csv-bestand in read modus</li>
+<li>Lees alle regels uit het .csv bestand en tel de regels</li>
+<li>Zet alle letters in een regel om naar kleine letters</li>
+<li>Breek iedere regel op in een voornaam, tussenvoegsel, achternaam, adres, postcode en plaats</li>
+<li>Zorg ervoor dat voornaam en achternaam beginnen met een hoofdletter</li>
+<li>Voeg een veld volledige_naam toe die is opgebouwd uit voornaam, tussenvoegsel en achternaam</li>
+<li>Print de volledige naam van alle personen op het scherm</li>
+<li>Print het aantal personen op het scherm</li>
+</ul>
+<h2 id="functies-gebruiken">Functies gebruiken</h2>
+<p>Dat zijn heel wat taken om in 1 script uit te voeren!<br>
+Laten we de code opbreken in functies:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sanitize</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># haal alle dubbele spaties en hoofdletters eruit</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">def</span> <span class="token function">create_person</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># zet de gegevens om in een dictionary</span>
+
+<span class="token keyword">def</span> <span class="token function">add_fullname</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># stel voor- en achternaam samen tot een volledige naam</span>
+    <span class="token keyword">pass</span>
+    
+<span class="token keyword">def</span> <span class="token function">print_persons</span><span class="token punctuation">(</span>persons<span class="token punctuation">,</span> <span class="token builtin">filter</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"full_name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># print de van alle personen de volledige naam en het totaal aantal personen</span>
+    <span class="token keyword">pass</span></code></pre>
+<p>Als je de functies zo bekijkt, kun je al heel goed zien wat het programma gaat doen.
+Hieronder de implementatie van de functies.</p>
+<ol>
+<li>Haal alle dubbele spaties en hoofdletters eruit</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sanitize</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># kleine letters maken en spaties voor en na het woord weghalen</span>
+   new_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+   lst <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+   <span class="token keyword">for</span> item <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+       new_lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token keyword">return</span> new_lst</code></pre>
+<ol start="2">
+<li>Converteer naar een dictionary zodat we toegang hebben tot de verschillende elementen van de naam:</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">create_person</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"tussenvoegsel"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">}</span>
+    person<span class="token punctuation">[</span><span class="token string">"voornaam"</span><span class="token punctuation">]</span> <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    person<span class="token punctuation">[</span><span class="token string">"tussenvoegsel"</span><span class="token punctuation">]</span> <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    person<span class="token punctuation">[</span><span class="token string">"achternaam"</span><span class="token punctuation">]</span> <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> person</code></pre>
+<ol start="3">
+<li>Voeg de volledige naam toe aan de person dictionary:</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add_fullname</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> person<span class="token punctuation">[</span><span class="token string">"tussenvoegsel"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        person<span class="token punctuation">[</span><span class="token string">'full_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'voornaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'achternaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        person<span class="token punctuation">[</span><span class="token string">'full_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'voornaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'tussenvoegsel'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'achternaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+    <span class="token keyword">return</span> person</code></pre>
+<ol start="4">
+<li>Print volledige naam en aantal personen</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_persons</span><span class="token punctuation">(</span>persons<span class="token punctuation">,</span> <span class="token builtin">filter</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"full_name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    counter <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> person <span class="token keyword">in</span> persons<span class="token punctuation">:</span>
+        counter <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> attr <span class="token keyword">in</span> <span class="token builtin">filter</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>person<span class="token punctuation">[</span>attr<span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>end<span class="token operator">=</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Er zijn in totaal </span><span class="token interpolation"><span class="token punctuation">{</span>counter<span class="token punctuation">}</span></span><span class="token string"> personen"</span></span><span class="token punctuation">)</span></code></pre>
+<p>Bovenstaande functies beslaan de totale functionaliteit van het programma.
+Het basis programma bestaat uit volgende functie-aanroepen</p>
+<pre class="language-python"><code class="language-python">persons <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.csv"</span><span class="token punctuation">,</span> <span class="token string">'rt'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lst <span class="token operator">=</span> sanitize<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+    person <span class="token operator">=</span> create_person<span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    person <span class="token operator">=</span> add_fullname<span class="token punctuation">(</span>person<span class="token punctuation">)</span>
+    persons<span class="token punctuation">.</span>append<span class="token punctuation">(</span>person<span class="token punctuation">)</span>
+
+print_persons<span class="token punctuation">(</span>persons<span class="token punctuation">)</span></code></pre>
+<p>Dat is best veel code voor het uitprinten van een paar namen. Maar in het ontwerp is al een beetje nagedacht over toekomstige aanpassingen. Zou het niet handig zijn als je kunt aangeven welke gegevens je van personen wilt uitprinten. Misschien willen we later ook kunnen filteren op naam. Door de functies voor deze opdracht in een module onder te brengen kunnen we ze makkelijk hergebruiken en maken ze het uiteindelijke programma veel overzichtelijker.</p>
+<p>Het idee is om nu 2 bestanden aan te maken. Het programma zelf en een module met de functies. Belangrijk is de locatie van de bestanden ten opzicht van elkaar. Als je een module maakt in dezelfde map als het programma, dan kun je de module importeren in het programma...</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># stel je hebt je file csv_module.py genoemd dan werkt dat zo...</span>
+<span class="token keyword">import</span> csv_module
+</code></pre>
+<p>Deze manier van werken is al een beetje riskant, omdat je met python ook modules van anderen kunt importeren. Sterker nog standaard wordt Python met meerdere standaard modules geïnstalleerd. De kans dat er al een module bestaat die 'csv' heet is heel aannemelijk. Sterker nog, die bestaat ook!
+Probeer maar eens vanaf de commandline:</p>
+<pre class="language-python"><code class="language-python">python
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">import</span> csv
+<span class="token operator">>></span><span class="token operator">></span><span class="token builtin">dir</span><span class="token punctuation">(</span>csv<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Dialect'</span><span class="token punctuation">,</span> <span class="token string">'DictReader'</span><span class="token punctuation">,</span> <span class="token string">'DictWriter'</span><span class="token punctuation">,</span> <span class="token string">'Error'</span><span class="token punctuation">,</span> <span class="token string">'QUOTE_ALL'</span><span class="token punctuation">,</span> <span class="token string">'QUOTE_MINIMAL'</span><span class="token punctuation">,</span> 
+<span class="token string">'QUOTE_NONE'</span><span class="token punctuation">,</span> <span class="token string">'QUOTE_NONNUMERIC'</span><span class="token punctuation">,</span> <span class="token string">'Sniffer'</span><span class="token punctuation">,</span> <span class="token string">'StringIO'</span><span class="token punctuation">,</span> <span class="token string">'_Dialect'</span><span class="token punctuation">,</span> <span class="token string">'__all__'</span><span class="token punctuation">,</span><span class="token string">'__builtins__'</span><span class="token punctuation">,</span> <span class="token string">'__cached__'</span><span class="token punctuation">,</span> <span class="token string">'__doc__'</span><span class="token punctuation">,</span> <span class="token string">'__file__'</span><span class="token punctuation">,</span> <span class="token string">'__loader__'</span><span class="token punctuation">,</span> <span class="token string">'__name__'</span><span class="token punctuation">,</span> 
+<span class="token string">'__package__'</span><span class="token punctuation">,</span> <span class="token string">'__spec__'</span><span class="token punctuation">,</span> <span class="token string">'__version__'</span><span class="token punctuation">,</span> <span class="token string">'excel'</span><span class="token punctuation">,</span> <span class="token string">'excel_tab'</span><span class="token punctuation">,</span> <span class="token string">'field_size_limit'</span><span class="token punctuation">,</span> 
+<span class="token string">'get_dialect'</span><span class="token punctuation">,</span> <span class="token string">'list_dialects'</span><span class="token punctuation">,</span> <span class="token string">'re'</span><span class="token punctuation">,</span> <span class="token string">'reader'</span><span class="token punctuation">,</span> <span class="token string">'register_dialect'</span><span class="token punctuation">,</span> <span class="token string">'unix_dialect'</span><span class="token punctuation">,</span>
+<span class="token string">'unregister_dialect'</span><span class="token punctuation">,</span> <span class="token string">'writer'</span><span class="token punctuation">]</span></code></pre>
+<p>Met dir kun je opvragen welke eigenschappen en functies beschikbaar zijn in een module!</p>
+<p>Als je verwacht dat je nog veel meer functies gaat maken die te maken hebben met het manipuleren van csv bestanden, dan kun je ook een map maken waarin je meerdere modules bewaard.
+Stel je noemt je programma 'main.py' en je hebt een map 'my_modules' met daarin een bestanden met csv-functies. Dit is dan je mappen-structuur</p>
+<pre class="language-python"><code class="language-python">programma
+ <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> main<span class="token punctuation">.</span>py
+ <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> my_modules
+        <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> csv<span class="token punctuation">.</span>py
+        <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> extra<span class="token punctuation">.</span>py</code></pre>
+<p>In 'main.py' importeer je dan je module met...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> modules <span class="token keyword">import</span> csv
+</code></pre>
+<p>Het voordeel is nu dat je de zelfgemaakte module gewoon 'csv' kunt noemen. Het werkt net als met bestanden. Er zijn veel bestanden die 'help.txt' heten, maar doordat bestanden in verschillende mappen staan kun je ze toch naast elkaar gebruiken. Je kunt niet 2 bestanden met dezelfde naam in een map bewaren!</p>
+<h2 id="opdracht">Opdracht</h2>
+<ul>
+<li>Maak de module csv en plaats die in een map in je project</li>
+<li>Plaats de functies uit dit hoofdstuk in de module</li>
+<li>Maak het csv-bestand zoals hierboven is aangegeven</li>
+<li>Laadt de module in een python-bestand en zorg dat je de functies kunt gebruiken om de lijst met personen weer te geven.</li>
+<li>Voeg een functie do_filter() toe aan de module waarmee je kunt filteren op voornaam of achternaam!</li>
+<li>Test het filter met <code>do_filter(&quot;achternaam&quot;, &quot;V&quot;)</code>. Output is dan:</li>
+</ul>
+<blockquote>
+<p>Jan van der Vliet<br>
+Piet de Vries</p>
+</blockquote>
+<p><code>do_filter(&quot;plaats&quot;, &quot;d&quot;)</code></p>
+<blockquote>
+<p>Griet van der Pol<br>
+Jan Jaap Siewers</p>
+</blockquote>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#modules">Modules</a></li><li><a href="#functies-gebruiken">Functies gebruiken</a></li><li><a href="#opdracht">Opdracht</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/functions/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Functions</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/pypi/">
+        <span class="title">PyPi</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

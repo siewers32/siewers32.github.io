@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Bestanden beheren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/html/html-ch050.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+
+<a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+
+<a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+
+<a class="page-link" href="/edutorial/html/bestanden-beheren/" aria-current="page" data-state="active">Bestanden beheren</a>
+
+<a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+
+<a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+
+<a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+
+<a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+
+<a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+
+<a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+    
+    <a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+    
+    <a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+    
+    <a class="page-link" href="/edutorial/html/bestanden-beheren/" aria-current="page" data-state="active">Bestanden beheren</a>
+    
+    <a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+    
+    <a class="page-link" href="/edutorial/html/tabellen/">Tabellen</a>
+    
+    <a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+    
+    <a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+    
+    <a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+    
+    <a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+    
+</div>
+
+            <h1 id="html-5">HTML 5</h1>
+<h2 id="bestanden-beheren">Bestanden beheren</h2>
+<p>Als je een website gaat maken, dan krijg je te maken met veel bestanden.
+Denk aan afbeeldingen, html-pagina's en andere media-bestanden.
+Het is handig om van te voren na te denken over een mappen structuur.</p>
+<blockquote>
+<p>Maak een map 'website' en maak in die map weer een map 'img'.<br>
+Gebruik je html-editor om een nieuw bestand met de naam 'index.html' te maken in de<br>
+map 'website'.</p>
+</blockquote>
+<p>Als het goed is ziet je folder-structuur er zo uit:</p>
+<pre class="language-javascript"><code class="language-javascript">website
+ <span class="token operator">|</span><span class="token operator">--</span> img
+ <span class="token operator">|</span><span class="token operator">--</span> index<span class="token punctuation">.</span>html</code></pre>
+<p>Zoek een willekeurig plaatje (bijv. de aap uit het vorige hoofdstuk) en sla dit op in de map 'img'.
+Hernoem de afbeelding naar 'plaatje.jpg'.
+Je folder-structuur ziet er nu zo uit:</p>
+<pre class="language-javascript"><code class="language-javascript">website
+ <span class="token operator">|</span><span class="token operator">--</span> img
+     <span class="token operator">|</span><span class="token operator">--</span> plaatje<span class="token punctuation">.</span>jpg
+ <span class="token operator">|</span><span class="token operator">--</span> index<span class="token punctuation">.</span>html</code></pre>
+<blockquote>
+<p>Maak een website met een titel en een paragraaf<br>
+Je mag de titel en de tekst in de paragraaf zelf verzinnen. <br>
+Onder de paragraaf zorg je er voor dat de afbeelding 'plaatje.jpg' wordt weergegeven</p>
+</blockquote>
+<p>Als het goed is ziet je code er ongeveer zo uit.....</p>
+<pre class="language-html"><code class="language-html">
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Mijn eerste website met plaatje!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Hier een mooie afbeelding!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Ik ben echt goed bezig met dat HTML!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img/plaatje.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Bij het attribuut 'src' in de tag 'img' is gebruik gemaakt van een relatieve verwijzing.</li>
+<li>Er wordt verwezen naar een plek relatief t.o.v. de pagina.</li>
+<li>Vanaf de pagina index.html ga je naar het mapje img en daar vind je 'plaatje.jpg'</li>
+<li>Een absolute verwijzing begint altijd met http of https. Er wordt verwezen naar een plek die niet relatief is aan de pagina.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#bestanden-beheren">Bestanden beheren</a></li><li><a href="#tips">Tips</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/html/veel-voorkomende-tags/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Veel voorkomende tags</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/html/eerste-website/">
+        <span class="title">Eerste website</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

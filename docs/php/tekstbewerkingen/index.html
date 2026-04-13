@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Tekstbewerkingen</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php/php-ch050.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+
+<a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+
+<a class="page-link" href="/edutorial/php/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/php/tekstbewerkingen/" aria-current="page" data-state="active">Tekstbewerkingen</a>
+
+<a class="page-link" href="/edutorial/php/loops/">Loops</a>
+
+<a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+
+<a class="page-link" href="/edutorial/php/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+
+<a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+
+<a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+
+<a class="page-link" href="/edutorial/php/toets/">Toets</a>
+
+<a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php/php-code-maken/">PHP code maken</a>
+    
+    <a class="page-link" href="/edutorial/php/php-variabelen/">PHP variabelen</a>
+    
+    <a class="page-link" href="/edutorial/php/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/php/tekstbewerkingen/" aria-current="page" data-state="active">Tekstbewerkingen</a>
+    
+    <a class="page-link" href="/edutorial/php/loops/">Loops</a>
+    
+    <a class="page-link" href="/edutorial/php/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/php/sessions/">Sessions</a>
+    
+    <a class="page-link" href="/edutorial/php/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-pokerio/">Opdracht Pokerio</a>
+    
+    <a class="page-link" href="/edutorial/php/opdracht-casino/">Opdracht Casino</a>
+    
+    <a class="page-link" href="/edutorial/php/proeftoetsen/">Proeftoetsen</a>
+    
+    <a class="page-link" href="/edutorial/php/toets/">Toets</a>
+    
+    <a class="page-link" href="/edutorial/php/hertoets/">Hertoets</a>
+    
+</div>
+
+            <h1 id="starten-met-php">Starten met PHP</h1>
+<h2 id="tekstbewerkingen">Tekstbewerkingen</h2>
+<p>Wat ga je leren</p>
+<ul>
+<li>PHP kent een aantal functies waarmee je teksten kunt manipuleren. Je gaat leren hoe je een aantal van deze functies toe kunt passen.</li>
+<li>Tekstfuncties die hier worden besproken zijn:
+<ul>
+<li>str_replace()</li>
+<li>strtolower()</li>
+<li>substr()</li>
+<li>trim()</li>
+</ul>
+</li>
+</ul>
+<p>Een overzicht van alle string-functies vind je bijvoorbeeld op <a href="https://www.w3schools.com/php/php_ref_string.asp">W3Schools</a></p>
+<p>Een toepassing van stringfuncties zie je bijvoorbeeld bij blogs.
+Om artikelen op een blog goed vindbaar te maken voor zoekmachines is het slim om de titel van het artikel op te nemen in de url. (kijk maar eens hoe ze dat doen op nu.nl).
+Bijvoorbeeld:<br>
+De titel van een artikel is: Studenten van het deltion ICT lyceum maken toffe app voor bejaarden!
+De url naar dit artikel moet worden:
+https://www.deltion.nl/blog/studenten-van-het-ict-lyceum-maken-toffe-app-voor-bejaarden.<br>
+Om deze url te kunnen maken moeten we een paar string-functies gebruiken.</p>
+<ul>
+<li>strtolower() - om alle hoofdletters om te zetten naar 'kleine' letters</li>
+<li>str_replace() - om alle spaties om te zetten naar een '-'.</li>
+<li>trim() of substr() - om het uitroepteken uit de titel te verwijderen</li>
+<li>We moeten de bewerkte titel aan de basis-url 'https://www.deltion.nl/blog/' plakken.</li>
+</ul>
+<pre class="language-php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token variable">$tekst</span> <span class="token operator">=</span> <span class="token function">strtolower</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Studenten van het ICT lyceum maken toffe app voor bejaarden!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$tekst</span> <span class="token operator">=</span> <span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string single-quoted-string">' '</span><span class="token punctuation">,</span><span class="token string single-quoted-string">'-'</span><span class="token punctuation">,</span> <span class="token variable">$tekst</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$tekst</span> <span class="token operator">=</span> <span class="token function">trim</span><span class="token punctuation">(</span><span class="token variable">$tekst</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token string single-quoted-string">'https://www.deltion.nl/blog/'</span><span class="token punctuation">,</span><span class="token variable">$tekst</span><span class="token punctuation">;</span>
+<span class="token comment">//Output is: </span>
+https<span class="token punctuation">:</span><span class="token comment">//www.deltion.nl/blog/studenten-van-het-ict-lyceum-maken-toffe-app-voor-bejaarden</span>
+<span class="token delimiter important">?></span></span></code></pre>
+<blockquote>
+<h4 id="opdracht-5.1">Opdracht 5.1</h4>
+<p>Vul onderstaande code aan met een stringfunctie zodat het begin van de url wordt omgezet van 'http' naar 'https'</p>
+</blockquote>
+<pre class="language-php"><code class="language-php"><span class="token variable">$tekst</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"http://www.apple.nl"</span><span class="token punctuation">;</span>
+<span class="token comment">// Pas hier de stringfunctie toe;</span>
+
+<span class="token keyword">echo</span> <span class="token variable">$tekst</span><span class="token punctuation">;</span>
+<span class="token comment">//Output moet zijn: https://www.apple.com</span></code></pre>
+<blockquote>
+<h4 id="opdracht-5.2">Opdracht 5.2</h4>
+<p>Zorg ervoor dat de puntjes aan het eind en begin van de tekst worden weggelaten</p>
+</blockquote>
+<pre class="language-php"><code class="language-php"><span class="token variable">$tekst</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"...Dit is de tekst..."</span><span class="token punctuation">;</span>
+<span class="token comment">// Pas hier de stringfunctie toe</span>
+
+<span class="token keyword">echo</span> <span class="token variable">$tekst</span><span class="token punctuation">;</span>
+<span class="token comment">//Output moet zijn: Dit is de tekst</span></code></pre>
+<blockquote>
+<h4 id="opdracht-5.3">Opdracht 5.3</h4>
+<p>In  titels zie je soms dat alle woorden een hoofdletter hebben.
+Bijvoorbeeld &quot;How The West Was Won&quot;.
+Zorg ervoor dat je deze title omzet naar &quot;How the west was won&quot;.</p>
+</blockquote>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#tekstbewerkingen">Tekstbewerkingen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php/condities/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Condities</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php/loops/">
+        <span class="title">Loops</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

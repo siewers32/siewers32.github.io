@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Machine learning</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/ai/ai-ch019.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/ai/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/ai/uitleg-keuzedeel/">Uitleg keuzedeel</a>
+
+<a class="page-link" href="/edutorial/ai/wat-is-ai/">Wat is AI</a>
+
+<a class="page-link" href="/edutorial/ai/starten-met-prompting/">Starten met prompting</a>
+
+<a class="page-link" href="/edutorial/ai/studeren-met-ai/">Studeren met AI</a>
+
+<a class="page-link" href="/edutorial/ai/machine-learning/" aria-current="page" data-state="active">Machine learning</a>
+
+<a class="page-link" href="/edutorial/ai/robotica/">Robotica</a>
+
+<a class="page-link" href="/edutorial/ai/ai-en-healthcare/">AI en Healthcare</a>
+
+<a class="page-link" href="/edutorial/ai/zorgrobots/">Zorgrobots</a>
+
+<a class="page-link" href="/edutorial/ai/realities/">Realities</a>
+
+<a class="page-link" href="/edutorial/ai/internet-of-things/">Internet of things</a>
+
+<a class="page-link" href="/edutorial/ai/serious-games/">Serious Games</a>
+
+<a class="page-link" href="/edutorial/ai/sound-and-vision/">Sound and Vision</a>
+
+<a class="page-link" href="/edutorial/ai/ethiek-en-privacy/">Ethiek en privacy</a>
+
+<a class="page-link" href="/edutorial/ai/ethiek-en-privacy-2/">Ethiek en privacy 2</a>
+
+<a class="page-link" href="/edutorial/ai/design-thinking/">Design Thinking</a>
+
+<a class="page-link" href="/edutorial/ai/ai-opdrachten/">AI Opdrachten</a>
+
+<a class="page-link" href="/edutorial/ai/links/">Links</a>
+
+<a class="page-link" href="/edutorial/ai/ai-en-design-thinking/">AI en design thinking</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/ai/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/ai/uitleg-keuzedeel/">Uitleg keuzedeel</a>
+    
+    <a class="page-link" href="/edutorial/ai/wat-is-ai/">Wat is AI</a>
+    
+    <a class="page-link" href="/edutorial/ai/starten-met-prompting/">Starten met prompting</a>
+    
+    <a class="page-link" href="/edutorial/ai/studeren-met-ai/">Studeren met AI</a>
+    
+    <a class="page-link" href="/edutorial/ai/machine-learning/" aria-current="page" data-state="active">Machine learning</a>
+    
+    <a class="page-link" href="/edutorial/ai/robotica/">Robotica</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-en-healthcare/">AI en Healthcare</a>
+    
+    <a class="page-link" href="/edutorial/ai/zorgrobots/">Zorgrobots</a>
+    
+    <a class="page-link" href="/edutorial/ai/realities/">Realities</a>
+    
+    <a class="page-link" href="/edutorial/ai/internet-of-things/">Internet of things</a>
+    
+    <a class="page-link" href="/edutorial/ai/serious-games/">Serious Games</a>
+    
+    <a class="page-link" href="/edutorial/ai/sound-and-vision/">Sound and Vision</a>
+    
+    <a class="page-link" href="/edutorial/ai/ethiek-en-privacy/">Ethiek en privacy</a>
+    
+    <a class="page-link" href="/edutorial/ai/ethiek-en-privacy-2/">Ethiek en privacy 2</a>
+    
+    <a class="page-link" href="/edutorial/ai/design-thinking/">Design Thinking</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-opdrachten/">AI Opdrachten</a>
+    
+    <a class="page-link" href="/edutorial/ai/links/">Links</a>
+    
+    <a class="page-link" href="/edutorial/ai/ai-en-design-thinking/">AI en design thinking</a>
+    
+</div>
+
+            <h1 id="artificial-intelligence">Artificial Intelligence</h1>
+<h2 id="machine-learning">Machine learning</h2>
+<p><strong>Machine learning</strong> is een tak van kunstmatige intelligentie (AI) waarbij computers leren van data en verbeteren met ervaring, zonder expliciet te worden geprogrammeerd. In plaats van handmatig regels te schrijven, worden algoritmes getraind op grote hoeveelheden data om patronen te herkennen en voorspellingen te doen.</p>
+<h3 id="voorbeelden-van-toepassingen">Voorbeelden van toepassingen</h3>
+<ul>
+<li><strong>Afbeeldingsherkenning:</strong> Gezichtsherkenning, objectdetectie in foto's.</li>
+<li><strong>Natuurlijke taalverwerking:</strong> Vertaling, sentimentanalyse, chatbots.</li>
+<li><strong>Aanbevelingssystemen:</strong> Product- of content-aanbevelingen op basis van gebruikersgedrag.</li>
+<li><strong>Medische diagnose:</strong> Het detecteren van ziektes op basis van medische beelden.</li>
+<li><strong>Financiële voorspelling:</strong> Voorspellen van aandelenkoersen of fraudedetectie.</li>
+</ul>
+<h3 id="waarom-is-machine-learning-belangrijk%3F">Waarom is machine learning belangrijk?</h3>
+<ul>
+<li><strong>Automatisering:</strong> Veel taken kunnen worden geautomatiseerd, waardoor bedrijven efficiënter kunnen werken.</li>
+<li><strong>Inzicht in data:</strong> Machine learning kan complexe patronen in grote datasets ontdekken die voor mensen moeilijk te zien zijn.</li>
+<li><strong>Persoonlijke ervaringen:</strong> Aanbevelingssystemen kunnen gepersonaliseerde ervaringen bieden aan gebruikers.</li>
+<li><strong>Innovatie:</strong> Machine learning drijft innovatie in veel sectoren aan.</li>
+</ul>
+<p>In essentie stelt machine learning computers in staat om te leren en zich aan te passen aan nieuwe informatie, waardoor ze steeds slimmer worden.</p>
+<h2 id="deep-learning">Deep Learning</h2>
+<ul>
+<li><strong>Geïnspireerd door het menselijk brein:</strong> Deep learning maakt gebruik van kunstmatige neurale netwerken, die zijn ontworpen om de werking van het menselijk brein na te bootsen.</li>
+<li><strong>Feature learning:</strong> In tegenstelling tot machine learning, leren deep learning modellen zelf de relevante kenmerken uit de data.</li>
+<li><strong>Complexe modellen:</strong> Deep learning modellen zijn vaak complexer en hebben grote hoeveelheden data nodig om te trainen.</li>
+</ul>
+<p><strong>Voorbeeld:</strong> Een zelfrijdende auto die objecten in zijn omgeving herkent en beslissingen neemt over het sturen, remmen en accelereren.</p>
+<p><strong>Wanneer gebruik je wat?</strong></p>
+<ul>
+<li><strong>Machine learning:</strong> Geschikt voor kleinere datasets, eenvoudige problemen en wanneer je de kenmerken duidelijk kunt definiëren.</li>
+<li><strong>Deep learning:</strong> Geschikt voor grote datasets, complexe problemen en wanneer je de relevante kenmerken niet vooraf kunt bepalen.</li>
+</ul>
+<h2 id="zelf-aan-de-slag-met-machine-learning">Zelf aan de slag met machine learning</h2>
+<p>Je kunt zelf een computer iets leren. Google biedt <a href="https://teachablemachine.withgoogle.com/">Teachable machine</a>. Je kunt hier zelf aan de slag met data en modellen, zodat je een AI-bot kunt genereren die bijvoorbeeld:</p>
+<ul>
+<li>Honden van katten kan onderscheiden</li>
+<li>Muziek kan classificeren</li>
+<li>Je stem kan herkennen tussen andere stemmen</li>
+</ul>
+<p>Om 'teachable machine' iets te kunnen leren heb je data nodig. Veel data. Toch kun je al met weinig data best goede resultaten bereiken, maar meer is beter. Je kunt testdata vinden op bijvoorbeeld:</p>
+<ul>
+<li><a href="https://teachablemachine.withgoogle.com/">Teachable machine</a></li>
+<li><a href="https://www.kaggle.com/">Kaggle - datasets en models</a></li>
+<li><a href="https://drive.google.com/file/d/1jJqGymhF7l9SGqGXnqySZdMDWfTiswS2/view?usp=drive_link">Dataset cats and dogs</a></li>
+<li><a href="https://drive.google.com/file/d/1SZz3E7zEOhLU40GOqkbyX31cqK--zG2m/view?usp=drive_link">Dataset music</a></li>
+<li><a href="https://drive.google.com/file/d/1XD-X8AeyVtK-9OxYuUUuPebApB_qqiU2/view?usp=sharing">Dataset medische gegevens</a> van <a href="https://www.kaggle.com/datasets/jpmiller/layoutlm">Kaggle, thanks to jpmiller</a></li>
+</ul>
+<h4 id="voorbeelden-teachable-machine">Voorbeelden Teachable machine</h4>
+<ul>
+<li><a href="https://teachablemachine.withgoogle.com/models/VFkAIFkV9/">Cats &amp; Dogs</a></li>
+<li><a href="https://teachablemachine.withgoogle.com/models/pdEt9x-IU/">Rock, reggae en jazz</a></li>
+</ul>
+<h2 id="links-en-tests">Links en Tests</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=f_uwKZIAeM0">Machine learning uitgelegd</a></li>
+<li><a href="https://moodle.edutorial.nl/mod/quiz/view.php?id=16">Test over DL, ML en Generatieve AI</a></li>
+<li><a href="https://www.youtube.com/watch?v=aircAruvnKk">Hoe werken neurale netwerken</a></li>
+<li><a href="https://notebooklm.google.com/">NotebookLM</a></li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#machine-learning">Machine learning</a></li><li><a href="#deep-learning">Deep Learning</a></li><li><a href="#zelf-aan-de-slag-met-machine-learning">Zelf aan de slag met machine learning</a></li><li><a href="#links-en-tests">Links en Tests</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/ai/studeren-met-ai/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Studeren met AI</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/ai/robotica/">
+        <span class="title">Robotica</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<script webc:type="js">
+    `<a href="${url}">
+    <div class="course-holder">
+        <div class="course-top" style="background-color:${style};">
+            <div class="course-name" style="color:${textcolor};">
+                ${name}
+            </div>
+            <img src="${image}" class="course-picture" alt="${name}">
+        </div>
+        <div class="course-bottom">
+            ${description}
+        </div>
+    </div>
+</a>`
+</script>

@@ -1,0 +1,13 @@
+<script webc:type="js">
+    let link = ""
+    if (previousPost) {
+      link =   `
+    <a id="previous-link" href="${previousPost.url}">
+    <span id="arrow-back" class="material-icons">
+        arrow_back_ios
+    </span>
+        <span class="title">${previousPost.data.title}</span>
+    </a>    `
+    }
+    link
+</script>

@@ -1,0 +1,25 @@
+{% extends "footer.njk"%}
+
+{% block aside_left %}
+<h3>Pagina's</h3>
+{% for p in collections[tags] | postsAscending %}
+<a class="page-link" href="{{ p.url }}" {% if p.url==page.url %}aria-current="page" data-state="active" {% endif %}>{{
+    p.data.title }}</a>
+{% endfor %}
+{% endblock %}
+
+{% block aside_right %}
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    {{ content | toc | safe }}
+</div>
+{% endblock %}
+
+{% block menu_panel %}
+<div id="menu-panel">
+    {% for p in collections[tags] %}
+    <a class="page-link" href="{{ p.url }}" {% if p.url==page.url %}aria-current="page" data-state="active" {% endif
+        %}>{{ p.data.title }}</a>
+    {% endfor %}
+</div>
+{% endblock %}

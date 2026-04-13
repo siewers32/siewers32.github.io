@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Eenvoudige queries</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch30.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/" aria-current="page" data-state="active">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/" aria-current="page" data-state="active">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="eenvoudige-queries">Eenvoudige queries</h2>
+<p>Je kunt onderstaande queries uitproberen als je een mysql- of mariadb databaseserver hebt draaien en je hebt de database <a href="/edutorial/_assets/dbq/school.sql">school</a> geïnstalleerd.<br>
+Als je net de terminal of shell hebt geopend dan log je in met:</p>
+<pre class="language-sql"><code class="language-sql">mysql <span class="token operator">-</span>u <span class="token operator">&lt;</span>naam<span class="token operator">></span> <span class="token operator">-</span>p <span class="token operator">&lt;</span>wachtwoord<span class="token operator">></span></code></pre>
+<p>Als je net XAMPP hebt geïnstalleerd dan is je naam 'root' zonder wachtwoord, dan log je in met:</p>
+<pre class="language-sql"><code class="language-sql">mysql <span class="token operator">-</span>u root</code></pre>
+<p>Als de 'school'-database goed is geïnstalleerd kun je hem ook gebruiken:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">use</span> school<span class="token punctuation">;</span></code></pre>
+<p>Bekijk weer welke tabellen er zijn:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> Tables_in_school <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> c_regel          <span class="token operator">|</span>
+<span class="token operator">|</span> cursist          <span class="token operator">|</span>
+<span class="token operator">|</span> cursus           <span class="token operator">|</span>
+<span class="token operator">|</span> docent           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span></code></pre>
+<p>Bekijk welke records er zijn in de tabel docent:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> docent<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+---------------+----------+------------+------------+---------+------------+</span>
+<span class="token operator">|</span> doc_code <span class="token operator">|</span> doc_naam   <span class="token operator">|</span> straat        <span class="token operator">|</span> postcode <span class="token operator">|</span> plaats     <span class="token operator">|</span> telefoon   <span class="token operator">|</span> uurloon <span class="token operator">|</span> geb_datum  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+---------------+----------+------------+------------+---------+------------+</span>
+<span class="token operator">|</span> WI       <span class="token operator">|</span> Witlok     <span class="token operator">|</span> Madeseweg <span class="token number">8</span>   <span class="token operator">|</span> <span class="token number">4841</span> PT  <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>  <span class="token number">100.00</span> <span class="token operator">|</span> <span class="token number">1957</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span>
+<span class="token operator">|</span> HM       <span class="token operator">|</span> Hooymayers <span class="token operator">|</span> Ignatiusstr <span class="token number">6</span> <span class="token operator">|</span> <span class="token number">4847</span> EZ  <span class="token operator">|</span> Breda      <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>  <span class="token number">200.00</span> <span class="token operator">|</span> <span class="token number">1952</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span>
+<span class="token operator">|</span> GR       <span class="token operator">|</span> Grond      <span class="token operator">|</span> Bolwerk <span class="token number">10</span>    <span class="token operator">|</span> <span class="token number">4541</span> CC  <span class="token operator">|</span> Tilburg    <span class="token operator">|</span> <span class="token number">013</span><span class="token operator">-</span><span class="token number">426786</span> <span class="token operator">|</span>  <span class="token number">150.00</span> <span class="token operator">|</span> <span class="token number">1958</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span>
+<span class="token operator">|</span> PE       <span class="token operator">|</span> Peters     <span class="token operator">|</span> Breedonk <span class="token number">64</span>   <span class="token operator">|</span> <span class="token number">4142</span> EC  <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>  <span class="token number">185.50</span> <span class="token operator">|</span> <span class="token number">1963</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">-</span><span class="token number">08</span> <span class="token operator">|</span>
+<span class="token operator">|</span> SE       <span class="token operator">|</span> Sengers    <span class="token operator">|</span> Bredaseweg <span class="token number">2</span>  <span class="token operator">|</span> <span class="token number">4344</span> DE  <span class="token operator">|</span> Bavel      <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>  <span class="token number">110.00</span> <span class="token operator">|</span> <span class="token number">1955</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">17</span> <span class="token operator">|</span>
+<span class="token operator">|</span> MO       <span class="token operator">|</span> Mol        <span class="token operator">|</span> Waterstr <span class="token number">8</span>    <span class="token operator">|</span> <span class="token number">4841</span> KA  <span class="token operator">|</span> Breda      <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>  <span class="token number">300.00</span> <span class="token operator">|</span> <span class="token number">1948</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">-</span><span class="token number">30</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+---------------+----------+------------+------------+---------+------------+</span></code></pre>
+<p>Bekijk nu welke velden er zijn in de tabel 'docent':</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">fields</span> <span class="token keyword">from</span> docent<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> Field     <span class="token operator">|</span> <span class="token keyword">Type</span>         <span class="token operator">|</span> <span class="token boolean">Null</span> <span class="token operator">|</span> <span class="token keyword">Key</span> <span class="token operator">|</span> <span class="token keyword">Default</span> <span class="token operator">|</span> Extra <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> doc_code  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>   <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> doc_naam  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> straat    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> postcode  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>   <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> plaats    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> telefoon  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> uurloon   <span class="token operator">|</span> <span class="token keyword">decimal</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> geb_datum <span class="token operator">|</span> <span class="token keyword">date</span>         <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+</code></pre>
+<p>Je ziet nu dat de eerste rij van de records van docent overeenkomst met de eerste kolom in het overzicht van de velden van een docent.<br>
+In de query <code>select * from docent</code> staat het sterretje voor 'alle velden/kolommen'.<br>
+Alle kolommen worden weergegeven uit de tabel docent.<br>
+Met <code>select</code> bepaal je dus welke kolommen worden weergegeven
+Met <code>from</code> bepaal je welke tabel je gebruikt.<br>
+Je kunt na <code>select</code> opgeven welke kolommen je wil zien:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent<span class="token punctuation">;</span>
+
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> Witlok     <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Grond      <span class="token operator">|</span> <span class="token number">013</span><span class="token operator">-</span><span class="token number">426786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters     <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers    <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> Mol        <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#eenvoudige-queries">Eenvoudige queries</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/postgresql/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Postgresql</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/gegevens-filteren/">
+        <span class="title">Gegevens filteren</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<h1 id=""></h1>
+<h2 id="introductie">Introductie</h2>
+<p>In deze cursus wordt uitgelegd hoe je een laravel backendapplicatie maakt met een Vue frontend.
+Een aantal technieken komen in deze cursus bij elkaar.</p>
+<blockquote>
+<h4 id="voorkennis">Voorkennis</h4>
+<ul>
+<li>Je kunt werken met SQL-queries</li>
+<li>Je kunt een ERD maken en een database normaliseren</li>
+<li>Je kunt een eenvoudige frontend applicatie maken met Vue.js</li>
+<li>Je kunt een eenvoudige Laravel applicatie bouwen</li>
+<li>Je hebt kennis van scrum en je weet hoe je userstories moet maken.</li>
+</ul>
+</blockquote>
+<p>Het onderwerp in de cursus is een movie-app.</p>
+<h2 id="user-stories">User stories</h2>
+<ul>
+<li>Bezoekers kunnen zoeken op de titel van movies</li>
+<li>Bezoekers kunnen een top-10 van movies bekijken met de hoogste gemiddelde rating</li>
+<li>Bezoekers kunnen registreren</li>
+<li>Gebruikers kunnen movies een rating geven</li>
+</ul>
+<p>Technisch gezien betekent dit dat een gebruiker meerdere movies een rating kan geven en een movie kan van meerdere gebruikers een rating ontvangen. M.a.w. een meer-op-meer relatie die je kan opdelen in 2 1-op-meer relaties doormiddel van een tussentabel (rating).
+De movie-app wordt opgedeeld in een front-end en een back-end gedeelte. Laravel wordt gebruikt voor de back-end (API). VueJS wordt gebruikt voor het front-end gedeelte. Uitgangspunt van de applicatie is dat straks ook andere front-end webapps maar ook mobiele applicaties gebruik kunnen maken van de Movie-app's API.</p>
+<h2 id="normalisatie">Normalisatie</h2>
+<ul>
+<li>Bepaal welke gegevens je wilt opslaan in de database.</li>
+<li>Maak onderscheid tussen tabellen, velden en records.</li>
+<li>Bepaal welke relaties er zijn tussen de tabellen:
+<ul>
+<li>Meer-op-meer relaties</li>
+<li>Een-op-meer relaties</li>
+</ul>
+</li>
+<li>Bepaal welke sleutels nodig zijn om gegevens te identificeren</li>
+</ul>
+<h4 id="stap-1">Stap 1</h4>
+<p>Welke gegevens zijn er in de applicatie:
+movietitel, moviejaar, rating, email gebruiker, voornaam, tussenvoegsel, achternaam</p>
+<h4 id="stap-2">Stap 2</h4>
+<p>Welke gegevens zijn van elkaar afhankelijk</p>
+<ul>
+<li>movies: movietitel, moviejaar</li>
+<li>ratings: rating (hoort bij een movie en bij een gebruiker!)</li>
+<li>users: email, voornaam, tussenvoegsel, achternaam</li>
+</ul>
+<h4 id="stap-3%3A">Stap 3:</h4>
+<p>Sleutels en relaties<br>
+table: <strong>movies</strong><br>
+<u>id</u>, title, year</p>
+<p>table: <strong>ratings</strong><br>
+<u style="text-decoration-style: double;">movie-id</u>, <u style="text-decoration-style: double;">user-id</u>, rating</p>
+<p>table: <strong>users</strong><br>
+<u>id</u>, email, fname, prefix, lname, password</p>
+<h2 id="entiteit-relatie-diagram-(erd)">Entiteit Relatie Diagram (ERD)</h2>
+<p><img src="/edutorial/_assets/laravel/movie-app-erd.png" alt="Movie app ERD"></p>

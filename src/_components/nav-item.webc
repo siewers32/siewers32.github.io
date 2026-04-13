@@ -1,0 +1,7 @@
+<script webc:type="js">
+    let extra = "";
+    if(url == page) {
+        extra = 'aria-current="page" data-state="active"';
+    }
+`<a href="${url}" class="nav-link" ${extra}>${name}</a>`
+</script>

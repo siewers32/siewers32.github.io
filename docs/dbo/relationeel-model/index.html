@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Relationeel model</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbo/dbo-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+
+<a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+
+<a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+
+<a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+
+<a class="page-link" href="/edutorial/dbo/relationeel-model/" aria-current="page" data-state="active">Relationeel model</a>
+
+<a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+
+<a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+
+<a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+
+<a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+
+<a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+
+<a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbo/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbo/wat-is-een-database/">Wat is een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/onderdelen-van-een-database/">Onderdelen van een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/hoe-werkt-een-database/">Hoe werkt een database</a>
+    
+    <a class="page-link" href="/edutorial/dbo/informatie-analyse/">Informatie analyse</a>
+    
+    <a class="page-link" href="/edutorial/dbo/relationeel-model/" aria-current="page" data-state="active">Relationeel model</a>
+    
+    <a class="page-link" href="/edutorial/dbo/normaliseren/">Normaliseren</a>
+    
+    <a class="page-link" href="/edutorial/dbo/bloemenzaak/">Bloemenzaak</a>
+    
+    <a class="page-link" href="/edutorial/dbo/reminder/">Reminder</a>
+    
+    <a class="page-link" href="/edutorial/dbo/deebee-train/">DeeBee Train</a>
+    
+    <a class="page-link" href="/edutorial/dbo/voorbeelden/">Voorbeelden</a>
+    
+    <a class="page-link" href="/edutorial/dbo/easytiger-patio/">EasyTiger Patio</a>
+    
+</div>
+
+            <h1 id="database-ontwerp">Database ontwerp</h1>
+<h2 id="relationeel-model">Relationeel model</h2>
+<p>Een relationele database is gebaseerd op een zgn. relationeel model. Door dit model toe te passen zorg je ervoor dat gegevens gestructureerd en genormaliseerd worden opgeslagen. Dit betekent:</p>
+<ul>
+<li>Alleen relevante gegevens worden opgeslagen</li>
+<li>Gegevens worden maar 1 keer opgeslagen (geen redundantie!)
+<ul>
+<li>Als een klant verhuist, hoef je maar in 1 tabel het adres te wijzigen!</li>
+</ul>
+</li>
+<li>Gegevens zijn consistent
+<ul>
+<li>In een bestelsysteem hoort een bestelling altijd bij een klant. Zonder klant kun je geen bestelling hebben.</li>
+</ul>
+</li>
+<li>Gegevens zijn betrouwbaar
+<ul>
+<li>Denk aan je bankrekening. Je hebt liever niet dat anderen jouw geld uitgeven door een probleem in de database.</li>
+</ul>
+</li>
+</ul>
+<h2 id="sleutels">Sleutels</h2>
+<p>Tabellen hebben sleutelvelden. Een sleutelveld identificeert een record. De waarde van een sleutel kan maar 1 rij data behoren. Een klantnummer is uniek voor iedere klant. Hierdoor kun je klanten niet door elkaar halen!</p>
+<ul>
+<li>Primaire sleutel (primary key)
+<ul>
+<li>Deze sleutel is uniek voor ieder record in de tabel</li>
+</ul>
+</li>
+<li>Vreemde sleutel (foreign key)
+<ul>
+<li>Deze sleutel is een verwijzing naar de primaire sleutel in een andere tabel.</li>
+</ul>
+</li>
+<li>Kandidaatsleutel
+<ul>
+<li>Deze sleutel is een wel een unieke waarde, maar niet de primaire sleutel. Bijvoorbeeld je emailadres is uniek voor jou, maar je krijgt toch een klantnummer!</li>
+</ul>
+</li>
+<li>Gecombineerde sleutels
+<ul>
+<li>Deze sleutels bestaan uit meerdere velden. Individueel zijn de waarden niet uniek, maar als je ze combineert wel!</li>
+</ul>
+</li>
+</ul>
+<h2 id="relaties">Relaties</h2>
+<p>Door een sleutel uit een tabel in een andere tabel op te nemen creëer je een relatie.
+In onderstaand voorbeeld zie je dat het 'id' van de klant is opgenomen in de tabel orders ('custormer').</p>
+<p>Er zijn 2 type relaties:</p>
+<ul>
+<li>1-op-meer relaties
+<ul>
+<li>Bestellingen horen bij één klant, maar een klant kan meerdere bestellingen hebben.</li>
+</ul>
+</li>
+<li>meer-op-meer relaties
+<ul>
+<li>Bij een film zijn meerdere acteurs betrokken, maar acteurs spelen ook in meerdere films.</li>
+</ul>
+</li>
+</ul>
+<h2 id="voorbeelden">Voorbeelden</h2>
+<h4 id="tabel-klanten">Tabel klanten</h4>
+<ul>
+<li><strong>id</strong> : dit is de primaire sleutel. Id is een uniek gegeven</li>
+</ul>
+<div class="html">
+<table style="border: 1px solid #000; border-collapse: collapse;">
+    <tr>
+        <th>id</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>phone</th>
+        <th>address</th>
+        <th>zip</th>
+    </tr>
+    <tr>
+        <td>1234</td>
+        <td>Tom</td>
+        <td>Jewett</td>
+        <td>714-555-1212</td>
+        <td>10200 Slater</td>
+        <td>92708</td>
+    </tr>
+    <tr>
+        <td>5678</td>
+        <td>Alvaro</td>
+        <td>Monge</td>
+        <td>562-333-4141</td>
+        <td>2145 Main</td>
+        <td>90840</td>
+    </tr>
+    <tr>
+        <td>9012</td>
+        <td>Wayne</td>
+        <td>Dick</td>
+        <td>562-777-3030</td>
+        <td>1250 Bellflower</td>
+        <td>90840</td>
+    </tr>
+</table>
+</div>
+<h4 id="tabel-orders">Tabel orders</h4>
+<ul>
+<li><strong>id</strong> : Dit is de primaire sleutel van de tabel orders</li>
+<li><strong>customer</strong> : Dit is de vreemde sleutel, de waarde komt overeen met het id uit de tabel klanten</li>
+</ul>
+<div class="html">
+<table style="border: 1px solid #000; border-collapse: collapse;">
+    <tr>
+        <th>id</th>
+        <th>customer</th>
+        <th>order-date</th>
+        <th>employee</th>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>5678</td>
+        <td>2003-07-14</td>
+        <td>Patrick</td>
+    </tr>
+    <tr>
+        <td>22</td>
+       <td>9012</td>
+        <td>2003-07-14</td>
+        <td>Patrick</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>5678</td>
+        <td>2003-07-18</td>
+        <td>Kathleen</td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>5678</td>
+        <td>2003-07-20</td>
+        <td>Kathleen</td>
+    </tr>
+</table>
+</div>
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#relationeel-model">Relationeel model</a></li><li><a href="#sleutels">Sleutels</a></li><li><a href="#relaties">Relaties</a></li><li><a href="#voorbeelden">Voorbeelden</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbo/informatie-analyse/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Informatie analyse</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbo/normaliseren/">
+        <span class="title">Normaliseren</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

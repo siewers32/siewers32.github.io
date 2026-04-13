@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Python ai</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python_int/python-ch030.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python_int/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python_int/python-classes/">Python classes</a>
+
+<a class="page-link" href="/edutorial/python_int/python-ai/" aria-current="page" data-state="active">Python ai</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python_int/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python_int/python-classes/">Python classes</a>
+    
+    <a class="page-link" href="/edutorial/python_int/python-ai/" aria-current="page" data-state="active">Python ai</a>
+    
+</div>
+
+            <h1 id="python-intermediate">Python intermediate</h1>
+<p>Je kunt Python heel goed gebruiken om te communiceren en data uit te wisselen met een Large Language Model (LLM).<br>
+Hieronder zie je hoe je dat kunt doen:</p>
+<h3 id="stap-1%3A-kies-je-llm-api">Stap 1: Kies je LLM API</h3>
+<p>Er zijn verschillende grote spelers op de markt. Je keuze hangt af van je project, budget en voorkeuren:</p>
+<ol>
+<li><strong>OpenAI API</strong>: Dit is de meest populaire keuze. Ze bieden toegang tot modellen zoals GPT-3.5 en GPT-4.
+<ul>
+<li><strong>Voordelen</strong>: Zeer krachtige modellen, uitstekende documentatie, grote community.</li>
+<li><strong>Nadelen</strong>: Niet gratis, vereist een API-sleutel en betaling (pay-as-you-go).</li>
+<li><strong>Startpunt</strong>: <a href="https://platform.openai.com/docs/overview">OpenAI API documentatie</a></li>
+</ul>
+</li>
+<li><strong>Google Gemini API (via Google AI Studio)</strong>: Google's antwoord op OpenAI. Biedt toegang tot de Gemini-modellen.
+<ul>
+<li><strong>Voordelen</strong>: Krachtige modellen, vaak genereuze gratis-tier limieten voor persoonlijk gebruik, geïntegreerd in het Google-ecosysteem.</li>
+<li><strong>Nadelen</strong>: Relatief nieuw, de documentatie en community zijn nog in ontwikkeling vergeleken met OpenAI.</li>
+<li><strong>Startpunt</strong>: <a href="https://aistudio.google.com/">Google AI Studio</a> (hier kun je API-sleutels krijgen en experimenteren) en <a href="https://cloud.google.com/vertex-ai">Google Cloud Vertex AI</a> (voor meer enterprise-achtige toepassingen).</li>
+</ul>
+</li>
+<li><strong>Hugging Face (Transformers library)</strong>: Dit is geen directe API zoals OpenAI of Google, maar een platform en library voor het hosten en gebruiken van <em>vele verschillende</em> open-source LLM's.
+<ul>
+<li><strong>Voordelen</strong>: Enorme verscheidenheid aan modellen (gratis en commercieel), flexibiliteit, veel controle als je lokaal modellen wilt draaien.</li>
+<li><strong>Nadelen</strong>: Vereist meer technische kennis om modellen lokaal te draaien, prestaties variëren sterk per model.</li>
+<li><strong>Startpunt</strong>: <a href="https://huggingface.co/models">Hugging Face Hub</a> en <a href="https://huggingface.co/docs/transformers/index">Transformers library</a>.</li>
+</ul>
+</li>
+<li><strong>Anthropic (Claude API)</strong>: Biedt de Claude-modellen aan, bekend om hun veiligheid en nuttigheid.
+<ul>
+<li><strong>Voordelen</strong>: Concurrerende modellen, vaak goede prestaties op specifieke taken.</li>
+<li><strong>Nadelen</strong>: Minder bekend en kleinere community dan OpenAI/Google.</li>
+<li><strong>Startpunt</strong>: <a href="https://docs.anthropic.com/en/api">Anthropic API documentatie</a></li>
+</ul>
+</li>
+</ol>
+<p><strong>Aanbeveling voor beginners:</strong> Start met <strong>OpenAI API</strong> of <strong>Google Gemini API</strong>. Deze zijn het makkelijkst om mee te beginnen vanwege hun heldere documentatie en directe API-toegang.</p>
+<h3 id="stap-2%3A-verkrijg-een-api-sleutel">Stap 2: Verkrijg een API-sleutel</h3>
+<p>Voor de commerciële API's (OpenAI, Google Gemini (soms), Anthropic) heb je een API-sleutel nodig. Dit is een unieke code die je toegang geeft tot hun diensten en die vaak gekoppeld is aan je facturering.</p>
+<ul>
+<li><strong>OpenAI</strong>: Ga naar <a href="https://platform.openai.com/">platform.openai.com</a> en maak een account aan. Ga dan naar &quot;API Keys&quot; en genereer een nieuwe sleutel.</li>
+<li><strong>Google Gemini</strong>: Ga naar <a href="https://aistudio.google.com/">aistudio.google.com</a>. Je kunt hier een API-sleutel genereren. Voor productiegebruik zul je waarschijnlijk ook een Google Cloud project nodig hebben.</li>
+</ul>
+<p><strong>Beveilig je API-sleutel!</strong> Deel deze nooit in je code op GitHub of met anderen. Gebruik omgevingsvariabelen (environment variables) om ze veilig te houden.</p>
+<h3 id="stap-3%3A-installeer-de-python-library">Stap 3: Installeer de Python Library</h3>
+<p>De meeste LLM API's hebben hun eigen Python client library.</p>
+<ul>
+<li><strong>OpenAI</strong>:<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> openai</code></pre>
+</li>
+<li><strong>Google Gemini (Google Generative AI SDK)</strong>:<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> google-generativeai</code></pre>
+</li>
+<li><strong>Hugging Face (voor de Transformers library)</strong>:<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> transformers</code></pre>
+</li>
+</ul>
+<h3 id="stap-4%3A-je-eerste-api-aanroep-(voorbeeld-met-openai)">Stap 4: Je eerste API-aanroep (Voorbeeld met OpenAI)</h3>
+<p>Laten we een eenvoudig voorbeeld nemen met de OpenAI API.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> openai
+<span class="token keyword">import</span> os
+
+<span class="token comment"># 1. Je API-sleutel instellen (ZEER BELANGRIJK: Gebruik geen hardcoded sleutels in echte code!)</span>
+<span class="token comment"># Haal de API-sleutel op uit een omgevingsvariabele</span>
+<span class="token comment"># Je kunt dit instellen in je terminal: export OPENAI_API_KEY='jouw_api_sleutel'</span>
+<span class="token comment"># Of voor Windows (PowerShell): $env:OPENAI_API_KEY='jouw_api_sleutel'</span>
+<span class="token comment"># Voor CMD: set OPENAI_API_KEY='jouw_api_sleutel'</span>
+<span class="token comment"># Voor Jupyter Notebooks/Google Colab: os.environ["OPENAI_API_KEY"] = "jouw_api_sleutel"</span>
+openai<span class="token punctuation">.</span>api_key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">"OPENAI_API_KEY"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> openai<span class="token punctuation">.</span>api_key<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Fout: OPENAI_API_KEY omgevingsvariabele is niet ingesteld."</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Stel deze in voordat je het script uitvoert."</span><span class="token punctuation">)</span>
+    exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">vraag_llm</span><span class="token punctuation">(</span>prompt_text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" Stuurt een prompt naar de OpenAI LLM en retourneert het antwoord. """</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        response <span class="token operator">=</span> openai<span class="token punctuation">.</span>chat<span class="token punctuation">.</span>completions<span class="token punctuation">.</span>create<span class="token punctuation">(</span>
+            model<span class="token operator">=</span><span class="token string">"gpt-3.5-turbo"</span><span class="token punctuation">,</span> <span class="token comment"># Of "gpt-4", "gpt-4o" (Omni) etc.</span>
+            messages<span class="token operator">=</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{</span><span class="token string">"role"</span><span class="token punctuation">:</span> <span class="token string">"system"</span><span class="token punctuation">,</span> <span class="token string">"content"</span><span class="token punctuation">:</span> <span class="token string">"Je bent een behulpzame assistent."</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span><span class="token string">"role"</span><span class="token punctuation">:</span> <span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"content"</span><span class="token punctuation">:</span> prompt_text<span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            max_tokens<span class="token operator">=</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token comment"># Maximaal aantal tokens (woorden/stukjes tekst) in het antwoord</span>
+            temperature<span class="token operator">=</span><span class="token number">0.7</span> <span class="token comment"># Hoe creatief/willekeurig het antwoord is (0.0 = zeer direct, 1.0 = zeer creatief)</span>
+        <span class="token punctuation">)</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">.</span>choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span>content
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Er is een fout opgetreden: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+
+<span class="token comment"># Voorbeeldgebruik</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    gebruikers_prompt <span class="token operator">=</span> <span class="token string">"Geef me drie ideeën voor een korte sci-fi verhaalplot."</span>
+    antwoord <span class="token operator">=</span> vraag_llm<span class="token punctuation">(</span>gebruikers_prompt<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Jouw prompt: </span><span class="token interpolation"><span class="token punctuation">{</span>gebruikers_prompt<span class="token punctuation">}</span></span><span class="token string">\n"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"LLM Antwoord:\n</span><span class="token interpolation"><span class="token punctuation">{</span>antwoord<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+    gebruikers_prompt_2 <span class="token operator">=</span> <span class="token string">"Schrijf een gedicht over de lente."</span>
+    antwoord_2 <span class="token operator">=</span> vraag_llm<span class="token punctuation">(</span>gebruikers_prompt_2<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\n---\nJouw prompt: </span><span class="token interpolation"><span class="token punctuation">{</span>gebruikers_prompt_2<span class="token punctuation">}</span></span><span class="token string">\n"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"LLM Antwoord:\n</span><span class="token interpolation"><span class="token punctuation">{</span>antwoord_2<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
+<p><strong>Uitleg van de OpenAI code:</strong></p>
+<ul>
+<li><strong><code>import os</code></strong>: Om je API-sleutel veilig uit een omgevingsvariabele te halen. <strong>Dit is cruciaal!</strong></li>
+<li><strong><code>openai.api_key = os.getenv(&quot;OPENAI_API_KEY&quot;)</code></strong>: Haalt de sleutel op. Zorg dat je de omgevingsvariabele <code>OPENAI_API_KEY</code> hebt ingesteld in je systeem voordat je het script runt.</li>
+<li><strong><code>openai.chat.completions.create(...)</code></strong>: Dit is de functie die de daadwerkelijke aanroep naar het model doet.
+<ul>
+<li><strong><code>model=&quot;gpt-3.5-turbo&quot;</code></strong>: Specificeert welk model je wilt gebruiken. Dit is een belangrijk aspect van kosten en prestaties.</li>
+<li><strong><code>messages</code></strong>: Dit is waar je de conversatie definieert.
+<ul>
+<li><code>&quot;role&quot;: &quot;system&quot;</code>: Instructies voor het model over zijn rol/gedrag.</li>
+<li><code>&quot;role&quot;: &quot;user&quot;</code>: De input van de gebruiker (jouw prompt).</li>
+<li><code>&quot;role&quot;: &quot;assistant&quot;</code>: (Optioneel) Eerdere antwoorden van het model om context te bieden voor vervolgvragen.</li>
+</ul>
+</li>
+<li><strong><code>max_tokens</code></strong>: Beperkt de lengte van het antwoord van de LLM. Handig om kosten te beheersen.</li>
+<li><strong><code>temperature</code></strong>: Bepaalt hoe &quot;creatief&quot; of &quot;willekeurig&quot; het antwoord is.
+<ul>
+<li><code>0.0</code>: Zeer deterministisch en gefocust.</li>
+<li><code>1.0</code>: Zeer creatief en divers.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="stap-5%3A-experimenteer-en-bouw-verder">Stap 5: Experimenteer en bouw verder</h3>
+<ul>
+<li><strong>Lees de documentatie</strong>: De API-documentatie van de gekozen provider is je beste vriend. Daar vind je alle parameters, best practices en voorbeeldcode.</li>
+<li><strong>Begrijp &quot;Prompts&quot;</strong>: De manier waarop je je vraag (prompt) formuleert, is cruciaal voor de kwaliteit van het antwoord van een LLM. Dit heet &quot;prompt engineering&quot;. Experimenteer met verschillende prompts.</li>
+<li><strong>Fouten afhandelen</strong>: Voeg altijd <code>try-except</code> blokken toe om API-fouten af te handelen (bijvoorbeeld netwerkproblemen, limieten overschreden).</li>
+<li><strong>Kostenbeheer</strong>: Houd rekening met de kosten. Begin klein, gebruik <code>max_tokens</code> en monitor je verbruik.</li>
+<li><strong>Use Cases</strong>: Denk na over wat je wilt bouwen:
+<ul>
+<li>Een eenvoudige chatbot.</li>
+<li>Een tool die samenvattingen maakt van teksten.</li>
+<li>Een programma dat ideeën genereert voor verhalen, code, enz.</li>
+<li>Een tool die tekst vertaalt of herschrijft.</li>
+</ul>
+</li>
+</ul>
+<h3 id="belangrijke-concepten-voor-llm-api's%3A">Belangrijke concepten voor LLM API's:</h3>
+<ul>
+<li><strong>Token</strong>: Een token is een stukje tekst, vaak een woord of een deel van een woord. LLM's &quot;denken&quot; in tokens. Kosten en <code>max_tokens</code> zijn gebaseerd op tokens.</li>
+<li><strong>Prompt Engineering</strong>: De kunst en wetenschap van het formuleren van effectieve instructies (prompts) voor een LLM om het gewenste resultaat te krijgen.</li>
+<li><strong>Context Window</strong>: De hoeveelheid tekst (tokens) die een LLM tegelijkertijd kan verwerken. Dit omvat zowel je input prompt als de output van het model. Oudere modellen hadden kleinere context windows.</li>
+<li><strong>Role-based chat</strong>: Zoals je in het OpenAI voorbeeld zag, definieer je de &quot;rollen&quot; (system, user, assistant) in de conversatie. Dit helpt het model om de context beter te begrijpen.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python_int/python-classes/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Python classes</span>
+    </a>
+    
+    
+    <div></div>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

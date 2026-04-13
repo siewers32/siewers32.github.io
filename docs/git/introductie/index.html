@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Introductie</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/git/git-ch1.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/git/introductie/" aria-current="page" data-state="active">Introductie</a>
+
+<a class="page-link" href="/edutorial/git/git-en-github/">Git en github</a>
+
+<a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+
+<a class="page-link" href="/edutorial/git/conflicten/">Conflicten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/git/introductie/" aria-current="page" data-state="active">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/git/git-en-github/">Git en github</a>
+    
+    <a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+    
+    <a class="page-link" href="/edutorial/git/conflicten/">Conflicten</a>
+    
+</div>
+
+            <h1 id="versiebeheer-met-git">Versiebeheer met Git</h1>
+<h2 id="introductie">Introductie</h2>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_GRm9onlLXE2QPhWB96poCS">
+        </iframe>
+    </div>
+<h3 id="wat-is-git">Wat is Git</h3>
+<p>Git is een uitvinding van Linus Torvalds. Linus is ook de bedenker van het Linux besturingssysteem. Er werken heel veel developers aan Linux, dus Linus heeft zijn handen vol aan het reviewen en testen van code van anderen. Om dit proces te vergemakkelijken heeft hij het Git versiesysteem bedacht. Git is razend populair bij vrijwel alle developers.</p>
+<h3 id="wat-is-github%3F">Wat is Github?</h3>
+<p>Github is een website-versie van Git. De bestanden die je bewaart in Git kun je ook bewaren en beheren op Github.com. Op die manier raak je nooit iets kwijt. Github is een soort Google Drive voor developers.</p>
+<h3 id="wat-is-er-zo-handig-aan-git">Wat is er zo handig aan Git</h3>
+<p>Git in combinatie met Github geeft je altijd de laatste versie van een applicatie. Het geeft je de mogelijkheid om samen te werken aan applicaties zonder dat je elkaar in de weg zit of dat je elkaars bestanden per ongeluk overschrijft.</p>
+<h3 id="hoe-werkt-git">Hoe werkt Git</h3>
+<p>Git werkt met een repository. Een repository is een soort database waarin je bestanden en alle aanpassingen op die bestanden worden bewaard. Om te kunnen werken met een repository moet je eerst Git installeren en een lege repository aanmaken.
+<a href="https://github.com/git-guides/install-git">Installeer Git</a></p>
+<p>Als je Git hebt geïnstalleerd is er een programma dat 'git bash' heet. Git bash is een eenvoudige (maar uitgebreide) app om git te besturen.
+Er zijn ook GUI's voor git. Bijv. Git Desktop, Git Kraken etc.
+Als je je applicatiebestanden op wilt slaan in een git repository navigeer dan in git bash naar je 'working directory'. Dit is de directory waar al je applicatiebestanden staan.</p>
+<pre class="language-php"><code class="language-php">git init</code></pre>
+<p>Met 'init' initialiseer je een nieuwe git repository.</p>
+<pre class="language-php"><code class="language-php">git add <span class="token operator">.</span>
+git commit <span class="token operator">-</span>m <span class="token string single-quoted-string">'first commit'</span></code></pre>
+<p>Met 'add' voeg je alle bestanden uit de 'working directory' toe aan de 'stage'.<br>
+Met 'commit' worden de bestanden uit de 'working directory' opgeslagen in de repository. '-m'  geeft nog de mogelijkheid om een message mee te bewaren die iets zegt over de commit. Bijv. 'first commit'.
+Om je bestanden toe te voegen aan een repository moet je 2 stappen doen. Je voegt de bestanden toe aan de 'stage', daarmee zet je ze klaar om opgeslagen te worden. Daarna doe je een 'commit' waarmee de bestanden worden opgeslagen in de repository.</p>
+<p><img src="/edutorial/_assets/git/git.svg" alt="Stadia van working directory naar repository met Git"></p>
+<p>Als je 'git init' start vanuit een directory, dan krijg je in die directory een 'verborgen' mapje met de naam '.git'. Een bestandsnaam of map die begint met een punt is verborgen. Je kunt ook verborgen bestanden zien als je de toevoeging '-a' gebruikt bij het commando 'ls' (list directory)</p>
+<pre class="language-php"><code class="language-php"><span class="token operator">|</span><span class="token operator">--</span>working <span class="token class-name">directory</span>
+    <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">.</span>git</code></pre>
+<h2 id="overzicht-git-opdrachten">Overzicht Git opdrachten</h2>
+<pre class="language-php"><code class="language-php"><span class="token comment">// Maak een nieuwe lege repository aan</span>
+<span class="token comment">// in de huidige map</span>
+git init
+
+<span class="token comment">// Maak een kopie van een bestaande repository</span>
+<span class="token comment">//(bijvoorbeeld vanaf github)</span>
+
+git <span class="token keyword">clone</span> gebruiker@host<span class="token punctuation">:</span><span class="token operator">/</span>path<span class="token operator">/</span>to<span class="token operator">/</span>repository
+
+<span class="token comment">// Voeg bestanden toe aan de stage.</span>
+git add
+
+<span class="token comment">// Voer de veranderingen in de stage door in de repository</span>
+git commit <span class="token operator">-</span>m <span class="token string double-quoted-string">"mijn bericht"</span>
+
+<span class="token comment">// Bekijk een lijst van repositories waarmee deze repository is gelinkt</span>
+git remote <span class="token operator">-</span>v
+
+<span class="token comment">// Voeg een link toe naar een remote repository</span>
+<span class="token comment">// Noem de link 'origin' en gebruik de master branch</span>
+git remote
+add origin gebruiker@host<span class="token punctuation">:</span><span class="token operator">/</span>path<span class="token operator">/</span>to<span class="token operator">/</span>repository
+git push origin master
+
+<span class="token comment">// Stuur de wijzigingen in de lokale repo</span>
+<span class="token comment">// naar een remote repository</span>
+git push origin master
+
+<span class="token comment">// Haal een nieuwe versie op van de server en</span>
+<span class="token comment">// synchroniseer met je lokale repository</span>
+git pull origin master
+
+<span class="token comment">// Bekijk een overzicht van alle commits</span>
+git log
+
+<span class="token comment">// Bekijk welke bestanden in de stage staan</span>
+git status
+
+<span class="token comment">// Als je helemaal gek wordt van de foutmeldingen en conflicten, </span>
+<span class="token comment">// dan kun je altijd opnieuw beginnen met..</span>
+rm <span class="token operator">-</span>rf <span class="token operator">.</span><span class="token operator">/</span><span class="token operator">.</span>git
+</code></pre>
+<p><code>rm -rf ./.git</code> is erg destructief dus gebruik het 'verstandig'.</p>
+<ul>
+<li>Met rm -rf verwijder je alle bestanden en mappen in een bepaalde map</li>
+<li>Het is geen prullebakje dat je nog kunt herstellen!!</li>
+<li>Je verwijdert alle git-bestanden voor het project in je working-directory.</li>
+<li>De overige bestanden (je code) in je working-directory blijven wel bewaard.</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#introductie">Introductie</a></li><li><a href="#overzicht-git-opdrachten">Overzicht Git opdrachten</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <div></div>
+    
+    
+    <a id="next-link" href="/edutorial/git/git-en-github/">
+        <span class="title">Git en github</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Postgresql</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch25_postgresql.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/" aria-current="page" data-state="active">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/" aria-current="page" data-state="active">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="postgresql">Postgresql</h2>
+<h2 id="voorwoord">Voorwoord</h2>
+<p>Een andere populaire database, die veel gebruikt wordt in combinatie met bijv. Python is Postgresql. Postgresql is o.a. populair als het gaat om het bouwen van ai-systemen. Postgresql kent een aantal extra data-typen waardoor het werken met LLM's en JSON makkelijker gaat.<br>
+Postgresql is een gratis open-source toepassing.</p>
+<h2 id="installatie">Installatie</h2>
+<ul>
+<li>Je kunt Postgresql installeren via de website (https://www.postgresql.org/).</li>
+<li>Macgebruikers kunnen het beste gebruik maken van <code>homebrew</code>. Let op dat je de laatste versie installeert!</li>
+<li>Pas indien nodig de <code>PATH</code> variabele aan, zodat je systeem de server- en clientapplicaties overal op je computer kan vinden.
+<ul>
+<li>Bij windows gaat dat bij <code>omgevingsvariabelen</code> of in het engels <code>environment variables</code></li>
+<li>Op de mac kun je <code>psql</code> starten vanuit <code>Terminal</code>. Als dat niet lukt dan pas je het bestand <code>~/.zprofile</code> aan.</li>
+</ul>
+</li>
+</ul>
+<h2 id="client-applicatie">Client applicatie</h2>
+<p>Postgresql is net als MySQL en MariaDB een client-server applicatie. Je gebruikt de client-applicatie om commando's naar de server te sturen.<br>
+Hieronder zie je hoe je voor de eerste keer kunt inloggen (standaard naam is postgres zonder wachtwoord)</p>
+<pre class="language-shell"><code class="language-shell">psql postgres</code></pre>
+<h2 id="nieuwe-superuser">Nieuwe superuser</h2>
+<ul>
+<li>Maak een nieuwe superuser aan die je gebruikt voor development-doeleinden</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> ROLE mijngebruiker <span class="token keyword">WITH</span> LOGIN PASSWORD <span class="token string">'mijnwachtwoord'</span> SUPERUSER<span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> mijngebruiker<span class="token punctuation">;</span></code></pre>
+<h2 id="cursus-bestanden">Cursus bestanden</h2>
+<ul>
+<li>Je kunt de database <code>school</code> hier downloaden.... <a href="/edutorial/_assets/dbq/school_pg.sql">School database</a><br>
+Als je op bovenstaande link klikt, wordt het bestand 'school_pg.sql' in je downloadmap geplaatst.</li>
+<li>Start psql en maak eerst een database aan:</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> school<span class="token punctuation">;</span></code></pre>
+<ul>
+<li>Je kunt checken of door een listing van alle databases op te vragen met <code>\l</code>:</li>
+<li>Laad het sql bestand om de tabellen en gegevens te importeren.</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">psql postgres <span class="token parameter variable">-f</span> C:<span class="token punctuation">\</span>school_pg.sql</code></pre>
+<h2 id="cheatsheet-postgresql">Cheatsheet Postgresql</h2>
+<table style="border-collapse:collapse; border:1px black solid;">
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid black; padding:4px">[-d] <database></database></td>
+<td style="border: 1px solid black; padding:4px">psql -d mydb</td>
+<td style="border: 1px solid black; padding:4px">Connecting to database</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-U</td>
+<td style="border: 1px solid black; padding:4px">psql -U john mydb</td>
+<td style="border: 1px solid black; padding:4px">Connecting as a specific user</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-h -p</td>
+<td style="border: 1px solid black; padding:4px">psql -h localhost -p 5432 mydb</td>
+<td style="border: 1px solid black; padding:4px">Connecting to a host/port</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-U -h -p -d</td>
+<td style="border: 1px solid black; padding:4px">psql -U admin -h 192.168.1.5 -p 2506 -d mydb</td>
+<td style="border: 1px solid black; padding:4px">Connect remote PostgreSQL</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-W</td>
+<td style="border: 1px solid black; padding:4px">psql -W mydb</td>
+<td style="border: 1px solid black; padding:4px">Force password</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-c</td>
+<td style="border: 1px solid black; padding:4px">psql -c '\c postgres' -c '\dt'</td>
+<td style="border: 1px solid black; padding:4px">Execute a SQL query or command</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-H</td>
+<td style="border: 1px solid black; padding:4px">psql -c &quot;\l+&quot; -H postgres &gt; database.html</td>
+<td style="border: 1px solid black; padding:4px">Generate HTML report</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-l</td>
+<td style="border: 1px solid black; padding:4px">psql -l</td>
+<td style="border: 1px solid black; padding:4px">List all databases</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-f</td>
+<td style="border: 1px solid black; padding:4px">psql mydb -f file.sql</td>
+<td style="border: 1px solid black; padding:4px">Execute commands from a file</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-V</td>
+<td style="border: 1px solid black; padding:4px">psql -V</td>
+<td style="border: 1px solid black; padding:4px">Print the psql version</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#postgresql">Postgresql</a></li><li><a href="#voorwoord">Voorwoord</a></li><li><a href="#installatie">Installatie</a></li><li><a href="#client-applicatie">Client applicatie</a></li><li><a href="#nieuwe-superuser">Nieuwe superuser</a></li><li><a href="#cursus-bestanden">Cursus bestanden</a></li><li><a href="#cheatsheet-postgresql">Cheatsheet Postgresql</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/installeren/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Installeren</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/eenvoudige-queries/">
+        <span class="title">Eenvoudige queries</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

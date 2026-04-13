@@ -1,0 +1,6 @@
+{
+    "course-title": "Blog",
+    "layout": "course.njk",
+    "tags": "blog",
+    "permalink": "/blog/{{ title | slug }}/{{ page.index }}"
+}

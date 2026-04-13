@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Conflicten</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/git/git-ch30.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/git/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/git/git-en-github/">Git en github</a>
+
+<a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+
+<a class="page-link" href="/edutorial/git/conflicten/" aria-current="page" data-state="active">Conflicten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/git/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/git/git-en-github/">Git en github</a>
+    
+    <a class="page-link" href="/edutorial/git/git-branches/">Git branches</a>
+    
+    <a class="page-link" href="/edutorial/git/conflicten/" aria-current="page" data-state="active">Conflicten</a>
+    
+</div>
+
+            <h1 id="versiebeheer-met-git">Versiebeheer met Git</h1>
+<h2 id="conflicten">Conflicten</h2>
+<h3 id="samenwerken">Samenwerken</h3>
+<p>Het samenvoegen van bestanden met collega's is niet altijd even makkelijk. Je doet natuurlijk je best om zo goed mogelijk taken te verdelen. De kans dat je elkaars bestanden bewerkt is daarmee zo klein mogelijk. Toch kun je niet altijd uitsluiten dat je samen aan hetzelfde bestand hebt gewerkt.</p>
+<h3 id="niet-in-sync-met-github.com">Niet in sync met github.com</h3>
+<p>In Laravel hebben bijvoorbeeld veel ontwikkelaars met 'web.php' of 'api.php' te maken. Je maakt daar routes aan naar de verschillende controllers. Dit kan voor conflicten zorgen.</p>
+<h3 id="samen-dezelfde-bestanden-bewerken">Samen dezelfde bestanden bewerken</h3>
+<p>Om conflicten op te lossen moet je begrijpen dat git werkt met versies. Iedere commit is weer een nieuwe versie. Conflicten ontstaan als je een nieuwe versie wil creëren, maar je collega wil dat ook en jullie hebben dezelfde bestanden bewerkt.
+Je zult dan toch samen moeten bekijken hoe je de wijzigingen in zo'n bestand samenvoegt.</p>
+<p>Hieronder zie je een voorbeeld van een merge-conflict in Visual Studio Code....</p>
+<p><img src="/edutorial/_assets/git/merge-conflict.png" alt="Merge conflict in Visual Studio Code"></p>
+<ul>
+<li>Bij <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (Current change)</code> tot aan <code>=======</code> zie je de code van je collega.</li>
+<li>Jouw code is de code vanaf <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;Test (Incoming change)</code>
+Pas het bestand aan zodat alleen de gewenste code nog overblijft
+<ul>
+<li>Alleen jouw code</li>
+<li>Alleen de code van je collega, of</li>
+<li>De code van jullie beide</li>
+</ul>
+</li>
+<li>Commit je code en push opnieuw naar github.com</li>
+</ul>
+<h2 id="niet-in-sync-met-github.com-1">Niet in sync met github.com</h2>
+<p>Een andere reden voor conflicten is dat je bent vergeten om de laatste wijzigingen in een github repository op te halen. Jouw lokale repository is daardoor niet meer in sync met de laatste wijzigingen op github. Dit is vaak op te lossen met een 'git pull'-commando. Daarna kun je je nieuwe wijzigingen weer committen en pushen naar github.</p>
+<pre class="language-php"><code class="language-php">error<span class="token punctuation">:</span> failed to push some refs to <span class="token string single-quoted-string">'github.com:edutorial/the-cook-book.git'</span>
+hint<span class="token punctuation">:</span> Updates were rejected because <span class="token package">the</span> remote contains work that you <span class="token keyword">do</span>
+hint<span class="token punctuation">:</span> not have locally<span class="token operator">.</span> This is usually caused by another repository pushing
+hint<span class="token punctuation">:</span> to the same ref<span class="token operator">.</span> You may want to first integrate the remote changes
+hint<span class="token punctuation">:</span> <span class="token punctuation">(</span>e<span class="token operator">.</span>g<span class="token operator">.</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'git pull ...'</span><span class="token punctuation">)</span> before pushing again<span class="token operator">.</span>
+hint<span class="token punctuation">:</span> See the <span class="token string single-quoted-string">'Note about fast-forwards'</span> in <span class="token string single-quoted-string">'git push --help'</span> <span class="token keyword">for</span> details<span class="token operator">.</span>
+
+</code></pre>
+<h2 id="niet-de-juiste-bestanden-in-de-stage">Niet de juiste bestanden in de stage</h2>
+<p>Het komt ook wel voor dat je <code>git add .</code> hebt gedaan. De hele vendor-map is per ongeluk meegekomen. Wat nu?<br>
+In dat geval kun je nog terug met:</p>
+<pre class="language-php"><code class="language-php"><span class="token comment"># git status geeft weer welke bestanden zijn opgenomen in de stage</span>
+git status
+<span class="token comment"># git reset verwijdert alle bestanden uit de stage</span>
+git reset</code></pre>
+<p>Je verwijdert dan de bestanden uit de stage en je kunt je .gitignore bestand nog in orde maken of een selectie maken uit de files die je uiteindelijk wil committen.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#conflicten">Conflicten</a></li><li><a href="#niet-in-sync-met-github.com-1">Niet in sync met github.com</a></li><li><a href="#niet-de-juiste-bestanden-in-de-stage">Niet de juiste bestanden in de stage</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/git/git-branches/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Git branches</span>
+    </a>
+    
+    
+    <div></div>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

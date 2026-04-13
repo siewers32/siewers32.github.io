@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | MVC</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch18.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/" aria-current="page" data-state="active">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/" aria-current="page" data-state="active">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="mvc">MVC</h2>
+<p>Als je op basis van object georiënteerd programmeren een applicatie bouwt dan is het overzichtelijk om de klassen op te slaan in afzonderlijke bestanden.
+Structuur aanbrengen in grote applicaties is een kunst op zich. In de loop van de tijd zijn er een aantal modellen ontstaan die goed blijken te werken in de praktijk. Het Model-View-Controller model is er 1 van. Veel php-frameworks zijn hierop gebaseerd. Denk aan Symphony, Laravel of Code Igniter.</p>
+<h2 id="model">Model</h2>
+<p>Het model-onderdeel is verantwoordelijk voor het ophalen of opslaan van gegevens. Communiceren met een database of een filesysteem gaat op basis van classes die deze functionaliteit leveren.</p>
+<h2 id="view">View</h2>
+<p>Een view-class zorgt er voor dat gegevens worden weergegeven. Binnen een view-class wordt er geen data meer gemanipuleerd, dat is al eerder gedaan in de model- en controller-classes.</p>
+<h2 id="controller">Controller</h2>
+<p>Een controller-class zorgt voor de verbinding tussen de model- en de view-classes. De controller manipuleert de data die wordt opgehaald of opgeslagen en levert de gegevens die moeten worden weergegeven aan een view-class.</p>
+<h2 id="frameworks">Frameworks</h2>
+<p>Frameworks hebben nog meer overeenkomsten.</p>
+<h3 id="routing">Routing</h3>
+<p>Normaliter geeft je webserver de pagina terug die je opvraagt met behulp van een url. Bijvoorbeeld de url https://www.example.com/test.php geeft de geïnterpreteerde inhoud van test.php terug aan de broser. Met behulp van de 'rewrite'-functie van webservers kun je zorgen voor een single point of entry'. Alle urls worden doorgestuurd naar 1 punt, te weten: <code>index.php</code>. In <code>index.php</code> wordt aan de hand van de url bekeken welke informatie wordt teruggestuurd naar de browser.<br>
+Deze methode heeft 2 belangrijke voordelen:</p>
+<ul>
+<li>Je kunt als developer goed controleren welke informatie je naar de client terugstuurd en dat is een belangrijk stukje beveiliging!</li>
+<li>Je kunt als developer goed bepalen hoe urls worden gevormd. Hierdoor kun je de applicatie optimaliseren voor zoekmachines.</li>
+</ul>
+<h3 id="middleware">Middleware</h3>
+<p>Voordat een applicatie de gevraagde pagina teruggeeft aan de browser kan er vooraf nog code uitgevoerd worden. Je wilt bijvoorbeeld controleren of de gebruiker wel is ingelogd en de juiste rechten heeft om de opgevraagde
+pagina weer te geven.<br>
+Met middleware kan in het proces vooraf en achteraf code uitgevoerd worden. Dit is ideaal voor bijvoorbeeld:</p>
+<ul>
+<li>Authenticatie</li>
+<li>Checken of een gebruiker geen robot is</li>
+<li>Validatie van formulieren</li>
+</ul>
+<h3 id="namespaces">Namespaces</h3>
+<p>Frameworks lijken veel op elkaar. Ze bieden in de basis vrijwel dezelfde functionaliteit. Er is in het Laravel framework zelfs veel code terug te vinden die ook in het Symfony-framework wordt gebruikt. Ook onderdelen van Zend-framework zie je terug in andere frameworks. Om naam-conflicten van klassen te vermijden biedt php de mogelijkheid om 'namespaces' te gebruiken. Het idee is dat iedere 'vendor' (=leverancier) zijn klassen in een mapje zet met zijn eigen naam. Zo is de Laravel\Router.php klasse een andere dan de Symfony\Router.php klasse. Beide kunnen nu in dezelfde applicatie worden gebruikt.</p>
+<h3 id="autoloading">Autoloading</h3>
+<p>Onder autoloading wordt verstaan dat je klasses niet voortduren met <code>include('pad/naar/klasse)</code> hoeft te laden. Door het gebruik van een vaste structuur en afspraken (PSR-4) met namespaces en vendors is het mogelijk om klassen automatisch te laden. Hiervoor wordt <code>composer</code> gebruikt.</p>
+<h2 id="opdrachten">Opdrachten</h2>
+<ul>
+<li>Clone de applicatie op github: <a href="https://github.com/siewers32/app">https://github.com/siewers32/app</a></li>
+<li>Installeer de applicatie op je eigen computer</li>
+<li>Zorg ervoor dat je php overal van je systeem kunt opstarten (omgevingsvariabele path instellen!)
+<ul>
+<li>git clone</li>
+<li>installeer <a href="https://getcomposer.org/">composer</a></li>
+<li>composer install vanuit de <code>app</code>-directory</li>
+<li>installeer de database</li>
+<li>copy <code>sample.env</code> naar <code>.env</code> en pas configuratie aan naar jouw situatie</li>
+<li>start vanuit public-directory met <code>php -S localhost:8666 index.php</code></li>
+</ul>
+</li>
+<li>Bestudeer de code:
+<ul>
+<li>index.php - single point of entry</li>
+<li>Appfactory - klasse waarmee de applicatie wordt geïnstantieerd</li>
+<li>App - is de applicatie</li>
+<li>After.php en Before.php zijn de middleware-klassen</li>
+<li>Request.php beheert alle informatie die wordt opgevraagd door de client</li>
+<li>Response.php beheert alle informatie die uiteindelijk wordt weergegeven op de pagina.</li>
+</ul>
+</li>
+</ul>
+<h2 id="project">Project</h2>
+<ul>
+<li>Maak op basis van de app op github zelf een applicatie.</li>
+<li>Je mag met maximaal 2 mensen samenwerken (groepjes van max. 3 personen)</li>
+<li>Je mag zelf een onderwerp verzinnen</li>
+<li>App vereisten:
+<ul>
+<li>Single point of entry</li>
+<li>MVC-pattern gebruiken</li>
+<li>Minimaal 1 database met 2 tabellen</li>
+</ul>
+</li>
+</ul>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/videoseries?list=PLBtXOV0WuE_EGKbUL_QzRSfBtaYg78aSe">
+        </iframe>
+    </div>
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#mvc">MVC</a></li><li><a href="#model">Model</a></li><li><a href="#view">View</a></li><li><a href="#controller">Controller</a></li><li><a href="#frameworks">Frameworks</a></li><li><a href="#opdrachten">Opdrachten</a></li><li><a href="#project">Project</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/interfaces/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Interfaces</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/composer/">
+        <span class="title">Composer</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

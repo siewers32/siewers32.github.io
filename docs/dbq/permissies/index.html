@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Permissies</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch70.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/" aria-current="page" data-state="active">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/" aria-current="page" data-state="active">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="permissies">Permissies</h2>
+<p>In eem database management systeem (DBMS oftewel database-server) moet worden aangegeven wie er toegang heeft tot de data van de gegevens. In een offline situatie is het gebruikelijk om namen en wachtwoorden simpel te houden en vooral alle rechten toe te kennen aan de gebruiker 'root'.</p>
+<h2 id="backend-voor-applicaties">Backend voor applicaties</h2>
+<p>Zodra de database gebruikt gaat worden door meer gebruikers moet er op een veilige manier omgegaan worden met permissies.
+Vaak zal een database worden gebruikt als 'backend' voor applicaties. De applicatie moet dan (net als een gebruiker) inloggen op de database om toegang te krijgen tot de gegevens.
+In PHP gaat dat zo....</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$connection</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'mysql:host=localhost;port=3306;dbname=test'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'gebruiker'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'geheim'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="gebruikers-aanmaken">Gebruikers aanmaken</h2>
+<p>De applicatie heeft toegang nodig m.b.v een naam en een wachtwoord. Gebruik hier een sterke naam en een sterk wachtwoord!<br>
+Afhankelijk van de applicatie moeten we de gebruiker (=applicatie) voldoende rechten geven om de acties te doen die nodig zijn.
+NB: In de applicatie wordt geregeld welke gebruikers toegang hebben tot data en acties.
+De applicatie moet minimaal de permissies bieden aan de gebruiker met de meeste rechten in de applicatie.<br>
+Meestal betekent dit dat een applicatie de CRUD acties uit moet kunnen voeren. Een applicatie hoeft over het algemeen geen tabellen aan te kunnen maken of aan te passen, laat staan dat een applicatie zelf databases moet kunnen creëren.
+Voor een php-applicatie wordt een gebruiker aangemaakt die CRUD-acties uit kan voeren, maar de database verder niet kan beheren.<br>
+Eerst de gebruiker aanmaken....</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">user</span> <span class="token string">'newuser'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'password'</span><span class="token punctuation">;</span></code></pre>
+<p>Vervang newuser en password door veilige gegevens. Bijvoorbeeld...</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">user</span> <span class="token string">'fk5fdVr.'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'deksli^kffk()dfk.S_'</span><span class="token punctuation">;</span></code></pre>
+<h2 id="permissies-toekennen">Permissies toekennen</h2>
+<p>De nieuwe gebruiker kan in eerste instantie nog helemaal niets. Hieronder krijgt de nieuwe gebruiker de rechten om records aan te maken, aan te passen en te verwijderen (CRUD).</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">grant</span> <span class="token keyword">select</span><span class="token punctuation">,</span> <span class="token keyword">insert</span><span class="token punctuation">,</span> <span class="token keyword">update</span><span class="token punctuation">,</span> <span class="token keyword">delete</span> <span class="token keyword">ON</span> school<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'fk5fdVr.'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span></code></pre>
+<p>Wanneer de vers aangemaakte gebruiker inlogt is dit het resultaat wanneer hij een overzicht van de beschikbare databases opvraagt:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> school             <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span></code></pre>
+<p>Er zijn meer databases in de database-server aanwezig, maar daar heeft deze gebruiker geen toegang toe.
+Het gaat niet lukken om tabellen aan te passen, aan te maken of te verwijderen. De gebruiker kan alleen records bekijken, toevoegen, aanpassen of verwijderen. Precies dat wat nodig is, is ook mogelijk!</p>
+<p>Hieronder een stukje php-code om alle records uit de tabel cursist weer te geven...</p>
+<h2 id="connectie-vanuit-applicaties">Connectie vanuit applicaties</h2>
+<pre class="language-php"><code class="language-php"><span class="token variable">$dsn</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'mysql:host=localhost;port=3306;dbname=school'</span><span class="token punctuation">;</span>
+<span class="token variable">$con</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token variable">$dsn</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'fk5fdVr.'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'deksli^kffk()dfk.S_'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$stmt</span> <span class="token operator">=</span> <span class="token variable">$con</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"select * from cursist"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$stmt</span><span class="token operator">-></span><span class="token function">fetchAll</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">FETCH_ASSOC</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print_r</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>In python gaat dat zo..</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> pymysql<span class="token punctuation">.</span>cursors
+
+<span class="token comment"># Connect to the database</span>
+con <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>
+                      user<span class="token operator">=</span><span class="token string">'fk5fdVr.'</span><span class="token punctuation">,</span>
+                      password<span class="token operator">=</span><span class="token string">'deksli^kffk()dfk.S_'</span><span class="token punctuation">,</span>
+                      database<span class="token operator">=</span><span class="token string">'school'</span><span class="token punctuation">,</span>
+                      port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span>
+                      charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">,</span>
+                      cursorclass<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">)</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> con<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cur<span class="token punctuation">:</span>
+        cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'SELECT * FROM cursist'</span><span class="token punctuation">)</span>
+        rows <span class="token operator">=</span> cur<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> row <span class="token keyword">in</span> rows<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    con<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li>
+<p><a href="https://www.edutorial.nl/python/projectopdrachten/">Proefopdrachten examens met python-mysql</a></p>
+</li>
+<li>
+<p><a href="https://phpdelusions.net/pdo">Hier alles over PDO en PHP op phpdelusions.net</a></p>
+</li>
+</ul>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#permissies">Permissies</a></li><li><a href="#backend-voor-applicaties">Backend voor applicaties</a></li><li><a href="#gebruikers-aanmaken">Gebruikers aanmaken</a></li><li><a href="#permissies-toekennen">Permissies toekennen</a></li><li><a href="#connectie-vanuit-applicaties">Connectie vanuit applicaties</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/tabellen-combineren/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Tabellen combineren</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/dbq/csv-bestanden-importeren/">
+        <span class="title">CSV bestanden importeren</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

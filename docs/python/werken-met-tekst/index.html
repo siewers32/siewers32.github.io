@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Werken met tekst</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch080.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/" aria-current="page" data-state="active">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/" aria-current="page" data-state="active">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="werken-met-tekst">Werken met tekst</h2>
+<p>We hebben eerder gezien dat je code kunt herhalen in een for-loop. Een while-loop doet in principe precies hetzelfde, maar er zijn situaties waarbij een while-loop een betere oplossing is dan een for-loop.
+Een van die situaties is bij applicaties waar user-input wordt gevraagd.<br>
+Bekijk onderstaande code eens..</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Vertel me iets dan geef ik terug wat je invoerde! \n"</span> \
+         <span class="token string">"Vul 'q' in om het programma te eindigen. \n"</span>
+
+active <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">while</span> active<span class="token punctuation">:</span>
+    message <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> message <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
+        active <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span></code></pre>
+<p>In gewoon nederlands:<br>
+Zolang de variabele <code>active</code> gelijk is aan <code>True</code> gaan we het volgende doen:</p>
+<ul>
+<li>Er wordt gechecked of de gebruiker de letter 'q' heeft ingegvoerd.</li>
+<li>Als dat zo is wordt <code>active</code> op False gezet. Het programma wordt dan gestopt.</li>
+<li>Als dan niet zo is dan wordt hetgeen de gebruiker heeft ingevoerd op het scherm getoond.</li>
+</ul>
+<p>Bij een while-loop wordt de code dus net zo lang herhaald totdat de conditie achter <code>while</code>-loop <code>False</code>is. Dan stopt de while loop.</p>
+<p>Als het programma stopt, dan gaat alle gebruikers-input verloren. In het volgende stukje code zie je hoe je die gebruikersinput op kan slaan in een tekst-bestand:</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Vertel me iets dan geef ik terug wat je invoerde! \n"</span> \
+         <span class="token string">"Vul 'q' in om het programma te eindigen. \n"</span>
+
+active <span class="token operator">=</span> <span class="token boolean">True</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> active<span class="token punctuation">:</span>
+    message <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> message <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
+        active <span class="token operator">=</span> <span class="token boolean">False</span>
+        fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'newtext.txt'</span><span class="token punctuation">,</span> <span class="token string">'wt'</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+            fo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+        fo<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>message<span class="token punctuation">)</span></code></pre>
+<p>Er wordt een lege list toegevoegd aan de code <code>lst</code><br>
+Alle gebruikersinput wordt toegevoegd aan de list <code>lst</code>.
+Als er op <code>q</code> wordt gedrukt wordt er....</p>
+<ul>
+<li>Een nieuw tekstbestand aangemaakt met de naam <code>newtext.txt</code></li>
+<li>Alle elementen in <code>lst</code> worden in een for-loop naar het text-bestand geschreven</li>
+</ul>
+<h2 id="werken-met-tekstbestanden">Werken met tekstbestanden</h2>
+<pre class="language-python"><code class="language-python">fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'newtext.txt'</span><span class="token punctuation">,</span> <span class="token string">'wt'</span><span class="token punctuation">)</span></code></pre>
+<p><code>fo</code> is een zogenaamde 'handle' naar het tekstbestand <code>newtext.txt</code>. De methode <code>open</code> accepteert 2 argumenten. De naam van het bestand en wat je met dat bestande gaat doen. De optie <code>wt</code> staat voor 'write text'. Python gaat anders om met textbestanden dan met binaire bestanden zoals afbeeldingen e.d. De functie write betekent dat het tekstbestand wordt aangemaakt als het nog niet bestaat, maar als het wel bestaat, dan wordt het overschreven.
+Als je informatie toe wilt voegen aan een bestaand bestand, dan gebruik je de optie <code>at</code>. Dit staat voor 'append' zodat je meer tekst toe kan voegen.
+Je kunt ook teksten uit bestanden lezen. Dan geef je de optie <code>rt</code></p>
+<h2 id="charactersets">Charactersets</h2>
+<p>Voor de computer zijn letters eigenlijk gewoon nummers. Een karakter wordt omgezet naar nullen en enen in een byte. Byte betekent letterlijk by eight. Dus er zijn 8 nullen en enen beschikbaar om een karakter op te slaan. Met 8 nullen en enen kun je 2<sup>8</sup> = 256 verschillende tekens maken. De letter 'a' wordt opgeslagen onder code 97, letter 'b' wordt dan 98 en 'c' dus 99 enzovoort. De hoofdletter 'A' wordt opgeslagen als code '65'. Python werkt onder de motorkap ook met deze codes. Je kunt deze codes opzoeken in de <a href="https://nl.wikipedia.org/wiki/ASCII_(tekenset)#Standaard-ASCII">ASCII</a> lijst.
+Kijk maar eens naar de sortering van deze list:</p>
+<pre class="language-python"><code class="language-python">letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span>
+letters<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>letters<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span></code></pre>
+<p>De hoofdletters komen voor de kleine letters, omdat die een lagere code hebben in de ASCII lijst.
+Je kunt de codering voor karakters opzoeken met python...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#output</span>
+<span class="token number">97</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#output</span>
+a</code></pre>
+<h2 id="uit-een-loop-breken">Uit een loop breken</h2>
+<p>Stel je hebt dit programma....</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Geef me de naam van een voetbalclub \n"</span> \
+          <span class="token string">"(vul een 'q' in om te stoppen) \n"</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+      vc <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> vc <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+      <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"De voetbalclub </span><span class="token interpolation"><span class="token punctuation">{</span>vc<span class="token punctuation">}</span></span><span class="token string"> is helemaal baas!"</span></span><span class="token punctuation">)</span></code></pre>
+<p>Zolang while True is wordt de code herhaald. Daar komt dus nooit een einde aan. In de vorige voorbeelden hadden we nog de variabele 'active' gebruikt om de while-loop te stoppen. In dit geval stoppen we de loop met het commando <code>break</code></p>
+<h2 id="teruggaan-naar-het-begin-van-de-loop">Teruggaan naar het begin van de loop</h2>
+<p>Met het commando <code>continue</code> kun je de rest van de code in een loop overslaan en direct terug gaan naar het begin van de loop.
+Stel je hebt onderstaande code...</p>
+<pre class="language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+      num <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token keyword">if</span> num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span></code></pre>
+<p>Deze loop gaat net zo lang door totdat de variabele <code>num</code> niet meer kleiner is dan 10. In het if-statement wordt bekeken of <code>num</code> deelbaar is door 2. Als dat zo is wordt <code>num</code> niet op het scherm getoond omdat <code>continue</code> er voor zorgt dat de code wordt afgebroken en het programma weer terug gaat naar het begin van de loop. De print-opdracht aan het einde van het programma wordt dus overgeslagen!</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#werken-met-tekst">Werken met tekst</a></li><li><a href="#werken-met-tekstbestanden">Werken met tekstbestanden</a></li><li><a href="#charactersets">Charactersets</a></li><li><a href="#uit-een-loop-breken">Uit een loop breken</a></li><li><a href="#teruggaan-naar-het-begin-van-de-loop">Teruggaan naar het begin van de loop</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/condities/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Condities</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/foutafhandeling/">
+        <span class="title">Foutafhandeling</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

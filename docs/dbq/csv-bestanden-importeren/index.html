@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | CSV bestanden importeren</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/dbq/dbq-ch80.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+
+<a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+
+<a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+
+<a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+
+<a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+
+<a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+
+<a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+
+<a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+
+<a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+
+<a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/" aria-current="page" data-state="active">CSV bestanden importeren</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/dbq/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/dbq/installeren/">Installeren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/postgresql/">Postgresql</a>
+    
+    <a class="page-link" href="/edutorial/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+    
+    <a class="page-link" href="/edutorial/dbq/gegevens-filteren/">Gegevens filteren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/crud/">CRUD</a>
+    
+    <a class="page-link" href="/edutorial/dbq/database-maken/">Database maken</a>
+    
+    <a class="page-link" href="/edutorial/dbq/aggregatie-functies/">Aggregatie functies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/tabellen-combineren/">Tabellen combineren</a>
+    
+    <a class="page-link" href="/edutorial/dbq/permissies/">Permissies</a>
+    
+    <a class="page-link" href="/edutorial/dbq/csv-bestanden-importeren/" aria-current="page" data-state="active">CSV bestanden importeren</a>
+    
+</div>
+
+            <h1 id="database-queries">Database queries</h1>
+<h2 id="csv-bestanden-importeren">CSV bestanden importeren</h2>
+<p>Soms heb je al een database structuur, maar krijg je later nieuwe nieuwe data die je aan een tabel toe wilt voegen.
+Het kan gaan om data uit Excel-bestanden of data uit een IoT omgeving. In dit hoofdstuk kun je zien hoe je de bestaande data uit een tabel kunt verwijderen en hoe je nieuwe data toevoegd.</p>
+<h2 id="voorbeeld">Voorbeeld</h2>
+<p>Eerder is er gebruik gemaakt van een database <code>school</code>. De database bevat 4 tabellen...</p>
+<pre class="language-sql"><code class="language-sql">MariaDB <span class="token punctuation">[</span><span class="token punctuation">(</span>none<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">></span> <span class="token keyword">use</span> school<span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed
+MariaDB <span class="token punctuation">[</span>school<span class="token punctuation">]</span><span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> Tables_in_school <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> c_regel          <span class="token operator">|</span>
+<span class="token operator">|</span> cursist          <span class="token operator">|</span>
+<span class="token operator">|</span> cursus           <span class="token operator">|</span>
+<span class="token operator">|</span> docent           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.010</span> sec<span class="token punctuation">)</span></code></pre>
+<p>Stel er wordt nieuwe data aangeleverd (bijv. de gegevens van een andere school). Welke handelingen moet je doen om de database te legen en de nieuwe data te importeren.</p>
+<ul>
+<li>Bestaande tabellen leegmaken, hier moet je rekening mee houden:
+<ul>
+<li>Je kunt geen cursisten verwijderen die nog gekoppeld zijn aan een cursus</li>
+<li>Je kunt geen cursussen verwijderen waar nog cursisten aan zijn gekoppeld.</li>
+<li>De volgorde waarin je gegevens verwijderd is dus belangrijk!</li>
+</ul>
+</li>
+</ul>
+<pre class="language-sql"><code class="language-sql">
+MariaDB <span class="token punctuation">[</span>school<span class="token punctuation">]</span><span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">fields</span> <span class="token keyword">from</span> c_regel<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> Field     <span class="token operator">|</span> <span class="token keyword">Type</span>         <span class="token operator">|</span> <span class="token boolean">Null</span> <span class="token operator">|</span> <span class="token keyword">Key</span> <span class="token operator">|</span> <span class="token keyword">Default</span> <span class="token operator">|</span> Extra <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> curs_code <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>   <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> cursistnr <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>   <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> cijfer    <span class="token operator">|</span> <span class="token keyword">decimal</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> betaald   <span class="token operator">|</span> <span class="token keyword">decimal</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.042</span> sec<span class="token punctuation">)</span></code></pre>
+<ul>
+<li>In dit geval is de volgorde van verwijderen als volgt:
+<ul>
+<li>c_regel (in c_regel staat het cursistnr en de curs_code)</li>
+<li>docent (docent is niet gekoppeld aan andere tabellen)</li>
+<li>cursist (c_regel is leeg, dus cursist kan worden verwijderd)</li>
+<li>cursus (c_regel is leeg, dus cursu kan worden verwijderd)</li>
+</ul>
+</li>
+</ul>
+<p>Voer de volgende queries uit:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">truncate</span> c_regel<span class="token punctuation">;</span>
+<span class="token keyword">truncate</span> docent<span class="token punctuation">;</span>
+<span class="token keyword">truncate</span> cursist<span class="token punctuation">;</span>
+<span class="token keyword">truncate</span> cursus<span class="token punctuation">;</span></code></pre>
+<p>NB: <code>truncate</code> verwijdert alle records uit een tabel. De identity ('id') wordt ook gereset en begint weer bij 1. <code>delete from c_regel</code> verwijdert ook alle records uit de tabel, maar als er weer nieuwe records worden toegevoegd zal het oorspronkelijke id weer worden opgehoogd. (hoogste id was bijv. 100, nieuwe records invoegen starten bij 101...).</p>
+<h2 id="csv-data-importeren">CSV-data importeren</h2>
+<ul>
+<li>In een csv bestand is ieder record opgeslagen in 1 regel.</li>
+<li>In onderstaand voorbeeld bestaat de eerste regel uit de veldnamen</li>
+<li>Iedere volgende regel is data (in dit geval personeelsgegevens)</li>
+</ul>
+<pre class="language-csv"><code class="language-csv"><span class="token value">voorbeeld 1:</span>
+
+<span class="token value">id</span><span class="token punctuation">,</span><span class="token value">title</span><span class="token punctuation">,</span><span class="token value">firstname</span><span class="token punctuation">,</span><span class="token value">lastname</span><span class="token punctuation">,</span><span class="token value">email</span><span class="token punctuation">,</span><span class="token value">jobtitle</span>
+<span class="token value">1</span><span class="token punctuation">,</span><span class="token value">mevr.</span><span class="token punctuation">,</span><span class="token value">Liam</span><span class="token punctuation">,</span><span class="token value">Polat</span><span class="token punctuation">,</span><span class="token value">l.polat@superduper-markets.com</span><span class="token punctuation">,</span><span class="token value">verkoopassistent</span>
+<span class="token value">2</span><span class="token punctuation">,</span><span class="token value">dhr.</span><span class="token punctuation">,</span><span class="token value">Ian</span><span class="token punctuation">,</span><span class="token value">van der Horst</span><span class="token punctuation">,</span><span class="token value">i.vanderhorst@superduper-markets.com</span><span class="token punctuation">,</span><span class="token value">magazijnmedewerker</span>
+<span class="token value">3</span><span class="token punctuation">,</span><span class="token value">mevr.</span><span class="token punctuation">,</span><span class="token value">Riley</span><span class="token punctuation">,</span><span class="token value">Yüksel</span><span class="token punctuation">,</span><span class="token value">r.yüksel@superduper-markets.com</span><span class="token punctuation">,</span><span class="token value">medewerker administratie</span></code></pre>
+<ul>
+<li>Hieronder een voorbeeld van dezelfde data, ook in CSV-format, maar nu zonder eerste regel met veldnamen, alle velden zijn ingesloten door <code>&quot;&quot;</code> en de data is gescheiden door <code>;</code> in plaats van <code>,</code>.</li>
+<li>CSV-data kan dus in verschillende vormen worden gepresenteerd.</li>
+</ul>
+<pre class="language-csv"><code class="language-csv"><span class="token value">voorbeeld 2:</span>
+
+<span class="token value">"1"</span><span class="token value">;</span><span class="token value">"mevr."</span><span class="token value">;</span><span class="token value">"Liam"</span><span class="token value">;</span><span class="token value">"Polat"</span><span class="token value">;</span><span class="token value">"l.polat@superduper-markets.com"</span><span class="token value">;</span><span class="token value">"verkoopassistent"</span>
+<span class="token value">"2"</span><span class="token value">;</span><span class="token value">"dhr."</span><span class="token value">;</span><span class="token value">"Ian"</span><span class="token value">;</span><span class="token value">"van der Horst"</span><span class="token value">;</span><span class="token value">"i.vanderhorst@superduper-markets.com"</span><span class="token value">;</span><span class="token value">"magazijnmedewerker"</span>
+<span class="token value">"3;"</span><span class="token value">mevr.</span><span class="token value">";"</span><span class="token value">Riley</span><span class="token value">";"</span><span class="token value">Yüksel</span><span class="token value">";"</span><span class="token value">r.yüksel@superduper-markets.com</span><span class="token value">";"</span><span class="token value">medewerker administratie</span>"</code></pre>
+<p>Om CSV-data op de juiste manier te importeren moet je rekening houden met de verschillende verschijningsvormen.</p>
+<pre class="language-csv"><code class="language-csv"><span class="token value">Data import voorbeeld 1:</span>
+
+<span class="token value">LOAD DATA INFILE </span><span class="token value">"C:/Users/jsiewers/Downloads/school/cursus.csv"</span><span class="token value"> \ </span>
+<span class="token value">INTO TABLE cursus \</span>
+<span class="token value">COLUMNS TERMINATED BY '</span><span class="token punctuation">,</span><span class="token value">' \</span>
+<span class="token value">LINES TERMINATED BY '\n' \</span>
+<span class="token value">IGNORE 1 LINES;</span></code></pre>
+<pre class="language-csv"><code class="language-csv"><span class="token value">Data import voorbeeld 2:</span>
+
+<span class="token value">LOAD DATA INFILE </span><span class="token value">"C:/Users/jsiewers/Downloads/school/cursus.csv"</span><span class="token value"> \</span>
+<span class="token value">INTO TABLE cursus \</span>
+<span class="token value">COLUMNS TERMINATED BY ';' \</span>
+<span class="token value">ENCLOSED BY '</span>"<span class="token value">' \</span>
+<span class="token value">LINES TERMINATED BY '\n' \</span>
+<span class="token value">IGNORE 0 LINES;</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#csv-bestanden-importeren">CSV bestanden importeren</a></li><li><a href="#voorbeeld">Voorbeeld</a></li><li><a href="#csv-data-importeren">CSV-data importeren</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/dbq/permissies/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Permissies</span>
+    </a>
+    
+    
+    <div></div>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

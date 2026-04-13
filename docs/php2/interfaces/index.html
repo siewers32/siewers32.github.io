@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Interfaces</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/php2/php2-ch16.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+
+<a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+
+<a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+
+<a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+
+<a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+
+<a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+
+<a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+
+<a class="page-link" href="/edutorial/php2/interfaces/" aria-current="page" data-state="active">Interfaces</a>
+
+<a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+
+<a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+
+<a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+
+<a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/php2/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/php2/php-en-mysql/">PHP en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/php2/crud-applicatie/">CRUD applicatie</a>
+    
+    <a class="page-link" href="/edutorial/php2/werken-met-bestanden/">Werken met bestanden</a>
+    
+    <a class="page-link" href="/edutorial/php2/oo-programmeren/">OO Programmeren</a>
+    
+    <a class="page-link" href="/edutorial/php2/access-modifiers/">Access Modifiers</a>
+    
+    <a class="page-link" href="/edutorial/php2/inheritance/">Inheritance</a>
+    
+    <a class="page-link" href="/edutorial/php2/project-gallery/">Project Gallery</a>
+    
+    <a class="page-link" href="/edutorial/php2/interfaces/" aria-current="page" data-state="active">Interfaces</a>
+    
+    <a class="page-link" href="/edutorial/php2/mvc/">MVC</a>
+    
+    <a class="page-link" href="/edutorial/php2/composer/">Composer</a>
+    
+    <a class="page-link" href="/edutorial/php2/radiostation-kraeken/">Radiostation Kraeken</a>
+    
+    <a class="page-link" href="/edutorial/php2/opdracht-top-10-app/">Opdracht top-10 app</a>
+    
+</div>
+
+            <h1 id="php-object-geori%C3%ABnteerd">PHP Object georiënteerd</h1>
+<h2 id="interfaces">Interfaces</h2>
+<p>Om code te kunnen hergebruiken moet het flexibel zijn en onafhankelijk. In dit hoofdstuk worden 2 manieren besproken om dat te bereiken.</p>
+<h2 id="abstract-classes">Abstract classes</h2>
+<p>Abstract classes zijn classes die eigenlijk nog niet helemaal af zijn. Ze zijn nog niet zo specifiek. Het voorbeeld van de Koe zouden we kunnen gebruiken als een abstract class. Een abstract class kun je niet zo gebruiken. Je moet een sub-class (bijv. LakenVel in het voorbeeld) maken die je wel rechtstreeks kunt gebruiken.</p>
+<p>Je kunt een 'extended' (=subklasse) class maken van onderstaande 'class Koe'. In de extended class moet je opnieuw de kleur en het voer instellen. Je kunt de class Koe dus niet rechtstreeks gebruiken, maar wel via een extended class zoals bijv. LakenVel...</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name-definition class-name">Koe</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">int</span> <span class="token variable">$aantal_poten</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$kleur</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$voer</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">abstract</span> <span class="token keyword">function</span> <span class="token function-definition function">doeIets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string single-quoted-string">'Ik ben een koe met '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span><span class="token operator">.</span> <span class="token string single-quoted-string">' poten,  ik ben grotendeels '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">kleur</span><span class="token operator">.</span><span class="token string single-quoted-string">' en ik lust graag '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span><span class="token operator">.</span><span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-php"><code class="language-php"><span class="token comment">// Dit kan dus niet...</span>
+
+<span class="token variable">$koe</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Je krijgt dan deze error</span>
+<span class="token comment">// Uncaught Error: Cannot instantiate abstract class Koe</span>
+</code></pre>
+<p>Hier de extended class LakenVel</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">LakenVel</span> <span class="token keyword">extends</span> <span class="token class-name">Koe</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword static-context">parent</span><span class="token operator">::</span><span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">kleur</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'zwart met wit'</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'gras'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">function</span> <span class="token function-definition function">doeIets</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string single-quoted-string">'Doe iets anders'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Dit kan wel want je kunt wel een subklasse van een abstract class instantiëren.</span>
+<span class="token variable">$koe</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LakenVel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="interfaces-1">Interfaces</h2>
+<p>Een interface lijkt op een abstracte klasse, maar bij een interface zijn de methoden nog niet geïmplementeerd, alleen de signatuur van de methode is aanwezig. Er is nog geen code om uit te voeren!<br>
+Aan de signatuur kun je zien wat de naam is van de functie. Je ziet welke argumenten moeten worden meegestuurd en je ziet of een methode een return-waarde heeft.<br>
+Een interface werkt als een soort contract. Een interface bepaalt welke methoden en eigenschappen geïmplementeerd moeten worden in een klasse. Vanaf PHP 7.4 kun je het type van variabelen aanduiden. Hierdoor heb je nog meer controle over het 'contract'.
+Hier de interface van een Koe! De interface wordt gebruikt in de klasse Koe!. Dat betekent dat alle methoden en eigenschappen uit de interface geïmplementeerd moeten worden (er moet code voor geschreven worden).
+Hier een interface voor Koe:</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">interface</span> <span class="token class-name-definition class-name">Koe</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getAantal_poten</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">int</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">setAantal_poten</span><span class="token punctuation">(</span><span class="token variable">$aantal_poten</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">void</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">setVoer</span><span class="token punctuation">(</span><span class="token variable">$voer</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">void</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getVoer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">string</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>De lakenvel implementeert de interface van Koe. In de class LakenVel worden de methoden voorzien van code. Iedere afgeleide van koe moet deze methoden implementeren. Zo weet je zeker dat alle classes die van Koe zijn afgeleid dezelfde functionaliteit en eigenschappen hebben.</p>
+<pre class="language-php"><code class="language-php"><span class="token keyword">class</span> <span class="token class-name-definition class-name">LakenVel</span> <span class="token keyword">implements</span> <span class="token class-name">Koe</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword type-declaration">string</span> <span class="token variable">$voer</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> <span class="token keyword type-declaration">int</span> <span class="token variable">$aantal_poten</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getAantal_poten</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">setAantal_poten</span><span class="token punctuation">(</span><span class="token variable">$aantal_poten</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">void</span><span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span> <span class="token operator">=</span> <span class="token variable">$aantal_poten</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">setVoer</span><span class="token punctuation">(</span><span class="token variable">$voer</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">void</span><span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span> <span class="token operator">=</span> <span class="token variable">$voer</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getVoer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">string</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword return-type">void</span><span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string single-quoted-string">'Ik ben een koe met '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">aantal_poten</span><span class="token operator">.</span> <span class="token string single-quoted-string">' poten en ik lust graag '</span><span class="token operator">.</span><span class="token variable">$this</span><span class="token operator">-></span><span class="token property">voer</span><span class="token operator">.</span><span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+
+<span class="token variable">$koe</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LakenVel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$koe</span><span class="token operator">-></span><span class="token function">setAantal_poten</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$koe</span><span class="token operator">-></span><span class="token function">setVoer</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'bix en gras'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$koe</span><span class="token operator">-></span><span class="token function">asText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#interfaces">Interfaces</a></li><li><a href="#abstract-classes">Abstract classes</a></li><li><a href="#interfaces-1">Interfaces</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/php2/project-gallery/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Project Gallery</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/php2/mvc/">
+        <span class="title">MVC</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

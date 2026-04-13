@@ -1,0 +1,6 @@
+{
+    "course-title": "AI-engineer",
+    "layout": "course.njk",
+    "permalink": "/ai_engineer/{{ title | slug }}/{{ page.index }}",
+    "tags": "ai_engineer"
+}

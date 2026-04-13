@@ -1,0 +1,5 @@
+<a class="page-link" href="{{ p.url }}" {% if p.url == page.url %}aria-current="page" data-state="active"{% endif %}>{{  p.data.title }}</a>
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    {{ content | toc | safe }}
+</div>

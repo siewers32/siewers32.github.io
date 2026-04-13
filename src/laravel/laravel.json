@@ -1,0 +1,6 @@
+{
+  "course-title": "Laravel",
+  "layout": "course.njk",
+  "tags": "laravel",
+  "permalink": "/laravel/{{ title | slug }}/{{ page.index }}"
+}

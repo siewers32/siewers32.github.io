@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Javascript loops en condities</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/js/js-ch020.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/" aria-current="page" data-state="active">Javascript loops en condities</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/">Javascript en Formulieren</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+
+<a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+
+<a class="page-link" href="/edutorial/javascript/events-in-javascript/">Events in javascript</a>
+
+<a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+
+<a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/">The Persistent Dashboard</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/javascript/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-basis/">Javascript Basis</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-loops-en-condities/" aria-current="page" data-state="active">Javascript loops en condities</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-arrays/">Javascript arrays</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-dom/">Javascript en DOM</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-en-formulieren/">Javascript en Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-functies/">Javascript functies</a>
+    
+    <a class="page-link" href="/edutorial/javascript/javascript-listeners/">Javascript listeners</a>
+    
+    <a class="page-link" href="/edutorial/javascript/events-in-javascript/">Events in javascript</a>
+    
+    <a class="page-link" href="/edutorial/javascript/nodejs-express-en-mysql/">NodeJS, Express en MySQL</a>
+    
+    <a class="page-link" href="/edutorial/javascript/the-persistent-dashboard/">The Persistent Dashboard</a>
+    
+</div>
+
+            <h1 id="javascript">Javascript</h1>
+<h2 id="javascript-loops-en-condities">Javascript loops en condities</h2>
+<h3 id="leerdoelen">Leerdoelen</h3>
+<ul>
+<li>Je weet wat een loop is en wat je er mee kunt doen.</li>
+<li>Je kunt zelf loops maken en stukken code herhaaldelijk laten uitvoeren</li>
+<li>Je kunt op basis van een conditie code laten uitvoeren</li>
+</ul>
+<h3 id="wat-is-een-loop">Wat is een loop</h3>
+<p>Een loop in javascript is vergelijkbaar met loops in andere programmeertalen. Je kunt een bewerking herhalen door gebruik te maken van een for-loop. Hieronder zie je de code om de tafel van 5 weer te geven in de console.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//deze code wordt 5 keer herhaald</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"5 * "</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">" = "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="wat-zijn-condities">Wat zijn condities</h3>
+<p>Je kunt in javascript controleren of er aan een bepaalde conditie wordt voldaan. Een conditie is altijd waar of onwaar.
+Je kunt bijvoorbeeld checken of de leeftijd van een bezoeker hoger is dan 65.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> price <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> leeftijd <span class="token operator">=</span> <span class="token number">66</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>leeftijd <span class="token operator">></span> <span class="token number">65</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//Persoon is ouder dan 65 dus hij/zij krijgt korting!</span>
+    <span class="token keyword">let</span> betalen <span class="token operator">=</span> price <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">0.25</span> <span class="token operator">*</span> price<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 25% korting!</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>betalen<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Output 37,50</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="meer-over-variabelen">Meer over variabelen</h2>
+<p>Als je een variabele met 'let' maakt, dan is die alleen beschikbaar in de 'blocked scope'. Een block is een bijvoorbeeld de code tussen accolades.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>       
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'dit is y: '</span> <span class="token operator">+</span> y<span class="token punctuation">)</span> <span class="token punctuation">;</span>  <span class="token comment">//Output: Uncaught ReferenceError: y is not defined.</span></code></pre>
+<p>De variabele y is tussen de accolades van het if-statement gemaakt waardoor hij niet meer bereikbaar is voor de functie <code>console.log</code>!
+Dit werkt wel....</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'dit is y: '</span> <span class="token operator">+</span> y<span class="token punctuation">)</span> <span class="token punctuation">;</span>  <span class="token comment">//Output: dit is y: 3 </span>
+<span class="token punctuation">}</span>      </code></pre>
+<p>De laatste mogelijkheid is om een variabele met 'const' te maken. Dit wordt een constante genoemd. Een constante is in principe 'immutable' (je kunt hem maken, maar niet meer aanpassen.)</p>
+<pre class="language-javascript"><code class="language-javascript">  <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+  y <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+  x <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'dit is y: '</span> <span class="token operator">+</span> y<span class="token punctuation">)</span> <span class="token punctuation">;</span>  
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'dit is x: '</span> <span class="token operator">+</span> x<span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment">//Output: Uncaught TypeError: invalid assingment to const 'x'</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#javascript-loops-en-condities">Javascript loops en condities</a></li><li><a href="#meer-over-variabelen">Meer over variabelen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/javascript/javascript-basis/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Javascript Basis</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/javascript/javascript-arrays/">
+        <span class="title">Javascript arrays</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

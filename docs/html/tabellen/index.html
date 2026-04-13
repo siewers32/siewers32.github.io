@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Tabellen</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/html/html-ch070.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+
+<a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+
+<a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+
+<a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+
+<a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+
+<a class="page-link" href="/edutorial/html/tabellen/" aria-current="page" data-state="active">Tabellen</a>
+
+<a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+
+<a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+
+<a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+
+<a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+
+<a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/html/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/html/starten-met-html/">Starten met HTML</a>
+    
+    <a class="page-link" href="/edutorial/html/html-structuur/">HTML structuur</a>
+    
+    <a class="page-link" href="/edutorial/html/veel-voorkomende-tags/">Veel voorkomende tags</a>
+    
+    <a class="page-link" href="/edutorial/html/bestanden-beheren/">Bestanden beheren</a>
+    
+    <a class="page-link" href="/edutorial/html/eerste-website/">Eerste website</a>
+    
+    <a class="page-link" href="/edutorial/html/tabellen/" aria-current="page" data-state="active">Tabellen</a>
+    
+    <a class="page-link" href="/edutorial/html/afbeeldingen-aanpassen/">Afbeeldingen aanpassen</a>
+    
+    <a class="page-link" href="/edutorial/html/formulieren/">Formulieren</a>
+    
+    <a class="page-link" href="/edutorial/html/website-vanaf-schets/">Website vanaf schets</a>
+    
+    <a class="page-link" href="/edutorial/html/hosting/">Hosting</a>
+    
+    <a class="page-link" href="/edutorial/html/tot-slot/">Tot slot</a>
+    
+</div>
+
+            <h1 id="html-5">HTML 5</h1>
+<h2 id="tabellen">Tabellen</h2>
+<p>In HTML maak kun je tabellen weergeven met de 'table'-tag. In het verleden werden tabellen gebruikt om een website vorm te geven,
+maar tegenwoordig wordt de 'table'-tag alleen nog gebruikt waar hij ook oorspronkelijk voor bedoeld is.
+Namelijk het weergeven van tabulaire informatie.</p>
+<p>De structuur van een tabel start met een 'table'-tag. Verder bestaat een tabel uit rijen en (data)cellen.
+Hieronder een voorbeeld van een simpele tabel:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Groen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Rood<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>komkommer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>tomaat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+<p>Hieronder het resultaat in de browser:</p>
+<style>
+    div.html table,
+    div.html td,
+    div.html tr,
+    div.html th {
+        border: 1px solid black;
+        padding:5px;
+        vertical-align: middle; 
+    }
+</style>
+<div class="html">
+<table>
+    <tr>
+        <th>Groen</th><th>Rood</th>
+    </tr>
+    <tr>
+        <td>komkommer</td><td>tomaat</td>
+    </tr>
+</table>
+</div>
+<p>Uitleg:</p>
+<ul>
+<li>Met 'table' wordt de tabel gecreëerd.</li>
+<li>Bij 'tr' wordt de eerste table-row gemaakt.</li>
+<li>Daarna volgt 2x een 'th' table-header. (groen en rood).</li>
+<li>Vervolgens begint de volgende rij 'tr'.</li>
+<li>En dan 2x een data-cel 'td'. (komkommer, tomaat).</li>
+</ul>
+<p>Een tabel in HTML lijkt wel wat op een spreadsheet. Je kunt ook cellen samenvoegen...
+Met het attribuut colspan kun je aangeven dat een data-cel over meerdere kolommen gaat.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span> <span class="token attr-name">colspan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Groente<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>komkommer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>tomaat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<table>
+    <tr>
+        <th colspan="2">Groente</th>
+    </tr>
+    <tr>
+        <td>komkommer</td><td>tomaat</td>
+    </tr>
+</table>
+</div>
+<p>Met het rowspan-attribuut kun je een cel over meerdere rijen laten gaan....</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span> <span class="token attr-name">rowspan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Groente<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>komkommer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>tomaat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<table>
+    <tr>
+        <th rowspan="2">Groente</th><td>komkommer</td>
+    </tr>
+    <tr>
+        <td>tomaat</td>
+    </tr>
+</table>
+</div>
+<p>Hieronder zowel colspan als rowspan toegepast..</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">colspan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tabel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span> <span class="token attr-name">rowspan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Groente<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>komkommer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>tomaat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+<div class="html">
+<table>
+    <tr>
+        <th colspan="2">Tabel</th>
+    </tr>
+    <tr>
+        <th rowspan="2">Groente</th><td>komkommer</td>
+    </tr>
+    <tr>
+        <td>tomaat</td>
+    </tr>
+</table>
+</div>
+<blockquote>
+<h4 id="opdracht-7.1-zelf-tabellen-maken.">Opdracht 7.1 Zelf tabellen maken.</h4>
+<p>Maak minimaal 3 tabellen na van de tabellen die je hier kunt downloaden:<br>
+<a href="/edutorial/_assets/html/tabellen.zip">Tabellen downloaden</a></p>
+</blockquote>
+<p>In de video's wordt uitgelegd hoe je tabellen maakt en er wordt een complexe tabel geanalyseerd en nagebouwd:</p>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/a6VI9QG5RIc">
+        </iframe>
+    </div>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/_AId8a5rK60">
+        </iframe>
+    </div>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#tabellen">Tabellen</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/html/eerste-website/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Eerste website</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/html/afbeeldingen-aanpassen/">
+        <span class="title">Afbeeldingen aanpassen</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

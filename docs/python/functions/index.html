@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Functions</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch090.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/" aria-current="page" data-state="active">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/" aria-current="page" data-state="active">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<h2 id="functions">Functions</h2>
+<p>Met functies kun je stukken code schrijven die je vaker nodig hebt. In plaats van iedere keer dezelfde code in te typen, kun je een functie <em>definiëren</em> en <em>aanroepen</em> op het moment dat je de code nodig hebt.
+Hieronder een voorbeeld van een simpele functie</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># functie definiëren</span>
+<span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hallo beste gebruiker, leuk dat je er bent"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste gebruiker<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<p>Met 'def' geef je aan dat je een functie wil definiëren. De code die ingesprongen is, hoort bij de functie. Iedere keer als de functie groet_gebruiker() wordt aangeroepen, zoals in de regels onder de functie, wordt die code uitgevoerd.</p>
+<h2 id="informatie-doorgeven-aan-een-functie">Informatie doorgeven aan een functie</h2>
+<p>Natuurlijk is bovenstaand voorbeeld nog niet zo nuttig. Maar stel je voor dat je iedere gebruiker die inlogt wil begroeten met een persoonlijke groet. Dat kan met onderstaande functie...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>naam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>naam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste Kees<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<h2 id="positional-arguments">Positional arguments</h2>
+<p>Bovenstaande functie groet_gebruiker(naam) accepteert 1 argument. Je kunt meerdere argumenten meegeven aan een functie. We kunnen de functie uitbreiden met een voornaam en een achternaam. Python weet niets van voornamen en achternamen, dus je kunt de voor- en achternaam met elkaar verwisselen als je ze in de verkeerde volgorde doorgeeft.
+De positie van de argumenten is dus bepalend.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'van der Broek'</span><span class="token punctuation">,</span> <span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste van der Broek Kees<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<h2 id="named-arguments">Named arguments</h2>
+<p>Je kunt python ook forceren om te letten op de namen van de variabelen, zodat je zeker weet dat alles in de juiste volgorde wordt geprint.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span>achternaam<span class="token operator">=</span><span class="token string">'van der Broek'</span><span class="token punctuation">,</span> voornaam<span class="token operator">=</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste Kees van der Broek<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<h2 id="default-waarden-invullen">Default waarden invullen</h2>
+<p>Als een functie 2 argumenten accepteert, maar je weet er maar 1 dan kun je het 2e argument een default waarde aan laten nemen....</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste Kees <span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<p>De achternaam blijft leeg, omdat dat de default waarde is. Er blijft wel een spatie staan, dat komt omdat tussen voornaam en achternaam een spatie staat.
+Zonder default waarde voor achternaam, kun je niet een argument weglaten. Als je dat doet krijg je een foutmelding...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token operator">=</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+TypeError<span class="token punctuation">:</span> groet_gebruiker<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> <span class="token string">'achternaam'</span></code></pre>
+<h2 id="return-waarde">Return waarde</h2>
+<p>Een functie kan in plaats van iets te printen ook een waarde teruggeven. Als we bovenstaande functie ombouwen met een return-waarde dan ziet dat er zo uit.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token operator">=</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span>
+
+<span class="token comment"># functie aanroepen</span>
+datum <span class="token operator">=</span> <span class="token string">"Het is vandaag 27 januari."</span>   
+groet <span class="token operator">=</span>  groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">,</span> <span class="token string">'Jansen'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>datum<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>groet<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Het <span class="token keyword">is</span> vandaag <span class="token number">27</span> januari<span class="token punctuation">.</span> Hallo beste Kees Jansen<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<p>Je ziet dat je nu de return-waarde van de functie ergens in je programma kunt hergebruiken.</p>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#functions">Functions</a></li><li><a href="#informatie-doorgeven-aan-een-functie">Informatie doorgeven aan een functie</a></li><li><a href="#positional-arguments">Positional arguments</a></li><li><a href="#named-arguments">Named arguments</a></li><li><a href="#default-waarden-invullen">Default waarden invullen</a></li><li><a href="#return-waarde">Return waarde</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/foutafhandeling/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Foutafhandeling</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/modules/">
+        <span class="title">Modules</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

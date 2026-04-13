@@ -1,0 +1,32 @@
+:root {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    --c-brand: #FF8000;
+    --c-brand-light: #B06E2C;
+    --c-text-light-grey: #e0e0e0;
+    --c-text-light-3: #93d4f5;
+    --c-text-light-2: #005E7A;
+    --c-text-light-1: #052c44;
+    --c-text: #1f1f1f;
+    --c-text-accent: var(--c-brand);
+    --c6: #d4c4b3;
+    --c-bg-light: #e8e8e8;
+    --c-bg-blockquote: #edf2f8;
+    --c-bg: #f6f6f6;
+    --c-bg-superlight: #fafafa;
+    --c-bg-dark:#555555;
+    --fontfamily: 'Public Sans', 'Arial', sans-serif;
+    --codefont: 'FiraCode', monospace;
+    --lineheight: 1.8rem;
+    --fontsize: 16px;
+    --box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    --box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --blockquote-assignment: #cddcc7;
+    --blockquote-warning: #fdbe8b;
+    --blockquote-primary: #d3e2e2;
+    --blockquote-border:#137333;
+    --c-course-level-1: #0A5F99FF;
+    --c-course-level-1-dark: #393d45;
+    --c-course-level-2: #69707DFF;
+    --c-course-level-3: #BB853EFF;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edutorial | Lists</title>
+<link rel="shortcut icon" type="image/png" href="/edutorial/_assets/android/edutorial-icon-48.png">
+
+<link rel="manifest" href="/edutorial/manifest.json">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="/edutorial/_css/prism-one-light.css" rel="stylesheet">
+<link href="/edutorial/_css/colors.css" rel="stylesheet">
+<link href="/edutorial/_css/base.css" rel="stylesheet">
+<link href="/edutorial/_css/frontpage.css" rel="stylesheet">
+<link href="/edutorial/_css/desktop.css" rel="stylesheet">
+<link href="/edutorial/_css/tablet.css" rel="stylesheet">
+<link href="/edutorial/_css/mobile.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a id="logolink" href="/edutorial/"><img id="logo" class="standard" src="/edutorial/_assets/logo.svg" alt="logo"></a>
+            <nav>
+                
+                <a href="/edutorial/" class="nav-link">Home</a>
+                
+                <a class="nav-link" href="https://github.com/siewers32/eleventy/blob/master/./src/python/python-ch040.md"><span class="material-icons">edit</span></a>
+
+                
+                <a href="#" id="menu"><span class="material-icons">menu</span></a>
+                
+            </nav>
+        </div><!-- container -->
+    </header>
+    <main>
+        <aside id="left">
+            
+<h3>Pagina's</h3>
+
+<a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+
+<a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+
+<a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+
+<a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+
+<a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+
+<a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+
+<a class="page-link" href="/edutorial/python/lists/" aria-current="page" data-state="active">Lists</a>
+
+<a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+
+<a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+
+<a class="page-link" href="/edutorial/python/condities/">Condities</a>
+
+<a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+
+<a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+
+<a class="page-link" href="/edutorial/python/functions/">Functions</a>
+
+<a class="page-link" href="/edutorial/python/modules/">Modules</a>
+
+<a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+
+<a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+
+
+        </aside>
+        <div id="content">
+            
+<div id="menu-panel">
+    
+    <a class="page-link" href="/edutorial/python/introductie/">Introductie</a>
+    
+    <a class="page-link" href="/edutorial/python/python-installeren/">Python installeren</a>
+    
+    <a class="page-link" href="/edutorial/python/werkwijze/">Werkwijze</a>
+    
+    <a class="page-link" href="/edutorial/python/variabelen/">Variabelen</a>
+    
+    <a class="page-link" href="/edutorial/python/berekeningen/">Berekeningen</a>
+    
+    <a class="page-link" href="/edutorial/python/tekstfuncties/">Tekstfuncties</a>
+    
+    <a class="page-link" href="/edutorial/python/lists/" aria-current="page" data-state="active">Lists</a>
+    
+    <a class="page-link" href="/edutorial/python/input-functions/">Input functions</a>
+    
+    <a class="page-link" href="/edutorial/python/loops-en-lists/">Loops en lists</a>
+    
+    <a class="page-link" href="/edutorial/python/condities/">Condities</a>
+    
+    <a class="page-link" href="/edutorial/python/werken-met-tekst/">Werken met tekst</a>
+    
+    <a class="page-link" href="/edutorial/python/foutafhandeling/">Foutafhandeling</a>
+    
+    <a class="page-link" href="/edutorial/python/functions/">Functions</a>
+    
+    <a class="page-link" href="/edutorial/python/modules/">Modules</a>
+    
+    <a class="page-link" href="/edutorial/python/pypi/">PyPi</a>
+    
+    <a class="page-link" href="/edutorial/python/projectopdrachten/">Projectopdrachten</a>
+    
+</div>
+
+            <h1 id="python-basis">Python basis</h1>
+<div class="video-wrapper">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube.com/embed/hNvzvMwyCZA">
+        </iframe>
+    </div>
+<h2 id="lists">Lists</h2>
+<p>Lists, tuples en dictionaries bieden de mogelijkheid om een set van informatie op te slaan. Lists zijn bijvoorbeeld handig als je alle namen van files in een directory op wil slaan. Of je wilt de namen en adressen van medewerkers opslaan. Als het gaat om een set van waarden die met elkaar te maken hebben, dan kan een list uitkomst bieden.
+Je kunt bijvoorbeeld de (eerste) letters van het alfabet opslaan in een list...</p>
+<pre class="language-python"><code class="language-python">my_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token string">"D"</span><span class="token punctuation">,</span> <span class="token string">"E"</span><span class="token punctuation">,</span> <span class="token string">"F"</span><span class="token punctuation">]</span></code></pre>
+<p>Je kunt een letter opzoeken op basis van de plek waar hij in de lijst staat. De letter &quot;A&quot; staat op de eerste plek. Bij een list begin je altijd te tellen vanaf 0. Je zou dus kunnen zeggen dat de letter &quot;A&quot; op de 0-de plek staat. Om de letter &quot;A&quot; te printen doe je dit...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Zo toon je het eerste element van de list my_list op het scherm.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+A
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+C
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+D</code></pre>
+<p>Je kunt ook vanaf de andere kant van de list beginnen te tellen.
+Bijvoorbeeld:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+F
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+E</code></pre>
+<h2 id="elementen-in-een-list-aanpassen">Elementen in een list aanpassen</h2>
+<p>Stel je hebt een lijst motoren en je wilt er 1 aanpassen</p>
+<pre class="language-python"><code class="language-python">motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+
+<span class="token comment"># honda wordt aangepast naar ducati</span>
+motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'ducati'</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ducati', 'yamaha', 'suzuki']</span></code></pre>
+<h2 id="elementen-toevoegen-aan-een-list">Elementen toevoegen aan een list</h2>
+<p>De honda moet toch weer terugkomen in de lijst. We willen dus een extra element toevoegen. Dat doe je met de methode <code>append()</code></p>
+<pre class="language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'honda'</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ducati', 'yamaha', 'suzuki', 'honda']</span></code></pre>
+<h2 id="elementen-op-een-bepaalde-plek-toevoegen-in-een-lijst">Elementen op een bepaalde plek toevoegen in een lijst</h2>
+<p>Een KTM ontbreekt nog, maar die willen we toevoegen na de ducati. Dit kun je doen met de methode <code>insert()</code>. Insert neemt 2 argumenten, namelijk de plek waar moet worden ingevoegd en de waarde.</p>
+<pre class="language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ktm'</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ktm', 'ducati', 'yamaha', 'suzuki', 'honda']</span>
+
+motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'kawasaki'</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ktm', 'ducati', 'yamaha', 'kawasaki', 'suzuki', 'honda']</span>
+</code></pre>
+<h2 id="elementen-weggooien">Elementen weggooien</h2>
+<p>Dat kan natuurlijk ook..</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+
+<span class="token comment"># output: ['ktm', 'ducati', 'yamaha', 'suzuki', 'honda']</span></code></pre>
+<h2 id="list-methoden">List methoden</h2>
+<p>Eigenlijk heb je al gewerkt met list methoden. Je kunt door een methode te gebruiken gegevens toevoegen aan een list met <code>insert()</code> of <code>append()</code>. Er zijn nog meer mogelijkheden met lists. Een opsomming vind je op <a href="https://www.w3schools.com/python/python_ref_list.asp">w3schools python list methods</a></p>
+<h2 id="een-list-in-een-list">Een list in een list</h2>
+<p>Lists kunnen zelf ook weer onderdeel uitmaken van een list. Stel dat je een list hebt met voertuigen:</p>
+<pre class="language-python"><code class="language-python">voertuigen <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"vliegtuig"</span><span class="token punctuation">,</span> <span class="token string">"auto"</span><span class="token punctuation">,</span> <span class="token string">"fiets"</span><span class="token punctuation">]</span></code></pre>
+<p>Je hebt nog een 2e list met dieren</p>
+<pre class="language-python"><code class="language-python">dieren <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"aap"</span><span class="token punctuation">,</span> <span class="token string">"mier"</span><span class="token punctuation">,</span> <span class="token string">"rat"</span><span class="token punctuation">]</span></code></pre>
+<p>En nu voegen we beide lists toe aan een nieuwe list</p>
+<pre class="language-python"><code class="language-python">allebei <span class="token operator">=</span> <span class="token punctuation">[</span>voertuigen<span class="token punctuation">,</span> dieren<span class="token punctuation">]</span></code></pre>
+<p>Als je dan &quot;mier&quot; wilt printen dan moet je op zoek naar het 2e element in de 2e list. Aangezien we beginnen te tellen bij 0 wordt dat...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>allebei<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>De aap is dan het eerste element in de 2e list <code>allebei[1][0]</code><br>
+Het vliegtuig is het eerste element in de 1e list <code>allebei[0][0]</code></p>
+<p>We voegen nog een dictionary toe. In een dictionary hebben elementen een naam, bijvoorbeeld:</p>
+<pre class="language-python"><code class="language-python">b <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"naam"</span><span class="token punctuation">:</span> <span class="token string">"Benny"</span><span class="token punctuation">,</span> <span class="token string">"fav_kleur"</span><span class="token punctuation">:</span> <span class="token string">"groen"</span> <span class="token punctuation">}</span>
+g <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"naam"</span><span class="token punctuation">:</span> <span class="token string">"Gerard"</span><span class="token punctuation">,</span> <span class="token string">"fav_kleur"</span><span class="token punctuation">:</span> <span class="token string">"paars"</span> <span class="token punctuation">}</span>
+allebei<span class="token punctuation">.</span>append<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+allebei<span class="token punctuation">.</span>append<span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>allebei<span class="token punctuation">)</span></code></pre>
+<p>Als je nu de naam van de eerste dictionary wil printen, dan moet je dus zijn bij het 3e element in de list allebei. Van dat 3e element wil je de naam printen:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>allebei<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"naam"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+        </div>
+        <aside id="right">
+            
+<div class="sections">
+    <h3>Onderwerpen</h3>
+    <div class="toc">
+        <ul><li><a href="#lists">Lists</a></li><li><a href="#elementen-in-een-list-aanpassen">Elementen in een list aanpassen</a></li><li><a href="#elementen-toevoegen-aan-een-list">Elementen toevoegen aan een list</a></li><li><a href="#elementen-op-een-bepaalde-plek-toevoegen-in-een-lijst">Elementen op een bepaalde plek toevoegen in een lijst</a></li><li><a href="#elementen-weggooien">Elementen weggooien</a></li><li><a href="#list-methoden">List methoden</a></li><li><a href="#een-list-in-een-list">Een list in een list</a></li></ul>
+      </div>
+</div>
+
+        </aside>
+        
+    </main>
+    <footer>
+        
+<div class="container">
+    
+    <a id="previous-link" href="/edutorial/python/tekstfuncties/">
+        <span id="arrow-back" class="material-icons">
+            arrow_back_ios
+        </span>
+        <span class="title">Tekstfuncties</span>
+    </a>
+    
+    
+    <a id="next-link" href="/edutorial/python/input-functions/">
+        <span class="title">Input functions</span>
+        <span id="arrow-forward" class="material-icons">
+            arrow_forward_ios
+        </span>
+    </a>
+    
+</div>
+
+    </footer>
+    <script src="/edutorial/_js/menu-scroller.js"></script>
+</body>
+
+</html>

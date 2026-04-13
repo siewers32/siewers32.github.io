@@ -1,0 +1,27 @@
+@media only screen and (max-width: 850px) {
+    aside {
+        display: none;
+    }
+
+    a#menu {
+        display: inline-block;
+        position: relative;
+        top: 6px;
+    }
+
+    div#menu-panel {
+        display: block;
+    }
+
+    a.nav-link {
+        display: none;
+    }
+
+    div#content {
+        max-width: 800px;
+    }
+
+    div#content p, pre[class*="language-"] {
+        width: 90vw;
+    }
+}

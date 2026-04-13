@@ -1,0 +1,132 @@
+{
+    "data": {
+        "id": 122,
+        "first_name": "Sara",
+        "last_name": "Rodríquez",
+        "created_at": "2022-08-31T12:29:23.000000Z",
+        "updated_at": null,
+        "reservations": [
+            {
+                "id": 135,
+                "customer_id": 122,
+                "trip_id": 44,
+                "reservation_date": "2024-06-23",
+                "number_of_adults": 4,
+                "number_of_children": 2,
+                "paid": 609,
+                "created_at": "2022-08-31T12:29:24.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 705,
+                "customer_id": 122,
+                "trip_id": 233,
+                "reservation_date": "2022-01-04",
+                "number_of_adults": 4,
+                "number_of_children": 0,
+                "paid": 784,
+                "created_at": "2022-08-31T12:29:24.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 1123,
+                "customer_id": 122,
+                "trip_id": 383,
+                "reservation_date": "2023-01-08",
+                "number_of_adults": 3,
+                "number_of_children": 0,
+                "paid": null,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 1266,
+                "customer_id": 122,
+                "trip_id": 435,
+                "reservation_date": "2023-07-08",
+                "number_of_adults": 4,
+                "number_of_children": 3,
+                "paid": null,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 1429,
+                "customer_id": 122,
+                "trip_id": 494,
+                "reservation_date": "2022-05-29",
+                "number_of_adults": 2,
+                "number_of_children": 0,
+                "paid": 93,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 1501,
+                "customer_id": 122,
+                "trip_id": 521,
+                "reservation_date": "2024-05-23",
+                "number_of_adults": 4,
+                "number_of_children": 4,
+                "paid": null,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 1908,
+                "customer_id": 122,
+                "trip_id": 663,
+                "reservation_date": "2022-10-12",
+                "number_of_adults": 2,
+                "number_of_children": 2,
+                "paid": 877,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 2282,
+                "customer_id": 122,
+                "trip_id": 788,
+                "reservation_date": "2023-10-01",
+                "number_of_adults": 4,
+                "number_of_children": 0,
+                "paid": 937,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 2608,
+                "customer_id": 122,
+                "trip_id": 905,
+                "reservation_date": "2022-11-12",
+                "number_of_adults": 1,
+                "number_of_children": 1,
+                "paid": 714,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 2737,
+                "customer_id": 122,
+                "trip_id": 950,
+                "reservation_date": "2024-11-11",
+                "number_of_adults": 3,
+                "number_of_children": 0,
+                "paid": 850,
+                "created_at": "2022-08-31T12:29:25.000000Z",
+                "updated_at": null
+            },
+            {
+                "id": 3165,
+                "customer_id": 122,
+                "trip_id": 1097,
+                "reservation_date": "2023-12-03",
+                "number_of_adults": 4,
+                "number_of_children": 1,
+                "paid": 2205,
+                "created_at": "2022-08-31T12:29:26.000000Z",
+                "updated_at": null
+            }
+        ]
+    }
+}
