@@ -1,1 +1,2 @@
 # Edutorial blog
+* Educational courses
